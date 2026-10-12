@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#050506">
-  <meta name="description" content="Portfólio de [Seu nome] — [Sua área de atuação]. Ideias que ganham forma em experiências digitais.">
+  <meta name="description" content="Portfólio de [Seu nome]. Crio campanhas organizadas, persuasivas e focadas em conversão.">
   <title>[Seu nome] — Portfólio</title>
   <link rel="preload" href="referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2" as="font" type="font/woff2" crossorigin>
   <style>
@@ -25,7 +25,7 @@
       --space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-36:144px;
     }
     *,*::before,*::after{box-sizing:border-box}
-    html{scroll-padding-top:104px;background:var(--void)}
+    html{scroll-padding-top:var(--nav-offset,104px);background:var(--void)}
     body{margin:0;background:var(--void);color:var(--ink);font:400 16px/1.65 var(--font-ui)}
     ::selection{background:var(--signal);color:var(--void)}
     h1,h2,h3,p,figure{margin:0}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
@@ -38,67 +38,89 @@
     .caps{font:400 10px/1.5 var(--font-mono);letter-spacing:.15em;text-transform:uppercase}
     .muted{color:var(--muted)}.editorial{font-family:var(--font-editorial);font-weight:300;color:var(--signal)}
     .wrap{width:100%;max-width:1440px;margin-inline:auto}
-    .nav{position:absolute;inset:0 0 auto;z-index:20;padding:24px var(--pad)}
+    .nav{position:fixed;inset:0 0 auto;z-index:60;padding:24px var(--pad);border-bottom:1px solid transparent;transition:padding .4s var(--ease),background .4s,border-color .4s}
+    .nav.is-scrolled{padding-block:16px;background:#050506e8;border-bottom-color:var(--line);backdrop-filter:blur(20px)}
     .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
     .brand{display:inline-flex;align-items:center;gap:12px;justify-self:start;min-height:48px;font:500 17px/1 var(--font-ui);letter-spacing:-.04em}
     .brand-symbol{position:relative;width:27px;height:24px;flex:none}
     .brand-symbol::before,.brand-symbol::after{content:'';position:absolute;top:4px;width:17px;height:17px;border:1px solid var(--ink);border-radius:50%}
     .brand-symbol::after{left:10px;background:var(--electric);border-color:var(--signal);box-shadow:0 0 22px #6c63ff44}
-    .nav-capsule{display:flex;padding:4px;border:1px solid var(--line);border-radius:100px;background:#ffffff05}
+    .nav-capsule{display:flex;padding:4px;border:1px solid var(--line);border-radius:100px;background:#0b0b0ddb;backdrop-filter:blur(14px)}
     .nav-capsule a{display:grid;place-items:center;min-height:40px;padding:0 18px;font-size:11px;color:var(--muted);border-radius:100px;transition:color .3s,background .3s}
     .nav-capsule a:hover,.nav-capsule a[aria-current]{background:#ffffff0c;color:var(--ink)}
     .nav-contact{justify-self:end;display:flex;align-items:center;gap:10px;min-height:48px;font-size:11px}
     .nav-contact .icon{width:15px;height:15px;transition:transform .4s var(--ease)}
     .nav-contact:hover .icon{transform:translate(2px,-2px)}
+    /* Hero full bleed: composição e medidas da referência Noema. */
     .hero{position:relative;isolation:isolate;background:var(--void)}
-    .scene{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:800px;min-height:max(800px,100svh);padding:132px var(--pad) 112px;overflow:hidden;background:var(--void)}
-    .scene::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 60% 70%,#6c63ff0c,transparent 55%);z-index:-1}
+    .scene{position:relative;isolation:isolate;display:flex;align-items:center;min-height:760px;height:100svh;overflow:hidden;background:var(--void)}
+    .hero-visual{position:absolute;inset:0;margin:0;z-index:0;overflow:hidden;background:var(--void)}
+    .video-window{position:absolute;inset:0;overflow:hidden}
+    .video-window video,.video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom}
+    .video-poster{z-index:1;transition:opacity .4s}
+    .video-window.is-ready .video-poster{opacity:0;pointer-events:none}.video-window.is-error .video-poster{opacity:1}
+    .hero-visual::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,#050506 0%,rgba(5,5,6,.94) 18%,rgba(5,5,6,.55) 39%,rgba(5,5,6,.12) 54%,transparent 68%),linear-gradient(0deg,#050506 0%,transparent 28%,rgba(5,5,6,.05) 100%)}
+    .hero-bloom{position:absolute;inset:20% 8% 8% 40%;z-index:1;pointer-events:none}
+    .hero-bloom::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 55%,#6c63ff10,transparent 65%);animation:bloom 9s ease-in-out infinite alternate}
     .scene::after{content:'';position:absolute;inset:0;opacity:.14;pointer-events:none;z-index:5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
-    .has-scrub .scene{height:100svh;min-height:100svh}
-    .hero-inner{display:grid;grid-template-columns:.87fr 1.13fr;align-items:center;gap:clamp(32px,4.2vw,64px);position:relative;z-index:2}
-    .hero-copy{min-width:0}
-    .eyebrow{display:flex;align-items:center;gap:12px;color:var(--muted)}
-    .eyebrow::before{content:'';width:24px;height:1px;background:var(--signal);flex:none}
-    h1{font:500 clamp(68px,7.5vw,112px)/.92 var(--font-primary);letter-spacing:-.075em;margin:28px 0 24px}
-    h1>span{display:block}.line-mask{overflow:hidden;padding:0 .04em .15em;margin-bottom:-.15em}.line-mask>span{display:block}
+    .hero-inner{position:relative;z-index:3;width:100%;max-width:1600px;padding:145px var(--pad) 150px;margin-inline:auto}
+    .hero-copy{width:68%;max-width:950px;position:relative}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:#c2c0d1}.eyebrow::before{content:'';width:24px;height:1px;background:var(--signal);flex:none}
+    h1{font:500 clamp(76px,8.5vw,136px)/.91 var(--font-primary);letter-spacing:-.075em;max-width:12ch;margin:28px 0 26px}
+    h1>span{display:block}.line-mask{overflow:hidden;padding:0 .05em .15em;margin-bottom:-.15em}.line-mask>span{display:block}
     h1 .editorial{font-size:1.04em;letter-spacing:-.065em}
-    .hero-lead{font-size:14px;line-height:1.75;color:#bab8c3;max-width:330px}
-    .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}
-    .button{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:0 24px;border:1px solid var(--line);border-radius:100px;background:#f1f0ea0a;color:var(--ink);font:500 12px/1.4 var(--font-ui);white-space:nowrap;isolation:isolate;overflow:hidden;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+    h1 .headline-intro{font:500 clamp(16px,1.4vw,20px)/1.4 var(--font-ui);letter-spacing:-.02em;margin-bottom:12px}
+    h1 .headline-final small{display:block;font:400 12px/1.5 var(--font-ui);letter-spacing:.01em;color:#bab8c3;margin:12px 0 8px}
+    .hero-lead{font:400 14px/1.7 var(--font-ui);color:#bab8c3;max-width:330px}
+    .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:30px}
+    .button{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:0 24px;border:1px solid var(--line);border-radius:100px;background:#f1f0ea0a;color:var(--ink);font:500 12px/1.4 var(--font-ui);white-space:nowrap;isolation:isolate;overflow:hidden;translate:var(--magnetic-x,0px) var(--magnetic-y,0px);transition:translate .4s var(--ease),transform .4s var(--ease),border-color .4s,box-shadow .4s}
     .button::after{content:'';position:absolute;inset:-50%;background:linear-gradient(110deg,transparent 35%,#ffffff22 49%,transparent 62%);transform:translateX(-110%);transition:transform .7s var(--ease);z-index:-1;pointer-events:none}
     .button:hover::after{transform:translateX(110%)}.button:hover{transform:translateY(-2px);border-color:#a9a5ff66;box-shadow:0 0 32px #6c63ff1a}
     .button:active{transform:scale(.98)}.button .icon{width:16px;height:16px;transition:transform .4s var(--ease)}.button:hover .icon{transform:translate(2px,-2px)}
     .button-primary{background:linear-gradient(180deg,#918bff,#8179ff 60%,#6c63ff);color:var(--void);border-color:#b0acff77;font-weight:600;box-shadow:inset 0 1px 0 #fff6,inset 0 -3px 8px #211b7755,0 8px 28px #6c63ff25}
     .button-primary:hover{box-shadow:inset 0 1px 0 #fff8,0 0 40px #6c63ff55}
-    .hero-signature{display:flex;align-items:center;gap:10px;margin-top:40px;color:var(--muted);font-size:10px}
-    .hero-signature::before{content:'✳';font-size:19px;color:var(--signal)}
-    .hero-visual{position:relative;min-width:0}
-    .video-panel{position:relative;border:1px solid #f1f0ea33;border-radius:var(--radius);overflow:hidden;background:#d4d5cf;color:var(--void);box-shadow:inset 0 1px 0 #fff5,0 20px 60px #0003}
-    .panel-top{display:flex;justify-content:space-between;align-items:center;position:absolute;top:22px;left:24px;right:24px;z-index:2;color:#43443f;font-size:9px}
-    .panel-top .icon{width:15px;height:15px;opacity:.65}
-    .video-window{position:relative;aspect-ratio:16/11;display:grid;place-items:center;overflow:hidden}
-    .video-window video,.video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
-    .video-poster{z-index:1;transition:opacity .35s}
-    .video-window.is-ready .video-poster{opacity:0;pointer-events:none}
-    .video-window.is-error .video-poster{opacity:1}
-    .panel-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;border-top:1px solid #05050614;font-size:9px;background:#e7e5de88}
-    .panel-bottom .timecode{font-variant-numeric:tabular-nums;white-space:nowrap;letter-spacing:.05em;color:#51524d}
-    .video-status{max-width:36ch;letter-spacing:.07em;text-transform:none;font-family:var(--font-ui);font-size:11px}
-    .panel-progress{position:absolute;bottom:0;left:0;height:2px;width:100%;background:var(--electric);transform:scaleX(0);transform-origin:left}
-    .story{position:relative;margin-top:28px;min-height:100px;padding:0 0 0 34px}
-    .story-number{position:absolute;top:2px;left:0;color:var(--signal)}
-    .story h2{font:300 27px/1.2 var(--font-editorial);letter-spacing:-.035em}
-    .story p{max-width:420px;font-size:12px;color:var(--muted);margin-top:9px;line-height:1.7}
-    .chapter-nav{display:none;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:14px}
-    .has-scrub .chapter-nav{display:grid}
-    .chapter{display:flex;align-items:center;gap:9px;text-align:left;padding:15px 0;min-height:48px;background:none;border:0;border-top:1px solid var(--line);color:var(--muted);font:400 10px/1.5 var(--font-mono);transition:color .3s,border-color .3s}
-    .chapter span{font-size:9px;opacity:.65}.chapter:hover{color:var(--ink)}.chapter[aria-current="step"]{border-top-color:var(--signal);color:var(--ink)}
+    .hero-actions .button-secondary{border-color:transparent;background:transparent;padding-inline:10px}
+    .hero-card{position:absolute;z-index:4;bottom:125px;right:var(--pad);width:260px;padding:17px 20px;border:1px solid #ffffff24;border-radius:16px;background:rgba(15,15,20,.82);box-shadow:inset 0 1px 0 #ffffff08,0 15px 50px #0005}
+    @supports(backdrop-filter:blur(16px)){.hero-card{background:rgba(15,15,20,.58);backdrop-filter:blur(16px)}}
+    .hero-card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.hero-card-top .caps{font-size:9px;color:var(--muted)}
+    .story{position:relative;min-height:106px}.story-number{position:absolute;right:0;top:0;color:var(--signal);font-size:9px}
+    .story h2{font:300 25px/1.2 var(--font-editorial);letter-spacing:-.035em;max-width:15ch;padding-right:12px}.story p{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.6}
+    .signal-line{height:1px;background:linear-gradient(90deg,var(--electric),var(--mint),transparent);margin-top:16px}
+    .signal-line{transform-origin:left;animation:signal-breathe 4s ease-in-out infinite}
+    .video-status{font-size:9px;color:var(--signal);white-space:nowrap}
+    .has-scrub .video-status{color:var(--mint)}
+    .has-scrub .video-status::before{content:'';display:inline-block;width:5px;height:5px;margin-right:6px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor;animation:status-pulse 2.6s ease-in-out infinite}
     .hero-bottom{position:absolute;left:var(--pad);right:var(--pad);bottom:28px;z-index:6}
-    .hero-bottom-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:18px}
+    .hero-bottom-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;border-top:1px solid var(--line);padding-top:18px}
     .scroll-cue{display:flex;align-items:center;gap:12px;min-height:32px;color:var(--ink)}.scroll-cue .icon{width:14px;height:14px}
-    .edition{color:var(--muted);font-size:9px;text-align:right}.edition i{font-style:normal;color:var(--signal);padding-left:16px}
-    .static-story{display:none;font-size:12px;color:var(--muted);margin-top:16px}
-    .is-static .static-story{display:block}
+    .chapter-nav{display:none;gap:24px}.has-scrub .chapter-nav{display:flex}
+    .chapter{display:flex;align-items:center;gap:8px;min-height:40px;padding:0;border:0;background:none;color:var(--muted);font:400 9px/1.5 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;transition:color .3s}
+    .chapter span{font-size:8px;opacity:.65}.chapter:hover{color:var(--ink)}.chapter[aria-current="step"]{color:var(--signal)}
+    .edition{font-size:9px;color:var(--muted);text-align:right;white-space:nowrap;line-height:1.8}.edition b{color:var(--ink);font-weight:400;font-variant-numeric:tabular-nums}
+    .panel-progress{position:absolute;bottom:0;left:0;z-index:7;height:2px;width:100%;background:var(--signal);transform:scaleX(0);transform-origin:left}
+    .static-story{display:none}.is-static .static-story{display:block;font-size:11px;color:var(--muted);margin-top:12px}.is-static .hero-card .story p{display:none}
+    .results{position:relative;isolation:isolate;overflow:hidden;padding:var(--section-space) var(--pad);border-top:1px solid var(--line);background:var(--void)}
+    .results::before{content:'';position:absolute;z-index:-1;top:8%;bottom:8%;left:43%;width:240px;background:radial-gradient(ellipse,#6c63ff1a,transparent 65%);animation:bloom 12s ease-in-out infinite alternate;pointer-events:none}
+    .results::after{content:'';position:absolute;z-index:-1;top:15%;bottom:15%;left:49%;width:1px;background:linear-gradient(transparent,#a9a5ff70,transparent);box-shadow:0 0 36px 6px #6c63ff33;pointer-events:none}
+    .results-layout{display:grid;grid-template-columns:1.08fr 1fr;align-items:center;gap:clamp(48px,6vw,96px)}
+    .results-monitor{position:relative;min-width:0;padding:32px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#a9a5ff08,transparent 60%),#0c0c10;box-shadow:inset 0 1px 0 #ffffff0d,0 20px 60px #0003}
+    @supports(backdrop-filter:blur(16px)){.results-monitor{background:linear-gradient(145deg,#a9a5ff08,transparent 60%),rgba(15,15,20,.75);backdrop-filter:blur(16px)}}
+    .monitor-header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+    .monitor-header .caps{color:var(--muted)}.monitor-indicator{display:flex;align-items:center;gap:7px;color:var(--signal);font:500 10px/1.4 var(--font-ui)}
+    .monitor-indicator::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor;animation:status-pulse 2.6s ease-in-out infinite}
+    .metric{padding:24px 0;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0;padding-bottom:8px}
+    .metric-top{display:grid;grid-template-columns:132px 1fr;align-items:center;gap:24px}
+    .metric-number{display:flex;align-items:baseline;gap:5px;font:400 clamp(60px,5.4vw,84px)/1 var(--font-primary);letter-spacing:-.075em;font-variant-numeric:tabular-nums}
+    .metric-plus{font:300 .65em/1 var(--font-editorial);color:var(--signal);letter-spacing:-.04em}
+    .metric-label{font:400 15px/1.5 var(--font-ui);letter-spacing:-.015em;color:var(--ink)}
+    .metric-track{height:6px;overflow:hidden;margin-top:18px;border:1px solid #ffffff0b;border-radius:100px;background:repeating-linear-gradient(-45deg,#ffffff08 0 1px,transparent 1px 6px)}
+    .metric-fill{height:100%;border-radius:inherit;transform-origin:left;transform:scaleX(var(--meter-share));background:linear-gradient(90deg,var(--electric),var(--signal));box-shadow:inset 0 1px 0 #ffffff55,0 0 16px #6c63ff33}
+    .monitor-footer{display:flex;justify-content:space-between;gap:16px;padding-top:24px;margin-top:16px;border-top:1px solid var(--line);font-size:9px;color:var(--muted)}
+    .monitor-footer span:last-child{color:var(--signal)}
+    .services{min-width:0}.services>.caps{color:var(--signal);margin-bottom:12px}
+    .service{position:relative;padding:24px 0 24px 34px;border-bottom:1px solid var(--line)}.service:last-child{border-bottom:0;padding-bottom:0}
+    .service-index{position:absolute;left:0;top:27px;color:var(--signal);font-size:9px}
+    .service h3{font:500 22px/1.25 var(--font-ui);letter-spacing:-.035em;max-width:28ch}.service p{max-width:440px;font-size:14px;line-height:1.75;color:var(--muted);margin-top:12px}
     .projects{position:relative;padding:var(--section-space) var(--pad);border-top:1px solid var(--line);background:var(--void-soft)}
     .section-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;margin-bottom:40px;border-bottom:1px solid var(--line);color:var(--muted)}
     .section-top span:first-child{color:var(--signal)}
@@ -111,6 +133,7 @@
     .work-card:hover{transform:translateY(-6px);border-color:#a9a5ff66;box-shadow:0 20px 60px #0003}
     .work-media{position:relative;height:290px;padding:32px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(ellipse at 60% 70%,#6c63ff1c,transparent 70%),#101015}
     .work-media::before{content:'';position:absolute;inset:0;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:48px 48px}
+    .work-media::before{animation:grid-drift 28s linear infinite}
     .work-index{position:absolute;top:24px;left:24px;color:var(--muted);font-size:9px}
     .demo-interface{position:relative;width:75%;max-width:320px;border:1px solid #ffffff20;border-radius:12px;background:#14131bcc;padding:20px;box-shadow:0 20px 40px #0005;transform:rotate(-5deg);transition:transform 1.2s var(--ease)}
     .work-card:hover .demo-interface{transform:rotate(-2deg) scale(1.04)}
@@ -135,130 +158,212 @@
     .contact p{font-size:13px;color:#58575f;margin-top:24px;max-width:370px}
     .contact-link{display:inline-flex;align-items:center;gap:24px;padding:16px 0;border-bottom:1px solid #05050666;font-size:18px;letter-spacing:-.03em;overflow-wrap:anywhere}
     .contact-link:hover{color:#5047c9}.contact-link .icon{width:24px;height:24px}
+    .portfolio-section{padding:clamp(64px,7vw,112px) var(--pad);border-top:1px solid var(--line);background:var(--void)}
+    .portfolio-section .section-head{margin-bottom:0}.portfolio-section .section-title{font-size:clamp(40px,4vw,60px)}
+    .placeholder-list{list-style:none;padding:0;margin:0;display:grid;gap:0}
+    .placeholder-list li{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+    .placeholder-list li:first-child{border-top:1px solid var(--line)}.placeholder-list .caps{font-size:9px;color:var(--signal)}
+    .materials-note{margin-top:16px;font-size:12px;color:var(--muted)}
     .footer{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px var(--pad);color:var(--muted);font-size:10px;border-top:1px solid var(--line)}
     .footer a{min-height:40px;display:inline-flex;align-items:center;gap:10px}.footer .icon{width:13px;height:13px}
-    @media(min-width:1600px){.hero-inner{gap:80px}}
-    @media(max-width:1100px){h1{font-size:clamp(65px,7.6vw,88px)}.hero-inner{grid-template-columns:.95fr 1.05fr;gap:32px}.hero-actions .button{padding:0 18px;font-size:11px}.story h2{font-size:24px}.hero-signature{margin-top:28px}.video-window{aspect-ratio:16/12}.section-head{gap:32px}}
+    /* Motion da referência: line-rise, rise, word reveal, bloom, pulse e cue.
+       Entradas CSS funcionam mesmo se o CDN estiver indisponível. */
+    .line-mask>span{animation:line-rise 1.25s var(--ease) both;animation-delay:.18s}
+    .line-mask:nth-child(2)>span{animation-delay:.30s}.line-mask:nth-child(3)>span{animation-delay:.42s}.line-mask:nth-child(4)>span{animation-delay:.54s}
+    [data-enter]{animation:rise .9s var(--ease) both;animation-delay:.15s}.hero-lead[data-enter]{animation-delay:.45s}.hero-actions[data-enter]{animation-delay:.6s}.hero-card[data-enter]{animation-delay:.8s}
+    .hero-visual{animation:image-arrive 1.7s var(--ease) both}.scroll-cue .icon{animation:scroll-cue 2.6s ease-in-out infinite}
+    html.js-motion [data-rise]{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--delay,0ms)}
+    html.js-motion [data-rise].is-in{opacity:1;transform:none}
+    html.js-motion .work-card[data-rise].is-in:hover{transform:translateY(-6px)}
+    html.js-motion .scroll-reveal .reveal-word{opacity:.25;filter:blur(4px);transition:opacity .8s var(--ease),filter .8s;transition-delay:var(--delay,0ms)}
+    html.js-motion .scroll-reveal.is-in .reveal-word{opacity:1;filter:none}
+    .cursor-ring{position:fixed;top:0;left:0;width:32px;height:32px;border:1px solid #a9a5ff66;border-radius:50%;pointer-events:none;opacity:0;z-index:90;transition:width .3s var(--ease),height .3s var(--ease),opacity .2s,background .3s}
+    .cursor-ring.is-visible{opacity:1}.cursor-ring.is-active{width:52px;height:52px;background:#a9a5ff0d}
+    @keyframes line-rise{from{transform:translateY(110%);opacity:0}to{transform:none;opacity:1}}
+    @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    @keyframes image-arrive{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
+    @keyframes bloom{from{transform:translate(-4%,4%) scale(.9);opacity:.45}to{transform:translate(4%,-4%) scale(1.12);opacity:1}}
+    @keyframes signal-breathe{0%,100%{transform:scaleX(.65);opacity:.5}50%{transform:scaleX(1);opacity:1}}
+    @keyframes status-pulse{0%,100%{opacity:1;box-shadow:0 0 10px currentColor}50%{opacity:.5;box-shadow:0 0 3px currentColor}}
+    @keyframes scroll-cue{0%,100%{transform:translateY(0);opacity:.65}50%{transform:translateY(4px);opacity:1}}
+    @keyframes grid-drift{to{background-position:48px 48px}}
+    html.motion-suspended *,html.motion-suspended *::before,html.motion-suspended *::after,
+    .motion-offscreen,.motion-offscreen::before,.motion-offscreen::after,.motion-offscreen *,.motion-offscreen *::before,.motion-offscreen *::after{animation-play-state:paused!important}
+    html.motion-reduced *,html.motion-reduced *::before,html.motion-reduced *::after{animation:none!important;transition:none!important}
+    html.motion-reduced [data-rise],html.motion-reduced .reveal-word{opacity:1!important;transform:none!important;filter:none!important}
+    html.motion-reduced .cursor-ring{display:none}
+    /* A frase completa tem três palavras em display e conectivos compactos. */
+    .hero h1{font-size:clamp(66px,7.2vw,116px);max-width:13ch}
+    @media(min-width:1700px){.hero-inner{padding-left:max(var(--pad),calc((100vw - 1500px)/2))}}
+    @media(max-width:1100px){h1{font-size:clamp(76px,9.3vw,108px)}.hero-card{width:240px}.section-head{gap:32px}.chapter-nav{gap:16px}}
+    @media(min-width:801px) and (max-height:850px){
+      .scene{min-height:100svh}.hero-inner{padding-top:120px;padding-bottom:140px}h1{font-size:clamp(72px,8.5vw,104px);margin:22px 0}.hero-card{bottom:114px}
+    }
+    @media(min-width:801px) and (max-height:760px){
+      .hero-inner{padding-top:100px;padding-bottom:92px}h1{font-size:clamp(64px,6.5vw,86px);margin:18px 0}.hero-lead{font-size:13px}.hero-actions{margin-top:24px}.hero-card{width:260px;bottom:110px}
+    }
     @media(max-width:800px){
-      .nav{padding:16px var(--pad)}.nav-inner{grid-template-columns:1fr auto;gap:16px}.nav-capsule{display:none}.brand{font-size:15px}.nav-contact{font-size:10px}
-      .scene{min-height:100svh;padding:112px var(--pad) 92px}.hero-inner{grid-template-columns:1fr;gap:36px;max-width:600px}.hero-copy{position:relative}
-      h1{font-size:clamp(60px,11vw,86px);margin:22px 0 18px}h1>span{display:inline}h1 .line-mask>span{display:inline}h1 .line-mask:first-child{display:block}
-      .hero-lead{max-width:370px}.hero-signature{display:none}.hero-actions{margin-top:22px}.video-window{aspect-ratio:16/9}.panel-top{top:14px;left:18px;right:18px;font-size:8px}
-      .panel-bottom{padding:14px 18px}.story{margin-top:18px;min-height:82px}.chapter-nav{margin-top:4px;gap:16px}.chapter{padding:10px 0}.edition{font-size:8px}.edition i{display:none}
+      :root{--nav-offset:148px}
+      .nav{padding:12px var(--pad)}.nav.is-scrolled{padding-block:10px}.nav-inner{grid-template-columns:1fr auto;gap:8px 16px}.brand{font-size:15px}.nav-contact{font-size:10px}
+      .nav-capsule{display:flex;grid-column:1/-1;grid-row:2;justify-self:center;width:max-content;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none}
+      .nav-capsule::-webkit-scrollbar{display:none}.nav-capsule a{flex:none;min-height:38px;padding:0 9px;font-size:10px;white-space:nowrap}
+      .scene{height:100svh;min-height:700px;align-items:flex-end}
+      /* Corte apenas do espaço preto à esquerda: rosto e elementos flutuantes
+         permanecem na área superior, com fundo contínuo em toda a viewport. */
+      .video-window video,.video-poster{inset:112px auto auto -48.837%;width:148.837%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center}
+      .hero-visual::after{background:linear-gradient(180deg,#050506aa 0%,transparent 18%,transparent 30%,#050506a6 44%,#050506 65%),linear-gradient(90deg,#05050633,transparent 65%)}
+      .hero-inner{padding:300px var(--pad) 185px}.hero-copy{width:100%;max-width:600px}
+      h1{font-size:clamp(60px,11vw,86px);line-height:.94;margin:20px 0 18px}
+      .hero-lead{max-width:310px;font-size:13px}.hero-actions{margin-top:22px;gap:12px}.hero-actions .button{padding:0 18px;font-size:11px}
+      .hero-card{bottom:78px;left:var(--pad);right:var(--pad);width:auto;padding:14px 16px;display:flex;align-items:center;gap:20px}
+      .hero-card-top{margin:0;flex-direction:column;align-items:start;gap:6px;min-width:100px}.story{min-height:0;flex:1}.story h2{font-size:22px;max-width:none;padding:0}.story p,.story-number,.signal-line,.static-story{display:none!important}
+      .hero-bottom{bottom:20px}.hero-bottom-inner{padding-top:10px;gap:20px}.scroll-cue{font-size:9px}.edition{display:none}.chapter-nav{gap:14px}.chapter{font-size:8px;min-height:32px}.chapter span{display:none}
       .section-head{grid-template-columns:1fr;gap:24px;margin-bottom:32px}.project-grid{grid-template-columns:1fr}.work-media{height:300px}.contact-inner{flex-direction:column;align-items:start;gap:36px}
     }
-    @media(max-width:800px) and (min-height:700px){
-      .has-scrub .scene{height:100svh;min-height:700px;padding-top:92px;padding-bottom:78px}
-      .has-scrub .hero-inner{gap:22px;width:100%}
-      .has-scrub h1{font-size:clamp(50px,9.5vw,72px);margin:18px 0 14px}
-      .has-scrub .hero-lead{font-size:12px;max-width:340px;line-height:1.6}
-      .has-scrub .hero-actions{margin-top:18px}
-      .has-scrub .video-window{aspect-ratio:auto;height:clamp(150px,24svh,260px)}
-      .has-scrub .story{min-height:70px;margin-top:16px}.has-scrub .story h2{font-size:22px}.has-scrub .story p{font-size:11px;margin-top:6px}
-      .has-scrub .hero-bottom{bottom:20px}.has-scrub .hero-bottom-inner{padding-top:10px}
-    }
-    @media(max-height:699px){
-      .has-scrub .scene{min-height:100svh;height:auto;padding-top:92px;padding-bottom:78px}
-      .has-scrub h1{font-size:clamp(44px,6.5vw,72px);margin:16px 0}
-      .has-scrub .hero-signature{display:none}.has-scrub .hero-lead{font-size:12px}.has-scrub .hero-actions{margin-top:16px}
-      .has-scrub .story{min-height:70px;margin-top:16px}.has-scrub .story h2{font-size:22px}
-      .has-scrub .video-window{aspect-ratio:16/9}.has-scrub .panel-bottom{padding:12px 18px}
-    }
-    @media(min-width:801px) and (max-height:850px){
-      .has-scrub .scene{padding-top:114px;padding-bottom:94px}.has-scrub h1{font-size:clamp(65px,6.8vw,88px);margin:22px 0 18px}.has-scrub .hero-signature{display:none}
-    }
-    @media(max-width:800px) and (min-height:700px) and (max-height:790px){
-      .has-scrub h1{font-size:44px;margin:12px 0}.has-scrub .hero-actions{margin-top:12px}.has-scrub .button{min-height:44px}
-      .has-scrub .hero-inner{gap:16px}.has-scrub .video-window{height:140px}.has-scrub .panel-bottom{padding:10px 16px}
-      .has-scrub .story{min-height:58px;margin-top:12px}.has-scrub .story h2{font-size:20px}.has-scrub .story p{font-size:10px;margin-top:4px}.has-scrub .chapter{min-height:40px;padding:8px 0}
-    }
-    @media(max-width:800px) and (max-height:699px){
-      .has-scrub .scene{padding-top:82px;padding-bottom:64px}.has-scrub .hero-inner{gap:16px}.has-scrub h1{font-size:44px;margin:12px 0} .has-scrub h1>span{display:inline}.has-scrub h1 .line-mask:first-child{display:block}
-      .has-scrub .hero-lead{font-size:11px;max-width:340px}.has-scrub .hero-actions{margin-top:12px}.has-scrub .button{min-height:44px;padding:0 16px;font-size:10px}
-      .has-scrub .video-window{height:130px;aspect-ratio:auto}.has-scrub .panel-top{display:none}.has-scrub .panel-bottom{padding:10px 16px}
-      .has-scrub .story{min-height:58px;margin-top:12px}.has-scrub .story h2{font-size:20px}.has-scrub .story p{font-size:10px;margin-top:4px}.has-scrub .chapter{min-height:40px;padding:8px 0}
-    }
     @media(max-width:430px){
-      .hero-actions{gap:8px}.hero-actions .button{padding:0 16px;font-size:11px}.eyebrow{font-size:8px}.nav-contact{gap:6px}
-      .panel-bottom{gap:8px}.video-status{font-size:10px}.edition{display:none}.section-top span:last-child{display:none}.work-media{height:260px;padding:24px}
-      .work-meta{padding:20px}.work-meta h3{font-size:20px}.contact-link{font-size:16px;gap:12px}.footer{align-items:start;font-size:9px}.footer span{max-width:22ch}
+      .scene{min-height:640px}.hero-inner{padding-top:260px;padding-bottom:170px}h1{font-size:clamp(54px,14.5vw,64px)}
+      .eyebrow{font-size:8px}.hero-lead{font-size:12px;line-height:1.65}.hero-actions{gap:8px;margin-top:20px}.hero-actions .button{padding:0 16px}
+      .hero-card{gap:12px;bottom:76px}.hero-card-top{min-width:78px}.hero-card-top .caps{font-size:8px}.video-status{font-size:8px}.story h2{font-size:19px}
+      .chapter-nav{gap:12px}.scroll-cue{font-size:8px;gap:8px}.section-top span:last-child{display:none}.work-media{height:260px;padding:24px}.work-meta{padding:20px}.work-meta h3{font-size:20px}.contact-link{font-size:16px;gap:12px}.footer{align-items:start;font-size:9px}.footer span{max-width:22ch}
     }
+    @media(max-width:800px) and (max-height:740px){
+      .scene{min-height:600px}.hero-inner{padding-top:240px;padding-bottom:152px}h1{font-size:50px;margin:14px 0}.hero-actions{margin-top:14px}.hero-actions .button{min-height:44px}
+      .hero-card{bottom:68px;padding:12px 16px}.hero-bottom{bottom:12px}
+    }
+    @media(max-height:550px) and (min-width:801px){.scene{min-height:550px}h1{font-size:65px}.hero-inner{padding-top:105px;padding-bottom:96px}.hero-card{bottom:90px}.hero-lead{font-size:12px}.hero-actions{margin-top:18px}}
+    @media(min-width:801px) and (max-height:850px){.hero h1{font-size:clamp(62px,6.6vw,92px);margin:20px 0}.hero-inner{padding-top:108px;padding-bottom:110px}}
+    @media(min-width:801px) and (max-height:760px){.hero h1{font-size:clamp(58px,5.9vw,78px);margin:18px 0}.hero-inner{padding-top:96px;padding-bottom:90px}.headline-final small{margin-top:8px!important}.hero-actions{margin-top:20px}}
+    @media(max-width:800px){.hero h1{font-size:clamp(52px,8.8vw,72px);margin:18px 0}.hero-inner{padding-top:250px}.headline-intro{margin-bottom:10px!important}.cursor-ring{display:none!important}}
+    @media(max-width:430px){.hero h1{font-size:clamp(46px,12.3vw,54px)}.hero-inner{padding-top:220px}.hero-lead{max-width:290px}}
+    @media(max-width:800px) and (max-height:740px){.hero h1{font-size:44px;margin:12px 0}.hero-inner{padding-top:195px;padding-bottom:150px}.hero h1 .headline-intro{font-size:15px;margin-bottom:8px}.headline-final small{font-size:10px!important;margin:8px 0 5px!important}.hero-lead{font-size:11px}.hero-actions{margin-top:14px}}
+    @media(min-width:501px) and (max-width:800px){.video-window video,.video-poster{inset:120px 0 auto;width:100%;height:auto;object-position:center}}
+    @media(min-width:801px) and (max-height:760px){.hero-card .story{min-height:54px}.hero-card .story h2{font-size:22px}.hero-card .story p{display:none}}
+    @media(max-width:500px) and (max-height:740px){.video-window video,.video-poster{inset:94px auto auto -39.13%;width:139.13%;height:auto}.hero h1{font-size:40px}.hero h1 .headline-final small{display:inline;margin:0!important;padding-right:8px;vertical-align:baseline}}
+    @media(max-width:1000px){.metric-top{grid-template-columns:108px 1fr;gap:16px}.results-monitor{padding:26px}.metric-label{font-size:14px}.service h3{font-size:20px}.service p{font-size:13px}}
+    @media(max-width:900px){.results-layout{grid-template-columns:1fr;gap:48px}.results-monitor,.services{width:100%;max-width:640px;margin-inline:auto}.results::after{left:auto;right:var(--pad)}.results::before{left:auto;right:-60px}}
+    @media(max-width:430px){.results-monitor{padding:22px}.monitor-header{padding-bottom:20px}.monitor-header .caps{font-size:9px}.monitor-indicator{font-size:9px}.metric{padding-block:22px}.metric-top{grid-template-columns:106px 1fr;gap:14px}.metric-number{font-size:60px}.metric-label{font-size:13px}.monitor-footer{font-size:8px;gap:10px}.service{padding-left:28px}.service h3{font-size:20px}.service p{font-size:13px}}
     @media(prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-      .scene{height:auto!important}.static-story{display:block}.chapter-nav{display:none!important}
+      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.chapter-nav,.cursor-ring{display:none!important}
+      html.js-motion [data-rise],html.js-motion .reveal-word{opacity:1!important;transform:none!important;filter:none!important}
     }
   </style>
 </head>
 <body>
+  <div class="cursor-ring" aria-hidden="true"></div>
   <a class="skip-link" href="#projetos">Pular para projetos</a>
   <header class="nav">
     <nav class="nav-inner wrap" aria-label="Navegação principal">
       <!-- SUBSTITUIR: nome e área também aparecem na descrição e no título. -->
       <a class="brand" href="#inicio" aria-label="[Seu nome] — início"><span class="brand-symbol" aria-hidden="true"></span><span>[Seu nome]<span class="editorial">.</span></span></a>
-      <div class="nav-capsule"><a href="#inicio" aria-current="page">Início</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></div>
+      <div class="nav-capsule"><a href="#inicio" aria-current="location">Visão geral</a><a href="#resultados">Resultados</a><a href="#habilidades">Habilidades</a><a href="#materiais">Materiais</a><a href="#contato">Contato</a></div>
       <a class="nav-contact" href="#contato">Vamos conversar <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
     </nav>
   </header>
   <main>
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="scene" id="scene">
-        <div class="hero-inner wrap">
+        <figure class="hero-visual" aria-labelledby="video-caption">
+          <div class="video-window">
+            <img class="video-poster" src="assets/portrait-poster.webp" alt="" width="1280" height="720" fetchpriority="high">
+            <!-- Cópia all-intra para scrubbing. O MP4 original foi preservado. -->
+            <video id="hero-video" muted playsinline preload="auto" poster="assets/portrait-poster.webp" width="1280" height="720" aria-label="Retrato com luz violeta e elementos criativos flutuantes" aria-describedby="video-description">
+              <source src="assets/Videos/Animating_portrait_transforming_…_20261012185500.scrub.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption class="sr-only" id="video-caption">Uma visão se transforma em criação, com estratégia e intenção.</figcaption>
+        </figure>
+        <div class="hero-bloom" aria-hidden="true"></div>
+        <div class="hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow caps" data-enter>[Sua área de atuação]</p>
-            <h1 id="hero-title"><span class="line-mask"><span>Ideias que</span></span> <span class="line-mask"><span>ganham</span></span> <span class="line-mask"><span class="editorial">forma.</span></span></h1>
-            <p class="hero-lead" data-enter>Transformo ideias em experiências digitais claras, expressivas e fáceis de usar.</p>
+            <p class="eyebrow caps" data-enter>[Sua área de atuação] / Portfólio</p>
+            <h1 id="hero-title"><span class="line-mask headline-intro"><span>Crio campanhas</span></span> <span class="line-mask"><span>organizadas,</span></span> <span class="line-mask"><span>persuasivas</span></span> <span class="line-mask headline-final"><span><small>e focadas em</small> <span class="editorial">conversão.</span></span></span></h1>
+            <p class="hero-lead" data-enter>Estratégia clara, mensagem certa e execução cuidadosa — da visão à ação.</p>
             <div class="hero-actions" data-enter>
               <a class="button button-primary" href="#projetos">Ver projetos <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-              <a class="button" href="#contato">Entrar em contato</a>
+              <a class="button button-secondary" href="#contato">Entrar em contato <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 5l8 7 8-7"/></svg></a>
             </div>
-            <p class="hero-signature" data-enter>Precisão digital. Sensibilidade humana.</p>
-          </div>
-          <div class="hero-visual" data-enter>
-            <figure class="video-panel" aria-labelledby="video-caption">
-              <div class="panel-top caps" aria-hidden="true"><span>Caderno de ideias / 001</span><svg class="icon" viewBox="0 0 24 24"><path d="M4 9V4h5m6 0h5v5m0 6v5h-5M9 20H4v-5"/></svg></div>
-              <div class="video-window">
-                <img class="video-poster" src="assets/video-poster.webp" alt="" width="1280" height="720" fetchpriority="high">
-                <!-- O arquivo original permanece intacto. Não adicionar autoplay ou loop. -->
-                <video id="hero-video" muted playsinline preload="auto" poster="assets/video-poster.webp" width="1280" height="720" aria-label="Caderno abrindo; um lápis desenha uma curva ascendente" aria-describedby="video-description">
-                  <source src="assets/Videos/Caderno_fechando_abrindo_desenha…_20261012165541.mp4" type="video/mp4">
-                </video>
-              </div>
-              <figcaption class="panel-bottom caps" id="video-caption"><span class="video-status" id="video-status" role="status">Uma ideia começa no papel.</span><span class="timecode" aria-hidden="true"><span id="video-time">00:00</span> / <span id="video-duration">00:10</span></span></figcaption>
-              <div class="panel-progress" aria-hidden="true"></div>
-            </figure>
-            <p class="sr-only" id="video-description">O vídeo mostra um caderno abrindo sobre uma superfície clara. Um lápis traça eixos e uma curva na página direita. Com movimento habilitado, a rolagem controla o vídeo nos dois sentidos; a reprodução permanece pausada.</p>
-            <div class="story" aria-hidden="true"><span class="story-number caps" id="story-number">01</span><h2 id="story-title">Toda ideia merece espaço.</h2><p id="story-text">Antes da primeira linha, uma possibilidade. O cuidado começa na página em branco.</p></div>
-            <p class="sr-only">Da página em branco à direção, da direção à forma: uma ideia se torna experiência, com clareza em cada detalhe.</p>
-            <nav class="chapter-nav" aria-label="Momentos da experiência">
-              <button class="chapter" type="button" data-progress="0" aria-current="step"><span>01</span> Ideia</button>
-              <button class="chapter" type="button" data-progress="0.4"><span>02</span> Direção</button>
-              <button class="chapter" type="button" data-progress="0.8"><span>03</span> Forma</button>
-            </nav>
-            <p class="static-story">Uma página em branco. Uma direção. Uma ideia que encontra sua forma.</p>
           </div>
         </div>
-        <div class="hero-bottom"><div class="hero-bottom-inner wrap"><a class="scroll-cue caps" href="#projetos"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg><span id="scroll-label">Continue para explorar</span></a><span class="edition caps">Portfólio / edição 01 <i>Do traço à experiência</i></span></div></div>
+        <p class="sr-only" id="video-description">O vídeo mostra uma pessoa de óculos segurando uma xícara sobre fundo preto. Uma luz violeta acima da cabeça se abre e revela cartões, ícones de ferramentas e uma peça de xadrez flutuando. Com movimento habilitado, a rolagem controla essa transformação nos dois sentidos; a reprodução permanece pausada.</p>
+        <aside class="hero-card" data-enter aria-label="Da visão à criação">
+          <div class="hero-card-top"><span class="caps">Visão / 001</span><span class="video-status" id="video-status" role="status">Da visão à ação</span></div>
+          <div class="story" aria-hidden="true"><span class="story-number caps" id="story-number">01</span><h2 id="story-title">Ideias com direção.</h2><p id="story-text">Uma visão clara organiza cada decisão antes de uma campanha ganhar forma.</p></div>
+          <p class="static-story">Uma visão clara. Criação com método. Foco em conversão.</p>
+          <div class="signal-line" aria-hidden="true"></div>
+        </aside>
+        <p class="sr-only">Da visão à criação, da criação à ação: organização e persuasão com foco em conversão.</p>
+        <div class="hero-bottom"><div class="hero-bottom-inner wrap">
+          <a class="scroll-cue caps" href="#projetos"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg><span id="scroll-label">Continue para explorar</span></a>
+          <nav class="chapter-nav" aria-label="Momentos da experiência">
+            <button class="chapter" type="button" data-progress="0" aria-current="step"><span>01</span> Visão</button>
+            <button class="chapter" type="button" data-progress="0.4"><span>02</span> Criação</button>
+            <button class="chapter" type="button" data-progress="0.8"><span>03</span> Ação</button>
+          </nav>
+          <span class="edition caps" aria-hidden="true">Field / Portfólio-01<br>Frame / <b id="video-time">00:00</b> — <b id="video-duration">00:04</b></span>
+        </div></div>
+        <div class="panel-progress" aria-hidden="true"></div>
+      </div>
+    </section>
+    <section class="results" id="resultados" aria-labelledby="results-title" tabindex="-1">
+      <div class="wrap">
+        <div class="section-top caps" data-rise><span>01 / Experiência em números</span><span>Copy · Gestão · Estratégia</span></div>
+        <h2 class="sr-only" id="results-title">Experiência em lançamentos e projetos perpétuos</h2>
+        <div class="results-layout">
+          <div class="results-monitor" id="results-monitor" data-rise>
+            <div class="monitor-header"><span class="caps">Construído na prática</span><span class="monitor-indicator">Em números</span></div>
+            <!-- Valores finais permanecem acessíveis; apenas a apresentação visual conta. -->
+            <div class="metric"><span class="sr-only">Mais de 30 lançamentos clássicos</span><div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="30">30</span><span class="metric-plus">+</span></span><span class="metric-label">lançamentos<br>clássicos</span></div><div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:1"></div></div></div>
+            <div class="metric"><span class="sr-only">Mais de 20 lançamentos pagos</span><div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="20">20</span><span class="metric-plus">+</span></span><span class="metric-label">lançamentos<br>pagos</span></div><div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:.666667"></div></div></div>
+            <div class="metric"><span class="sr-only">Mais de 4 projetos perpétuos criados</span><div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="4">4</span><span class="metric-plus">+</span></span><span class="metric-label">projetos perpétuos<br>criados</span></div><div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:.133333"></div></div></div>
+            <div class="monitor-footer caps"><span>Experiência acumulada</span><span>Intenção em cada entrega</span></div>
+          </div>
+          <div class="services" data-rise style="--delay:90ms">
+            <p class="caps">Da estratégia à execução</p>
+            <article class="service"><span class="service-index caps" aria-hidden="true">01</span><h3>Copy para lançamentos e perpétuos</h3><p>VSLs, páginas de vendas, anúncios, e-mails, sequências de WhatsApp e roteiros.</p></article>
+            <article class="service"><span class="service-index caps" aria-hidden="true">02</span><h3>Gestão de projetos de lançamento</h3><p>Cronograma, time, entregas e prazos sob controle. Organização dá ROI.</p></article>
+            <article class="service"><span class="service-index caps" aria-hidden="true">03</span><h3>Coprodução e estratégia</h3><p>Visão do funil inteiro, da captação ao pós-venda, incluindo funis low ticket e operações com time comercial.</p></article>
+          </div>
+        </div>
       </div>
     </section>
     <section class="projects" id="projetos" aria-labelledby="projects-title" tabindex="-1">
       <div class="wrap">
-        <div class="section-top caps"><span>01 / Projetos selecionados</span><span>Intenção em cada detalhe</span></div>
-        <header class="section-head"><h2 class="section-title" id="projects-title">O pensamento<br>vira <em>experiência.</em></h2><p>Espaços reservados para seus projetos. Substitua os estudos de composição abaixo pelos seus cases, imagens e links reais.</p></header>
+        <div class="section-top caps" data-rise><span>02 / Projetos selecionados</span><span>Intenção em cada detalhe</span></div>
+        <header class="section-head" data-rise><h2 class="section-title" id="projects-title">O pensamento<br>vira <em>experiência.</em></h2><p>Espaços reservados para seus projetos. Substitua os estudos de composição abaixo pelos seus cases, imagens e links reais.</p></header>
         <!-- SUBSTITUIR: cards demonstrativos; nenhuma credencial ou resultado real. -->
         <div class="project-grid">
-          <article class="work-card">
+          <article class="work-card" data-rise>
             <div class="work-media" aria-hidden="true"><span class="work-index caps">Estudo visual / 01</span><div class="demo-interface"><div class="demo-top"><i></i><i></i><i></i></div><div class="demo-title">Menos ruído.<br>Mais intenção.</div><div class="demo-line"></div><div class="demo-line short"></div><div class="demo-pill"></div></div></div>
             <div class="work-meta"><div><span class="badge">Placeholder · Projeto 01</span><h3>[Nome do projeto]</h3><p>[Categoria] · [Seu papel no projeto]</p></div><a class="button work-arrow" href="#contato" aria-label="Conversar sobre o espaço do Projeto 01"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
           </article>
-          <article class="work-card">
+          <article class="work-card" data-rise style="--delay:90ms">
             <div class="work-media paper" aria-hidden="true"><span class="work-index caps">Estudo visual / 02</span><div class="editorial-art"><span class="big">Aa.</span><span class="small">Forma & função</span></div></div>
             <div class="work-meta"><div><span class="badge">Placeholder · Projeto 02</span><h3>[Nome do projeto]</h3><p>[Categoria] · [Seu papel no projeto]</p></div><a class="button work-arrow" href="#contato" aria-label="Conversar sobre o espaço do Projeto 02"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
           </article>
         </div>
       </div>
     </section>
+    <section class="portfolio-section" id="habilidades" aria-labelledby="skills-title" tabindex="-1">
+      <div class="wrap">
+        <div class="section-top caps" data-rise><span>03 / Habilidades</span><span>Estratégia · mensagem · execução</span></div>
+        <div class="section-head" data-rise>
+          <h2 class="section-title" id="skills-title">Habilidades<br>em <em>ação.</em></h2>
+          <!-- SUBSTITUIR: liste suas competências reais. -->
+          <ul class="placeholder-list"><li><span>[Sua habilidade principal]</span><span class="caps">01</span></li><li><span>[Sua segunda habilidade]</span><span class="caps">02</span></li><li><span>[Sua terceira habilidade]</span><span class="caps">03</span></li></ul>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio-section" id="materiais" aria-labelledby="materials-title" tabindex="-1">
+      <div class="wrap">
+        <div class="section-top caps" data-rise><span>04 / Materiais</span><span>Conteúdo para explorar</span></div>
+        <div class="section-head" data-rise>
+          <h2 class="section-title" id="materials-title">Ideias em<br><em>detalhe.</em></h2>
+          <div><ul class="placeholder-list"><li><span>[Nome do material ou apresentação]</span><span class="caps">Placeholder</span></li><li><span>[Nome da peça ou documento]</span><span class="caps">Placeholder</span></li></ul><p class="materials-note">Espaço reservado para apresentações, peças e materiais de campanha.</p></div>
+        </div>
+      </div>
+    </section>
     <section class="contact" id="contato" aria-labelledby="contact-title" tabindex="-1">
-      <div class="wrap"><div class="section-top caps"><span>02 / Próximo capítulo</span><span>Contato</span></div><div class="contact-inner"><div><h2 id="contact-title">Vamos dar forma<br>à sua próxima ideia?</h2><p>Substitua o endereço ao lado pelo seu e-mail profissional para começar a conversa.</p></div><a class="contact-link" href="mailto:seu.email@example.com" aria-label="Enviar e-mail — endereço de exemplo, substitua pelo seu">seu.email@example.com <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div></div>
+      <div class="wrap"><div class="section-top caps" data-rise><span>05 / Próximo capítulo</span><span>Contato</span></div><div class="contact-inner" data-rise><div><h2 id="contact-title" class="scroll-reveal">Vamos dar forma<br>à sua próxima ideia?</h2><p>Substitua o endereço ao lado pelo seu e-mail profissional para começar a conversa.</p></div><a class="contact-link" href="mailto:seu.email@example.com" aria-label="Enviar e-mail — endereço de exemplo, substitua pelo seu">seu.email@example.com <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div></div>
     </section>
   </main>
   <footer class="footer"><span class="caps">[Seu nome] / Portfólio profissional</span><a class="caps" href="#inicio">Voltar ao início <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></a></footer>
@@ -266,31 +371,177 @@
     (() => {
       'use strict';
       // AJUSTES: pixels de rolagem por segundo do vídeo; maior = narrativa mais lenta.
-      const CONFIG = { pixelsPerSecond: 280, mobilePixelsPerSecond: 210, seekTolerance: 1 / 48, metadataTimeout: 12000, libraryTimeout: 8000 };
+      const CONFIG = { pixelsPerSecond: 520, mobilePixelsPerSecond: 400, seekTolerance: 1 / 48, metadataTimeout: 12000, libraryTimeout: 8000 };
       const $ = selector => document.querySelector(selector);
       const hero = $('#inicio'), scene = $('#scene'), video = $('#hero-video');
       const videoWindow = $('.video-window'), status = $('#video-status');
       const reduced = matchMedia('(prefers-reduced-motion: reduce)');
       const chapters = Array.from(document.querySelectorAll('.chapter'));
       const stories = [
-        { title: 'Toda ideia merece espaço.', text: 'Antes da primeira linha, uma possibilidade. O cuidado começa na página em branco.' },
-        { title: 'Clareza aponta a direção.', text: 'Cada traço tem uma intenção. Estrutura e sensibilidade organizam o que importa.' },
-        { title: 'O detalhe dá vida à forma.', text: 'Da ideia à experiência. Uma construção em que forma e função caminham juntas.' }
+        { title: 'Ideias com direção.', text: 'Uma visão clara organiza cada decisão antes de uma campanha ganhar forma.' },
+        { title: 'Criação com método.', text: 'Mensagem, recursos e execução conectados para construir uma campanha persuasiva.' },
+        { title: 'Foco em conversão.', text: 'Cada escolha conduz à ação. Organização e persuasão com um objetivo claro.' }
       ];
-      let duration = 0, targetTime = 0, seekFrame = 0, metadataReady = false, libraryReady = false;
+      let duration = 0, targetTime = 0, metadataReady = false, libraryReady = false;
       let trigger = null, context = null, storyIndex = -1, failed = false, staticMode = true;
-      let metadataTimer, storyTween, entranceTween, seekWatchdog;
+      let metadataTimer, storyTween, seekWatchdog;
       const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
       const timecode = seconds => '00:' + String(Math.floor(seconds)).padStart(2, '0');
+
+      // Interações e reveals da referência, independentes do CDN do vídeo.
+      const root = document.documentElement;
+      const fine = matchMedia('(hover: hover) and (pointer: fine)');
+      const ring = $('.cursor-ring');
+      const magneticButtons = Array.from(document.querySelectorAll('.button'));
+      let ringFrame = 0, pointer = null, ringX = 0, ringY = 0;
+      const pointerMotionOff = () => reduced.matches || document.hidden || !fine.matches || innerWidth <= 800;
+      function resetPointers() {
+        cancelAnimationFrame(ringFrame); ringFrame = 0; pointer = null;
+        ring.classList.remove('is-visible', 'is-active');
+        magneticButtons.forEach(button => {
+          button.style.removeProperty('--magnetic-x'); button.style.removeProperty('--magnetic-y');
+        });
+      }
+      function syncMotionEffects() {
+        root.classList.toggle('motion-reduced', reduced.matches);
+        root.classList.toggle('motion-suspended', document.hidden);
+        if (pointerMotionOff()) resetPointers();
+      }
+      function drawRing() {
+        ringFrame = 0;
+        if (!pointer || pointerMotionOff()) return;
+        ringX += (pointer.x - ringX) * .18; ringY += (pointer.y - ringY) * .18;
+        ring.style.transform = 'translate(' + ringX + 'px,' + ringY + 'px) translate(-50%,-50%)';
+        if (Math.abs(pointer.x - ringX) + Math.abs(pointer.y - ringY) > .4) ringFrame = requestAnimationFrame(drawRing);
+      }
+      document.addEventListener('pointermove', event => {
+        if (pointerMotionOff() || event.pointerType === 'touch') return;
+        if (!pointer) { ringX = event.clientX; ringY = event.clientY; }
+        pointer = {x:event.clientX, y:event.clientY};
+        ring.classList.add('is-visible');
+        ring.classList.toggle('is-active', !!event.target.closest('a,button'));
+        if (!ringFrame) ringFrame = requestAnimationFrame(drawRing);
+      }, {passive:true});
+      document.documentElement.addEventListener('pointerleave', resetPointers);
+      magneticButtons.forEach(button => {
+        button.classList.add('magnetic');
+        button.addEventListener('pointermove', event => {
+          if (pointerMotionOff() || event.pointerType === 'touch') return;
+          const bounds = button.getBoundingClientRect();
+          button.style.setProperty('--magnetic-x', clamp((event.clientX - bounds.left - bounds.width / 2) * .07, -3, 3) + 'px');
+          button.style.setProperty('--magnetic-y', clamp((event.clientY - bounds.top - bounds.height / 2) * .1, -3, 3) + 'px');
+        }, {passive:true});
+        button.addEventListener('pointerleave', () => {
+          button.style.removeProperty('--magnetic-x'); button.style.removeProperty('--magnetic-y');
+        });
+      });
+      if ('IntersectionObserver' in window) {
+        document.querySelectorAll('.scroll-reveal').forEach(node => {
+          // Preserve <br>, emphasis, whitespace and the original reading order.
+          const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+          const textNodes = []; while (walker.nextNode()) textNodes.push(walker.currentNode);
+          let wordIndex = 0;
+          textNodes.forEach(textNode => {
+            const fragment = document.createDocumentFragment();
+            textNode.textContent.split(/(\s+)/).filter(Boolean).forEach(word => {
+              if (/^\s+$/.test(word)) { fragment.appendChild(document.createTextNode(word)); return; }
+              const span = document.createElement('span'); span.className = 'reveal-word'; span.textContent = word;
+              span.style.setProperty('--delay', wordIndex++ * 55 + 'ms'); fragment.appendChild(span);
+            });
+            textNode.replaceWith(fragment);
+          });
+        });
+        const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-in'); reveal.unobserve(entry.target); }
+        }), {threshold:.12});
+        document.querySelectorAll('[data-rise],.scroll-reveal').forEach(node => reveal.observe(node));
+        root.classList.add('js-motion');
+        // Pause decorative loops outside the viewport; no idle JS animation loop.
+        const loops = new IntersectionObserver(entries => entries.forEach(entry => {
+          entry.target.classList.toggle('motion-offscreen', !entry.isIntersecting);
+        }), {rootMargin:'100px'});
+        document.querySelectorAll('.scene,.results,.projects,.portfolio-section,.contact').forEach(node => loops.observe(node));
+      }
+      fine.addEventListener('change', syncMotionEffects);
+      document.addEventListener('visibilitychange', syncMotionEffects);
+      addEventListener('resize', syncMotionEffects, {passive:true});
+      syncMotionEffects();
+
+      const nav = $('.nav');
+      const navLinks = Array.from(document.querySelectorAll('.nav-capsule a'));
+      function setCurrentNavigation(hash) {
+        const navigationHash = hash === '#projetos' ? '#resultados' : hash;
+        navLinks.forEach(link => {
+          if (link.hash === navigationHash) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+      function updateNavigationSurface() { nav.classList.toggle('is-scrolled', scrollY > 40); }
+      addEventListener('scroll', updateNavigationSurface, {passive:true});
+      updateNavigationSurface();
+      if ('IntersectionObserver' in window) {
+        const navigationObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) setCurrentNavigation('#' + entry.target.id); });
+        }, {rootMargin:'-20% 0px -55% 0px', threshold:0});
+        navLinks.forEach(link => { const section = document.querySelector(link.hash); if (section) navigationObserver.observe(section); });
+      }
+
+      // Os números vêm do conteúdo fornecido. Um único RAF anima números e
+      // barras ao entrar na tela; termina sem deixar um loop ocioso.
+      const monitor = $('#results-monitor');
+      const metrics = Array.from(monitor.querySelectorAll('.metric')).map(row => ({
+        number:row.querySelector('[data-counter]'), fill:row.querySelector('.metric-fill'),
+        target:Number(row.querySelector('[data-counter]').dataset.counter)
+      }));
+      const largestMetric = Math.max(...metrics.map(metric => metric.target));
+      let counterFrame = 0, countersStarted = false, countersFinished = false, counterObserver = null;
+      function finishCounters() {
+        cancelAnimationFrame(counterFrame); counterFrame = 0; countersFinished = true;
+        metrics.forEach(metric => {
+          metric.number.textContent = String(metric.target);
+          metric.fill.style.transform = 'scaleX(' + metric.target / largestMetric + ')';
+        });
+        if (counterObserver) counterObserver.unobserve(monitor);
+      }
+      function startCounters() {
+        if (countersStarted || countersFinished) return;
+        countersStarted = true;
+        if (reduced.matches || document.hidden) { finishCounters(); return; }
+        const startedAt = performance.now(), durationMs = 1800, staggerMs = 120;
+        metrics.forEach(metric => { metric.number.textContent = '0'; metric.fill.style.transform = 'scaleX(0)'; });
+        function updateCounters(now) {
+          if (reduced.matches || document.hidden) { finishCounters(); return; }
+          const elapsed = now - startedAt;
+          metrics.forEach((metric, index) => {
+            const progress = clamp((elapsed - index * staggerMs) / durationMs, 0, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = String(Math.floor(metric.target * eased));
+            if (metric.number.textContent !== value) metric.number.textContent = value;
+            metric.fill.style.transform = 'scaleX(' + metric.target / largestMetric * eased + ')';
+          });
+          if (elapsed < durationMs + (metrics.length - 1) * staggerMs) counterFrame = requestAnimationFrame(updateCounters);
+          else finishCounters();
+        }
+        counterFrame = requestAnimationFrame(updateCounters);
+      }
+      if (reduced.matches || !('IntersectionObserver' in window)) finishCounters();
+      else {
+        counterObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) startCounters();
+          else if (countersStarted && !countersFinished) finishCounters();
+        }), {threshold:.25});
+        counterObserver.observe(monitor);
+      }
 
       // Uma busca por vez. Alvos intermediários cedem lugar ao mais recente;
       // o evento seeked libera a próxima atualização.
       function scheduleSeek() {
-        if (seekFrame || failed || staticMode || !metadataReady || document.hidden) return;
-        seekFrame = requestAnimationFrame(flushSeek);
+        if (failed || staticMode || !metadataReady || document.hidden) return;
+        // ScrollTrigger já agrupa updates por frame. Não adicionar um segundo
+        // RAF: assim o alvo mais recente não espera um frame extra após seeked.
+        flushSeek();
       }
       function flushSeek() {
-        seekFrame = 0;
         if (failed || staticMode || !metadataReady || document.hidden || video.seeking || video.readyState < 2) return;
         if (Math.abs(video.currentTime - targetTime) < CONFIG.seekTolerance) return;
         try {
@@ -304,9 +555,9 @@
       }
       function setVideoProgress(progress) {
         // Use metadata duration; a small endpoint epsilon avoids asking for an
-        // instant beyond the last decodable video frame (audio ends at 10.006s).
+        // instant beyond the last decodable video frame.
         targetTime = clamp(progress, 0, 1) * Math.max(0, duration - .001);
-        $('#video-time').textContent = timecode(targetTime);
+        $('#video-time').textContent = timecode(progress >= .999 ? duration : targetTime);
         scheduleSeek();
       }
       video.addEventListener('seeked', () => { clearTimeout(seekWatchdog); scheduleSeek(); });
@@ -342,7 +593,6 @@
         if (context) { context.revert(); context = null; }
         if (storyTween) { storyTween.kill(); storyTween = null; }
         clearTimeout(seekWatchdog);
-        cancelAnimationFrame(seekFrame); seekFrame = 0;
         hero.classList.remove('has-scrub'); hero.classList.add('is-static');
         video.pause(); videoWindow.classList.remove('is-ready');
         renderStory(0, true);
@@ -351,20 +601,20 @@
       }
       function failVideo(message) {
         failed = true; clearTimeout(metadataTimer); clearTimeout(seekWatchdog);
-        clearExperience(); videoWindow.classList.add('is-error'); status.textContent = message;
+        clearExperience(); videoWindow.classList.add('is-error'); status.textContent = 'Cena estática'; status.setAttribute('aria-label', message);
       }
       function initialize() {
         if (reduced.matches || failed || !metadataReady || !libraryReady) return;
         clearExperience();
         staticMode = false; hero.classList.remove('is-static'); hero.classList.add('has-scrub');
         if (video.readyState >= 2) videoWindow.classList.add('is-ready');
-        status.textContent = 'O ritmo está nas suas mãos.';
-        $('#scroll-label').textContent = 'Role para dar forma';
+        status.textContent = 'Em movimento';
+        $('#scroll-label').textContent = 'Role para transformar';
         gsap.registerPlugin(ScrollTrigger);
         // A single ScrollTrigger drives seeking, progress, narrative and parallax.
         // No numeric scrub smoothing: stopping scrolling holds the exact target.
         context = gsap.context(() => {
-          const visualMotion = gsap.timeline({paused:true}).fromTo('.video-panel', {y:8}, {y:-8, duration:1, ease:'none'});
+          const visualMotion = gsap.timeline({paused:true}).fromTo('.hero-bloom', {y:8}, {y:-8, duration:1, ease:'none'});
           trigger = ScrollTrigger.create({
             id:'portfolio-scene', trigger:hero, pin:scene, start:'top top',
             end:() => '+=' + Math.round(duration * (innerWidth <= 800 ? CONFIG.mobilePixelsPerSecond : CONFIG.pixelsPerSecond)),
@@ -375,7 +625,7 @@
         }, hero);
         ScrollTrigger.refresh();
         // Hash navigation must be resolved after pin spacing exists.
-        if (location.hash === '#projetos' || location.hash === '#contato') {
+        if (['#resultados','#projetos','#habilidades','#materiais','#contato'].includes(location.hash)) {
           const destination = document.querySelector(location.hash);
           destination.scrollIntoView({behavior:'instant'});
         }
@@ -411,26 +661,21 @@
           await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js');
           if (!window.gsap || !window.ScrollTrigger) throw new Error('Missing library');
           libraryReady = true;
-          if (!reduced.matches) {
-            entranceTween = gsap.timeline({defaults:{ease:'power3.out'}})
-              .from('.line-mask > span', {yPercent:110, opacity:0, duration:1.25, stagger:.12, clearProps:'all'}, 0)
-              .from('[data-enter]', {y:24, opacity:0, duration:.9, stagger:.09, clearProps:'all'}, .15);
-          }
           initialize();
         } catch {
           clearExperience();
-          if (!failed) status.textContent = 'Uma ideia começa no papel.';
+          if (!failed) status.textContent = 'Da visão à ação';
         }
       }
       clearExperience();
       loadMotion();
       reduced.addEventListener('change', () => {
-        if (entranceTween) { entranceTween.progress(1).kill(); entranceTween = null; }
-        if (reduced.matches) { clearExperience(); status.textContent = 'Uma ideia começa no papel.'; }
+        syncMotionEffects();
+        if (reduced.matches) { finishCounters(); clearExperience(); status.textContent = 'Da visão à ação'; }
         else initialize();
       });
       document.addEventListener('visibilitychange', () => {
-        if (document.hidden) { cancelAnimationFrame(seekFrame); seekFrame = 0; video.pause(); }
+        if (document.hidden) { video.pause(); if (counterFrame) finishCounters(); }
         else if (!staticMode) { if (trigger) setVideoProgress(trigger.progress); scheduleSeek(); }
       });
       chapters.forEach(button => button.addEventListener('click', () => {
@@ -444,7 +689,8 @@
         if (!destination || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
         history.pushState(null, '', link.getAttribute('href'));
-        const top = destination === hero ? 0 : window.scrollY + destination.getBoundingClientRect().top - 32;
+        setCurrentNavigation(link.getAttribute('href'));
+        const top = destination === hero ? 0 : window.scrollY + destination.getBoundingClientRect().top - nav.getBoundingClientRect().height - 24;
         window.scrollTo({top, behavior:reduced.matches ? 'instant' : 'smooth'});
         if (destination === hero) $('.brand').focus({preventScroll:true});
         else destination.focus({preventScroll:true});
