@@ -1,89 +1,62 @@
-# Portfólio — campanhas organizadas, persuasivas e focadas em conversão
+# Portfólio de gestão de lançamentos
 
-`index.html` contém todo o HTML, CSS e JavaScript da página. Não exige build, instalação de pacotes nem framework. A hero usa vídeo como fundo de toda a viewport, degradês escuros, texto sobreposto à esquerda e um card de vidro, seguindo a composição do design system. O design system e o MP4 original foram preservados.
-
-A headline contém a frase completa “Crio campanhas organizadas, persuasivas e focadas em conversão.” Os conectivos têm tamanho menor; “organizadas”, “persuasivas” e “conversão” recebem o destaque principal. As fontes se ajustam para preservar a hierarquia em celulares e em telas de pouca altura.
+O arquivo index.html contém HTML, CSS e JavaScript incorporados. A composição usa o design system Noema × GenLabs × TerraSprint, preservando os tokens e as fontes locais. Não exige build.
 
 ## Executar
 
-Na pasta do projeto, com Node.js instalado:
+Com Node.js instalado, execute na pasta do projeto:
 
 ```powershell
 node serve.cjs
 ```
 
-Abra **http://127.0.0.1:4173**. Encerre com `Ctrl+C`. Também funciona com Live Server ou outro servidor estático que aceite requisições HTTP Range para o MP4. Acesso à internet é necessário para carregar GSAP e ScrollTrigger 3.12.5 pelo CDN. Se falharem, a página continua legível, com pôster, projetos, contato e links.
+Abra http://127.0.0.1:4173. Encerre com Ctrl+C. Live Server e servidores estáticos com suporte a HTTP Range também funcionam. GSAP e ScrollTrigger 3.12.5 carregam por CDN; se falharem, os conteúdos e as animações CSS permanecem disponíveis.
 
-Para hospedar, mantenha `index.html`, `assets/portrait-poster.webp`, o vídeo `Animating_portrait_transforming_…_20261012185500.scrub.mp4` em `assets/Videos/` e as duas fontes utilizadas em `referenciais/terrasprint-ai-design-system/`. `serve.cjs` e `.preview/` são ferramentas locais, não fazem parte da página publicada.
+## Hero
 
-## Personalizar
+O eyebrow é “GESTÃO DE LANÇAMENTOS / PORTFÓLIO”. A headline tem cinco linhas: “Lançamentos para experts que querem”, “escalar”, “sem perder”, “o controle da” e “operação.”. As linhas pequenas usam Manrope 400; as grandes, Arial/Helvetica 500; o destaque editorial, Fraunces 300.
 
-A navegação em cápsula permanece no topo, inclusive no celular: Visão geral, Resultados, Habilidades, Materiais e Contato. Resultados leva à segunda dobra, com números e serviços; o CTA “Ver projetos” continua levando aos cases. Habilidades e Materiais possuem áreas com placeholders a substituir. O item ativo acompanha a seção visível e os links descontam a altura do cabeçalho fixo.
+As classes .hero__copy, .hero__lead, .line-mask, .font-fraunces, .button-ghost, .hero-card.glass-card, .carousel-track, .signal-strip e .hero__halo seguem o vocabulário do sistema. A curva das animações vem de --ease, inclusive nos efeitos JavaScript. Não há travessões nos textos da página.
 
-## Segunda dobra — experiência e serviços
+O botão “Ver cases” leva a #projetos. “Conversar no WhatsApp” abre uma nova aba com rel="noopener noreferrer". Substitua SEU_NUMERO no link https://wa.me/SEU_NUMERO pelo seu número internacional, ou cole seu link wa.me completo. O balão de conversa usa SVG inline com stroke de 1,5.
 
-O painel de vidro à esquerda apresenta os números fornecidos: mais de 30 lançamentos clássicos, mais de 20 lançamentos pagos e mais de 4 projetos perpétuos criados. À direita estão os textos de copy, gestão de projetos e coprodução/estratégia. A composição usa o preto profundo, o violeta, as fontes e as linhas finas do design system; em celular, o painel vem antes dos textos.
+O card alterna entre três provas, em ciclo de 12 s, com aproximadamente 3 s de permanência em cada estado. Pausa com hover e foco. No celular de até 430 px, fica em linha e esconde badge e caption. A faixa abaixo da hero duplica o grupo de cinco frases para o ticker contínuo.
 
-Os contadores começam em zero quando 25% do painel entra na viewport e crescem por aproximadamente 2 s, com intervalo de 120 ms entre eles. As barras acompanham a contagem e representam a proporção entre os três números, sem criar séries históricas ou métricas adicionais. A animação acontece uma vez, funciona sem GSAP e não mantém um loop ocioso.
+O botão de pausa ao lado da navegação suspende o vídeo, os efeitos de ponteiro, os elementos flutuantes, o carrossel e o ticker. A preferência por movimento reduzido mantém os textos legíveis, a foto estática e o primeiro estado do card. Os loops pausam fora da viewport e com a aba oculta.
 
-Sem JavaScript, sem IntersectionObserver ou com movimento reduzido, os valores finais permanecem visíveis. Os leitores de tela sempre recebem os valores finais, sem anúncios a cada incremento. Ao ocultar a aba, sair do painel ou ativar movimento reduzido durante a contagem, os números concluem imediatamente.
+## Retrato e quatro elementos
 
-Para mudar os números, atualize `data-counter`, seu texto inicial e o texto acessível de cada `.metric`. Ajuste também `--meter-share`, a proporção do número em relação ao maior, para o estado sem JavaScript. Os textos de serviços estão em `.services`.
+A hero usa novamente o vídeo de retrato indicado, na versão .scrub.mp4, preservando sua animação original. Os elementos que fazem parte dos pixels do vídeo, incluindo logos, aparecem como no arquivo fornecido. Os quatro SVGs sobre a foto continuam na composição: caneta tinteiro, cavalo de xadrez, calendário e checklist. A composição usa o halo violeta do sistema e preserva o degradê e o hero-bloom existentes.
 
-## Dados pessoais e projetos
+Arquivo ativo: assets/Videos/Animating_portrait_transforming_…_20261012185500.scrub.mp4. Pôster: assets/portrait-poster.webp. A reticência … faz parte do nome real do arquivo.
 
-- Pesquise `[Seu nome]`, `[Sua área de atuação]`, `[Nome do projeto]`, `[Categoria]` e `[Seu papel no projeto]` no HTML. Atualize também `<title>`, descrição, rótulos acessíveis e rodapé.
-- Substitua `seu.email@example.com` tanto no texto quanto no `mailto:` e atualize seu rótulo acessível.
-- Os dois cards são placeholders identificados. Troque as composições demonstrativas por imagens e os links por URLs dos cases. Não representam projetos realizados.
-- Edite `stories` no JavaScript para alterar os três momentos da narrativa: Visão, Criação e Ação. Os limiares `.32` e `.7` em `renderStory` acompanham a abertura da luz violeta, a formação dos elementos flutuantes e a composição final.
-- O vídeo ativo é a cópia otimizada `assets/Videos/Animating_portrait_transforming_…_20261012185500.scrub.mp4`, derivada do original com o mesmo nome-base. A reticência `…` faz parte do nome. Os vídeos anteriores foram preservados e não são mais usados pela hero.
-- As fontes são Manrope e Fraunces locais; títulos principais usam Arial/Helvetica. Cores, espaços, raios e curva de transição estão em `:root`, transpostos da referência.
+O clipe ativo tem 4 s, 1280 × 720 e 24 fps. Começa automaticamente após carregar, com muted, playsinline e loop, sem aguardar GSAP ou interação. A rolagem não altera currentTime. O contador FRAME acompanha o relógio real do player. A reprodução pausa com a aba oculta, fora da viewport ou pelo controle global; retoma da posição atual. Movimento reduzido apresenta somente a foto. Se o navegador bloquear autoplay, aparece o botão “Reproduzir vídeo”, seguindo a [orientação de autoplay da MDN](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay).
 
-## Ajustar o ritmo
+No objeto CONFIG, sceneScroll = 2080 e mobileSceneScroll = 1600 controlam somente a distância de rolagem da cena fixada. Aumente para alongar a cena, sem alterar a velocidade do vídeo. A duração real é obtida dos metadados. A fixação e o parallax usam um único ScrollTrigger, seguindo a [documentação oficial](https://gsap.com/docs/v3/Plugins/ScrollTrigger/).
 
-No objeto `CONFIG`, aumente `pixelsPerSecond` para alongar a sequência e diminua para encurtá-la. O padrão é 520 px por segundo no desktop e 400 no celular: 2.080 e 1.600 px de rolagem para a cópia otimizada de 4 s. O ritmo foi alongado por segundo para a transformação curta continuar confortável de explorar.
+## Segunda dobra
 
-A duração vem de `video.duration` após `loadedmetadata`. O progresso controla o tempo em ambos os sentidos. O vídeo permanece pausado, sem `autoplay` e sem `loop`. Uma fila conserva somente o alvo mais recente e aguarda `seeked` antes da próxima busca. A atualização usa o ciclo do ScrollTrigger, sem acrescentar outro requestAnimationFrame a cada busca. O fim usa uma margem de 1 ms para evitar solicitar um instante fora dos quadros decodificáveis.
+O painel à esquerda mostra os números fornecidos: mais de 30 lançamentos clássicos, mais de 20 lançamentos pagos e mais de 4 projetos perpétuos criados. À direita estão os serviços de copy, gestão de projetos e coprodução/estratégia.
 
-Um único ScrollTrigger fixa a cena, atualiza o vídeo e coordena narrativa, indicador e parallax de 16 px no brilho decorativo. O vídeo permanece alinhado à viewport. A extensão da sequência é recalculada ao redimensionar. A integração segue a [documentação oficial do ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/). A rolagem é nativa, sem Lenis.
+Os contadores crescem uma vez ao entrar na viewport. As barras representam somente a proporção entre esses números. Sem JavaScript, sem IntersectionObserver ou com movimento reduzido, os valores finais continuam visíveis. Leitores de tela recebem os valores finais sem anúncios a cada incremento.
 
-No desktop, a mídia ocupa uma camada de toda a viewport sobre preto profundo. O quadro completo é ajustado à direita e à base, preservando rosto, luz e elementos flutuantes mesmo em telas mais largas que 16:9. O preto do vídeo se integra ao fundo; degradês protegem a leitura à esquerda e deixam o retrato à direita mais visível.
+Para alterar números, atualize data-counter, o texto inicial, o texto acessível e --meter-share de cada .metric.
 
-Nos celulares, o enquadramento aproxima o retrato cortando o espaço preto à esquerda. Os elementos flutuantes permanecem dentro da área superior. Tablets mantêm o quadro inteiro; telas curtas usam um corte mais aberto e uma headline mais compacta. O card de vidro fica menor em desktops de pouca altura para evitar cobrir o rosto.
+## Conteúdos pessoais e publicação
 
-Com `prefers-reduced-motion`, a cena fica estática e sem pin, usando o pôster do primeiro quadro do retrato. A preferência também é respeitada quando muda durante a visita. Um erro de vídeo ou um carregamento que exceda o limite libera a sequência e conserva o conteúdo.
+- Substitua [Seu nome] no título, marca e rodapé.
+- Atualize SEU_NUMERO no link do WhatsApp e seu.email@example.com no contato.
+- Os cards de cases, as habilidades e os materiais ainda têm placeholders. Substitua-os por conteúdo real.
+- Para hospedar, mantenha index.html, o clipe Animating_portrait_transforming_…_20261012185500.scrub.mp4, portrait-poster.webp e as fontes usadas em referenciais/terrasprint-ai-design-system/.
+- serve.cjs, .preview/ e output/previews/ são ferramentas e artefatos de revisão, não dependências da página.
 
-## Animações da referência aplicadas
+## Verificação e prévias
 
-- Entrada das linhas da headline: 1.250 ms, com intervalo de 120 ms; elementos de apoio entram por opacidade e deslocamento de 24 px em 900 ms.
-- Projetos e contato aparecem ao entrar na viewport, com cascata de 90 ms. O título do contato se revela por palavra, com blur de 4 px, duração de 800 ms e intervalo de 55 ms, preservando as quebras de linha.
-- Brilho violeta respira em um ciclo de 9 s; linha do card em 4 s, sinal de status em 2,6 s e grade dos projetos em 28 s.
-- Botões respondem ao ponteiro com magnetismo limitado a 3 px, além de lift, sheen e glow. Um anel acompanha o cursor com suavização e cresce sobre links e botões. O cursor nativo é preservado.
-- Efeitos de ponteiro são habilitados apenas em desktop com ponteiro fino, sem movimento reduzido. O anel usa requestAnimationFrame somente enquanto precisa alcançar o ponteiro.
-- Loops decorativos pausam fora da viewport e com a aba oculta. Movimento reduzido remove animações e mantém todos os textos legíveis.
+Os testes de DOM passaram para autoplay, independência da rolagem, pausa global, retomada, aba oculta, saída da viewport, bloqueio de autoplay com tentativa manual, movimento reduzido, falhas de CDN/vídeo, contadores, links e foco. O clipe foi gerado com FFmpeg.
 
-As entradas e os efeitos de apoio usam CSS e JavaScript nativos, de modo que continuem disponíveis se o CDN falhar. GSAP e ScrollTrigger continuam responsáveis pela cena fixada e pela sincronização do vídeo.
+As imagens abaixo foram renderizadas do HTML real no Chrome sem interface. O modo ?preview=1 conclui as entradas e fixa o primeiro estado do card somente para a exportação. A navegação normal não usa esse modo.
 
-## Vídeo e fluidez
+- [Hero desktop, 1440 × 900](output/previews/hero-desktop.png)
+- [Hero mobile, 390 × 844](output/previews/hero-mobile.png)
 
-Inspeção do novo original: H.264 High, 1280 × 720, 24 fps, 96 quadros e vídeo de 4 s. O contêiner indica aproximadamente 4,01 s, incluindo áudio. Há somente um keyframe no original. O conteúdo começa com um retrato sobre preto; uma luz violeta se abre e revela cartões, ícones e uma peça de xadrez acima da cabeça.
-
-O intervalo longo entre keyframes aumenta o trabalho de decodificação nas buscas, especialmente para trás. A página usa uma cópia já gerada e validada com **96 keyframes em 96 quadros**, sem quadros B nem áudio, com índice no início do MP4. A cópia tem 4 s, mantém resolução e taxa de quadros, e ocupa 3.023.778 bytes, contra 719.024 bytes do original.
-
-Para regenerar essa cópia com FFmpeg instalado:
-
-```powershell
-ffmpeg -i "assets/Videos/Animating_portrait_transforming_…_20261012185500.mp4" -an -c:v libx264 -preset medium -crf 18 -g 1 -keyint_min 1 -sc_threshold 0 -bf 0 -pix_fmt yuv420p -movflags +faststart "assets/Videos/Animating_portrait_transforming_…_20261012185500.scrub.mp4"
-```
-
-A cópia já está conectada ao `<source>`. Em um teste de cinco buscas regressivas com FFmpeg, os tempos do original foram 323, 673, 334, 267 e 138 ms; os da cópia foram 144, 162, 137, 177 e 124 ms. Os números incluem inicialização do processo e decodificação por software, sem medir o navegador ou seu decodificador por hardware. O código evita buscas concorrentes, mas a experiência no dispositivo ainda precisa ser validada. O original não foi recodificado nem substituído.
-
-## Verificação realizada
-
-- JavaScript validado; arquivos, fontes, âncoras, resposta HTTP 200 e requisição parcial do vídeo (HTTP 206) verificados.
-- Original e cópia otimizada decodificados integralmente com FFmpeg. Verificados 96 quadros independentes na cópia e realizadas buscas regressivas. Oito quadros do conteúdo original inspecionados visualmente; pôster extraído do instante 0 s.
-- Simulação de DOM passou para metadados, pin, mapeamento da duração, avanço, retorno, parada, busca única com alvo mais recente, capítulos, foco, comprimento responsivo, mudança de preferência e falhas de CDN/vídeo.
-- Navegador integrado indisponível nesta sessão. Layout visual, rolagem real, console e desempenho do decodificador em celular ainda precisam de uma revisão no navegador. A simulação não substitui essa revisão.
-- A checagem direta do CDN expirou nesta rede, inclusive após tentar fora das restrições do ambiente. Sua disponibilidade não foi confirmada; a página tem timeout e fallback estático para esse caso.
-
-Para a revisão visual, verifique 1440 × 900, 1280 × 720, 768 × 1024, 390 × 844 e 375 × 667. Role até o fim, retorne à hero, pare em diferentes pontos, redimensione no meio da sequência, use Tab/Enter, teste os CTAs e ative a preferência por movimento reduzido. Os cards de projeto e o e-mail ainda são exemplos a substituir.
+As prévias permitem revisar a composição. A fluidez percebida do scroll e do decodificador ainda varia por dispositivo e não é uma promessa de precisão quadro a quadro.
