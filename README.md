@@ -1,16 +1,34 @@
 # Portfólio de gestão de lançamentos
 
-O arquivo index.html contém HTML, CSS e JavaScript incorporados. A composição usa o design system Noema × GenLabs × TerraSprint, preservando os tokens e as fontes locais. Não exige build.
+O arquivo portfolio/index.html contém HTML, CSS e JavaScript incorporados. A composição usa o design system Noema × GenLabs × TerraSprint, preservando os tokens e as fontes locais. Não exige build.
+
+O site é publicado em https://alissonsegecs.com.br/portfolio.
+
+## Estrutura
+
+```
+portfolio/              site publicado em /portfolio
+  index.html
+  favicon.svg
+  assets/               imagens, vídeos, logos, og-image.jpg e design_system_portifolio.html
+  referenciais/         design systems de referência e fontes locais
+vercel.json             redirecionamentos: / → /portfolio (temporário), /portifolio → /portfolio (permanente)
+.vercelignore           exclui output/, serve.cjs e README.md da publicação
+serve.cjs               servidor local de prévia
+output/previews/        capturas de revisão
+```
+
+Os recursos do index.html usam caminhos absolutos (/portfolio/assets/…, /portfolio/referenciais/…), por isso funcionam tanto em /portfolio quanto em /portfolio/. Ao adicionar um arquivo novo, siga o mesmo padrão. Os caminhos citados neste README (assets/…, referenciais/…) são relativos à pasta portfolio/.
 
 ## Executar
 
-Com Node.js instalado, execute na pasta do projeto:
+Com Node.js instalado, execute na raiz do projeto:
 
 ```powershell
 node serve.cjs
 ```
 
-Abra http://127.0.0.1:4173. Encerre com Ctrl+C. Live Server e servidores estáticos com suporte a HTTP Range também funcionam. GSAP e ScrollTrigger 3.12.5 carregam por CDN; se falharem, os conteúdos e as animações CSS permanecem disponíveis.
+Abra http://127.0.0.1:4173/portfolio. Encerre com Ctrl+C. O servidor aplica os mesmos redirecionamentos do vercel.json e aceita HTTP Range, necessário para o vídeo. GSAP e ScrollTrigger 3.12.5 carregam por CDN; se falharem, os conteúdos e as animações CSS permanecem disponíveis.
 
 ## Espaçamento entre seções
 
@@ -72,7 +90,7 @@ O case de Marcia usa a foto real enviada, em assets/cases/marcia-macedo.jpg, com
 
 O case da Receita Previsível usa a headline “Copywriter do ecossistema.” e o histórico fornecido por Alisson sobre campanhas, workshops, eventos, lançamentos e produção de conteúdo. A narrativa está em quatro parágrafos, com os nomes em destaque e largura máxima de 58ch. A foto do livro enviada fica em assets/cases/receita-previsivel-livro.jpg, com 387 × 516 px. A capa aparece inteira, com moldura .glass-card, grade Noema, um bloom violeta, rótulos monoespaçados e .signal-line. A entrada usa data-rise e image-arrive de 1,7 s; a flutuação reutiliza tile-drift do design system em 6 s com --ease. Hover pausa a flutuação e responde com inclinação e borda. Pausa global e movimento reduzido deixam o livro estático. O observador de loops acompanha a figura para suspender também grade e bloom fora da viewport. A área mede 480 px de altura em até 800 px e 440 px em até 430 px, mantendo a capa separada dos rótulos.
 
-As outras fotos são provisórias e locais em assets/cases/, com fontes e licença registradas em [assets/cases/README.md](assets/cases/README.md). Em até 800 px, cada uma fica acima do seu texto e mede 280 px de altura. As imagens usam grayscale(1) contrast(1.1), object-fit: cover e zoom de 1,04 em 1.200 ms, com --ease. Pausa global e movimento reduzido suspendem esse zoom.
+As outras fotos são provisórias e locais em assets/cases/, com fontes e licença registradas em [assets/cases/README.md](portfolio/assets/cases/README.md). Em até 800 px, cada uma fica acima do seu texto e mede 280 px de altura. As imagens usam grayscale(1) contrast(1.1), object-fit: cover e zoom de 1,04 em 1.200 ms, com --ease. Pausa global e movimento reduzido suspendem esse zoom.
 
 O case de Marcia apresenta mais de 8 lançamentos clássicos juntos e outros projetos de perpétuo, a evolução de copywriter para a operação e os produtos Fluenti e Português Todo Dia. A atuação está indicada como “Gestão operacional + copy”. Os cinco documentos e a página de vendas PTD informados por Alisson estão ativos, com target="_blank", rel="noopener noreferrer" e rótulos indicando a abertura em nova aba. O aviso abaixo explica que os links são uma seleção e que várias outras copies foram produzidas.
 
@@ -90,7 +108,7 @@ Na entrada, a hairline se abre da esquerda para a direita, as duas linhas do tí
 
 O holofote atualiza --px e --py para cada card, inclusive vizinhos, em um único requestAnimationFrame por atualização. As leituras de layout ficam em cache e são invalidadas ao rolar ou redimensionar. Não há loop JavaScript ocioso. As máscaras de borda seguem a técnica do GenLabs. Ao sair da grade, a iluminação desaparece em 400 ms.
 
-Ponteiro grosso, toque, movimento reduzido, aba oculta e pausa global desativam o holofote e o lift. O hover estático e o foco visível permanecem disponíveis. Os logos locais de Typebot e ClickUp aparecem desde o carregamento, em tons de cinza, sem depender de máscaras SVG. No hover ativo, recebem suas cores originais. Suas fontes estão registradas em [assets/logos/README.md](assets/logos/README.md). Como a ferramenta de Webdesign não foi informada, o card usa o SVG de navegador previsto no briefing.
+Ponteiro grosso, toque, movimento reduzido, aba oculta e pausa global desativam o holofote e o lift. O hover estático e o foco visível permanecem disponíveis. Os logos locais de Typebot e ClickUp aparecem desde o carregamento, em tons de cinza, sem depender de máscaras SVG. No hover ativo, recebem suas cores originais. Suas fontes estão registradas em [assets/logos/README.md](portfolio/assets/logos/README.md). Como a ferramenta de Webdesign não foi informada, o card usa o SVG de navegador previsto no briefing.
 
 O card final abre o WhatsApp de Alisson em nova aba, com o mesmo número e mensagem do botão flutuante e do hero.
 
@@ -110,7 +128,7 @@ O tablist usa foco itinerante, aria-selected e um tabpanel com o nome da etapa a
 
 ## Sobre mim
 
-A seção #sobre foi criada após #metodo. A composição editorial usa .surface-paper, o .noise original, Arial/Helvetica, Manrope e Fraunces 300, com destaque #5047c9 e apoio #58575f. O retrato é o mesmo poster da hero, enquadrado com CSS. A segunda foto é provisória, com data-placeholder="true" e instrução de substituição no HTML. Sua fonte e licença estão em [assets/about/README.md](assets/about/README.md).
+A seção #sobre foi criada após #metodo. A composição editorial usa .surface-paper, o .noise original, Arial/Helvetica, Manrope e Fraunces 300, com destaque #5047c9 e apoio #58575f. O retrato é o mesmo poster da hero, enquadrado com CSS. A segunda foto é provisória, com data-placeholder="true" e instrução de substituição no HTML. Sua fonte e licença estão em [assets/about/README.md](portfolio/assets/about/README.md).
 
 O X em --electric usa duas pinceladas SVG com bordas irregulares e stroke-dashoffset. Começa 270 ms após a entrada da foto, quando ela já está visível. Cada pincelada dura 400 ms, com intervalo de 200 ms entre elas. As fotos se endireitam, sobem 4 px e ganham cor em 800 ms. Todas as curvas usam --ease. Movimento reduzido, pausa global, ausência de JavaScript e modo de prévia deixam o X completo e o conteúdo legível.
 
@@ -137,8 +155,9 @@ São seis cédulas no desktop e quatro no celular, com ciclos CSS de 10 a 14 s. 
 - Alisson Segecs está no título, descrição, marca e rodapé. A marca usa o ícone de caneta do sistema.
 - E-mail, WhatsApp e redes sociais estão configurados com os dados fornecidos.
 - As fotos e os links dos cases são provisórios. “Materiais” no menu aponta para as peças já listadas em outros projetos. O bloco vazio de materiais foi removido.
-- Para hospedar, mantenha index.html, assets/cases/, assets/logos/, assets/about/, o clipe Animating_portrait_transforming_…_20261012185500.playback.mp4, portrait-poster.webp e as fontes usadas em referenciais/terrasprint-ai-design-system/.
-- serve.cjs, .preview/ e output/previews/ são ferramentas e artefatos de revisão, não dependências da página.
+- Para hospedar, mantenha em portfolio/: index.html, favicon.svg, assets/cases/, assets/logos/, assets/about/, assets/og-image.jpg, o clipe Animating_portrait_transforming_…_20261012185500.playback.mp4, portrait-poster.webp e as fontes usadas em referenciais/terrasprint-ai-design-system/.
+- SEO: canonical e og:url apontam para https://alissonsegecs.com.br/portfolio; og:image usa https://alissonsegecs.com.br/portfolio/assets/og-image.jpg (1200 × 630, captura do hero).
+- serve.cjs, .preview/ e output/previews/ são ferramentas e artefatos de revisão, não dependências da página. O .vercelignore impede que output/, serve.cjs e este README sejam publicados.
 
 ## Verificação e prévias
 

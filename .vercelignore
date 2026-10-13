@@ -1,0 +1,5 @@
+# Ferramentas e artefatos de revisão; não fazem parte do site publicado.
+# Barra inicial = somente na raiz (os README.md dentro de portfolio/ seguem publicados).
+/output
+/serve.cjs
+/README.md

@@ -3,13 +3,25 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
+// Reproduz os redirecionamentos do vercel.json (inclusive :path*).
+const redirects = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8')).redirects.map(r => ({
+  ...r, pattern: new RegExp('^' + r.source.replace(/\/:path\*$/, '(?:/(.*))?') + '$')
+}));
 const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.mp4':'video/mp4','.woff2':'font/woff2','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif'};
 http.createServer((req, res) => {
   if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405).end(); return; }
   let file;
   try {
-    const pathname = decodeURIComponent(req.url.split('?')[0]);
-    file = path.resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+    const [rawPath, query] = req.url.split('?');
+    for (const r of redirects) {
+      const match = r.pattern.exec(rawPath);
+      if (!match) continue;
+      const location = r.destination.replace('/:path*', match[1] ? '/' + match[1] : '') + (query ? '?' + query : '');
+      res.writeHead(r.permanent ? 308 : 307, {Location: location}).end(); return;
+    }
+    const pathname = decodeURIComponent(rawPath);
+    file = path.resolve(root, '.' + pathname);
+    if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
   } catch { res.writeHead(400).end(); return; }
   if (!file.startsWith(root + path.sep) || path.relative(root, file).split(path.sep).some(part => part.startsWith('.'))) {
     res.writeHead(403).end(); return;
@@ -30,4 +42,4 @@ http.createServer((req, res) => {
     const stream=fs.createReadStream(file,{start,end});
     stream.on('error',()=>res.destroy());req.on('close',()=>stream.destroy());stream.pipe(res);
   });
-}).listen(4173,'127.0.0.1',()=>console.log('Portfólio: http://127.0.0.1:4173 — Ctrl+C para encerrar'));
+}).listen(4173,'127.0.0.1',()=>console.log('Portfólio: http://127.0.0.1:4173/portfolio — Ctrl+C para encerrar'));
