@@ -731,7 +731,7 @@
     .about-composition{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:36px 32px;align-items:start;padding:32px 12px}
     .about-photo{position:relative;min-width:0}
     .about-photo--portrait{grid-column:1/8;grid-row:1;--photo-angle:-2deg}
-    .about-photo--planning{grid-column:8/-1;grid-row:2;--photo-angle:3deg;margin-top:24px}
+    .about-photo--planning{grid-column:7/-1;grid-row:1;align-self:stretch;margin:0 calc((var(--pad) + 12px) * -1) 0 0;isolation:isolate}
     .about-print{position:relative;transform:rotate(var(--photo-angle));transition:transform 800ms var(--ease)}
     .about-print img{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:right center;filter:grayscale(1) contrast(1.08);box-shadow:0 20px 50px rgba(5,5,6,.18);transition:filter 800ms var(--ease)}
     .about-photo--planning img{aspect-ratio:4/3;object-position:center}
@@ -775,10 +775,21 @@
     .about-video-window video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;transition:opacity 800ms var(--ease)}
     .about-video-window.is-video-ready video{opacity:1}
     html.js-motion .about-photo.is-in .about-video-window>.about-video-poster{animation:image-arrive 1.7s var(--ease) both}
-    .about-photo--planning .about-video-window{outline:1px solid var(--line-dark);outline-offset:6px}
-    .planning-frame-line{position:absolute;inset:0 0 auto;height:1px;z-index:2;background:linear-gradient(90deg,var(--signal),var(--mint),transparent);transform-origin:left;pointer-events:none}
-    html.js-motion .about-photo--planning.is-in .planning-frame-line{animation:planning-line-arrive 1.25s var(--ease) 180ms both}
-    @keyframes planning-line-arrive{from{opacity:0;transform:scaleX(0)}to{opacity:.7;transform:scaleX(1)}}
+    /* Dobra escura: o vídeo original preenche o espaço ao lado da trajetória. */
+    .about-photo--planning .about-print.about-video-window{position:absolute;inset:0;aspect-ratio:auto;background:var(--void);outline:none;box-shadow:none;transform:none!important;overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 12%,black 88%,transparent)}
+    .about .about-photo--planning .about-video-window .about-video-poster{height:100%;aspect-ratio:auto;object-fit:cover;filter:none!important}
+    .about-photo--planning .about-video-window video{object-fit:cover;object-position:center}
+    .about-photo--planning .about-video-caption{position:absolute;inset:auto 12px 20px;margin:0!important;justify-content:flex-end;z-index:2}
+    .about-trajectory{grid-column:1/-1;grid-row:2;position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;align-items:stretch;padding:var(--section-space) 0;background:var(--void);color:var(--ink);--signal:#a9a5ff;--muted:#a3a2a9;--line-dark:rgba(241,240,234,.16)}
+    .about-trajectory::before{content:'';position:absolute;inset:0 auto;left:50%;width:100vw;transform:translateX(-50%);z-index:-1;background:var(--void);pointer-events:none}
+    .about-trajectory .about-journey{grid-row:1;padding-top:12px}
+    .about-trajectory .about-journey>.caps{color:var(--signal)}
+    .about-trajectory .about-milestone>.caps,.about-trajectory .badge-status{color:var(--signal)}
+    .about-trajectory .about-timeline li::before{background:var(--signal)}
+    .about-trajectory .about-timeline li:last-child::before{box-shadow:0 0 10px color-mix(in srgb,var(--signal) 50%,transparent)}
+    .about-trajectory .about-video-play.button{color:var(--ink);border-color:var(--line-dark);background:var(--void-soft)}
+    .about-trajectory .about-photo--planning .about-video-caption{justify-content:flex-end}
+    @media(max-width:800px){.about-trajectory{grid-row:auto;grid-template-columns:minmax(0,1fr);gap:24px}.about-trajectory .about-photo--planning{grid-column:1;grid-row:1;margin:0;aspect-ratio:16/9}.about-trajectory .about-journey{grid-column:1;grid-row:2;padding-top:0}}
     .about .about-video-caption{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
     .about-video-play.button{min-height:36px;padding:0 12px;font-size:11px;color:var(--void);border-color:var(--line-dark)}
     .about-video-play[hidden]{display:none}
@@ -789,6 +800,7 @@
     @media(max-width:800px){.about-top{display:block;padding-bottom:24px}.about-top>.caps{max-width:none;text-align:left;margin-top:24px;padding:0}.about-composition{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 4px 32px}.about-photo--portrait,.about-story,.about-photo--planning,.about-journey{grid-column:1;grid-row:auto}.about-photo--portrait{--photo-angle:-1deg}.about-photo--planning{--photo-angle:1deg;margin-top:0}.about-story,.about-journey{padding-top:0}.about-photo figcaption{margin-top:20px}.about-education{grid-template-columns:minmax(0,1fr);gap:24px}.about-mentors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.about-mentors li+li::before{display:none}}
     @media(max-width:430px){.about-mark{right:8px;bottom:12px;width:178px;height:105px}.about-mark>.caps{font-size:12px}.about-story h3{font-size:26px}.about-photo figcaption{font-size:8px;letter-spacing:.15em}.about-milestone{gap:8px}.about-timeline li{padding-left:22px}.about-mentors{gap:24px 16px}}
     @media(prefers-reduced-motion:reduce){html.js-motion .about-cross path{stroke-dashoffset:0!important}.about-print{transform:rotate(var(--photo-angle))!important}.about-print img{filter:grayscale(1) contrast(1.08)!important}}
+    @media(max-width:800px){.about-photo--planning{grid-column:1;margin:0;aspect-ratio:16/9}}
     /* Encerramento: o mesmo campo de luz atravessa perguntas e contato. */
     .closing-field{position:relative;isolation:isolate;overflow:hidden;background:var(--void);--grid-unit:100px;--quiet-band:min(420px,42vw)}
     /* Fundo estático: evita repintar uma superfície que atravessa FAQ e contato. */
@@ -938,10 +950,19 @@
     @media(max-width:800px){
       html.js-motion .nav.nav--hero{visibility:hidden;pointer-events:none}
       .hero-motion-toggle{display:inline-flex}
-      .hero .scene{align-items:flex-start}
-      .hero .hero-inner{padding-top:clamp(44px,8svh,72px)}
+      .hero .scene{height:auto;min-height:calc(100svh - 88px);flex-direction:column;align-items:flex-start;padding-bottom:76px}
+      .hero .hero-inner{padding-top:clamp(32px,5svh,48px);padding-bottom:0}
+      .hero .hero-card.glass-card{position:relative;left:auto;right:auto;bottom:auto;width:calc(100% - var(--pad)*2);margin:22px var(--pad) 0}
+      .hero .hero-bottom{bottom:14px}
+      body:has(.nav.nav--hero) .whatsapp-float.button{bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+      .results{padding-top:8px}
+      .results .section-top{margin-bottom:16px}
       .hero-visual::after{background:linear-gradient(180deg,#05050666 0%,#05050655 24%,#050506a6 48%,var(--void) 72%),linear-gradient(90deg,#05050666,transparent 90%)}
     }
+    @media(max-width:430px){.hero .hero__copy h1{font-size:clamp(56px,16vw,68px)}}
+    @media(max-width:800px) and (max-height:740px){.hero .hero__copy h1{margin:16px 0 14px}.hero .hero-card.glass-card{margin-top:18px;padding-block:12px}}
+    @media(max-width:430px) and (max-height:740px){.hero .hero-inner{padding-top:28px}.hero .hero__copy h1{font-size:clamp(50px,15vw,62px)}.hero .hero-card strong{font-size:20px}.hero .hero-card .carousel-window,.hero .hero-card .carousel-slide{height:48px}.hero .hero-card .carousel-track{height:144px}}
+    @media(max-width:350px) and (max-height:740px){.hero .hero-inner{padding-top:22px}.hero .hero__copy h1{font-size:48px}.hero .hero__lead{font-size:12px}.hero .hero-card.glass-card{padding-block:10px}}
   </style>
 </head>
 <body id="top">
@@ -1399,26 +1420,27 @@
             <p>Então comecei a cuidar do resto também.</p>
             <p>Hoje são mais de 40 lançamentos geridos, pagos e clássicos, em B2B e B2C, com um time de prestadores que trabalha no mesmo método.</p>
           </div>
-          <figure class="about-photo about-photo--planning" data-rise style="--delay:90ms">
-            <div class="about-print about-video-window">
-              <img class="about-video-poster" src="assets/about/timeline-video-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Livro se transformando em uma linha do tempo e um cronograma, ao lado de Alisson">
-              <video id="planning-video" muted loop playsinline preload="none" width="1280" height="720" aria-label="Livro e cronograma em movimento" aria-describedby="planning-motion-description">
-                <source data-src="assets/about/Animation_from_book_to_timeline_20261013171036.mp4" type="video/mp4">
-              </video>
-              <span class="planning-frame-line" aria-hidden="true"></span>
+          <div class="about-trajectory">
+            <figure class="about-photo about-photo--planning" data-rise style="--delay:90ms">
+              <div class="about-print about-video-window">
+                <img class="about-video-poster" src="assets/about/timeline-video-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Livro se transformando em uma linha do tempo e um cronograma, ao lado de Alisson">
+                <video id="planning-video" muted loop playsinline preload="none" width="1280" height="720" aria-label="Livro e cronograma em movimento" aria-describedby="planning-motion-description">
+                  <source data-src="assets/about/Animation_from_book_to_timeline_20261013171036.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="sr-only" id="planning-motion-description">Um livro se transforma em uma linha do tempo e em um cronograma. Animação sem áudio, controlada pela pausa global.</p>
+              <figcaption class="caps about-video-caption"><span class="sr-only">02 · ONDE O PLANO VIRA CRONOGRAMA</span><button class="button button-ghost button-sm about-video-play" type="button" data-about-video-play hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Reproduzir vídeo</button></figcaption>
+            </figure>
+            <div class="about-journey">
+              <p class="caps" data-rise>TRAJETÓRIA</p>
+              <ol class="about-timeline">
+                <li data-rise style="--delay:90ms"><div class="about-milestone"><span class="caps">01 ·</span><h4>Agências</h4></div><p>Comecei trabalhando como copywriter para agências.</p></li>
+                <li data-rise style="--delay:180ms"><div class="about-milestone"><span class="caps">02 ·</span><h4>Dani Martins</h4></div><p>Participei do início do que viria a ser o Prosperus Club, construindo a base de comunicação e vendas.</p></li>
+                <li data-rise style="--delay:270ms"><div class="about-milestone"><span class="caps">03 ·</span><h4>Marcia Macedo</h4></div><p>Mais de 8 lançamentos juntos, como copywriter, gestor de projetos e coprodutor. Me tornei braço direito estratégico e operacional do projeto.</p></li>
+                <li data-rise style="--delay:360ms"><div class="about-milestone"><span class="caps">04 ·</span><h4>Receita Previsível</h4></div><p>Entrei como copywriter de todo o ecossistema, da produção à estratégia de conteúdo. Evoluí muito como profissional.</p></li>
+                <li data-rise style="--delay:450ms"><div class="about-milestone"><span class="caps">05 ·</span><h4>Hoje</h4><span class="badge badge-status"><span class="status-dot" aria-hidden="true"></span>Em movimento</span></div><p>Nos últimos 12 meses, foram mais de 20 lançamentos entre clássicos e pagos, como gestor de projetos e, em alguns deles, também como copywriter.</p></li>
+              </ol>
             </div>
-            <p class="sr-only" id="planning-motion-description">Um livro se transforma em uma linha do tempo e em um cronograma. Animação sem áudio, controlada pela pausa global.</p>
-            <figcaption class="caps about-video-caption"><span>02 · ONDE O PLANO VIRA CRONOGRAMA</span><button class="button button-ghost button-sm about-video-play" type="button" data-about-video-play hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Reproduzir vídeo</button></figcaption>
-          </figure>
-          <div class="about-journey">
-            <p class="caps" data-rise>TRAJETÓRIA</p>
-            <ol class="about-timeline">
-              <li data-rise style="--delay:90ms"><div class="about-milestone"><span class="caps">01 ·</span><h4>Agências</h4></div><p>Comecei trabalhando como copywriter para agências.</p></li>
-              <li data-rise style="--delay:180ms"><div class="about-milestone"><span class="caps">02 ·</span><h4>Dani Martins</h4></div><p>Participei do início do que viria a ser o Prosperus Club, construindo a base de comunicação e vendas.</p></li>
-              <li data-rise style="--delay:270ms"><div class="about-milestone"><span class="caps">03 ·</span><h4>Marcia Macedo</h4></div><p>Mais de 8 lançamentos juntos, como copywriter, gestor de projetos e coprodutor. Me tornei braço direito estratégico e operacional do projeto.</p></li>
-              <li data-rise style="--delay:360ms"><div class="about-milestone"><span class="caps">04 ·</span><h4>Receita Previsível</h4></div><p>Entrei como copywriter de todo o ecossistema, da produção à estratégia de conteúdo. Evoluí muito como profissional.</p></li>
-              <li data-rise style="--delay:450ms"><div class="about-milestone"><span class="caps">05 ·</span><h4>Hoje</h4><span class="badge badge-status"><span class="status-dot" aria-hidden="true"></span>Em movimento</span></div><p>Nos últimos 12 meses, foram mais de 20 lançamentos entre clássicos e pagos, como gestor de projetos e, em alguns deles, também como copywriter.</p></li>
-            </ol>
           </div>
         </div>
         <div class="about-education" data-rise>
