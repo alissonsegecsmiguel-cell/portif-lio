@@ -20,7 +20,7 @@
       --font-primary:Arial,Helvetica,sans-serif;--font-ui:Manrope,Arial,sans-serif;
       --font-editorial:Fraunces,Georgia,'Times New Roman',serif;
       --font-mono:'Courier New',Courier,monospace;--ease:cubic-bezier(.16,1,.3,1);
-      --pad:clamp(22px,4.6vw,80px);--radius:20px;--section-space:clamp(80px,9vw,144px);
+      --pad:clamp(22px,4.6vw,80px);--radius:20px;--section-space:clamp(24px,2.5vw,36px);
       --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;
       --space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-36:144px;
     }
@@ -99,9 +99,10 @@
     .edition{font-size:9px;color:var(--muted);text-align:right;white-space:nowrap;line-height:1.8}.edition b{color:var(--ink);font-weight:400;font-variant-numeric:tabular-nums}
     .panel-progress{position:absolute;bottom:0;left:0;z-index:7;height:2px;width:100%;background:var(--signal);transform:scaleX(0);transform-origin:left}
     .static-story{display:none}.is-static .static-story{display:block;font-size:11px;color:var(--muted);margin-top:12px}.is-static .hero-card .story p{display:none}
-    .results{position:relative;isolation:isolate;overflow:hidden;padding:var(--section-space) var(--pad);border-top:1px solid var(--line);background:var(--void)}
+    .results{position:relative;isolation:isolate;overflow:hidden;padding:24px var(--pad) 28px;border-top:0;background:var(--void)}
+    .results .section-top{padding-bottom:14px;margin-bottom:20px;font-size:9px}
     .results::before{content:'';position:absolute;z-index:-1;top:8%;bottom:8%;left:43%;width:240px;background:radial-gradient(ellipse,#6c63ff1a,transparent 65%);animation:bloom 12s var(--ease) infinite alternate;pointer-events:none}
-    .results::after{content:'';position:absolute;z-index:-1;top:15%;bottom:15%;left:49%;width:1px;background:linear-gradient(transparent,#a9a5ff70,transparent);box-shadow:0 0 36px 6px #6c63ff33;pointer-events:none}
+    .results::after{display:none}
     .results-layout{display:grid;grid-template-columns:1.08fr 1fr;align-items:center;gap:clamp(48px,6vw,96px)}
     .results-monitor{position:relative;min-width:0;padding:32px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#a9a5ff08,transparent 60%),#0c0c10;box-shadow:inset 0 1px 0 #ffffff0d,0 20px 60px #0003}
     @supports(backdrop-filter:blur(16px)){.results-monitor{background:linear-gradient(145deg,#a9a5ff08,transparent 60%),rgba(15,15,20,.75);backdrop-filter:blur(16px)}}
@@ -151,20 +152,13 @@
     .work-meta h3{font:500 22px/1.2 var(--font-ui);letter-spacing:-.025em;margin:10px 0 8px}.work-meta p{font-size:12px;color:var(--muted)}
     .badge{display:inline-flex;align-items:center;padding:5px 9px;border:1px solid #a9a5ff33;border-radius:100px;background:#6c63ff0c;color:var(--signal);font:500 9px/1.4 var(--font-ui)}
     .work-arrow{width:48px;min-height:48px;padding:0;flex:none}
-    .contact{background:var(--paper);color:var(--void);padding:var(--section-space) var(--pad);--line:rgba(5,5,6,.16);--signal:#5047c9}
-    .contact .section-top{color:#58575f;margin-bottom:32px}.contact .section-top span:first-child{color:#5047c9}
-    .contact-inner{display:flex;align-items:end;justify-content:space-between;gap:48px}
-    .contact h2{font:300 clamp(42px,5vw,72px)/1.08 var(--font-editorial);letter-spacing:-.045em;max-width:14ch}
-    .contact p{font-size:13px;color:#58575f;margin-top:24px;max-width:370px}
-    .contact-link{display:inline-flex;align-items:center;gap:24px;padding:16px 0;border-bottom:1px solid #05050666;font-size:18px;letter-spacing:-.03em;overflow-wrap:anywhere}
-    .contact-link:hover{color:#5047c9}.contact-link .icon{width:24px;height:24px}
-    .portfolio-section{padding:clamp(64px,7vw,112px) var(--pad);border-top:1px solid var(--line);background:var(--void)}
+    .portfolio-section{padding:var(--section-space) var(--pad);border-top:1px solid var(--line);background:var(--void)}
     .portfolio-section .section-head{margin-bottom:0}.portfolio-section .section-title{font-size:clamp(40px,4vw,60px)}
     .placeholder-list{list-style:none;padding:0;margin:0;display:grid;gap:0}
     .placeholder-list li{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
     .placeholder-list li:first-child{border-top:1px solid var(--line)}.placeholder-list .caps{font-size:9px;color:var(--signal)}
     .materials-note{margin-top:16px;font-size:12px;color:var(--muted)}
-    .footer{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px var(--pad);color:var(--muted);font-size:10px;border-top:1px solid var(--line)}
+    .footer{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:20px var(--pad);color:var(--muted);font-size:10px;border-top:1px solid var(--line)}
     .footer a{min-height:40px;display:inline-flex;align-items:center;gap:10px}.footer .icon{width:13px;height:13px}
     /* Motion da referência: line-rise, rise, word reveal, bloom, pulse e cue.
        Entradas CSS funcionam mesmo se o CDN estiver indisponível. */
@@ -186,7 +180,7 @@
     @keyframes signal-breathe{0%,100%{transform:scaleX(.65);opacity:.5}50%{transform:scaleX(1);opacity:1}}
     @keyframes status-pulse{0%,100%{opacity:1;box-shadow:0 0 10px currentColor}50%{opacity:.5;box-shadow:0 0 3px currentColor}}
     @keyframes scroll-cue{0%,100%{transform:translateY(0);opacity:.65}50%{transform:translateY(4px);opacity:1}}
-    @keyframes grid-drift{to{background-position:48px 48px}}
+    @keyframes grid-drift{to{background-position:var(--grid-unit,48px) var(--grid-unit,48px)}}
     html.motion-suspended *,html.motion-suspended *::before,html.motion-suspended *::after,
     .motion-offscreen,.motion-offscreen::before,.motion-offscreen::after,.motion-offscreen *,.motion-offscreen *::before,.motion-offscreen *::after{animation-play-state:paused!important}
     html.motion-reduced *,html.motion-reduced *::before,html.motion-reduced *::after{animation:none!important;transition:none!important}
@@ -275,10 +269,28 @@
     .hero-card .carousel-slide{height:132px;padding:0;display:flex;flex-direction:column;justify-content:center}
     .hero-card:hover .carousel-track,.hero-card:focus-within .carousel-track{animation-play-state:paused}
     @keyframes vertical-scroll{0%,25%{transform:translateY(0)}33.33%,58.33%{transform:translateY(-33.33%)}66.66%,91.66%{transform:translateY(-66.66%)}100%{transform:translateY(0)}}
-    .signal-strip{position:relative;z-index:6;height:52px;overflow:hidden;display:flex;align-items:center;background:var(--void-soft);color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .signal-strip{position:relative;z-index:6;height:100px;overflow:hidden;display:flex;align-items:center;background:var(--void-soft);color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .signal-strip__track{display:flex;width:max-content;flex-shrink:0;font:400 10px/1.5 var(--font-mono);letter-spacing:.15em;text-transform:uppercase;animation:ticker 32s var(--ease) infinite}
-    .ticker-group{display:flex;align-items:center;gap:32px;padding-inline:16px}.ticker-group span{white-space:nowrap}.ticker-group span::after{content:'·';margin-left:32px;color:var(--signal)}
+    .ticker-group{display:flex;align-items:center;gap:36px;padding-inline:18px}
+    .expert-link{display:flex;align-items:center;gap:14px;flex-shrink:0;padding:10px 6px;border-radius:var(--radius);color:var(--ink);text-decoration:none;transition:color .3s var(--ease),background .3s var(--ease)}
+    .expert-link img{display:block;width:48px;height:48px;flex-shrink:0;object-fit:cover;border:1px solid var(--line);border-radius:50%;transition:border-color .3s var(--ease)}
+    .expert-copy{display:flex;flex-direction:column;gap:5px;white-space:nowrap}
+    .expert-name{font:400 10px/1.5 var(--font-mono);letter-spacing:.15em;text-transform:uppercase}
+    .expert-handle{font:400 11px/1.5 var(--font-ui);letter-spacing:0;text-transform:none;color:var(--muted)}
+    .expert-link:hover,.expert-link:focus-visible{color:var(--signal);background:var(--void)}
+    .expert-link:hover img,.expert-link:focus-visible img{border-color:var(--signal)}
     .signal-strip:hover .signal-strip__track,.signal-strip:focus-within .signal-strip__track{animation-play-state:paused}
+    /* Keyboard navigation presents one static, horizontally scrollable group. */
+    .signal-strip:has(.ticker-group:not([aria-hidden]) .expert-link:focus){overflow-x:auto}
+    .signal-strip:has(.ticker-group:not([aria-hidden]) .expert-link:focus) .signal-strip__track{animation:none;transform:none}
+    .signal-strip:has(.ticker-group:not([aria-hidden]) .expert-link:focus) .ticker-group[aria-hidden]{display:none}
+    html.motion-reduced .signal-strip{height:auto;padding:14px var(--pad)}
+    html.motion-reduced .signal-strip__track{width:100%;transform:none}
+    html.motion-reduced .signal-strip .ticker-group{width:100%;flex-wrap:wrap;gap:8px 24px;padding:0}
+    html.motion-reduced .signal-strip .ticker-group[aria-hidden]{display:none}
+    @media(max-width:800px){.signal-strip{height:88px}.ticker-group{gap:24px;padding-inline:12px}.expert-link{gap:10px}.expert-link img{width:44px;height:44px}}
+    @media(max-width:430px){.expert-name{font-size:9px}.expert-handle{font-size:10px}.expert-link img{width:40px;height:40px}}
+    @media(prefers-reduced-motion:reduce){.signal-strip{height:auto;padding:14px var(--pad)}.signal-strip__track{width:100%;transform:none!important}.signal-strip .ticker-group{width:100%;flex-wrap:wrap;gap:8px 24px;padding:0}.signal-strip .ticker-group[aria-hidden]{display:none}}
     @keyframes ticker{to{transform:translateX(-50%)}}
     .hero .scroll-cue{font:400 10px/1.5 var(--font-mono);letter-spacing:.15em;text-transform:uppercase}
     .hero__coordinates{font:400 10px/1.8 var(--font-mono);letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}.hero__coordinates b{font-weight:400;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -298,14 +310,15 @@
 
     /* Cases editoriais: proporções da referência e superfícies do sistema. */
     .cases.projects{padding:0;background:var(--void);border-top:1px solid var(--line)}
-    .cases-intro{padding:var(--section-space) var(--pad) 64px}
-    .cases .ds-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:38px;color:var(--signal)}
-    .cases .ds-top span:last-child{color:var(--muted)}
-    .cases .ds-head{display:grid;grid-template-columns:1.2fr 1fr;align-items:end;gap:60px}
-    .cases .ds-head h2,.case-panel h3{font:500 clamp(36px,4vw,60px)/1.02 var(--font-primary);letter-spacing:-.065em}
-    .cases .ds-head em,.case-panel h3 em{display:block;font:300 1.04em/1 var(--font-editorial);letter-spacing:-.065em;font-style:normal;color:var(--signal)}
-    .cases .ds-head p{font:400 14px/1.8 var(--font-ui);max-width:430px;color:var(--muted)}
-    .cases .ds-head .cases-note{font-size:12px;margin-top:14px}
+    .cases-intro{padding:var(--section-space) var(--pad) 32px}
+    .results+.cases .cases-intro{padding-top:28px}
+    @media(max-width:430px){.results+.cases .cases-intro{padding-top:22px}}
+    .cases-heading{padding-bottom:18px;border-bottom:1px solid var(--line)}
+    .cases-heading h2{display:flex;align-items:baseline;gap:.14em;margin:0;color:var(--ink);font:500 clamp(76px,8.5vw,136px)/1 var(--font-primary);letter-spacing:-.075em;white-space:nowrap}
+    .cases-heading .font-fraunces{font-size:1.04em;font-weight:300;letter-spacing:-.065em;color:var(--signal)}
+    @media(max-width:800px){.cases-heading h2{font-size:clamp(52px,14vw,94px)}}
+    .case-panel h3{font:500 clamp(36px,4vw,60px)/1.02 var(--font-primary);letter-spacing:-.065em}
+    .case-panel h3 em{display:block;font:300 1.04em/1 var(--font-editorial);letter-spacing:-.065em;font-style:normal;color:var(--signal)}
     .case-block{display:grid;grid-template-columns:1fr 1fr;min-height:420px;isolation:isolate}
     .case-block--dark{grid-template-columns:52% 48%;min-height:520px}
     .case-panel{display:flex;align-items:center;min-width:0;padding:56px var(--pad);background:var(--void-soft);color:var(--ink)}
@@ -329,6 +342,15 @@
     .case-link[aria-disabled=true]{cursor:default}
     .case-links{margin-top:28px;border-top:1px solid var(--line)}
     .case-links .case-link{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}
+    .case-instagram{display:grid;grid-template-columns:56px minmax(0,1fr) 24px;align-items:center;gap:16px;margin-top:24px;padding:18px 0;border-block:1px solid var(--line);color:inherit;text-decoration:none;transition:color .4s var(--ease),border-color .4s var(--ease)}
+    .case-instagram>img{display:block;width:56px;height:56px;border:1px solid var(--line);border-radius:50%;object-fit:cover;filter:grayscale(1)}
+    .case-instagram-copy{display:grid;gap:6px;min-width:0}
+    .case-instagram-copy strong{font:500 clamp(32px,3vw,44px)/1 var(--font-primary);letter-spacing:-.065em}
+    .case-instagram-copy small{font:400 12px/1.5 var(--font-ui);color:var(--muted);overflow-wrap:anywhere}
+    .case-instagram>.icon{width:24px;height:24px;color:var(--signal);transition:transform .4s var(--ease)}
+    .case-instagram:hover{color:var(--signal);border-color:var(--signal)}
+    .case-instagram:hover>.icon{transform:translate(2px,-2px)}
+    @media(max-width:430px){.case-instagram{grid-template-columns:44px minmax(0,1fr) 20px;gap:12px;padding-block:16px}.case-instagram>img{width:44px;height:44px}.case-instagram>.icon{width:20px;height:20px}}
     .case-highlights{display:flex;gap:42px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
     .case-highlights strong{display:block;font:500 40px/1 var(--font-primary);letter-spacing:-.065em}
     .case-highlights .caps{display:block;font-size:9px;color:var(--mint);margin-top:10px}
@@ -338,34 +360,105 @@
     .case-deliverable p{font:500 12px/1.5 var(--font-ui);color:var(--muted);margin-bottom:4px}
     .case-media{position:relative;min-width:0;min-height:100%;overflow:hidden;background:var(--void-soft);margin:0}
     .case-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:transform 1200ms var(--ease)}
-    /* Close-up da mesa: preserva os headphones e o teclado, excluindo os logos da tela. */
-    .case-media--b2b img{top:auto;bottom:0;height:225%;object-position:30% 100%}
     .case-media::after{content:'';position:absolute;inset:0;pointer-events:none;border:1px solid var(--line)}
     .case-media--split{display:grid;grid-template-columns:1fr 1fr}
     .case-media--split img{position:relative;inset:auto;min-width:0}
     .case-media--split img+img{border-left:1px solid var(--line)}
     @media(hover:hover){.case-block:hover .case-media img{transform:scale(1.04)}}
-    .cases-outro{padding:64px var(--pad) var(--section-space);background:var(--void)}
-    .case-other{display:flex;align-items:baseline;gap:28px;border-bottom:1px solid var(--line);padding-bottom:28px}
+    .cases-outro{padding:32px var(--pad) var(--section-space);background:var(--void)}
+    .case-other{display:flex;align-items:baseline;gap:28px;border-bottom:1px solid var(--line);padding-bottom:20px}
     .case-other>p{flex-shrink:0}
     .case-other .case-copy-group{gap:10px 16px}
     .case-other .case-copy-group>span{color:var(--muted)}
     html.motion-paused .case-media img{transform:none!important}
-    @media(max-width:1100px){.cases .ds-head{gap:40px}.case-panel{padding-block:44px}.case-eyebrow{font-size:9px}.case-specs th{width:40%}.case-other{display:block}.case-other>p{margin-bottom:14px}}
-    @media(max-width:800px){.cases-intro{padding-bottom:48px}.cases .ds-head{grid-template-columns:1fr;gap:24px}.case-block,.case-block--dark{grid-template-columns:1fr;min-height:0}.case-block .case-media{order:-1;min-height:0;height:280px}.case-panel{padding:40px var(--pad)}.case-content{max-width:none}.case-specs .case-copy-group{justify-content:flex-start}.case-specs td{text-align:left}.case-specs th{width:35%}.cases-outro{padding-top:48px}}
-    @media(max-width:430px){.cases .ds-top{font-size:9px;gap:16px;margin-bottom:28px}.case-panel{padding-block:36px}.case-eyebrow{font-size:9px;margin-bottom:18px}.case-panel h3{margin-bottom:18px}.case-panel h3>span{max-width:15ch}.case-specs th,.case-specs td{display:block;width:100%;padding:10px 0}.case-specs td{border-top:0;padding-top:0}.case-specs tr:last-child th{border-bottom:0}.case-highlights{gap:36px}.case-other .case-copy-group{gap:8px 12px}.case-other .case-copy-group>span{display:none}}
+    @media(max-width:1100px){.case-panel{padding-block:44px}.case-eyebrow{font-size:9px}.case-specs th{width:40%}.case-other{display:block}.case-other>p{margin-bottom:14px}}
+    @media(max-width:800px){.cases-intro{padding-bottom:32px}.case-block,.case-block--dark{grid-template-columns:1fr;min-height:0}.case-block .case-media{order:-1;min-height:0;height:280px}.case-panel{padding:40px var(--pad)}.case-content{max-width:none}.case-specs .case-copy-group{justify-content:flex-start}.case-specs td{text-align:left}.case-specs th{width:35%}.cases-outro{padding-top:28px}}
+    @media(max-width:430px){.case-panel{padding-block:36px}.case-eyebrow{font-size:9px;margin-bottom:18px}.case-panel h3{margin-bottom:18px}.case-panel h3>span{max-width:15ch}.case-specs th,.case-specs td{display:block;width:100%;padding:10px 0}.case-specs td{border-top:0;padding-top:0}.case-specs tr:last-child th{border-bottom:0}.case-highlights{gap:36px}.case-other .case-copy-group{gap:8px 12px}.case-other .case-copy-group>span{display:none}}
     @media(prefers-reduced-motion:reduce){.case-media img{transform:none!important;transition:none!important}}
+
+    /* Retrato real: escala editorial e image-arrive do design system. */
+    .case-block--marcia{grid-template-columns:48% 52%;min-height:clamp(500px,44vw,680px)}
+    .case-media--portrait{background:var(--paper)}
+    .case-narrative{display:grid;gap:14px}
+    .case-block--marcia .case-description,.case-block--rp .case-description{max-width:58ch}
+    .case-description strong{font-weight:600;color:inherit}
+    .case-copy-note{margin-top:12px;max-width:58ch;color:var(--muted);font:400 12px/1.7 var(--font-ui)}
+    .case-press{margin-top:24px}
+    .case-press-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;color:var(--muted)}
+    .case-press-head .badge{font-family:var(--font-mono);letter-spacing:.15em;text-transform:uppercase}
+    .case-press-head .caps{font-size:9px}
+    .case-press .case-link{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;border-top:1px solid var(--line)}
+    .case-press .case-link:last-child{border-bottom:1px solid var(--line)}
+    .case-press-copy{display:grid;gap:6px;min-width:0}
+    .case-press-copy strong{font:500 14px/1.5 var(--font-ui);color:var(--ink)}
+    .case-press-copy small{font:400 11px/1.5 var(--font-ui);color:var(--muted)}
+    .case-press .case-link[href]:hover .case-press-copy strong{color:var(--signal)}
+    .case-press .case-link>.icon{flex-shrink:0}
+    .case-portrait{position:absolute;inset:0}
+    .case-media--portrait img{object-position:50% 0%;filter:grayscale(1) contrast(1.1)}
+    html.js-motion .case-media--portrait.is-in .case-portrait{animation:image-arrive 1.7s var(--ease) 90ms both}
+    html.motion-paused .case-portrait,html.motion-reduced .case-portrait,html.preview-render .case-portrait{animation:none!important;opacity:1!important;transform:none!important}
+    html.motion-paused .case-media--portrait img,html.motion-reduced .case-media--portrait img{transform:none!important;transition:none!important}
+    @media(max-width:800px){.case-block--marcia{grid-template-columns:1fr;min-height:0}.case-block--marcia .case-media--portrait{height:auto;aspect-ratio:4/3}}
+    @media(max-width:430px){.case-block--marcia .case-media--portrait{aspect-ratio:1}}
+    @media(prefers-reduced-motion:reduce){.case-portrait{animation:none!important;opacity:1!important;transform:none!important}}
+
+    /* Sanduba: retrato inteiro sobre a superfície editorial do sistema. */
+    .case-media--sanduba{background:var(--paper)}
+    .case-media--sanduba img{object-fit:contain;object-position:center;padding:64px 36px 76px;mix-blend-mode:multiply}
+    .case-portrait-caption{position:absolute;z-index:1;left:28px;right:28px;bottom:24px;display:flex;justify-content:space-between;gap:16px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:9px}
+    @media(max-width:800px){.case-block .case-media--sanduba{height:440px}.case-media--sanduba img{padding:36px 28px 76px}}
+    @media(max-width:430px){.case-block .case-media--sanduba{height:360px}.case-media--sanduba img{padding:28px 22px 68px}.case-portrait-caption{left:22px;right:22px;font-size:8px}}
+
+    .case-block--angelica{grid-template-columns:48% 52%;min-height:500px}
+    .case-media--angelica.surface-paper,.case-media--andre.surface-paper{--muted:#58575f;--line:var(--line-dark)}
+    .case-media--angelica img{object-fit:contain;object-position:center;padding:44px 36px 76px}
+    @media(max-width:800px){.case-block--angelica{grid-template-columns:1fr;min-height:0}.case-block .case-media--angelica{height:440px}.case-media--angelica img{padding:36px 28px 76px}}
+    @media(max-width:430px){.case-block .case-media--angelica{height:360px}.case-media--angelica img{padding:28px 22px 68px}}
+
+    .case-media--andre img{object-fit:contain;object-position:center;padding:44px 36px 76px}
+    .case-block--andre .case-narrative .case-description{max-width:58ch}
+    .case-block--andre .case-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,28px)}
+    .case-block--andre .case-highlights .caps{color:var(--signal)}
+    @media(max-width:800px){.case-block .case-media--andre{height:440px}.case-media--andre img{padding:36px 28px 76px}}
+    @media(max-width:430px){.case-block .case-media--andre{height:360px}.case-media--andre img{padding:28px 22px 68px}}
+
+    /* Receita Previsível: artefato editorial, vidro e movimento do sistema. */
+    .case-media--book{isolation:isolate;background:var(--void)}
+    .rp-stage{position:absolute;inset:0;display:grid;place-items:center;padding:64px 28px}
+    .rp-stage::before{content:'';position:absolute;inset:10% 5%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse,color-mix(in srgb,var(--electric) 12%,transparent),transparent 68%);animation:bloom 12s var(--ease) infinite alternate}
+    .rp-grid{--grid-unit:100px;position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:var(--grid-unit) var(--grid-unit);mask-image:radial-gradient(ellipse,black,transparent 75%);animation:grid-drift 28s var(--ease) infinite}
+    .rp-hud{position:absolute;top:24px;left:28px;right:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--signal);font-size:9px}
+    .rp-hud .icon{width:18px;height:18px}
+    .rp-book-slot{position:relative;width:min(48%,280px);transform:rotate(-4deg);transition:transform .4s var(--ease)}
+    .rp-book.glass-card{position:relative;overflow:hidden;padding:8px;border:1px solid var(--line);border-radius:16px;background:var(--void-soft);box-shadow:0 4px 30px rgba(0,0,0,.1);transition:border-color .4s var(--ease)}
+    .case-media--book .rp-book img{position:relative;inset:auto;display:block;width:100%;height:auto;object-fit:contain;border-radius:8px;filter:grayscale(1) contrast(1.1);transform:none!important;transition:none}
+    html.js-motion .case-media--book.is-in .rp-book-reveal{animation:image-arrive 1.7s var(--ease) 90ms both}
+    html.js-motion .case-media--book.is-in .rp-book{animation:tile-drift 6s var(--ease) infinite}
+    @keyframes tile-drift{0%,100%{transform:translateY(8px)}50%{transform:translateY(-12px)}}
+    .rp-caption{position:absolute;left:28px;right:28px;bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:9px}
+    .rp-caption span:last-child{color:var(--signal)}
+    .rp-stage>.signal-line{position:absolute;display:block!important;left:28px;right:28px;bottom:52px;height:1px;margin:0;transform-origin:left;transition:transform 1.25s var(--ease)}
+    html.js-motion .case-media--book:not(.is-in) .signal-line{transform:scaleX(0)}
+    @media(hover:hover) and (pointer:fine){html.js-motion .case-media--book.is-in:hover .rp-book{animation-play-state:paused}.case-media--book:hover .rp-book-slot{transform:rotate(-1deg)}.case-media--book:hover .rp-book.glass-card{border-color:var(--signal)}}
+    @media(max-width:1100px){.rp-book-slot{width:min(62%,260px)}}
+    @media(max-width:800px){.case-block .case-media--book{height:480px}.rp-book-slot{width:260px;max-width:calc(100% - 56px)}}
+    @media(max-width:430px){.case-block .case-media--book{height:440px}.rp-stage{padding:56px 20px}.rp-book-slot{width:224px;max-width:calc(100% - 32px)}.rp-hud,.rp-caption{left:20px;right:20px;font-size:8px}.rp-stage>.signal-line{left:20px;right:20px}}
+    html.motion-paused .rp-book,html.motion-paused .rp-book-reveal,html.motion-reduced .rp-book,html.motion-reduced .rp-book-reveal,html.preview-render .rp-book,html.preview-render .rp-book-reveal{animation:none!important;opacity:1!important;transform:none!important}
+    html.motion-paused .rp-book-slot,html.motion-reduced .rp-book-slot{transform:rotate(-4deg)!important;transition:none!important}
+    html.motion-paused .rp-stage>.signal-line,html.motion-reduced .rp-stage>.signal-line,html.preview-render .rp-stage>.signal-line{transform:none!important}
+    @media(prefers-reduced-motion:reduce){.rp-book,.rp-book-reveal{animation:none!important;opacity:1!important;transform:none!important}.rp-book-slot{transform:rotate(-4deg)!important;transition:none!important}.rp-stage>.signal-line{transform:none!important}}
 
     /* Habilidades: os campos, materiais e movimentos vêm do design system. */
     .skills.ds-group{position:relative;isolation:isolate;overflow:hidden;padding:var(--section-space) var(--pad);border-bottom:1px solid var(--line);background:var(--void)}
     .skills.ds-group::before{content:'';position:absolute;width:720px;height:720px;right:-320px;top:-120px;background:radial-gradient(ellipse,#6c63ff0c,transparent 68%);animation:bloom 14s var(--ease) infinite alternate;pointer-events:none;z-index:-1}
     .skills.ds-group::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.3;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:100px 100px;mask-image:linear-gradient(90deg,transparent,black);animation:grid-drift 28s var(--ease) infinite}
     .skills .section-inner{max-width:1440px;margin:auto}
-    .skills .ds-top{position:relative;display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid transparent;margin-bottom:38px;color:var(--signal)}
+    .skills .ds-top{position:relative;display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid transparent;margin-bottom:24px;color:var(--signal)}
     .skills .ds-top::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--line);transform-origin:left;transition:transform 1.25s var(--ease)}
     html.js-motion .skills .ds-top:not(.is-in)::after{transform:scaleX(0)}
     .skills .ds-top span:last-child{color:var(--muted)}
-    .skills .ds-head{display:grid;grid-template-columns:1.2fr 1fr;align-items:end;gap:60px;margin-bottom:50px}
+    .skills .ds-head{display:grid;grid-template-columns:1.2fr 1fr;align-items:end;gap:60px;margin-bottom:32px}
     .skills .ds-head h2{font:500 clamp(44px,5vw,76px)/1.02 var(--font-primary);letter-spacing:-.065em}
     .skills .ds-head em{font:300 1.04em/1 var(--font-editorial);letter-spacing:-.06em;font-style:normal;color:var(--signal)}
     .skills .ds-head p{max-width:430px;font:400 14px/1.8 var(--font-ui);color:var(--muted)}
@@ -376,6 +469,7 @@
     html.js-motion .skills-title.is-in .line-mask>span{animation:line-rise 1.25s var(--ease) both;animation-delay:var(--delay,0ms)}
     .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
     .skill-reveal{min-width:0;display:flex}
+    .skills-grid>.skill-reveal:last-child{grid-column:1/-1}
     .skill-card{--px:50%;--py:50%;--border-gradient:radial-gradient(400px circle at var(--px) var(--py),color-mix(in srgb,var(--signal) 50%,transparent),transparent 60%);position:relative;isolation:isolate;overflow:hidden;width:100%;min-width:0;min-height:148px;display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.02);backdrop-filter:blur(8px);box-shadow:0 4px 30px rgba(0,0,0,.1);color:var(--ink);cursor:default;transition:transform 400ms var(--ease),border-color 400ms var(--ease)}
     .skill-card::before,.skill-card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 400ms var(--ease)}
     .skill-card::before{z-index:0;background:radial-gradient(400px circle at var(--px) var(--py),rgba(108,99,255,.12),transparent 60%)}
@@ -424,14 +518,40 @@
     .results-layout--summary .monitor-footer{margin-top:0}
     @media(max-width:1100px){.skills .ds-head{gap:40px}.skill-card{padding:22px;gap:14px}.skill-copy{padding-right:16px}}
     @media(max-width:800px){.skills .ds-head{grid-template-columns:1fr;gap:24px;margin-bottom:32px}.skills-grid{grid-template-columns:1fr}.skill-card{min-height:132px}.results-layout--summary .results-monitor{grid-template-columns:1fr}.results-layout--summary .metric,.results-layout--summary .metric:nth-of-type(2),.results-layout--summary .metric:nth-last-of-type(2){padding:24px 0}.results-layout--summary .metric+.metric{border-left:0;border-top:1px solid var(--line)}.results-layout--summary .metric-top{grid-template-columns:132px 1fr;gap:24px}}
-    @media(max-width:430px){.skills .ds-top{font-size:9px;gap:16px;margin-bottom:28px}.skills .ds-top span:last-child{max-width:22ch;text-align:right}.skills .ds-head h2{font-size:44px}.skill-card{padding:20px;grid-template-columns:40px minmax(0,1fr);gap:14px}.skill-icon{width:40px;height:40px}.skill-index{display:none}.skill-copy{padding-right:0}.skill-card--cta .skill-copy{padding-right:22px}.skill-card--cta .skill-arrow{right:18px;top:20px}.results-layout--summary .metric-top{grid-template-columns:106px 1fr;gap:14px}}
+    @media(max-width:430px){.skills .ds-top{font-size:9px;gap:16px;margin-bottom:24px}.skills .ds-top span:last-child{max-width:22ch;text-align:right}.skills .ds-head h2{font-size:44px}.skill-card{padding:20px;grid-template-columns:40px minmax(0,1fr);gap:14px}.skill-icon{width:40px;height:40px}.skill-index{display:none}.skill-copy{padding-right:0}.skill-card--cta .skill-copy{padding-right:22px}.skill-card--cta .skill-arrow{right:18px;top:20px}.results-layout--summary .metric-top{grid-template-columns:106px 1fr;gap:14px}}
+
+    /* Painel compacto: vidro GenLabs, grade Noema e cascata TerraSprint. */
+    .results-layout--summary .results-monitor{padding:22px;gap:14px}
+    .results-layout--summary .monitor-header{padding-bottom:18px}
+    .results-layout--summary .monitor-footer{padding-top:18px}
+    .results-layout--summary .metric,
+    .results-layout--summary .metric:nth-of-type(2),
+    .results-layout--summary .metric:nth-last-of-type(2){position:relative;isolation:isolate;overflow:hidden;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--void-soft);box-shadow:inset 0 1px 0 #ffffff0d;transition:opacity .9s var(--ease),transform .9s var(--ease),border-color .4s var(--ease);transition-delay:var(--delay,0ms),var(--delay,0ms),0ms}
+    .metric::before{--grid-unit:32px;content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:var(--grid-unit) var(--grid-unit);mask-image:linear-gradient(120deg,transparent,black);animation:grid-drift 28s var(--ease) infinite}
+    .metric::after{content:'';position:absolute;inset:0;pointer-events:none;padding:1px;border-radius:inherit;background:linear-gradient(135deg,var(--signal),transparent 35%,transparent 70%,var(--line));mask:linear-gradient(var(--ink) 0 0) content-box,linear-gradient(var(--ink) 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(var(--ink) 0 0) content-box,linear-gradient(var(--ink) 0 0);-webkit-mask-composite:xor;opacity:.3;transition:opacity .4s var(--ease)}
+    .metric-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;color:var(--muted);font-size:9px}
+    .results-layout--summary .metric[data-rise]{transition-property:opacity,transform,border-color;transition-duration:.9s,.9s,.4s;transition-timing-function:var(--ease);transition-delay:var(--delay,0ms),var(--delay,0ms),0ms}
+    .metric-symbol{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:12px;color:var(--signal);background:var(--void);flex-shrink:0}
+    .metric-art{position:absolute;right:8px;bottom:22px;width:144px;height:120px;z-index:-1;fill:none;stroke:var(--signal);stroke-width:1;opacity:.18;pointer-events:none;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+    .metric-art .metric-outline{stroke-linecap:round;stroke-linejoin:round}
+    html.js-motion .metric-art .metric-outline{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.25s var(--ease);transition-delay:var(--delay,0ms)}
+    html.js-motion .metric.is-in .metric-art .metric-outline{stroke-dashoffset:0}
+    .results-layout--summary .metric-track{margin-top:24px;height:5px}
+    .results-layout--summary .metric-label{position:relative;z-index:1}
+    @media(hover:hover) and (pointer:fine){.results-layout--summary .metric:hover{border-color:var(--signal)}.metric:hover::after{opacity:.65}.metric:hover .metric-art{opacity:.4;transform:translateY(-3px)}}
+    @media(max-width:1100px){.results-layout--summary .results-monitor{padding:20px;gap:12px}.results-layout--summary .metric,.results-layout--summary .metric:nth-of-type(2),.results-layout--summary .metric:nth-last-of-type(2){padding:20px}.metric-meta{font-size:8px;letter-spacing:.15em}}
+    @media(max-width:800px){.results-layout--summary .results-monitor{gap:12px}.results-layout--summary .metric+.metric{border:1px solid var(--line)}.metric-meta{margin-bottom:14px}.metric-symbol{width:30px;height:30px;border-radius:10px}.metric-symbol .icon{width:18px;height:18px}.results-layout--summary .metric-track{margin-top:18px}.metric-art{right:18px;bottom:10px;width:120px;height:100px}.results .section-top{gap:12px;font-size:8px}}
+    @media(max-width:430px){.results{padding-top:18px;padding-bottom:22px}.results .section-top{margin-bottom:16px;align-items:center}.results .section-top span:last-child{max-width:13ch;text-align:right}.results-layout--summary .results-monitor{padding:16px}.results-layout--summary .metric,.results-layout--summary .metric:nth-of-type(2),.results-layout--summary .metric:nth-last-of-type(2){padding:18px}.results-layout--summary .metric-top{grid-template-columns:90px 1fr;gap:10px}.metric-label{font-size:12px}.metric-art{right:8px;opacity:.14}.monitor-footer span{max-width:16ch}.monitor-footer span:last-child{text-align:right}}
+    html.motion-paused .metric-art .metric-outline,html.motion-reduced .metric-art .metric-outline,html.preview-render .metric-art .metric-outline{stroke-dashoffset:0!important}
+    html.motion-paused .metric-art,html.motion-reduced .metric-art{transform:none!important}
+    @media(prefers-reduced-motion:reduce){.metric-art .metric-outline{stroke-dashoffset:0!important}.metric-art{transform:none!important}}
 
     /* Método: estrutura editorial, componentes e movimento do design system. */
     .method.ds-group{position:relative;isolation:isolate;overflow:hidden;padding:var(--section-space) var(--pad);border-bottom:1px solid var(--line);background:var(--void)}
     .method .section-inner{max-width:1440px;margin:auto}
-    .method .ds-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:38px;color:var(--signal)}
+    .method .ds-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:24px;color:var(--signal)}
     .method .ds-top span:last-child{color:var(--muted)}
-    .method .ds-head{margin-bottom:64px}
+    .method .ds-head{margin-bottom:32px}
     .method .ds-head h2{font:500 clamp(44px,5vw,76px)/1.02 var(--font-primary);letter-spacing:-.065em}
     .method .ds-head h2>span,.method .ds-head h2>em{display:block}
     .method .ds-head em{font:300 1.04em/1.04 var(--font-editorial);letter-spacing:-.06em;font-style:normal;color:var(--signal);margin-top:12px}
@@ -495,7 +615,7 @@
     .method-cases-link:hover .icon{transform:translate(2px,-2px)}
     .method-fallback{margin-top:36px;display:grid;gap:24px;color:var(--muted);font:400 16px/1.7 var(--font-ui)}
     .method-fallback h3{color:var(--ink);font-weight:500;margin-bottom:6px}
-    .method-audience{margin-top:64px;padding-top:32px;border-top:1px solid var(--line)}
+    .method-audience{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
     .method-audience>h3{font:300 32px/1.2 var(--font-editorial);letter-spacing:-.04em;color:var(--ink)}
     .method-audience-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:28px}
     .method-audience .principle{padding-top:20px;border-top:1px solid var(--line)}
@@ -504,8 +624,8 @@
     .method-audience p{max-width:40ch;font:400 13px/1.7 var(--font-ui);color:var(--muted)}
     html.motion-reduced .method-flow-light{display:none}
     @media(max-width:1100px){.method-layout{gap:40px}.method-tab-name{font-size:40px}.method-tab{min-height:62px;gap:14px}.method-timer{left:38px}.method-screen.glass-card{padding:22px}.method .ds-sheet{padding:18px}.method-task{gap:6px;font-size:11px}.method .badge{font-size:9px}.method-flow{gap:12px}.method-flow-step{font-size:11px;padding-inline:6px}.method-flow-step .method-flow-arrow{right:-12px;width:10px}.method-description{min-height:6.8em}}
-    @media(max-width:800px){.method .ds-head{margin-bottom:36px}.method-audience-list{grid-template-columns:1fr;gap:24px}.method-audience p{max-width:52ch}.method-layout{grid-template-columns:minmax(0,1fr);gap:36px}.method-intro{max-width:52ch}.method-tabs{display:flex;gap:10px;margin-top:28px;padding:6px 6px 10px;margin-inline:-6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.method-tabs::-webkit-scrollbar{display:none}.method-tab{display:inline-flex;flex:none;width:auto;min-height:48px;gap:10px;padding:10px 16px 14px;border:1px solid var(--line);border-radius:100px;scroll-snap-align:center}.method-tab-name{font:500 14px/1.5 var(--font-ui);letter-spacing:-.02em}.method-tab-index{font-size:8px}.method-tab>.icon{width:18px;height:18px}.method-tab[aria-selected="true"]{color:var(--signal);border-color:color-mix(in srgb,var(--signal) 40%,transparent)}.method-timer{left:16px;right:16px;bottom:5px}.method-screen.glass-card{padding:24px}.method .ds-sheet{padding:22px}.method-task{font-size:12px;gap:12px}.method .badge{font-size:10px}.method-description{min-height:5.1em}.method-flow-step{font-size:12px;min-height:112px}.method-result-notes .caps{font-size:9px}}
-    @media(max-width:430px){.method .ds-top{font-size:9px;gap:16px;margin-bottom:28px}.method .ds-top span:last-child{max-width:18ch;text-align:right}.method .ds-head h2{font-size:44px}.method .ds-head em{margin-top:14px}.method-screen.glass-card{aspect-ratio:4/5;min-height:0;padding:16px}.method-screen-top{gap:8px;padding-bottom:16px}.method-screen-top .caps{font-size:8px}.method-screen-top .badge{font-size:8px;padding:5px 7px}.method .ds-sheet{padding:16px}.method-sheet-title{font-size:13px}.method-checklist{grid-template-columns:repeat(2,minmax(0,1fr))}.method-checklist li{padding:8px;gap:6px;font-size:10px;min-height:52px}.method-checklist .icon{width:14px;height:14px}.method-task{grid-template-columns:minmax(0,1fr) auto;gap:8px;min-height:70px;font-size:12px}.method-task .method-week{grid-column:1/-1;justify-self:start;font-size:8px;margin-top:-6px}.method-task:nth-child(n+4){display:none}.method-task:nth-child(3){border-bottom:0}.method-flow{gap:8px}.method-flow-step{gap:10px;min-height:96px;padding:12px 4px;font-size:10px}.method-flow-step>.icon{width:20px;height:20px}.method-flow-step .method-flow-arrow{right:-8px;width:7px}.method-status-row{gap:8px;font-size:11px;min-height:64px}.method-status-row:nth-child(2){display:none}.method-status-row .badge{font-size:8px;padding:5px 7px}.method-result-bars{height:154px;gap:10px;padding-inline:0}.method-result-notes{gap:8px;margin-top:20px}.method-result-notes .caps{font-size:7px;min-height:34px;overflow-wrap:anywhere}.method-description{min-height:8.5em}.method-proof{font-size:8px}}
+    @media(max-width:800px){.method .ds-head{margin-bottom:28px}.method-audience-list{grid-template-columns:1fr;gap:24px}.method-audience p{max-width:52ch}.method-layout{grid-template-columns:minmax(0,1fr);gap:36px}.method-intro{max-width:52ch}.method-tabs{display:flex;gap:10px;margin-top:28px;padding:6px 6px 10px;margin-inline:-6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.method-tabs::-webkit-scrollbar{display:none}.method-tab{display:inline-flex;flex:none;width:auto;min-height:48px;gap:10px;padding:10px 16px 14px;border:1px solid var(--line);border-radius:100px;scroll-snap-align:center}.method-tab-name{font:500 14px/1.5 var(--font-ui);letter-spacing:-.02em}.method-tab-index{font-size:8px}.method-tab>.icon{width:18px;height:18px}.method-tab[aria-selected="true"]{color:var(--signal);border-color:color-mix(in srgb,var(--signal) 40%,transparent)}.method-timer{left:16px;right:16px;bottom:5px}.method-screen.glass-card{padding:24px}.method .ds-sheet{padding:22px}.method-task{font-size:12px;gap:12px}.method .badge{font-size:10px}.method-description{min-height:5.1em}.method-flow-step{font-size:12px;min-height:112px}.method-result-notes .caps{font-size:9px}}
+    @media(max-width:430px){.method .ds-top{font-size:9px;gap:16px;margin-bottom:24px}.method .ds-top span:last-child{max-width:18ch;text-align:right}.method .ds-head h2{font-size:44px}.method .ds-head em{margin-top:14px}.method-screen.glass-card{aspect-ratio:4/5;min-height:0;padding:16px}.method-screen-top{gap:8px;padding-bottom:16px}.method-screen-top .caps{font-size:8px}.method-screen-top .badge{font-size:8px;padding:5px 7px}.method .ds-sheet{padding:16px}.method-sheet-title{font-size:13px}.method-checklist{grid-template-columns:repeat(2,minmax(0,1fr))}.method-checklist li{padding:8px;gap:6px;font-size:10px;min-height:52px}.method-checklist .icon{width:14px;height:14px}.method-task{grid-template-columns:minmax(0,1fr) auto;gap:8px;min-height:70px;font-size:12px}.method-task .method-week{grid-column:1/-1;justify-self:start;font-size:8px;margin-top:-6px}.method-task:nth-child(n+4){display:none}.method-task:nth-child(3){border-bottom:0}.method-flow{gap:8px}.method-flow-step{gap:10px;min-height:96px;padding:12px 4px;font-size:10px}.method-flow-step>.icon{width:20px;height:20px}.method-flow-step .method-flow-arrow{right:-8px;width:7px}.method-status-row{gap:8px;font-size:11px;min-height:64px}.method-status-row:nth-child(2){display:none}.method-status-row .badge{font-size:8px;padding:5px 7px}.method-result-bars{height:154px;gap:10px;padding-inline:0}.method-result-notes{gap:8px;margin-top:20px}.method-result-notes .caps{font-size:7px;min-height:34px;overflow-wrap:anywhere}.method-description{min-height:8.5em}.method-proof{font-size:8px}}
     /* Contato persistente: ação violeta, sheen e movimento do sistema. */
     .whatsapp-float.button{position:fixed;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:80;width:232px;min-height:64px;gap:12px;padding:12px 18px;animation:rise .9s var(--ease) 1s backwards}
     .whatsapp-float .whatsapp-float__symbol{width:26px;height:26px}
@@ -527,7 +647,7 @@
     .about-top h2{font:500 clamp(48px,6vw,96px)/.95 var(--font-primary);letter-spacing:-.065em}
     .about-top h2 em{display:block;font:300 1em/1.1 var(--font-editorial);letter-spacing:-.065em;color:#5047c9}
     .about-top>.caps{max-width:27ch;padding-bottom:6px;color:var(--muted);text-align:right}
-    .about-composition{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:56px 32px;align-items:start;padding:64px 12px 64px}
+    .about-composition{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:36px 32px;align-items:start;padding:32px 12px}
     .about-photo{position:relative;min-width:0}
     .about-photo--portrait{grid-column:1/8;grid-row:1;--photo-angle:-2deg}
     .about-photo--planning{grid-column:8/-1;grid-row:2;--photo-angle:3deg;margin-top:24px}
@@ -559,7 +679,7 @@
     .about-milestone h4{margin:0;font:600 16px/1.5 var(--font-ui)}
     .about-timeline p{max-width:48ch;color:var(--muted);font:400 14px/1.7 var(--font-ui)}
     .about .badge-status{color:#5047c9;border-color:var(--line-dark);background:transparent}
-    .about-education{display:grid;grid-template-columns:160px minmax(0,1fr);align-items:start;gap:24px;padding:40px 0;border-top:1px solid color-mix(in srgb,var(--void) 80%,transparent)}
+    .about-education{display:grid;grid-template-columns:160px minmax(0,1fr);align-items:start;gap:24px;padding:24px 0;border-top:1px solid color-mix(in srgb,var(--void) 80%,transparent)}
     .about-education>.caps{color:var(--muted);padding-top:3px}
     .about-mentors{list-style:none;display:flex;flex-wrap:wrap;gap:24px 32px;margin:0;padding:0}
     .about-mentors li{position:relative;flex:1 1 150px;min-width:0}
@@ -570,13 +690,157 @@
     html.motion-paused .about-print,html.motion-reduced .about-print{transform:rotate(var(--photo-angle))!important}
     html.motion-paused .about-print img,html.motion-reduced .about-print img{filter:grayscale(1) contrast(1.08)!important}
     html.motion-paused .about [data-rise]{transition-delay:0s!important}
-    @media(max-width:1100px){.about-photo--portrait{--photo-angle:-1.5deg}.about-photo--planning{--photo-angle:1.5deg}.about-mark{width:208px;height:120px;right:4px}.about-mark>.caps{font-size:14px}.about-composition{gap:48px 28px;padding-inline:8px}.about-top>.caps{max-width:24ch}.about-education{grid-template-columns:120px minmax(0,1fr)}.about-mentors{gap:24px 28px}.about-mentors li{flex-basis:165px}}
-    @media(max-width:800px){.about-top{display:block;padding-bottom:24px}.about-top>.caps{max-width:none;text-align:left;margin-top:24px;padding:0}.about-composition{grid-template-columns:minmax(0,1fr);gap:40px;padding:44px 4px 48px}.about-photo--portrait,.about-story,.about-photo--planning,.about-journey{grid-column:1;grid-row:auto}.about-photo--portrait{--photo-angle:-1deg}.about-photo--planning{--photo-angle:1deg;margin-top:0}.about-story,.about-journey{padding-top:0}.about-photo figcaption{margin-top:20px}.about-education{grid-template-columns:minmax(0,1fr);gap:24px}.about-mentors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.about-mentors li+li::before{display:none}}
+    @media(max-width:1100px){.about-photo--portrait{--photo-angle:-1.5deg}.about-photo--planning{--photo-angle:1.5deg}.about-mark{width:208px;height:120px;right:4px}.about-mark>.caps{font-size:14px}.about-composition{gap:32px 28px;padding-inline:8px}.about-top>.caps{max-width:24ch}.about-education{grid-template-columns:120px minmax(0,1fr)}.about-mentors{gap:24px 28px}.about-mentors li{flex-basis:165px}}
+    @media(max-width:800px){.about-top{display:block;padding-bottom:24px}.about-top>.caps{max-width:none;text-align:left;margin-top:24px;padding:0}.about-composition{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 4px 32px}.about-photo--portrait,.about-story,.about-photo--planning,.about-journey{grid-column:1;grid-row:auto}.about-photo--portrait{--photo-angle:-1deg}.about-photo--planning{--photo-angle:1deg;margin-top:0}.about-story,.about-journey{padding-top:0}.about-photo figcaption{margin-top:20px}.about-education{grid-template-columns:minmax(0,1fr);gap:24px}.about-mentors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.about-mentors li+li::before{display:none}}
     @media(max-width:430px){.about-mark{right:8px;bottom:12px;width:178px;height:105px}.about-mark>.caps{font-size:12px}.about-story h3{font-size:26px}.about-photo figcaption{font-size:8px;letter-spacing:.15em}.about-milestone{gap:8px}.about-timeline li{padding-left:22px}.about-mentors{gap:24px 16px}}
     @media(prefers-reduced-motion:reduce){html.js-motion .about-cross path{stroke-dashoffset:0!important}.about-print{transform:rotate(var(--photo-angle))!important}.about-print img{filter:grayscale(1) contrast(1.08)!important}}
+    /* Encerramento: o mesmo campo de luz atravessa perguntas e contato. */
+    .closing-field{position:relative;isolation:isolate;overflow:hidden;background:var(--void);--grid-unit:100px;--quiet-band:min(420px,42vw)}
+    .closing-field::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.3;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:100px 100px;mask-image:linear-gradient(90deg,transparent,black);animation:grid-drift 28s var(--ease) infinite}
+    .closing-field__backdrop{--px:0%;--py:0%;position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;mask-image:linear-gradient(90deg,black,black calc(50% - var(--quiet-band) - 80px),transparent calc(50% - var(--quiet-band)),transparent calc(50% + var(--quiet-band)),black calc(50% + var(--quiet-band) + 80px),black)}
+    .field-bloom{position:absolute;width:1400px;height:1400px;left:calc(50% - 280px);top:25%;transform:translate(var(--px),var(--py))}
+    .field-bloom::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--electric) 18%,transparent),transparent 68%);animation:bloom 12s var(--ease) infinite alternate}
+    .field-bloom--mint{width:1100px;height:1100px;left:-450px;top:50%}
+    .field-bloom--mint::before{background:radial-gradient(ellipse at center,color-mix(in srgb,var(--mint) 10%,transparent),transparent 68%);animation-delay:-6s}
+    .field-wires{position:absolute;inset:0;width:100%;height:100%;overflow:visible;opacity:.35}
+    .field-wire use{fill:none;stroke:url(#field-light);stroke-width:1;vector-effect:non-scaling-stroke;opacity:.25}
+    .field-wire .field-wire__spark{opacity:1;stroke-dasharray:80 920;animation:wire-travel var(--wire-duration,12s) var(--ease) infinite}
+    @keyframes wire-travel{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+    .closing-field .ds-group{position:relative;padding:var(--section-space) var(--pad);background:transparent;border-bottom:1px solid var(--line)}
+    .closing-field .section-inner{width:100%;max-width:1440px;margin:auto}
+    .closing-field .ds-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;margin-bottom:24px;border-bottom:1px solid var(--line);color:var(--signal)}
+    .closing-field .ds-top span:last-child{color:var(--muted);text-align:right}
+    .closing-field .section-title{font:500 clamp(44px,5vw,76px)/1.02 var(--font-primary);letter-spacing:-.065em;text-align:center}
+    .closing-field .section-title em{font:300 1.04em/1 var(--font-editorial);letter-spacing:-.06em;font-style:normal;color:var(--signal)}
+    .closing-field .line-mask{display:block}
+    .closing-field [data-lines-reveal] .line-mask>span{animation:none}
+    html.js-motion .closing-field [data-lines-reveal] .line-mask>span{transform:translateY(110%);opacity:0}
+    html.js-motion .closing-field [data-lines-reveal].is-in .line-mask>span{animation:line-rise 1.25s var(--ease) both;animation-delay:var(--delay,0ms)}
+    .faq-head{max-width:1000px;margin:0 auto 28px;text-align:center}
+    .faq-head>p{max-width:520px;margin:24px auto 0;color:var(--muted);font:400 16px/1.7 var(--font-ui)}
+    .faq-list{display:grid;gap:10px;width:100%;max-width:760px;margin:auto}
+    .faq-card.glass-card{--px:50%;--py:50%;position:relative;isolation:isolate;overflow:hidden;padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02);box-shadow:inset 0 1px 0 #ffffff08;transition:border-color 400ms var(--ease)}
+    .faq-card.glass-card[data-rise]{transition:opacity .9s var(--ease),transform .9s var(--ease),border-color 400ms var(--ease);transition-delay:var(--delay,0ms),var(--delay,0ms),0ms}
+    .faq-card::before,.faq-card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 400ms var(--ease)}
+    .faq-card::before{z-index:0;background:radial-gradient(400px circle at var(--px) var(--py),color-mix(in srgb,var(--electric) 8%,transparent),transparent 60%)}
+    .faq-card::after{z-index:2;padding:1px;border-radius:inherit;background:radial-gradient(400px circle at var(--px) var(--py),color-mix(in srgb,var(--signal) 40%,transparent),transparent 60%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .faq-list.is-proximity-active .faq-card::before,.faq-list.is-proximity-active .faq-card::after{opacity:1}
+    .faq-card>*{position:relative;z-index:1}
+    .faq-card h3{font:600 16px/1.5 var(--font-ui)}
+    .faq-question{display:grid;grid-template-columns:minmax(0,1fr) 32px;align-items:center;gap:20px;width:100%;padding:0;min-height:32px;border:0;background:transparent;text-align:left;color:var(--ink);font:600 16px/1.5 var(--font-ui)}
+    .faq-arrow{display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);border-radius:50%;background:transparent;transition:background 400ms var(--ease),border-color 400ms var(--ease)}
+    .faq-arrow .icon{width:16px;height:16px;transition:transform 400ms var(--ease)}
+    .faq-answer-shell{display:grid;grid-template-rows:1fr;transition:grid-template-rows 450ms var(--ease)}
+    .faq-answer{min-height:0;overflow:hidden}
+    .faq-answer p{max-width:62ch;padding-top:16px;color:var(--muted);font:400 15px/1.7 var(--font-ui);opacity:1;transform:none;transition:opacity 450ms var(--ease),transform 450ms var(--ease)}
+    .faq-ready .faq-card:not(.is-open) .faq-answer-shell{grid-template-rows:0fr}
+    .faq-ready .faq-card:not(.is-open) .faq-answer p{opacity:0;transform:translateY(8px)}
+    .faq-card.is-open{border-color:color-mix(in srgb,var(--signal) 40%,transparent)}
+    .faq-card.is-open .faq-arrow{background:color-mix(in srgb,var(--electric) 12%,transparent);border-color:color-mix(in srgb,var(--signal) 40%,transparent)}
+    .faq-card.is-open .faq-arrow .icon{transform:rotate(180deg)}
+    .closing.ds-group{display:grid;align-items:center;min-height:0;border-bottom:0}
+    .closing-content{max-width:1200px;margin:64px auto 0;text-align:center}
+    .closing-eyebrow{color:var(--signal)}
+    .closing .section-title{max-width:none;margin:25px 0}
+    .closing .closing-lead{max-width:480px;margin:0 auto;color:var(--muted);font:400 17px/1.7 var(--font-ui)}
+    .closing-cta-wrap{width:max-content;max-width:100%;margin:32px auto 0}
+    .closing-cta.button{min-height:56px;padding:0 32px;font-size:14px}
+    .closing-cta .icon{width:20px;height:20px}
+    .closing-cta:hover .icon:first-child{transform:none}
+    .closing .closing-caption{margin-top:14px;font:400 12px/1.5 var(--font-ui);color:var(--muted)}
+    html.js-motion .closing-cta-wrap{opacity:0;transform:scale(.94)}
+    html.js-motion .closing-cta-wrap.is-in{animation:contact-arrive 600ms var(--ease) 450ms both}
+    html.js-motion .closing-cta-wrap.is-in .button::after{animation:contact-sheen 700ms var(--ease) 1050ms}
+    @keyframes contact-arrive{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+    @keyframes contact-sheen{from{transform:translateX(-110%)}to{transform:translateX(110%)}}
+    .contact-channels{display:grid;grid-template-columns:1fr 1.3fr 1fr 1fr;width:100%;max-width:1240px;margin:64px auto 0}
+    .contact-channel{min-width:0;display:flex;flex-direction:column;gap:10px;padding:16px 24px;color:var(--ink)}
+    .contact-channel+.contact-channel{border-left:1px solid var(--line)}
+    .contact-channel>.caps{color:var(--muted)}
+    .contact-channel__value{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;font:500 15px/1.7 var(--font-ui);overflow-wrap:anywhere}
+    .contact-channel__value .icon{width:14px;height:14px;opacity:0;transform:translate(-2px,2px);transition:opacity 400ms var(--ease),transform 400ms var(--ease);color:var(--signal)}
+    .contact-channel:hover .icon,.contact-channel:focus-visible .icon{opacity:1;transform:none}
+    .footer{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:24px;padding:24px var(--pad) calc(104px + env(safe-area-inset-bottom,0px));background:var(--void-soft);color:var(--muted);font:400 10px/1.6 var(--font-mono)}
+    .footer>span{max-width:none}.footer a{justify-self:end;font:inherit}.footer a:hover{color:var(--ink)}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;visibility:hidden;max-width:calc(100% - 32px);width:max-content;padding:12px 20px;border:1px solid #a9a5ff44;border-radius:100px;background:#17131f;backdrop-filter:blur(16px);color:var(--ink);font-size:12px;z-index:300;transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s var(--ease);pointer-events:none}
+    .toast.is-visible{visibility:visible;opacity:1;transform:translate(-50%,0)}
+    .is-field-offscreen .closing-field__backdrop *,.is-field-offscreen::after{animation-play-state:paused!important}
+    html.motion-paused .closing-cta-wrap,html.motion-reduced .closing-cta-wrap,html.preview-render .closing-cta-wrap{opacity:1!important;transform:none!important;animation:none!important}
+    html.motion-paused .closing-cta::after,html.motion-reduced .closing-cta::after,html.preview-render .closing-cta::after{animation:none!important}
+    html.motion-paused .closing-field [data-rise]{transition-delay:0s!important}
+    html.motion-paused .field-bloom,html.motion-reduced .field-bloom{transform:none!important}
+    html.motion-paused .field-bloom::before{animation:none!important;transform:none;opacity:1}
+    html.motion-paused .faq-card::before,html.motion-paused .faq-card::after,html.motion-reduced .faq-card::before,html.motion-reduced .faq-card::after{opacity:0!important}
+    @media(max-width:1100px){.contact-channel{padding-inline:16px}.closing-content{margin-top:48px}.contact-channels{margin-top:48px}.field-bloom{width:1200px;height:1200px;left:calc(50% - 180px)}.field-bloom--mint{left:-400px}}
+    @media(max-width:800px){.closing-field .ds-top{font-size:9px}.closing-field .ds-top span:last-child{max-width:25ch}.field-wire--desktop{display:none}.field-bloom{transform:none}.contact-channels{grid-template-columns:repeat(2,minmax(0,1fr));max-width:640px}.contact-channel:nth-child(odd){border-left:0}.contact-channel:nth-child(n+3){border-top:1px solid var(--line)}.contact-channel{padding:20px 16px}.closing-content{margin-top:40px}.footer{grid-template-columns:minmax(0,1fr);text-align:center;gap:12px}.footer a{justify-self:center}.toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}}
+    @media(max-width:430px){.faq-head{margin-bottom:24px}.faq-head>p{margin-top:20px}.faq-card.glass-card{padding:20px}.faq-question{gap:14px;font-size:15px}.faq-answer p{font-size:14px}.closing .closing-lead{font-size:16px}.closing-cta.button{padding:0 22px;font-size:12px;gap:12px}.contact-channel{padding:18px 10px}.contact-channel__value{font-size:13px;gap:4px}.contact-channel__value .icon{width:12px;height:12px}.contact-channels{margin-top:40px}.field-bloom--mint{left:-580px}.footer{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){.closing-cta-wrap{opacity:1!important;transform:none!important}.field-bloom{transform:none!important}}
+    /* Contato editorial: fluxo financeiro abstrato, sem valores ou logos. */
+    .closing .section-inner{position:relative;z-index:1}
+    .closing-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:40px;margin:28px auto 0}
+    .closing-layout .closing-content{position:relative;z-index:2;width:100%;max-width:720px;margin:0;text-align:left;color:var(--ink)}
+    .closing-layout .closing-content::before{content:'';position:absolute;inset:-24px -20px;z-index:-1;background:var(--void);mask-image:radial-gradient(ellipse,black 55%,transparent 78%);pointer-events:none}
+    .closing-layout .section-title{text-align:left;font-size:clamp(48px,5.25vw,80px);max-width:15ch;margin:24px 0}
+    .closing-layout .closing-lead{max-width:410px;margin:0;font-size:16px}
+    .closing-layout .closing-cta-wrap{margin:28px 0 0}
+    .closing-layout .closing-caption{margin-top:14px;max-width:330px}
+    .closing-eyebrow{color:var(--signal)}
+    .closing-visual{position:relative;min-width:0;align-self:stretch;display:grid;align-items:center;pointer-events:none}
+    .money-scene{position:relative;width:100%;height:540px;perspective:1000px;isolation:isolate}
+    .money-defs{position:absolute;overflow:hidden}
+    .money-stream{position:absolute;inset:0;overflow:hidden;clip-path:inset(0 0 28% 0);mask-image:linear-gradient(transparent,black 12%,black 86%,transparent)}
+    .money-note{position:absolute;left:calc(50% - 56px);top:10%;width:112px;height:64px;color:var(--signal);opacity:0;animation:money-arrive var(--money-duration,12s) var(--ease) var(--money-delay,0s) infinite;will-change:transform,opacity}
+    .money-note:nth-child(3n){color:var(--mint)}
+    .money-note svg{display:block;width:100%;height:100%;overflow:visible;fill:color-mix(in srgb,var(--void-soft) 80%,transparent);stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .money-note text{fill:currentColor;stroke:none;font:500 14px var(--font-mono)}
+    @keyframes money-arrive{0%{opacity:0;transform:translate3d(var(--from-x),-100px,0) rotate(var(--from-angle)) scale(.88)}12%{opacity:.4;transform:translate3d(calc(var(--from-x) * .95),-10px,0) rotate(var(--from-angle)) scale(.88)}45%{opacity:.4;transform:translate3d(calc(var(--from-x) * .45),125px,0) rotate(calc(var(--from-angle) * .35)) scale(.82)}75%{opacity:.32;transform:translate3d(calc(var(--from-x) * .12),240px,0) rotate(0deg) scale(.75)}100%{opacity:0;transform:translate3d(0,340px,0) rotate(-3deg) scale(.52)}}
+    .money-account.glass-card{position:absolute;top:60%;left:50%;width:82%;max-width:380px;height:210px;border:1px solid color-mix(in srgb,var(--signal) 30%,transparent);border-radius:var(--radius);padding:24px;background:linear-gradient(120deg,color-mix(in srgb,var(--electric) 8%,var(--void-soft)),var(--void-soft));box-shadow:inset 0 1px 0 #ffffff08;transform:translate(-50%,-12%) rotate(-8deg) rotateY(-10deg);animation:account-float 12s var(--ease) infinite alternate}
+    .money-account::before{content:'';position:absolute;inset:14px -12px -14px 12px;z-index:-1;border:1px solid var(--line);border-radius:inherit;background:var(--void-soft);transform:rotate(8deg);opacity:.4}
+    .money-account__top{display:flex;justify-content:space-between;align-items:center;color:var(--signal)}
+    .money-account__top>.icon{width:24px;height:24px}
+    .money-account__top .status-dot{color:var(--mint)}
+    .money-account__mark{position:absolute;width:126px;height:80px;left:calc(50% - 63px);top:48px;fill:none;stroke:var(--signal);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.6}
+    .money-account__lines{display:flex;gap:8px;align-items:center;margin-top:106px}
+    .money-account__lines i{display:block;width:25px;height:3px;border-radius:100px;background:var(--line)}
+    .money-account__lines i:last-child{width:44px}
+    .money-account>.signal-line{display:block!important;position:absolute;bottom:0;left:24px;right:24px;margin:0;width:auto;opacity:.7}
+    .money-landing{position:absolute;left:50%;top:72%;width:78%;max-width:380px;height:60px;transform:translateX(-50%);z-index:-1}
+    .money-landing span{position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--signal) 30%,transparent);border-radius:50%;opacity:0;animation:account-receive 6s var(--ease) infinite}
+    .money-landing span+span{animation-delay:-3s}
+    @keyframes account-float{from{transform:translate(-50%,-12%) rotate(-8deg) rotateY(-10deg)}to{transform:translate(-50%,-16%) rotate(-5deg) rotateY(-6deg)}}
+    @keyframes account-receive{0%{opacity:0;transform:scale(.72)}30%{opacity:.3}100%{opacity:0;transform:scale(1.3)}}
+    .closing .contact-channels{margin-top:32px;border-top:1px solid var(--line);padding-top:20px;max-width:none}
+    .closing .contact-channel:first-child{padding-left:0}
+    .closing .contact-channel:last-child{padding-right:0}
+    .field-wires{mask-image:linear-gradient(black 0%,black 38%,transparent 55%)}
+    .money-paused .money-scene *,.money-paused .money-scene *::before{animation-play-state:paused!important}
+    html.motion-paused .money-note,html.motion-reduced .money-note,html.preview-render .money-note{animation:none!important;opacity:.32;transform:translate3d(calc(var(--from-x) * .62),var(--rest-y,80px),0) rotate(var(--from-angle)) scale(.86)}
+    html.motion-paused .money-account,html.motion-reduced .money-account,html.preview-render .money-account{animation:none!important}
+    html.motion-paused .money-landing,html.motion-reduced .money-landing,html.preview-render .money-landing{display:none}
+    @media(max-width:1100px){.closing-layout{gap:20px}.money-scene{height:500px}.money-note{width:96px;height:55px;left:calc(50% - 48px)}.money-account.glass-card{padding:20px;width:90%;height:200px}.money-account__mark{top:40px}.money-account__lines{margin-top:104px}}
+    @media(max-width:800px){.closing-layout{display:block;position:relative;margin-top:28px}.closing-layout .closing-content{max-width:660px;margin:auto;text-align:center}.closing-layout .section-title{max-width:15ch;margin-inline:auto;text-align:center;font-size:clamp(48px,7.5vw,64px)}.closing-layout .closing-eyebrow{justify-content:center}.closing-layout .closing-lead{margin:auto;max-width:440px}.closing-layout .closing-cta-wrap{margin:28px auto 0}.closing-layout .closing-caption{margin-inline:auto}.closing-visual{height:310px;margin:24px auto 0;max-width:460px;overflow:hidden}.money-scene{height:340px}.money-note--desktop{display:none}.money-stream{clip-path:inset(0 0 22% 0)}.money-note{top:4%;animation-name:money-arrive-mobile}.money-account.glass-card{top:49%;width:72%;height:156px;padding:16px}.money-account__mark{width:96px;height:62px;left:calc(50% - 48px);top:32px}.money-account__lines{margin-top:76px}.money-account__top>.icon{width:20px;height:20px}.money-landing{top:67%;width:70%}.closing .contact-channels{margin-top:32px;padding-top:12px}.closing .contact-channel:first-child{padding-left:16px}.closing .contact-channel:last-child{padding-right:16px}}
+    @keyframes money-arrive-mobile{0%{opacity:0;transform:translate3d(calc(var(--from-x) * .65),-65px,0) rotate(var(--from-angle)) scale(.68)}12%{opacity:.35;transform:translate3d(calc(var(--from-x) * .6),0,0) rotate(var(--from-angle)) scale(.68)}45%{opacity:.35;transform:translate3d(calc(var(--from-x) * .3),80px,0) rotate(calc(var(--from-angle) * .35)) scale(.64)}75%{opacity:.28;transform:translate3d(calc(var(--from-x) * .08),155px,0) rotate(0deg) scale(.56)}100%{opacity:0;transform:translate3d(0,235px,0) rotate(-3deg) scale(.4)}}
+    @media(max-width:430px){.closing-layout .section-title{font-size:48px}.closing-visual{height:270px;margin-top:12px}.money-scene{height:300px}.money-note{width:88px;height:50px;left:calc(50% - 44px)}.money-account.glass-card{width:76%;top:45%;height:148px}.money-account__lines{margin-top:68px}.money-landing{top:63%}.closing .contact-channel:first-child{padding-left:10px}.closing .contact-channel:last-child{padding-right:10px}}
+    @media(prefers-reduced-motion:reduce){.money-note{animation:none!important;opacity:.32;transform:translate3d(calc(var(--from-x) * .5),40px,0) rotate(var(--from-angle)) scale(.72)}.money-account{animation:none!important}.money-landing{display:none}}
+    /* CTA principal: relevo, borda em gradiente e seta em cápsula do GenLabs. */
+    .hero-actions .hero-whatsapp{min-height:54px;padding:0 22px;gap:12px;font-size:13px;letter-spacing:-.02em}
+    .hero-whatsapp::before{content:'';position:absolute;inset:0;padding:1px;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,#fff6,var(--signal),#b0acff77);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.8;animation:hero-cta-border 3.2s var(--ease) 1.2s infinite}
+    .hero-whatsapp::after{animation:hero-cta-shine 5.2s var(--ease) 1.2s infinite}
+    .hero-whatsapp .hero-whatsapp__chat{width:20px;height:20px}
+    .hero-whatsapp__arrow{display:grid;place-items:center;width:32px;height:24px;border-radius:100px;background:color-mix(in srgb,var(--void) 12%,transparent)}
+    .hero-whatsapp__arrow .icon{width:14px;height:14px}
+    .hero-whatsapp:hover .hero-whatsapp__chat{transform:none}
+    .hero-whatsapp:hover::before,.hero-whatsapp:focus-visible::before{animation:none;opacity:1}
+    .hero-whatsapp:hover::after,.hero-whatsapp:focus-visible::after{animation:none;transform:translateX(110%)}
+    .hero-whatsapp:focus-visible .hero-whatsapp__arrow .icon{transform:translate(2px,-2px)}
+    @keyframes hero-cta-border{0%,100%{opacity:.45}50%{opacity:1}}
+    @keyframes hero-cta-shine{0%,14%{transform:translateX(-110%)}30%,100%{transform:translateX(110%)}}
+    html.motion-paused .hero-whatsapp::before,html.motion-paused .hero-whatsapp::after,html.motion-reduced .hero-whatsapp::before,html.motion-reduced .hero-whatsapp::after,html.preview-render .hero-whatsapp::before,html.preview-render .hero-whatsapp::after{animation:none!important}
+    @media(max-width:800px){.hero-actions{gap:12px}.hero-actions .hero-whatsapp{min-height:50px;padding-inline:18px;font-size:12px;gap:10px}.hero-actions .hero-cases{padding-inline:8px;gap:8px;font-size:12px}}
+    @media(max-width:430px){.hero-actions{gap:8px}.hero-actions .hero-whatsapp{min-height:48px;padding-inline:12px;font-size:11px;gap:6px}.hero-whatsapp .hero-whatsapp__chat{width:16px;height:16px}.hero-whatsapp__arrow{width:20px;height:22px}.hero-whatsapp__arrow .icon{width:12px;height:12px}.hero-actions .hero-cases{font-size:11px;padding-inline:6px}.hero-cases>.icon{display:none}}
   </style>
 </head>
-<body>
+<body id="top">
   <div class="cursor-ring" aria-hidden="true"></div>
   <a class="skip-link" href="#cases">Pular para cases</a>
   <header class="nav">
@@ -602,11 +866,11 @@
         <div class="hero-bloom" aria-hidden="true"></div>
         <div class="hero-inner"><div class="hero__copy">
           <p class="eyebrow" data-enter>GESTÃO DE LANÇAMENTOS / PORTFÓLIO</p>
-          <h1 id="hero-title"><span class="line-mask headline-small body-lg"><span>Lançamentos para experts que querem</span></span> <span class="line-mask"><span>escalar</span></span> <span class="line-mask"><span>sem perder</span></span> <span class="line-mask headline-small body-lg"><span>o controle da</span></span> <span class="line-mask font-fraunces"><span>operação.</span></span></h1>
-          <p class="hero__lead" data-enter>+40 lançamentos em 6 nichos. Da copy à entrega, cada peça no lugar certo.</p>
+          <h1 id="hero-title"><span class="line-mask headline-small body-lg"><span>Experts que querem</span></span> <span class="line-mask"><span>escalar</span></span> <span class="line-mask"><span>sem perder</span></span> <span class="line-mask headline-small body-lg"><span>o controle da</span></span> <span class="line-mask font-fraunces"><span>operação.</span></span></h1>
+          <p class="hero__lead" data-enter>+40 lançamentos em 6 nichos. Crio a campanha e organizo o seu time: da gestão à copy, da estratégia a operação.</p>
           <div class="hero-actions" data-enter>
-            <a class="button button-primary magnetic" href="#cases">Ver cases <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-            <a class="button button-ghost magnetic" href="https://wa.me/5511936188143?text=Quero%20te%20falar%20do%20meu%20projeto%2C%20Alisson." target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp, abre em nova aba">Conversar no WhatsApp <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H4l2-4A8 8 0 1 1 20 11.5Z"/><path d="M8 10h8m-8 4h5"/></svg></a>
+            <a class="button button-primary magnetic hero-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H4l2-4A8 8 0 1 1 20 11.5Z"/><path d="M8 10h8m-8 4h5"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="button button-ghost magnetic hero-cases" href="#cases">Ver cases <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
             <button class="button button-ghost" type="button" data-video-play hidden>Reproduzir vídeo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 10 7-10 7Z"/></svg></button>
           </div>
         </div></div>
@@ -622,21 +886,57 @@
         <div class="panel-progress" aria-hidden="true"></div>
       </div>
     </section>
-    <div class="signal-strip" aria-label="Gestão de lançamentos. Organização dá ROI. Da copy à operação. Mais de 40 lançamentos. Cada peça no lugar certo."><div class="signal-strip__track" aria-hidden="true">
-      <div class="ticker-group"><span>Gestão de lançamentos</span><span>Organização dá ROI</span><span>Da copy à operação</span><span>+40 lançamentos</span><span>Cada peça no lugar certo</span></div>
-      <div class="ticker-group"><span>Gestão de lançamentos</span><span>Organização dá ROI</span><span>Da copy à operação</span><span>+40 lançamentos</span><span>Cada peça no lugar certo</span></div>
-    </div></div>
+    <section class="signal-strip" aria-label="Experts e marcas com quem trabalhei"><div class="signal-strip__track">
+      <div class="ticker-group">
+        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Receita Previsível, @receitaprevisivel, abrir Instagram em nova aba"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="André Ferraz, @andreferrazaromaterapia, abrir Instagram em nova aba"><img src="assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Marcia Macedo, @portugues_marciamacedo, abrir Instagram em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" aria-label="Camila Soares, @engcivilcamilasoares, abrir Instagram em nova aba"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" aria-label="Luciano F. Castro, @lucianof.castro, abrir Instagram em nova aba"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Dani Martins, @danimartinspro, abrir Instagram em nova aba"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" aria-label="Thiago Muniz, @thiagomuniz.rp, abrir Instagram em nova aba"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" aria-label="Edmar Lopes, @saradodepoisdos40, abrir Instagram em nova aba"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
+      </div>
+      <div class="ticker-group" aria-hidden="true">
+        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
+      </div>
+    </div></section>
     <section class="results" id="resultados" aria-labelledby="results-title" tabindex="-1">
       <div class="wrap">
-        <div class="section-top caps" data-rise><span>01 / Experiência em números</span><span>Copy · Gestão · Estratégia</span></div>
+        <div class="section-top caps" data-rise><span>02 / Experiência em números</span><span>Copy · Gestão · Estratégia</span></div>
         <h2 class="sr-only" id="results-title">Experiência em lançamentos e projetos perpétuos</h2>
         <div class="results-layout results-layout--summary">
           <div class="results-monitor" id="results-monitor" data-rise>
             <div class="monitor-header"><span class="caps">Construído na prática</span><span class="monitor-indicator">Em números</span></div>
             <!-- Valores finais permanecem acessíveis; apenas a apresentação visual conta. -->
-            <div class="metric"><span class="sr-only">Mais de 30 lançamentos clássicos</span><div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="30">30</span><span class="metric-plus">+</span></span><span class="metric-label">lançamentos<br>clássicos</span></div><div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:1"></div></div></div>
-            <div class="metric"><span class="sr-only">Mais de 20 lançamentos pagos</span><div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="20">20</span><span class="metric-plus">+</span></span><span class="metric-label">lançamentos<br>pagos</span></div><div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:.666667"></div></div></div>
-            <div class="metric"><span class="sr-only">Mais de 4 projetos perpétuos criados</span><div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="4">4</span><span class="metric-plus">+</span></span><span class="metric-label">projetos perpétuos<br>criados</span></div><div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:.133333"></div></div></div>
+            <div class="metric" data-rise style="--delay:0ms">
+              <span class="sr-only">Mais de 30 lançamentos clássicos</span>
+              <div class="metric-meta caps" aria-hidden="true"><span>01 / CLÁSSICOS</span><span class="metric-symbol"><svg class="icon" viewBox="0 0 24 24"><path d="M7 3v4m10-4v4M4 10h16"/><rect x="4" y="5" width="16" height="16" rx="3"/><path d="m9 15 2 2 4-4"/></svg></span></div>
+              <svg class="metric-art" viewBox="0 0 144 120" aria-hidden="true"><path class="metric-outline" pathLength="1" d="M35 39h64v54H35zM45 29h64v54M55 19h64v54M35 53h64M48 67h12m11 0h14M48 79h22"/></svg>
+              <div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="30">30</span><span class="metric-plus">+</span></span><span class="metric-label">lançamentos<br>clássicos</span></div>
+              <div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:1"></div></div>
+            </div>
+            <div class="metric" data-rise style="--delay:90ms">
+              <span class="sr-only">Mais de 20 lançamentos pagos</span>
+              <div class="metric-meta caps" aria-hidden="true"><span>02 / PAGOS</span><span class="metric-symbol"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="13" r="7"/><circle cx="11" cy="13" r="3"/><path d="m11 13 9-9m-5 0h5v5"/></svg></span></div>
+              <svg class="metric-art" viewBox="0 0 144 120" aria-hidden="true"><path class="metric-outline" pathLength="1" d="M116 61a37 37 0 1 1-37-37M104 61a25 25 0 1 1-25-25M91 61a12 12 0 1 1-12-12M79 61l38-38m-17 0h17v17"/></svg>
+              <div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="20">20</span><span class="metric-plus">+</span></span><span class="metric-label">lançamentos<br>pagos</span></div>
+              <div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:.666667"></div></div>
+            </div>
+            <div class="metric" data-rise style="--delay:180ms">
+              <span class="sr-only">Mais de 4 projetos perpétuos criados</span>
+              <div class="metric-meta caps" aria-hidden="true"><span>03 / PERPÉTUOS</span><span class="metric-symbol"><svg class="icon" viewBox="0 0 24 24"><path d="M12 12c-3-5-8-5-8 0s5 5 8 0 8-5 8 0-5 5-8 0Z"/></svg></span></div>
+              <svg class="metric-art" viewBox="0 0 144 120" aria-hidden="true"><path class="metric-outline" pathLength="1" d="M77 61c-17-27-49-27-49 0s32 27 49 0 49-27 49 0-32 27-49 0Z"/><path class="metric-outline" pathLength="1" d="M77 61c-13-18-38-18-38 0s25 18 38 0 38-18 38 0-25 18-38 0Z"/></svg>
+              <div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="4">4</span><span class="metric-plus">+</span></span><span class="metric-label">projetos perpétuos<br>criados</span></div>
+              <div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:.133333"></div></div>
+            </div>
             <div class="monitor-footer caps"><span>Experiência acumulada</span><span>Intenção em cada entrega</span></div>
           </div>
         </div>
@@ -645,56 +945,75 @@
     <section class="cases projects" id="cases" aria-labelledby="cases-title" tabindex="-1">
       <div class="cases-intro">
         <div class="wrap">
-          <div class="ds-top caps" data-rise><span>02 / CASES</span><span>PROJETOS SELECIONADOS</span></div>
-          <header class="ds-head" data-rise style="--delay:90ms">
-            <h2 id="cases-title">Experts diferentes.<br><em>A mesma organização.</em></h2>
-            <div><p>Em cada projeto, o meu papel e as peças que produzi. As copies originais estão abertas para leitura.</p><p class="cases-note">Links das copies em preparação.</p></div>
+          <header class="cases-heading" data-rise>
+            <h2 id="cases-title"><span class="font-fraunces">03/</span> <span>CASES</span></h2>
           </header>
         </div>
       </div>
       <div class="case-blocks">
-        <article class="case-block case-block--paper" aria-labelledby="case-marcia-title">
+        <article class="case-block case-block--paper case-block--marcia" aria-labelledby="case-marcia-title">
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <p class="caps case-eyebrow" data-rise>PORTUGUÊS PARA ESTRANGEIROS / MARCIA MACEDO</p>
-              <h3 id="case-marcia-title" data-rise style="--delay:90ms"><span>Mais de 8 lançamentos.</span><em>Uma só parceria.</em></h3>
-              <p class="case-description" data-rise style="--delay:180ms">Atuei como copywriter, gestor de projetos e coprodutor. É a parceria responsável pela maior parte do faturamento que mostro nesta página.</p>
+              <h3 id="case-marcia-title" data-rise style="--delay:90ms"><span>Mais de 8 lançamentos clássicos juntos.</span><em>E outros projetos de perpétuo.</em></h3>
+              <div class="case-narrative" data-rise style="--delay:180ms">
+                <p class="case-description">Entrei como copywriter e ampliei minha atuação até assumir a operação: copy, gestão e estratégia.</p>
+                <p class="case-description">No nicho de português para estrangeiros, trabalhamos com o <strong>Fluenti</strong>, produto principal dos lançamentos, e o <strong>Português Todo Dia</strong>, nossa assinatura.</p>
+                <p class="case-description">Nesse projeto, me aprofundei na estratégia de lançamento pago da Fórmula e no papel do time comercial dentro da campanha.</p>
+              </div>
+              <a class="case-instagram" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Marcia Macedo, @portugues_marciamacedo, abrir em nova aba" data-rise style="--delay:240ms"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@portugues_marciamacedo</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               <table class="case-specs" data-rise style="--delay:270ms">
                 <caption class="sr-only">Atuação na parceria com Marcia Macedo</caption>
                 <tbody>
-                  <tr><th scope="row">Lançamentos juntos</th><td>8+</td></tr>
-                  <tr><th scope="row">Atuação</th><td>Copy · Gestão · Coprodução</td></tr>
-                  <tr><th scope="row">Copies</th><td><div class="case-copy-group">
-                    <!-- LINKS PENDENTES: preencher href e retirar aria-disabled quando receber as URLs. -->
-                    <a class="case-link" data-copy-link="marcia-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                    <a class="case-link" data-copy-link="marcia-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                    <a class="case-link" data-copy-link="marcia-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                    <a class="case-link" data-copy-link="marcia-04" aria-disabled="true" target="_blank" rel="noopener">Copy 04 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                    <a class="case-link" data-copy-link="marcia-05" aria-disabled="true" target="_blank" rel="noopener">Copy 05 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                    <a class="case-link" data-copy-link="marcia-ptd" aria-disabled="true" target="_blank" rel="noopener">Página de vendas PTD <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  <tr><th scope="row">Lançamentos clássicos juntos</th><td>Mais de 8</td></tr>
+                  <tr><th scope="row">Atuação</th><td>Gestão operacional + copy</td></tr>
+                  <tr><th scope="row">Seleção de copies</th><td><div class="case-copy-group" aria-describedby="marcia-copy-note">
+                    <a class="case-link" data-copy-link="marcia-01" href="https://docs.google.com/document/d/1047e6rcC8M4QS0BzijKj3pdG5ackTTmI/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 01 de Marcia Macedo, abrir em nova aba">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-02" href="https://docs.google.com/document/d/1zL9Boqd3QW7getDi0xVmOLHpJK7O5Tqo/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 02 de Marcia Macedo, abrir em nova aba">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-03" href="https://docs.google.com/document/d/1p2PzNezdhnCv1ow8QJxiBMvWdC88AJwV/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 03 de Marcia Macedo, abrir em nova aba">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-04" href="https://docs.google.com/document/d/1gWETFS8Uwfh_Lvpbm7k76zWVuFpAEnvB/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 04 de Marcia Macedo, abrir em nova aba">Copy 04 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-05" href="https://docs.google.com/document/d/1FtXx5tXO44aIn3kA3Y_Ap-4LW6Pu39qC/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 05 de Marcia Macedo, abrir em nova aba">Copy 05 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-ptd" href="https://marcia.fluenti.com.br/ptd" target="_blank" rel="noopener noreferrer" aria-label="Página de vendas PTD de Marcia Macedo, abrir em nova aba">Página de vendas PTD <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                   </div></td></tr>
                 </tbody>
               </table>
+              <p class="case-copy-note" id="marcia-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Várias outras também foram desenvolvidas ao longo da parceria.</p>
             </div>
           </div>
-          <figure class="case-media" data-rise style="--delay:90ms">
-            <!-- FOTO PROVISÓRIA: Marcia Macedo, português para estrangeiros. Substituir pela foto real. -->
-            <img src="assets/cases/portugues.jpg" data-placeholder="true" alt="Passaporte sobre um mapa, imagem ilustrativa do nicho de português para estrangeiros" width="1500" height="1000" loading="lazy" decoding="async">
+          <figure class="case-media case-media--portrait" data-rise style="--delay:90ms">
+            <div class="case-portrait"><img src="assets/cases/marcia-macedo.jpg" alt="Marcia Macedo, sorrindo e usando óculos" width="225" height="225" loading="lazy" decoding="async"></div>
           </figure>
         </article>
-        <article class="case-block case-block--dark" aria-labelledby="case-rp-title">
-          <figure class="case-media case-media--b2b" data-rise>
-            <!-- FOTO PROVISÓRIA: Receita Previsível, vendas B2B. Substituir pela foto real. -->
-            <img src="assets/cases/b2b.jpg" data-placeholder="true" alt="Headphones e teclado de notebook sobre uma mesa de trabalho, imagem ilustrativa de vendas B2B" width="1500" height="685" loading="lazy" decoding="async">
+        <article class="case-block case-block--dark case-block--rp" aria-labelledby="case-rp-title">
+          <figure class="case-media case-media--book" data-rise>
+            <div class="rp-stage">
+              <div class="rp-grid" aria-hidden="true"></div>
+              <div class="rp-hud caps" aria-hidden="true"><span>Receita Previsível</span><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v15m0-15C8 2 4 3 3 4v15c3-2 6-1 9 1m0-15c4-3 8-2 9-1v15c-3-2-6-1-9 1"/></svg></div>
+              <div class="rp-book-slot"><div class="rp-book-reveal"><div class="rp-book glass-card"><img src="assets/cases/receita-previsivel-livro.jpg" alt="Capa do livro Receita Previsível, de Aaron Ross e Marylou Tyler" width="387" height="516" loading="lazy" decoding="async"></div></div></div>
+              <div class="signal-line" aria-hidden="true"></div>
+            </div>
+            <figcaption class="rp-caption caps"><span>Livro de referência</span><span>Vendas B2B</span></figcaption>
           </figure>
           <div class="case-panel">
             <div class="case-content">
               <p class="caps case-eyebrow" data-rise>VENDAS B2B / RECEITA PREVISÍVEL</p>
-              <h3 id="case-rp-title" data-rise style="--delay:90ms"><span>De copywriter</span><em>a braço direito.</em></h3>
-              <p class="case-description" data-rise style="--delay:180ms">Entrei no time como copywriter e me tornei braço direito do CEO, Thiago Muniz. Escrevi para a empresa e para outros negócios do ecossistema.</p>
+              <h3 id="case-rp-title" data-rise style="--delay:90ms"><span>Copywriter</span> <em>do ecossistema.</em></h3>
+              <div class="case-narrative" data-rise style="--delay:180ms">
+                <p class="case-description">Fui o copywriter responsável por todas as campanhas do ecossistema <strong>Receita Previsível</strong> (sim, o livro de vendas B2B mais famoso do mundo).</p>
+                <p class="case-description">Desenvolvi copies para workshops, eventos presenciais e lançamentos clássicos.</p>
+                <p class="case-description">Também construí a produção de conteúdo de todas as empresas do ecossistema, incluindo <strong>Receita Previsível</strong>, <strong>Thiago Muniz (CEO)</strong>, <strong>Receita Previsível Agendas</strong>, <strong>Nino Carvalho (Marketing Elevation)</strong>, <strong>CRM7</strong>, entre outras.</p>
+                <p class="case-description">Ali aprendi a lição mais importante: você é responsável pela tarefa e por fazer com que ela dê resultado.</p>
+              </div>
+              <a class="case-instagram" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Receita Previsível, @receitaprevisivel, abrir em nova aba" data-rise style="--delay:240ms"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@receitaprevisivel</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               <div class="case-links" data-rise style="--delay:270ms" aria-label="Materiais da Receita Previsível, links em preparação">
                 <a class="case-link" data-copy-link="rp-webinar" aria-disabled="true" target="_blank" rel="noopener">Webinar Labora + RP <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                 <a class="case-link" data-copy-link="rp-artigos" aria-disabled="true" target="_blank" rel="noopener">Artigos GazzConecta <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              </div>
+              <div class="case-press" data-rise style="--delay:360ms" aria-label="Materiais da Forbes sobre o livro e seu autor">
+                <div class="case-press-head"><span class="badge">Forbes</span><span class="caps">Sobre o livro e seu autor</span></div>
+                <a class="case-link" data-press-source="forbes-book" href="https://www.forbes.com/councils/forbesagencycouncil/2021/05/24/12-influential-books-every-agency-professional-should-read/" target="_blank" rel="noopener noreferrer" aria-label="Receita Previsível entre livros recomendados na Forbes, abrir em nova aba"><span class="case-press-copy"><strong>Receita Previsível entre livros recomendados</strong><small>Forbes Agency Council · 24/05/2021</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <!-- URL PENDENTE: confirmar a matéria da segunda imagem antes de ativar este material. -->
+                <span class="case-link" data-press-source="forbes-author" aria-disabled="true"><span class="case-press-copy"><strong>Aaron Ross, autor de Receita Previsível</strong><small>Forbes</small></span></span>
               </div>
             </div>
           </div>
@@ -703,21 +1022,23 @@
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <!-- NOME OFICIAL PENDENTE: confirmar Dani Martins. -->
-              <p class="caps case-eyebrow" data-rise>VENDAS / [NOME OFICIAL: DANI MARTINS]</p>
+              <p class="caps case-eyebrow" data-rise>VENDAS / DANI MARTINS</p>
               <h3 id="case-dani-title" data-rise style="--delay:90ms"><span>Antes de virar</span><em>Prosperus Club.</em></h3>
               <p class="case-description" data-rise style="--delay:180ms">Participei do início do projeto, ajudando a construir a base de comunicação e vendas do que viria a se tornar o Prosperus Club.</p>
+              <a class="case-instagram" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Dani Martins, @danimartinspro, abrir em nova aba" data-rise style="--delay:240ms"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@danimartinspro</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               <table class="case-specs" data-rise style="--delay:270ms">
-                <caption class="sr-only">Entregas na fundação do Prosperus Club</caption>
+                <caption class="sr-only">Fase do projeto e função no Prosperus Club</caption>
                 <tbody>
-                  <tr><th scope="row">Fase do projeto</th><td>Fundação</td></tr>
-                  <tr><th scope="row">Entregas</th><td>Copies de vendas</td></tr>
-                  <tr><th scope="row">Copies</th><td><div class="case-copy-group">
-                    <a class="case-link" data-copy-link="dani-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                    <a class="case-link" data-copy-link="dani-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                    <a class="case-link" data-copy-link="dani-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  <tr><th scope="row">Fase do projeto</th><td>Primeiro ano de construção</td></tr>
+                  <tr><th scope="row">Função</th><td>Copywriter</td></tr>
+                  <tr><th scope="row">Seleção de copies</th><td><div class="case-copy-group" aria-describedby="dani-copy-note">
+                    <a class="case-link" data-copy-link="dani-01" href="https://docs.google.com/document/d/1XKr9KijgUzxJroKgccITUWRLpuct-EIT/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 01 de Dani Martins, abrir em nova aba">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="dani-02" href="https://docs.google.com/document/d/1ilsVFGLqSUqmzDIOHGKLSHhFUDsZsoJr/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 02 de Dani Martins, abrir em nova aba">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="dani-03" href="https://docs.google.com/document/d/1Ih4e--AL4wYDOEYsB-ZYi0931QlT11UWVarWQjcDAi0/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Copy 03 de Dani Martins, abrir em nova aba">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                   </div></td></tr>
                 </tbody>
               </table>
+              <p class="case-copy-note" id="dani-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
             </div>
           </div>
           <figure class="case-media" data-rise style="--delay:90ms">
@@ -725,38 +1046,83 @@
             <img src="assets/cases/prosperus.jpg" data-placeholder="true" alt="Microfone em pedestal diante de um palco vazio com luzes desfocadas, imagem ilustrativa de comunicação e vendas" width="1500" height="1000" loading="lazy" decoding="async">
           </figure>
         </article>
-        <article class="case-block case-block--dark" aria-labelledby="case-vtsd-title">
-          <figure class="case-media case-media--split" data-rise>
-            <!-- FOTOS PROVISÓRIAS: Sanduba do Careca e Angélica Gevaerd. Substituir pelas fotos reais. -->
-            <img src="assets/cases/sanduba.jpg" data-placeholder="true" alt="Sanduíche artesanal em close-up, imagem ilustrativa do mercado de alimentação" width="1500" height="1000" loading="lazy" decoding="async">
-            <img src="assets/cases/marketplace.jpg" data-placeholder="true" alt="Caixas de papelão empilhadas, imagem ilustrativa do mercado de marketplace" width="1500" height="1000" loading="lazy" decoding="async">
+        <article class="case-block case-block--dark case-block--sanduba" aria-labelledby="case-sanduba-title">
+          <figure class="case-media case-media--portrait case-media--sanduba surface-paper" data-rise>
+            <div class="case-portrait"><img src="assets/cases/sanduba-do-careca.jpg" alt="Sanduba do Careca usando uma coroa e segurando dois sanduíches" width="216" height="233" loading="lazy" decoding="async"></div>
+            <figcaption class="case-portrait-caption caps"><span>Sanduba do Careca</span><span>Perpétuo / VTSD</span></figcaption>
           </figure>
           <div class="case-panel">
             <div class="case-content">
-              <p class="caps case-eyebrow" data-rise>PERPÉTUO · VTSD / SANDUBA DO CARECA E ANGÉLICA GEVAERD</p>
-              <h3 id="case-vtsd-title" data-rise style="--delay:90ms"><span>Dois perpétuos.</span><em>O mesmo método.</em></h3>
-              <p class="case-description" data-rise style="--delay:180ms">VSL, anúncios de conversão e remarketing no método VTSD, em dois mercados que não têm nada em comum: alimentação e marketplace.</p>
-              <div class="case-highlights" data-rise style="--delay:270ms"><div><strong>2</strong><span class="caps">PERPÉTUOS</span></div><div><strong>2</strong><span class="caps">VSLS</span></div></div>
-              <div class="case-deliverables" data-rise style="--delay:360ms">
-                <div class="case-deliverable"><p>Sanduba do Careca</p><div class="case-copy-group">
-                  <a class="case-link" data-copy-link="sanduba-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                  <a class="case-link" data-copy-link="sanduba-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                  <a class="case-link" data-copy-link="sanduba-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              <p class="caps case-eyebrow" data-rise>PERPÉTUO · VTSD / SANDUBA DO CARECA</p>
+              <h3 id="case-sanduba-title" data-rise style="--delay:90ms"><span>Sanduba</span><em>do Careca.</em></h3>
+              <p class="case-description" data-rise style="--delay:180ms">Uma das personalidades mais icônicas com quem já trabalhei. Produzi a copy do seu vídeo de vendas para perpétuo, anúncios de conversão e remarketing seguindo o VTSD.</p>
+              <table class="case-specs" data-rise style="--delay:270ms">
+                <caption class="sr-only">Atuação e seleção de copies de Sanduba do Careca</caption>
+                <tbody>
+                  <tr><th scope="row">Função</th><td>Copywriter</td></tr>
+                  <tr><th scope="row">Projeto</th><td>Perpétuo · VTSD</td></tr>
+                  <tr><th scope="row">Seleção de copies</th><td><div class="case-copy-group" aria-describedby="sanduba-copy-note">
+                    <a class="case-link" data-copy-link="sanduba-01" href="https://docs.google.com/document/d/1oC5MFvd8dOUEuw__uvFNFWvWESATxEgsN5ayPwI4eOY/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Copy 01 de Sanduba do Careca, abrir em nova aba">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="sanduba-02" href="https://docs.google.com/document/d/1YIcnzvXM26xyZ8NVAvaBHVQsrZzpOQ40/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 02 de Sanduba do Careca, abrir em nova aba">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="sanduba-03" href="https://docs.google.com/document/d/1mw_VHt8D-ShiVgW1VwfOOHAwKsKhjxff/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 03 de Sanduba do Careca, abrir em nova aba">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  </div></td></tr>
+                </tbody>
+              </table>
+              <p class="case-copy-note" id="sanduba-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
+            </div>
+          </div>
+        </article>
+        <article class="case-block case-block--paper case-block--angelica" aria-labelledby="case-angelica-title">
+          <div class="case-panel surface-paper glass-panel">
+            <div class="case-content">
+              <p class="caps case-eyebrow" data-rise>MARKETPLACE · VTSD / ANGÉLICA GEVAERD</p>
+              <h3 id="case-angelica-title" data-rise style="--delay:90ms"><span>Angélica</span><em>Gevaerd.</em></h3>
+              <p class="case-description" data-rise style="--delay:180ms">De jogadora de rugby a uma das maiores especialistas em marketplace do Brasil. Produzi o vídeo de vendas para o perpétuo e anúncios de conversão e remarketing, seguindo também o VTSD.</p>
+              <div class="case-deliverables" data-rise style="--delay:270ms">
+                <div class="case-deliverable"><p>Seleção de copies</p><div class="case-copy-group" aria-describedby="angelica-copy-note">
+                  <a class="case-link" data-copy-link="angelica-01" href="https://docs.google.com/document/d/1Mr0foghoz9EXkz2JTQWuwGqcm_i7LdzE/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 01 de Angélica Gevaerd, abrir em nova aba">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  <a class="case-link" data-copy-link="angelica-02" href="https://docs.google.com/document/d/120X0pnnZP5K4p70bhCUOVobJOOMHFE1V/edit?usp=sharing&amp;ouid=111706256285623529399&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" aria-label="Copy 02 de Angélica Gevaerd, abrir em nova aba">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                 </div></div>
-                <div class="case-deliverable"><p>Angélica Gevaerd</p><div class="case-copy-group">
-                  <a class="case-link" data-copy-link="angelica-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                  <a class="case-link" data-copy-link="angelica-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                  <a class="case-link" data-copy-link="angelica-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                </div></div>
+              </div>
+              <p class="case-copy-note" id="angelica-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
+            </div>
+          </div>
+          <figure class="case-media case-media--portrait case-media--angelica surface-paper" data-rise style="--delay:90ms">
+            <div class="case-portrait"><img src="assets/cases/angelica-gevaerd.png" alt="Angélica Gevaerd ao lado de um notebook com uma página de marketplace aberta" width="195" height="225" loading="lazy" decoding="async"></div>
+            <figcaption class="case-portrait-caption caps"><span>Marketplace</span><span>Perpétuo / VTSD</span></figcaption>
+          </figure>
+        </article>
+        <article class="case-block case-block--dark case-block--andre" aria-labelledby="case-andre-title">
+          <figure class="case-media case-media--portrait case-media--andre surface-paper" data-rise>
+            <div class="case-portrait"><img src="assets/cases/andre-ferraz.jpg" alt="André Ferraz sorrindo, com plantas ao fundo" width="800" height="800" loading="lazy" decoding="async"></div>
+            <figcaption class="case-portrait-caption caps"><span>Aromaterapia</span><span>Gestão · Copy · Webdesign</span></figcaption>
+          </figure>
+          <div class="case-panel">
+            <div class="case-content">
+              <p class="caps case-eyebrow" data-rise>AROMATERAPIA / ANDRÉ FERRAZ</p>
+              <h3 id="case-andre-title" data-rise style="--delay:90ms"><span>André</span><em>Ferraz.</em></h3>
+              <div class="case-narrative" data-rise style="--delay:180ms">
+                <p class="case-description">O maior expert de aromaterapia do mundo.</p>
+                <p class="case-description">Foram mais de 14 lançamentos, sendo 11 pagos, abertos e secretos.</p>
+                <p class="case-description">Atuei como gestor de projetos de uma equipe que chegou a 10 pessoas. Nos últimos meses do projeto, também atuei como copywriter e webdesigner.</p>
+              </div>
+              <div class="case-highlights" data-rise style="--delay:270ms" aria-label="Mais de 14 lançamentos, 11 pagos e equipe de até 10 pessoas">
+                <div><strong>14+</strong><span class="caps">LANÇAMENTOS</span></div>
+                <div><strong>11</strong><span class="caps">PAGOS</span></div>
+                <div><strong><small class="caption muted">até</small> 10</strong><span class="caps">PESSOAS NO TIME</span></div>
+              </div>
+              <a class="case-instagram" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de André Ferraz, @andreferrazaromaterapia, abrir em nova aba" data-rise style="--delay:360ms"><img src="assets/cases/andre-ferraz.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@andreferrazaromaterapia</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              <div class="case-links" data-rise style="--delay:450ms">
+                <a class="case-link" href="https://www.youtube.com/@andreferraz" target="_blank" rel="noopener noreferrer" aria-label="Canal de André Ferraz no YouTube, abrir em nova aba"><span>YouTube <span class="muted">· @andreferraz</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               </div>
             </div>
           </div>
         </article>
-        <!-- Case 05, Engª Camila Soares: incluir somente após receber título, papel e entregas. -->
+        <!-- Engª Camila Soares: incluir somente após receber título, papel e entregas. -->
       </div>
       <div class="cases-outro">
         <div class="wrap">
-          <div class="case-other" data-rise><p class="caps muted">Outros projetos</p><div class="case-copy-group">
+          <div class="case-other" id="materiais" aria-label="Materiais de outros projetos" tabindex="-1" data-rise><p class="caps muted">Outros projetos</p><div class="case-copy-group">
             <a class="case-link" data-copy-link="outros-typebot" aria-disabled="true" target="_blank" rel="noopener">Typebot <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><span aria-hidden="true">·</span>
             <a class="case-link" data-copy-link="outros-b2b" aria-disabled="true" target="_blank" rel="noopener">Copies B2B para prospecção <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><span aria-hidden="true">·</span>
             <a class="case-link" data-copy-link="outros-blueberry" aria-disabled="true" target="_blank" rel="noopener">Anúncios Blueberry <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
@@ -767,9 +1133,9 @@
 
     <section class="skills ds-group" id="habilidades" aria-labelledby="skills-title" tabindex="-1">
       <div class="section-inner">
-        <div class="ds-top caps" data-rise><span>03 / HABILIDADES</span><span>O QUE EU LEVO PARA O SEU LANÇAMENTO</span></div>
+        <div class="ds-top caps" data-rise><span>04 / HABILIDADES</span><span>O QUE EU LEVO PARA O SEU LANÇAMENTO</span></div>
         <header class="ds-head">
-          <h2 class="skills-title" id="skills-title" data-lines-reveal><span class="line-mask" style="--delay:90ms"><span>Sete habilidades.</span></span> <span class="line-mask" style="--delay:200ms"><span><em>Um só lançamento.</em></span></span></h2>
+          <h2 class="skills-title" id="skills-title" data-lines-reveal><span class="line-mask" style="--delay:90ms"><span>Seis habilidades.</span></span> <span class="line-mask" style="--delay:200ms"><span><em>Um só lançamento.</em></span></span></h2>
           <p class="scroll-reveal" data-rise style="--delay:240ms">Em vez de um especialista isolado em uma etapa, alguém que conecta as áreas que normalmente ficam espalhadas entre várias pessoas.</p>
         </header>
         <div class="skills-grid" data-proximity-grid>
@@ -790,27 +1156,22 @@
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:270ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">04</span>
-            <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="8" width="7" height="8" rx="2"/><rect x="15" y="8" width="7" height="8" rx="2"/><path d="M9 10h6m-6 4h6m-10-6V5m0 11v3m14-11V5m0 11v3"/></svg></span>
-            <div class="skill-copy"><h3>Coprodução</h3><p>Olhar de sócio sobre o projeto inteiro, da captação ao pós-venda, incluindo funis low ticket e operações com time comercial.</p></div>
-          </article></div>
-          <div class="skill-reveal" data-rise style="--delay:360ms"><article class="skill-card glass-card ds-stage">
-            <span class="skill-index caps" aria-hidden="true">05</span>
             <span class="skill-icon"><span class="tool-logo" role="img" aria-label="Typebot"><img class="tool-logo__color" src="assets/logos/typebot.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
             <div class="skill-copy"><h3>Automações</h3><p>Fluxos que tiram o trabalho manual do caminho: chatbots, integrações e disparos que rodam sem depender de alguém apertar o botão.</p></div>
           </article></div>
-          <div class="skill-reveal" data-rise style="--delay:450ms"><article class="skill-card glass-card ds-stage">
-            <span class="skill-index caps" aria-hidden="true">06</span>
+          <div class="skill-reveal" data-rise style="--delay:360ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">05</span>
             <!-- Ferramenta de Webdesign não informada: ícone de navegador conforme o briefing. -->
             <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 9v11m-2-14h.01M9 6h.01m2.99 7h6m-6 4h6"/></svg></span>
             <div class="skill-copy"><h3>Webdesign</h3><p>Páginas de captura e de vendas pensadas para converter, com hierarquia clara e leitura confortável no celular.</p></div>
           </article></div>
-          <div class="skill-reveal" data-rise style="--delay:540ms"><article class="skill-card glass-card ds-stage">
-            <span class="skill-index caps" aria-hidden="true">07</span>
+          <div class="skill-reveal" data-rise style="--delay:450ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">06</span>
             <span class="skill-icon"><span class="tool-logo" role="img" aria-label="ClickUp"><img class="tool-logo__color" src="assets/logos/clickup.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
             <div class="skill-copy"><h3>ClickUp</h3><p>O lançamento inteiro num só lugar: tarefas, prazos e responsáveis visíveis para todo o time, sem planilha perdida nem cobrança no grupo.</p></div>
           </article></div>
-          <div class="skill-reveal" data-rise style="--delay:630ms">
-            <a class="skill-card skill-card--cta glass-card ds-stage" href="https://wa.me/5511936188143?text=Quero%20te%20falar%20do%20meu%20projeto%2C%20Alisson." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson sobre seu lançamento no WhatsApp, abre em nova aba">
+          <div class="skill-reveal" data-rise style="--delay:540ms">
+            <a class="skill-card skill-card--cta glass-card ds-stage" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson sobre seu lançamento no WhatsApp, abre em nova aba">
               <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8m-4-4h8"/></svg></span>
               <div class="skill-copy"><h3>E o que mais o seu lançamento pedir.</h3><p>Me conta o projeto e eu digo como posso ajudar.</p></div>
               <svg class="icon skill-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
@@ -822,7 +1183,7 @@
 
     <section class="method ds-group" id="metodo" aria-labelledby="method-title" tabindex="-1">
       <div class="section-inner">
-        <div class="ds-top caps" data-rise><span>04 / COMO EU TRABALHO</span><span>DA COPY À OPERAÇÃO</span></div>
+        <div class="ds-top caps" data-rise><span>05 / COMO EU TRABALHO</span><span>DA COPY À OPERAÇÃO</span></div>
         <header class="ds-head" data-rise style="--delay:90ms"><h2 id="method-title"><span>A copy raramente é o que derruba um lançamento.</span><em>É o que acontece entre uma peça e outra.</em></h2></header>
         <div class="method-layout">
           <div class="method-left" data-rise style="--delay:180ms">
@@ -874,7 +1235,7 @@
       <div class="wrap">
         <header class="about-top" data-rise>
           <h2 id="about-title">Entrei pela copy.<em>Fiquei pelo resto.</em></h2>
-          <p class="caps">05 / SOBRE · DA COPY À OPERAÇÃO</p>
+          <p class="caps">06 / SOBRE · DA COPY À OPERAÇÃO</p>
         </header>
         <div class="about-composition">
           <figure class="about-photo about-photo--portrait" data-rise style="--delay:90ms">
@@ -930,25 +1291,121 @@
       </div>
     </section>
 
-    <section class="portfolio-section" id="materiais" aria-labelledby="materials-title" tabindex="-1">
-      <div class="wrap">
-        <div class="section-top caps" data-rise><span>06 / Materiais</span><span>Conteúdo para explorar</span></div>
-        <div class="section-head" data-rise>
-          <h2 class="section-title" id="materials-title">Ideias em<br><em>detalhe.</em></h2>
-          <div><ul class="placeholder-list"><li><span>[Nome do material ou apresentação]</span><span class="caps">Placeholder</span></li><li><span>[Nome da peça ou documento]</span><span class="caps">Placeholder</span></li></ul><p class="materials-note">Espaço reservado para apresentações, peças e materiais de campanha.</p></div>
-        </div>
+    <div class="closing-field" id="closing-field">
+      <div class="closing-field__backdrop" aria-hidden="true">
+        <div class="field-bloom field-bloom--electric"></div><div class="field-bloom field-bloom--mint"></div>
+        <svg class="field-wires" viewBox="0 0 1440 1800" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="field-light" x1="0" y1="0" x2="1" y2="1"><stop style="stop-color:var(--electric)"/><stop offset=".55" style="stop-color:var(--mint)"/><stop offset="1" style="stop-color:var(--mint)" stop-opacity="0"/></linearGradient>
+            <path id="field-wire-1" pathLength="1000" d="M-80 160C260 650 530 0 960 460S1550 610 1530 1050"/>
+            <path id="field-wire-2" pathLength="1000" d="M-100 1300C410 1650 550 860 1060 1060S1430 1700 1530 1720"/>
+            <path id="field-wire-3" pathLength="1000" d="M-60 650C420 830 540 180 1140 250S1480 650 1520 690"/>
+            <path id="field-wire-4" pathLength="1000" d="M-70 1650C440 1050 510 1510 1000 1430S1400 1090 1510 1220"/>
+          </defs>
+          <g class="field-wire"><use href="#field-wire-1"/><use class="field-wire__spark" href="#field-wire-1" style="--wire-duration:10s"/></g>
+          <g class="field-wire"><use href="#field-wire-2"/><use class="field-wire__spark" href="#field-wire-2" style="--wire-duration:14s"/></g>
+          <g class="field-wire field-wire--desktop"><use href="#field-wire-3"/><use class="field-wire__spark" href="#field-wire-3" style="--wire-duration:12s"/></g>
+          <g class="field-wire field-wire--desktop"><use href="#field-wire-4"/><use class="field-wire__spark" href="#field-wire-4" style="--wire-duration:16s"/></g>
+        </svg>
       </div>
-    </section>
-    <section class="contact" id="contato" aria-labelledby="contact-title" tabindex="-1">
-      <div class="wrap"><div class="section-top caps" data-rise><span>07 / Próximo capítulo</span><span>Contato</span></div><div class="contact-inner" data-rise><div><h2 id="contact-title" class="scroll-reveal">Vamos dar forma<br>à sua próxima ideia?</h2><p>Substitua o endereço ao lado pelo seu e-mail profissional para começar a conversa.</p></div><a class="contact-link" href="mailto:seu.email@example.com" aria-label="Enviar e-mail  /  endereço de exemplo, substitua pelo seu">seu.email@example.com <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div></div>
-    </section>
+      <section class="faq ds-group" id="perguntas" aria-labelledby="faq-title" tabindex="-1">
+        <div class="section-inner">
+          <div class="ds-top caps" data-rise><span>07 / PERGUNTAS</span><span>ANTES DA PRIMEIRA CONVERSA</span></div>
+          <header class="faq-head">
+            <h2 class="section-title" id="faq-title" data-lines-reveal><span class="line-mask" style="--delay:90ms"><span>Respostas diretas</span></span><span class="line-mask" style="--delay:200ms"><span><em>para decidir com calma.</em></span></span></h2>
+            <p data-rise style="--delay:350ms">O que costuma travar a decisão de chamar alguém para cuidar do lançamento.</p>
+          </header>
+          <div class="faq-list" id="faq-list">
+            <article class="faq-card glass-card is-open" data-rise>
+              <h3><button class="faq-question" type="button" id="faq-question-01" aria-expanded="true" aria-controls="faq-answer-01"><span>Você faz só a copy ou também a gestão do lançamento?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-01" role="region" aria-labelledby="faq-question-01"><p>Depende do momento do projeto. Posso atuar na copy, na gestão do lançamento ou nas duas frentes juntas. Em alguns projetos, entro também como coprodutor, com visão do funil inteiro.</p></div></div>
+            </article>
+            <article class="faq-card glass-card" data-rise style="--delay:70ms">
+              <h3><button class="faq-question" type="button" id="faq-question-02" aria-expanded="true" aria-controls="faq-answer-02"><span>Trabalha só com lançamentos ou também com perpétuo?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-02" role="region" aria-labelledby="faq-question-02"><p>Com os dois. Já geri mais de 40 lançamentos, pagos e clássicos, e criei mais de 4 projetos perpétuos, incluindo funis low ticket.</p></div></div>
+            </article>
+            <article class="faq-card glass-card" data-rise style="--delay:140ms">
+              <h3><button class="faq-question" type="button" id="faq-question-03" aria-expanded="true" aria-controls="faq-answer-03"><span>Em quais nichos você já atuou?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-03" role="region" aria-labelledby="faq-question-03"><p>Aromaterapia, engenharia civil, português para estrangeiros, reconstrução de casamento, vendas, marketplace e alimentação, em projetos B2B e B2C.</p></div></div>
+            </article>
+          </div>
+          <!-- Respostas pendentes ficam fora da página publicada. Preencher os <p>,
+               mover os artigos para #faq-list na ordem indicada, ajustar --delay
+               em passos de 70ms e incluir as mesmas respostas no FAQPage abaixo. -->
+          <template id="faq-pending">
+            <article class="faq-card glass-card" data-rise style="--delay:210ms" data-pending="contratacao">
+              <h3><button class="faq-question" type="button" id="faq-question-04" aria-expanded="true" aria-controls="faq-answer-04"><span>Como funciona a contratação?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-04" role="region" aria-labelledby="faq-question-04"><p><!-- PREENCHER: forma de contratação e cobrança. --></p></div></div>
+            </article>
+            <article class="faq-card glass-card" data-rise style="--delay:280ms" data-pending="antecedencia">
+              <h3><button class="faq-question" type="button" id="faq-question-05" aria-expanded="true" aria-controls="faq-answer-05"><span>Com quanto tempo de antecedência devo te chamar?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-05" role="region" aria-labelledby="faq-question-05"><p><!-- PREENCHER: antecedência ideal. --></p></div></div>
+            </article>
+            <article class="faq-card glass-card" data-rise style="--delay:350ms" data-pending="acompanhamento">
+              <h3><button class="faq-question" type="button" id="faq-question-06" aria-expanded="true" aria-controls="faq-answer-06"><span>Você trabalha sozinho? Como acompanho o andamento?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-06" role="region" aria-labelledby="faq-question-06"><p>Trabalho com um time de prestadores que segue o mesmo método. <!-- CONFIRMAR antes de publicar: acompanhamento no ClickUp, com peças, responsáveis e prazos visíveis para o cliente. --></p></div></div>
+            </article>
+            <article class="faq-card glass-card" data-rise style="--delay:420ms" data-pending="primeiro-lancamento">
+              <h3><button class="faq-question" type="button" id="faq-question-07" aria-expanded="true" aria-controls="faq-answer-07"><span>Você atende quem vai lançar pela primeira vez?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-07" role="region" aria-labelledby="faq-question-07"><p><!-- PREENCHER: atendimento ao primeiro lançamento. --></p></div></div>
+            </article>
+          </template>
+        </div>
+      </section>
+      <section class="contact closing ds-group" id="contato" aria-labelledby="contact-title" tabindex="-1">
+        <div class="section-inner">
+          <div class="ds-top caps" data-rise><span>08 / CONTATO</span><span>ATENDIMENTO REMOTO EM TODO O BRASIL</span></div>
+          <div class="closing-layout">
+          <div class="closing-content">
+            <p class="eyebrow caps closing-eyebrow" data-rise>PRÓXIMO PASSO</p>
+            <h2 class="section-title" id="contact-title" data-lines-reveal><span class="line-mask" style="--delay:90ms"><span>Seu próximo lançamento</span></span><span class="line-mask" style="--delay:200ms"><span><em>já pode começar organizado.</em></span></span></h2>
+            <p class="closing-lead" data-rise style="--delay:350ms">Quanto antes a operação é planejada, menos peça fica para a última hora. Me conta em que momento você está e eu digo como posso ajudar.</p>
+            <div class="closing-cta-wrap" data-contact-enter>
+              <a class="button button-primary magnetic closing-cta" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/></svg>Conversar no WhatsApp <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+            </div>
+            <p class="caption closing-caption" data-rise style="--delay:540ms">A conversa já abre com a mensagem pronta.</p>
+          </div>
+          <div class="closing-visual" aria-hidden="true">
+            <div class="money-scene">
+              <svg class="money-defs" width="0" height="0"><defs><symbol id="contact-banknote" viewBox="0 0 112 64"><rect x="3" y="3" width="106" height="58" rx="5"/><path d="M20 11h72a9 9 0 0 0 9 9v24a9 9 0 0 0-9 9H20a9 9 0 0 0-9-9V20a9 9 0 0 0 9-9Z"/><ellipse cx="56" cy="32" rx="17" ry="20"/><path d="M22 29h8m-8 6h8m52-6h8m-8 6h8"/><text x="56" y="37" text-anchor="middle">R$</text></symbol></defs></svg>
+              <div class="money-stream">
+                <span class="money-note" style="--from-x:-180px;--from-angle:-24deg;--rest-y:35px;--money-delay:-1s;--money-duration:10s"><svg viewBox="0 0 112 64"><use href="#contact-banknote"/></svg></span>
+                <span class="money-note" style="--from-x:138px;--from-angle:18deg;--rest-y:120px;--money-delay:-4s;--money-duration:12s"><svg viewBox="0 0 112 64"><use href="#contact-banknote"/></svg></span>
+                <span class="money-note" style="--from-x:-64px;--from-angle:12deg;--rest-y:205px;--money-delay:-7s;--money-duration:11s"><svg viewBox="0 0 112 64"><use href="#contact-banknote"/></svg></span>
+                <span class="money-note" style="--from-x:206px;--from-angle:-18deg;--rest-y:65px;--money-delay:-8s;--money-duration:13s"><svg viewBox="0 0 112 64"><use href="#contact-banknote"/></svg></span>
+                <span class="money-note money-note--desktop" style="--from-x:-230px;--from-angle:28deg;--rest-y:180px;--money-delay:-5s;--money-duration:14s"><svg viewBox="0 0 112 64"><use href="#contact-banknote"/></svg></span>
+                <span class="money-note money-note--desktop" style="--from-x:56px;--from-angle:-8deg;--rest-y:240px;--money-delay:-10s;--money-duration:12s"><svg viewBox="0 0 112 64"><use href="#contact-banknote"/></svg></span>
+              </div>
+              <div class="money-account glass-card">
+                <div class="money-account__top"><svg class="icon" viewBox="0 0 24 24"><path d="M4 8h16v12H4V8Zm0 0V5h13v3m0 5h4v4h-4v-4"/></svg><span class="status-dot"></span></div>
+                <svg class="money-account__mark" viewBox="0 0 160 100"><path d="M80 12v54m-18-18 18 18 18-18M30 67v16h100V67"/></svg>
+                <div class="money-account__lines"><i></i><i></i><i></i></div>
+                <div class="signal-line"></div>
+              </div>
+              <div class="money-landing"><span></span><span></span></div>
+            </div>
+          </div>
+          </div>
+          <div class="contact-channels" aria-label="Canais de contato">
+            <a class="contact-channel" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" data-rise><span class="caps">WHATSAPP</span><span class="contact-channel__value">+55 11 93618-8143 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="contact-channel" href="mailto:alisson.segecsmiguel@gmail.com" data-copy-email data-rise style="--delay:90ms"><span class="caps">E-MAIL</span><span class="contact-channel__value">alisson.segecsmiguel@gmail.com <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="contact-channel" href="https://www.instagram.com/asegecs/" target="_blank" rel="noopener noreferrer" data-rise style="--delay:180ms"><span class="caps">INSTAGRAM</span><span class="contact-channel__value">@asegecs <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="contact-channel" href="https://www.youtube.com/@alissonsegecs5304" target="_blank" rel="noopener noreferrer" data-rise style="--delay:270ms"><span class="caps">YOUTUBE</span><span class="contact-channel__value">@alissonsegecs5304 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
-  <footer class="footer"><span class="caps">Alisson Segecs / Portfólio profissional</span><a class="caps" href="#inicio">Voltar ao início <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></a></footer>
-  <a class="whatsapp-float button button-primary magnetic" href="https://wa.me/5511936188143?text=Quero%20te%20falar%20do%20meu%20projeto%2C%20Alisson." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba">
+  <footer class="footer" data-rise><span>Alisson Segecs · CNPJ 64.493.187/0001-95</span><span>Gestão de lançamentos e copy · © 2026</span><a href="#top">Voltar ao início ↑</a></footer>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true" id="toast"></div>
+  <a class="whatsapp-float button button-primary magnetic" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba">
     <svg class="icon whatsapp-float__symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg>
     <span class="whatsapp-float__copy"><span class="whatsapp-float__title">Vamos conversar</span><span class="caps">NO WHATSAPP</span></span>
     <svg class="icon whatsapp-float__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
   </a>
+  <script type="application/ld+json" id="faq-schema">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Você faz só a copy ou também a gestão do lançamento?","acceptedAnswer":{"@type":"Answer","text":"Depende do momento do projeto. Posso atuar na copy, na gestão do lançamento ou nas duas frentes juntas. Em alguns projetos, entro também como coprodutor, com visão do funil inteiro."}},{"@type":"Question","name":"Trabalha só com lançamentos ou também com perpétuo?","acceptedAnswer":{"@type":"Answer","text":"Com os dois. Já geri mais de 40 lançamentos, pagos e clássicos, e criei mais de 4 projetos perpétuos, incluindo funis low ticket."}},{"@type":"Question","name":"Em quais nichos você já atuou?","acceptedAnswer":{"@type":"Answer","text":"Aromaterapia, engenharia civil, português para estrangeiros, reconstrução de casamento, vendas, marketplace e alimentação, em projetos B2B e B2C."}}]}
+  </script>
   <script>
     (() => {
       'use strict';
@@ -960,6 +1417,7 @@
       const reduced = matchMedia('(prefers-reduced-motion: reduce)');
       let userPaused = false;
       let syncMethodMotion = () => {};
+      let syncClosingMotion = () => {};
       let duration = 0, metadataReady = false, libraryReady = false;
       let trigger = null, context = null, failed = false, staticMode = true;
       let metadataTimer, playRequest = null;
@@ -967,6 +1425,24 @@
       let heroVisible = initialBounds.bottom > 0 && initialBounds.top < innerHeight;
       const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
       const timecode = seconds => '00:' + String(Math.floor(seconds)).padStart(2, '0');
+
+      // Keep the entire focused profile visible without animating keyboard navigation.
+      const expertStrip = $('.signal-strip');
+      if (expertStrip) {
+        expertStrip.addEventListener('focusin', event => {
+          const link = event.target.closest('.expert-link');
+          if (!link || link.closest('[aria-hidden="true"]')) return;
+          const bounds = expertStrip.getBoundingClientRect();
+          const item = link.getBoundingClientRect();
+          if (item.right > bounds.right - 12) expertStrip.scrollLeft += item.right - bounds.right + 12;
+          else if (item.left < bounds.left + 12) expertStrip.scrollLeft += item.left - bounds.left - 12;
+        });
+        expertStrip.addEventListener('focusout', () => {
+          queueMicrotask(() => {
+            if (!expertStrip.contains(document.activeElement)) expertStrip.scrollLeft = 0;
+          });
+        });
+      }
 
       // Interações e reveals da referência, independentes do CDN do vídeo.
       const root = document.documentElement;
@@ -984,49 +1460,45 @@
         return value((lo+hi)/2,y1,y2);
       }
       const fine = matchMedia('(hover: hover) and (pointer: fine)');
-      // O holofote compartilha uma atualização por frame entre os oito cards.
-      // Só lê os retângulos quando a grade muda de posição ou de tamanho.
-      const proximityGrid = $('[data-proximity-grid]');
-      const proximityCards = Array.from(proximityGrid.querySelectorAll('.skill-card'));
-      let proximityFrame = 0, proximityPointer = null, proximityBounds = [], proximityGridBounds;
-      let proximityBoundsDirty = true;
       const proximityAllowed = () => fine.matches && !userPaused && !reduced.matches && !document.hidden;
-      function resetSkillsProximity() {
-        cancelAnimationFrame(proximityFrame); proximityFrame = 0;
-        proximityPointer = null; proximityBoundsDirty = true;
-        proximityGrid.classList.remove('is-proximity-active');
-      }
-      function renderSkillsProximity() {
-        proximityFrame = 0;
-        if (!proximityPointer || !proximityAllowed()) { resetSkillsProximity(); return; }
-        if (proximityBoundsDirty) {
-          proximityGridBounds = proximityGrid.getBoundingClientRect();
-          proximityBounds = proximityCards.map(card => card.parentElement.getBoundingClientRect());
-          proximityBoundsDirty = false;
+      // Habilidades e FAQ compartilham o holofote, com uma atualização por
+      // frame em cada grade ativa e retângulos lidos apenas quando necessário.
+      function createCardProximity(grid, selector, wrapped = false) {
+        const cards = Array.from(grid.querySelectorAll(selector));
+        let frame = 0, pointer = null, bounds = [], gridBounds, dirty = true;
+        function reset() {
+          cancelAnimationFrame(frame); frame = 0; pointer = null; dirty = true;
+          grid.classList.remove('is-proximity-active');
         }
-        const {x,y} = proximityPointer;
-        if (x < proximityGridBounds.left || x > proximityGridBounds.right || y < proximityGridBounds.top || y > proximityGridBounds.bottom) {
-          resetSkillsProximity(); return;
+        function render() {
+          frame = 0;
+          if (!pointer || !proximityAllowed()) { reset(); return; }
+          if (dirty) {
+            gridBounds = grid.getBoundingClientRect();
+            bounds = cards.map(card => (wrapped ? card.parentElement : card).getBoundingClientRect());
+            dirty = false;
+          }
+          const {x,y} = pointer;
+          if (x < gridBounds.left || x > gridBounds.right || y < gridBounds.top || y > gridBounds.bottom) { reset(); return; }
+          cards.forEach((card,index) => {
+            card.style.setProperty('--px', (x - bounds[index].left).toFixed(1) + 'px');
+            card.style.setProperty('--py', (y - bounds[index].top).toFixed(1) + 'px');
+          });
+          grid.classList.add('is-proximity-active');
         }
-        proximityCards.forEach((card,index) => {
-          card.style.setProperty('--px', (x - proximityBounds[index].left).toFixed(1) + 'px');
-          card.style.setProperty('--py', (y - proximityBounds[index].top).toFixed(1) + 'px');
-        });
-        proximityGrid.classList.add('is-proximity-active');
+        function schedule() { if (!frame && pointer) frame = requestAnimationFrame(render); }
+        function refresh() { dirty = true; schedule(); }
+        grid.addEventListener('pointermove', event => {
+          if (event.pointerType === 'touch' || !proximityAllowed()) { reset(); return; }
+          pointer = {x:event.clientX,y:event.clientY}; schedule();
+        }, {passive:true});
+        grid.addEventListener('pointerleave', reset); grid.addEventListener('pointercancel', reset);
+        addEventListener('scroll', refresh, {passive:true}); addEventListener('resize', refresh, {passive:true});
+        return {reset,refresh};
       }
-      function scheduleSkillsProximity() {
-        if (!proximityFrame && proximityPointer) proximityFrame = requestAnimationFrame(renderSkillsProximity);
-      }
-      proximityGrid.addEventListener('pointermove', event => {
-        if (event.pointerType === 'touch' || !proximityAllowed()) { resetSkillsProximity(); return; }
-        proximityPointer = {x:event.clientX,y:event.clientY};
-        scheduleSkillsProximity();
-      }, {passive:true});
-      proximityGrid.addEventListener('pointerleave', resetSkillsProximity);
-      proximityGrid.addEventListener('pointercancel', resetSkillsProximity);
-      function refreshSkillsProximity() { proximityBoundsDirty = true; scheduleSkillsProximity(); }
-      addEventListener('scroll', refreshSkillsProximity, {passive:true});
-      addEventListener('resize', refreshSkillsProximity, {passive:true});
+      const skillsProximity = createCardProximity($('[data-proximity-grid]'), '.skill-card', true);
+      const faqProximity = createCardProximity($('#faq-list'), '.faq-card');
+      const resetSkillsProximity = () => skillsProximity.reset();
 
       const ring = $('.cursor-ring');
       const magneticButtons = Array.from(document.querySelectorAll('.button'));
@@ -1049,8 +1521,9 @@
         });
         root.classList.toggle('motion-suspended', document.hidden);
         if (pointerMotionOff()) resetPointers();
-        if (!proximityAllowed()) resetSkillsProximity();
+        if (!proximityAllowed()) { resetSkillsProximity(); faqProximity.reset(); }
         syncMethodMotion();
+        syncClosingMotion();
       }
       function drawRing() {
         ringFrame = 0;
@@ -1098,24 +1571,24 @@
         });
         const reveal = new IntersectionObserver(entries => {
           let skillOrder = 0;
-          const lastSkillOrder = innerWidth <= 800 ? 3 : 7;
+          const lastSkillOrder = innerWidth <= 800 ? 3 : 6;
           entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             // Cascata por grupo visível: um card novo no celular não espera
-            // os sete anteriores. No mobile, o atraso fica em até 270 ms.
+            // os cards anteriores. No mobile, o atraso fica em até 270 ms.
             if (entry.target.classList.contains('skill-reveal')) {
               entry.target.style.setProperty('--delay', Math.min(skillOrder++, lastSkillOrder) * 90 + 'ms');
             }
             entry.target.classList.add('is-in'); reveal.unobserve(entry.target);
           });
         }, {threshold:.12});
-        document.querySelectorAll('[data-rise],.scroll-reveal,[data-lines-reveal]').forEach(node => reveal.observe(node));
+        document.querySelectorAll('[data-rise],.scroll-reveal,[data-lines-reveal],[data-contact-enter]').forEach(node => reveal.observe(node));
         root.classList.add('js-motion');
         // Pause decorative loops outside the viewport; no idle JS animation loop.
         const loops = new IntersectionObserver(entries => entries.forEach(entry => {
           entry.target.classList.toggle('motion-offscreen', !entry.isIntersecting);
         }), {rootMargin:'100px'});
-        document.querySelectorAll('.scene,.signal-strip,.results,.projects,.skills,.method,.about,.portfolio-section,.contact').forEach(node => loops.observe(node));
+        document.querySelectorAll('.scene,.signal-strip,.results,.projects,.case-media--book,.skills,.method,.about,.faq,.closing-field,.contact').forEach(node => loops.observe(node));
         // A reprodução usa a viewport real, sem a margem dos loops decorativos.
         const playbackObserver = new IntersectionObserver(entries => {
           heroVisible = entries[0].isIntersecting;
@@ -1148,6 +1621,104 @@
       function updateNavigationSurface() { nav.classList.toggle('is-scrolled', scrollY > 40); }
       addEventListener('scroll', updateNavigationSurface, {passive:true});
       updateNavigationSurface();
+      // Acordeão progressivo: sem JavaScript, as respostas permanecem legíveis.
+      {
+        const faq = $('#perguntas'), cards = Array.from($('#faq-list').children);
+        function setOpen(card, open) {
+          const button = card.querySelector('.faq-question'), answer = card.querySelector('.faq-answer');
+          card.classList.toggle('is-open', open);
+          button.setAttribute('aria-expanded', String(open));
+          answer.setAttribute('aria-hidden', String(!open)); answer.inert = !open;
+        }
+        cards.forEach((card,index) => {
+          setOpen(card, index === 0);
+          card.querySelector('.faq-question').addEventListener('click', () => {
+            const open = !card.classList.contains('is-open');
+            cards.forEach(item => setOpen(item, item === card && open));
+            faqProximity.refresh();
+          });
+        });
+        faq.classList.add('faq-ready');
+        if ('ResizeObserver' in window) new ResizeObserver(() => faqProximity.refresh()).observe($('#faq-list'));
+      }
+      // Campo de luz compartilhado. O RAF só existe enquanto o cursor muda
+      // de posição; movimento reduzido, toque, pausa e saída da tela o desligam.
+      {
+        const field = $('#closing-field'), backdrop = field.querySelector('.closing-field__backdrop');
+        let frame = 0, visible = false, bounds = null, dirty = true;
+        let x = 0, y = 0, targetX = 0, targetY = 0;
+        const allowed = () => proximityAllowed() && innerWidth > 800 && visible && !previewMode;
+        function draw() {
+          frame = 0;
+          if (!allowed()) return;
+          x += (targetX - x) * .18; y += (targetY - y) * .18;
+          const settled = Math.abs(targetX - x) + Math.abs(targetY - y) < .02;
+          if (settled) { x = targetX; y = targetY; }
+          backdrop.style.setProperty('--px', x.toFixed(3) + '%'); backdrop.style.setProperty('--py', y.toFixed(3) + '%');
+          if (!settled) frame = requestAnimationFrame(draw);
+        }
+        function schedule() { if (!frame && allowed()) frame = requestAnimationFrame(draw); }
+        syncClosingMotion = () => {
+          if (!allowed()) {
+            cancelAnimationFrame(frame); frame = 0; x = y = targetX = targetY = 0;
+            backdrop.style.setProperty('--px', '0%'); backdrop.style.setProperty('--py', '0%');
+          }
+        };
+        field.addEventListener('pointermove', event => {
+          if (event.pointerType === 'touch' || !allowed()) return;
+          if (dirty || !bounds) { bounds = field.getBoundingClientRect(); dirty = false; }
+          targetX = clamp((event.clientX - bounds.left) / bounds.width * 12 - 6, -6, 6);
+          targetY = clamp((event.clientY - bounds.top) / bounds.height * 12 - 6, -6, 6);
+          schedule();
+        }, {passive:true});
+        field.addEventListener('pointerleave', () => { targetX = targetY = 0; schedule(); });
+        field.addEventListener('pointercancel', syncClosingMotion);
+        const refresh = () => { dirty = true; };
+        addEventListener('scroll', refresh, {passive:true}); addEventListener('resize', refresh, {passive:true});
+        function setVisible(value) { visible = value; field.classList.toggle('is-field-offscreen', !visible); syncClosingMotion(); }
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(entries => setVisible(entries[0].isIntersecting), {threshold:0}).observe(field);
+        } else {
+          const check = () => { const r = field.getBoundingClientRect(); setVisible(r.bottom > 0 && r.top < innerHeight); };
+          addEventListener('scroll', check, {passive:true}); addEventListener('resize', check, {passive:true}); check();
+        }
+        syncClosingMotion();
+      }
+      // Suspende o fluxo financeiro fora da viewport.
+      {
+        const contact = $('#contato');
+        const setVisible = visible => contact.classList.toggle('money-paused', !visible);
+        if ('IntersectionObserver' in window) {
+          contact.classList.add('money-paused');
+          new IntersectionObserver(entries => setVisible(entries[0].isIntersecting), {threshold:0}).observe(contact);
+        } else {
+          const check = () => { const r = contact.getBoundingClientRect(); setVisible(r.bottom > 0 && r.top < innerHeight); };
+          addEventListener('scroll', check, {passive:true}); addEventListener('resize', check, {passive:true}); check();
+        }
+      }
+      // Copia com confirmação real, preservando a ação nativa do mailto.
+      {
+        const email = 'alisson.segecsmiguel@gmail.com', toast = $('#toast');
+        let toastTimer;
+        function notify(message) {
+          toast.textContent = message; toast.classList.add('is-visible');
+          clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 3200);
+        }
+        async function copyEmail() {
+          if (navigator.clipboard && window.isSecureContext) {
+            try { await navigator.clipboard.writeText(email); return true; } catch (_) { /* Fallback do sistema. */ }
+          }
+          const active = document.activeElement, area = document.createElement('textarea');
+          area.value = email; area.setAttribute('readonly',''); area.setAttribute('aria-hidden','true');
+          area.style.cssText = 'position:fixed;top:-1000px;left:-1000px'; document.body.appendChild(area);
+          area.select(); let copied = false;
+          try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
+          area.remove(); if (active && active.focus) active.focus({preventScroll:true}); return copied;
+        }
+        document.querySelectorAll('[data-copy-email]').forEach(link => link.addEventListener('click', async () => {
+          notify(await copyEmail() ? 'E-mail copiado.' : 'Abra seu e-mail para continuar a conversa.');
+        }));
+      }
       if ('IntersectionObserver' in window) {
         const navigationObserver = new IntersectionObserver(entries => {
           entries.forEach(entry => { if (entry.isIntersecting) setCurrentNavigation('#' + entry.target.id); });
@@ -1481,9 +2052,10 @@
         event.preventDefault();
         history.pushState(null, '', link.getAttribute('href'));
         setCurrentNavigation(link.getAttribute('href'));
-        const top = destination === hero ? 0 : window.scrollY + destination.getBoundingClientRect().top - nav.getBoundingClientRect().height - 24;
+        const isTop = destination === hero || destination.id === 'top';
+        const top = isTop ? 0 : window.scrollY + destination.getBoundingClientRect().top - nav.getBoundingClientRect().height - 24;
         window.scrollTo({top, behavior:reduced.matches || hero.contains(link) ? 'instant' : 'smooth'});
-        if (destination === hero) $('.brand').focus({preventScroll:true});
+        if (isTop) $('.brand').focus({preventScroll:true});
         else destination.focus({preventScroll:true});
       }));
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (trigger) ScrollTrigger.refresh(); });

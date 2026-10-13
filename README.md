@@ -12,15 +12,23 @@ node serve.cjs
 
 Abra http://127.0.0.1:4173. Encerre com Ctrl+C. Live Server e servidores estáticos com suporte a HTTP Range também funcionam. GSAP e ScrollTrigger 3.12.5 carregam por CDN; se falharem, os conteúdos e as animações CSS permanecem disponíveis.
 
+## Espaçamento entre seções
+
+O token --section-space usa clamp(24px,2.5vw,36px). A escala compacta é compartilhada por Habilidades, Método, Sobre mim, Perguntas e Contato. Cases têm entrada e saída próprias, também reduzidas. Foram encurtados os intervalos entre rótulos, títulos e conteúdo, a separação do bloco de públicos no método e os espaços da composição Sobre mim. O contato acompanha a altura do conteúdo, sem min-height de quase uma viewport. A proteção de rodapé e das âncoras para o botão flutuante permanece.
+
 ## Hero
 
-O eyebrow é “GESTÃO DE LANÇAMENTOS / PORTFÓLIO”. A headline tem cinco linhas: “Lançamentos para experts que querem”, “escalar”, “sem perder”, “o controle da” e “operação.”. As linhas pequenas usam Manrope 400; as grandes, Arial/Helvetica 500; o destaque editorial, Fraunces 300.
+O eyebrow é “GESTÃO DE LANÇAMENTOS / PORTFÓLIO”. A headline tem cinco linhas: “Experts que querem”, “escalar”, “sem perder”, “o controle da” e “operação.”. As linhas pequenas usam Manrope 400; as grandes, Arial/Helvetica 500; o destaque editorial, Fraunces 300. O apoio é “+40 lançamentos em 6 nichos. Crio a campanha e organizo o seu time: da gestão à copy, da estratégia a operação.”.
 
 As classes .hero__copy, .hero__lead, .line-mask, .font-fraunces, .button-ghost, .hero-card.glass-card, .carousel-track e .signal-strip seguem o vocabulário do sistema. A curva das animações vem de --ease, inclusive nos efeitos JavaScript. Não há travessões nos textos da página.
 
-O botão “Ver cases” e a indicação de rolagem levam a #cases. “Conversar no WhatsApp” no hero abre uma nova aba com rel="noopener noreferrer", apontando para +55 11 93618-8143 e a mensagem “Quero te falar do meu projeto, Alisson.”. O balão de conversa usa SVG inline com stroke de 1,5.
+O botão “Ver cases” e a indicação de rolagem levam a #cases. “Conversar no WhatsApp” no hero abre uma nova aba com rel="noopener noreferrer", apontando para +55 11 93618-8143 e a mensagem “Alisson, posso te apresentar meu projeto?”. O balão de conversa usa SVG inline com stroke de 1,5. Essa mesma mensagem está nos cinco links de WhatsApp da página.
 
-O card alterna entre três provas, em ciclo de 12 s, com aproximadamente 3 s de permanência em cada estado. Pausa com hover e foco. No celular de até 430 px, fica em linha e esconde badge e caption. A faixa abaixo da hero duplica o grupo de cinco frases para o ticker contínuo.
+O WhatsApp aparece primeiro e usa o botão principal violeta. “Ver cases” é a ação secundária. O acabamento adapta o relevo, a borda em gradiente e a seta em uma pequena cápsula do GenLabs, preservando a paleta e --ease do portfólio. A borda respira em 3,2 s e um brilho atravessa o botão a cada 5,2 s. Hover e foco interrompem esses loops para manter a ação estável. Pausa global, movimento reduzido e saída da primeira dobra suspendem as animações. Os botões foram revisados de 320 a 1440 px, sem sobreposição ao card de experiência, incluindo ordem de Tab e foco visível.
+
+O card alterna entre três provas, em ciclo de 12 s, com aproximadamente 3 s de permanência em cada estado. Pausa com hover e foco. No celular de até 430 px, fica em linha e esconde badge e caption.
+
+A faixa abaixo da hero mostra os oito experts e marcas informados, com fotos reais dos perfis, nomes e links para o Instagram. Mantém o ticker de 32 s com --ease e dois grupos idênticos, sem mudar o vídeo. As fotos estão em assets/experts/ e suas origens estão documentadas no README dessa pasta. Não depende de imagens externas. Hover pausa o movimento; ao navegar por teclado, apresenta uma única sequência estática com rolagem horizontal e foco visível. A cópia usa aria-hidden e links fora da sequência de Tab, mantendo os cliques durante todo o loop. Movimento reduzido organiza todos os perfis em linhas estáticas. A faixa respeita também a pausa global e a suspensão fora da viewport.
 
 O botão de pausa ao lado da navegação suspende o vídeo, os efeitos de ponteiro, os elementos flutuantes, o carrossel e o ticker. A preferência por movimento reduzido mantém os textos legíveis, a foto estática e o primeiro estado do card. Os loops pausam fora da viewport e com a aba oculta.
 
@@ -42,25 +50,41 @@ Na comparação local em Chrome sem interface, com gráficos padrão e amostras 
 
 ## Segunda dobra
 
-Um painel ocupa a largura da seção e mostra os números fornecidos em três colunas: mais de 30 lançamentos clássicos, mais de 20 lançamentos pagos e mais de 4 projetos perpétuos criados. No celular, os indicadores empilham. A antiga coluna de serviços foi removida; o conteúdo agora está nas habilidades.
+Um painel ocupa a largura da seção e mostra os números fornecidos em três cards: mais de 30 lançamentos clássicos, mais de 20 lançamentos pagos e mais de 4 projetos perpétuos criados. A transição da faixa de experts usa 24 px no desktop e 18 px no celular, substituindo o espaçamento amplo de seção. Cada card tem borda em gradiente com a máscara do GenLabs, relevo interno, grade discreta do Noema, ícone e grafismo vetorial associados à categoria. Os grafismos são decorativos. A entrada usa [data-rise] com cascata de 90 ms e desenho dos traços em 1,25 s com --ease. A grade reutiliza grid-drift e pausa junto das animações globais. No celular, os indicadores empilham. A antiga coluna de serviços foi removida; o conteúdo agora está nas habilidades.
 
-Os contadores crescem uma vez ao entrar na viewport. As barras representam somente a proporção entre esses números. Sem JavaScript, sem IntersectionObserver ou com movimento reduzido, os valores finais continuam visíveis. Leitores de tela recebem os valores finais sem anúncios a cada incremento.
+Os contadores crescem uma vez ao entrar na viewport. As barras representam somente a proporção entre esses números. Sem JavaScript, sem IntersectionObserver ou com movimento reduzido, os valores finais continuam visíveis. Leitores de tela recebem os valores finais sem anúncios a cada incremento. A entrada dos cases imediatamente após o painel usa 28 px no desktop e 22 px no celular, evitando outra faixa vazia entre as seções.
 
 Para alterar números, atualize data-counter, o texto inicial, o texto acessível e --meter-share de cada .metric.
 
 ## Terceira dobra: cases
 
-A seção #cases usa quatro blocos sem intervalos, alternando texto claro com imagem à direita e imagem à esquerda com texto escuro. As superfícies e hairlines seguem o GenLabs, com os tokens, Manrope, Fraunces e títulos do design system do portfólio. A abertura usa .ds-top e .ds-head; o painel claro usa .surface-paper.glass-panel. As entradas usam data-rise em intervalos de 90 ms.
+A seção #cases usa seis blocos sem intervalos, alternando texto claro com imagem à direita e imagem à esquerda com texto escuro. As superfícies e hairlines seguem o GenLabs, com os tokens, Manrope, Fraunces e títulos do design system do portfólio. A abertura contém somente o título grande “03/ CASES”: índice editorial em Fraunces 300 e --signal, palavra em --font-primary 500 e --ink, entrada data-rise e hairline. O tamanho segue a escala da hero, com ajuste para caber em uma linha no celular. O painel claro usa .surface-paper.glass-panel. As entradas usam data-rise em intervalos de 90 ms.
 
-Os conteúdos de Marcia Macedo, Receita Previsível, Dani Martins / Prosperus Club e os dois perpétuos VTSD são os fornecidos no briefing. O quinto case permanece omitido até receber conteúdo. Dani Martins continua com a indicação de nome oficial a confirmar.
+Os conteúdos de Marcia Macedo, Receita Previsível, Dani Martins / Prosperus Club, Sanduba do Careca, Angélica Gevaerd e André Ferraz são os fornecidos no briefing. Os dois perpétuos VTSD agora têm cases separados. O case de Camila Soares permanece omitido até receber conteúdo. Dani Martins continua com a indicação de nome oficial a confirmar.
 
-As fotos são provisórias e locais em assets/cases/, com fontes e licença registradas em [assets/cases/README.md](assets/cases/README.md). Em até 800 px, cada foto fica acima do seu texto e mede 280 px de altura. As imagens usam grayscale(1) contrast(1.1), object-fit: cover e zoom de 1,04 em 1.200 ms, com --ease. Pausa global e movimento reduzido suspendem esse zoom.
+André Ferraz tem um case de aromaterapia com mais de 14 lançamentos, 11 pagos abertos e secretos e equipe de até 10 pessoas. A narrativa apresenta gestão de projetos, copywriting e webdesign, conforme o texto enviado. A foto de 800 × 800 px foi obtida no canal de YouTube fornecido, corresponde ao anexo e fica local em assets/cases/andre-ferraz.jpg. O case preserva o retrato inteiro, com tratamento em preto e branco e entrada image-arrive usando --ease; a pausa global e movimento reduzido funcionam como nos outros retratos. Instagram aparece em destaque e YouTube tem um link dedicado, ambos em nova aba com rel="noopener noreferrer". A mesma foto corrige a imagem de André na faixa de experts.
 
-Conforme solicitado, os links desta seção são estáticos. Cada a.case-link possui data-copy-link identificando o destino, sem href e com aria-disabled="true". Para ativar depois, preencher href e retirar aria-disabled. Os atributos target="_blank" e rel="noopener" já estão preparados. A faixa de convite para conversar no WhatsApp ao final dos cases foi removida por enquanto.
+Sanduba do Careca usa a foto real enviada, copiada sem recodificação para assets/cases/sanduba-do-careca.jpg. O retrato inteiro aparece em uma superfície clara, com object-fit: contain e preto e branco em CSS. A entrada reutiliza .case-portrait e image-arrive; pausa global e movimento reduzido deixam a foto estática. No celular, a imagem vem antes do texto e mede 440 px de altura em até 800 px e 360 px em até 430 px. A narrativa identifica vídeo de vendas para perpétuo, anúncios de conversão e remarketing seguindo o VTSD. As três copies enviadas estão ativas em nova aba, com rel="noopener noreferrer" e aviso de que são apenas uma seleção.
+
+Angélica Gevaerd tem um case próprio de marketplace. A narrativa fornecida descreve sua trajetória do rugby ao marketplace e o vídeo de vendas para perpétuo, anúncios de conversão e remarketing seguindo o VTSD. A foto real, assets/cases/angelica-gevaerd.png, substitui a imagem ilustrativa e aparece inteira em uma superfície clara, preservando rosto e notebook. O layout e a entrada reutilizam .case-portrait, image-arrive, --ease, pausa global e movimento reduzido. No desktop, o texto ocupa 48% e a imagem 52%; no celular, o retrato aparece antes do texto, com as mesmas alturas do case do Sanduba. Somente as duas copies enviadas são exibidas, com abertura em nova aba, rel="noopener noreferrer" e nota de que muitas outras foram produzidas.
+
+O case de Marcia usa a foto real enviada, em assets/cases/marcia-macedo.jpg, com 52% da largura no desktop e altura mínima de clamp(500px,44vw,680px). O rosto fica no topo do enquadramento. Em até 800 px, o retrato aparece antes do texto em proporção 4:3; em até 430 px, fica quadrado. A figura usa data-rise e sua camada interna reutiliza image-arrive de 1,7 s com --ease, sem disputar o transform do hover. Pausa global e movimento reduzido apresentam a foto estática. A origem de 225 × 225 px limita a nitidez ao ampliar.
+
+O case da Receita Previsível usa a headline “Copywriter do ecossistema.” e o histórico fornecido por Alisson sobre campanhas, workshops, eventos, lançamentos e produção de conteúdo. A narrativa está em quatro parágrafos, com os nomes em destaque e largura máxima de 58ch. A foto do livro enviada fica em assets/cases/receita-previsivel-livro.jpg, com 387 × 516 px. A capa aparece inteira, com moldura .glass-card, grade Noema, um bloom violeta, rótulos monoespaçados e .signal-line. A entrada usa data-rise e image-arrive de 1,7 s; a flutuação reutiliza tile-drift do design system em 6 s com --ease. Hover pausa a flutuação e responde com inclinação e borda. Pausa global e movimento reduzido deixam o livro estático. O observador de loops acompanha a figura para suspender também grade e bloom fora da viewport. A área mede 480 px de altura em até 800 px e 440 px em até 430 px, mantendo a capa separada dos rótulos.
+
+As outras fotos são provisórias e locais em assets/cases/, com fontes e licença registradas em [assets/cases/README.md](assets/cases/README.md). Em até 800 px, cada uma fica acima do seu texto e mede 280 px de altura. As imagens usam grayscale(1) contrast(1.1), object-fit: cover e zoom de 1,04 em 1.200 ms, com --ease. Pausa global e movimento reduzido suspendem esse zoom.
+
+O case de Marcia apresenta mais de 8 lançamentos clássicos juntos e outros projetos de perpétuo, a evolução de copywriter para a operação e os produtos Fluenti e Português Todo Dia. A atuação está indicada como “Gestão operacional + copy”. Os cinco documentos e a página de vendas PTD informados por Alisson estão ativos, com target="_blank", rel="noopener noreferrer" e rótulos indicando a abertura em nova aba. O aviso abaixo explica que os links são uma seleção e que várias outras copies foram produzidas.
+
+Na Receita Previsível, o bloco “Forbes / Sobre o livro e seu autor” apresenta referências editoriais. O item do livro está vinculado à [matéria do Forbes Agency Council de 24/05/2021](https://www.forbes.com/councils/forbesagencycouncil/2021/05/24/12-influential-books-every-agency-professional-should-read/), confirmada como a primeira imagem enviada, que inclui Predictable Revenue no item 6. O item sobre Aaron Ross mantém a atribuição Forbes informada no segundo anexo e permanece estático até receber seu endereço exato. O HTML marca essa pendência em comentário, sem inventar um destino. As referências não atribuem a Alisson autoria das matérias da Forbes.
+
+As três copies de Dani Martins estão vinculadas aos documentos enviados, com abertura em nova aba, rel="noopener noreferrer" e descrição acessível. A tabela identifica “Seleção de copies” e inclui a nota de que muitas outras foram desenvolvidas no projeto, usando o mesmo componente do case de Marcia.
+
+Os demais materiais pendentes continuam estáticos, com data-copy-link identificando o destino, sem href e com aria-disabled="true". Para ativar depois, preencher href e retirar aria-disabled. A faixa de convite para conversar no WhatsApp ao final dos cases foi removida por enquanto.
 
 ## Habilidades
 
-A seção #habilidades fica imediatamente depois de #cases. Usa .ds-group, .section-inner, .ds-top, .ds-head, .glass-card e .ds-stage, com bloom e grid discretos do sistema. Sete cards apresentam as habilidades fornecidas; o oitavo, tracejado, é o único link. Em até 800 px, a grade tem uma coluna; em até 430 px, os ícones medem 40 px e os índices ficam ocultos.
+A seção #habilidades fica imediatamente depois de #cases. Usa .ds-group, .section-inner, .ds-top, .ds-head, .glass-card e .ds-stage, com bloom e grid discretos do sistema. Seis cards apresentam as habilidades fornecidas; Coprodução foi removida. O sétimo, tracejado, é o único link e ocupa a linha inteira no desktop. O título, a numeração e os atrasos de entrada acompanham a nova quantidade. Em até 800 px, a grade tem uma coluna; em até 430 px, os ícones medem 40 px e os índices ficam ocultos.
 
 Na entrada, a hairline se abre da esquerda para a direita, as duas linhas do título usam line-rise com intervalo de 110 ms e o apoio usa a revelação de palavras do sistema. Os cards entram em cascata de 90 ms por grupo visível, com atraso máximo de 630 ms no desktop e 270 ms no celular; no celular, os cards seguintes não acumulam o atraso dos anteriores. Ícones e textos completam a entrada em etapas próximas, usando image-arrive e rise. A sequência ocorre uma vez, respeita a pausa global e movimento reduzido e apresenta todo o conteúdo sem JavaScript ou CDN.
 
@@ -92,11 +116,27 @@ O X em --electric usa duas pinceladas SVG com bordas irregulares e stroke-dashof
 
 História, cinco marcos da trajetória e cinco referências de formação seguem o briefing fornecido. Assinatura, depoimentos e parágrafo familiar dependem de conteúdo ou confirmação e não foram incluídos. A grade tem 12 colunas no desktop e respeita os breakpoints 1100, 800 e 430 px. No celular, a ordem é retrato, história, planejamento, trajetória e formação.
 
+## Perguntas, contato e rodapé
+
+As seções #perguntas e #contato vêm imediatamente após #sobre. A identidade mantém os tokens e componentes do design system, incluindo .ds-group, .section-inner, .ds-top, .section-title, .line-mask, .glass-card, .button-primary, .magnetic, .caption, .toast e .footer. O contato anterior foi substituído, removendo seus estilos de superfície clara. Não há textos publicados entre colchetes.
+
+O FAQ publica as três respostas confirmadas. As quatro perguntas pendentes estão reservadas em `<template id="faq-pending">`, com comentários para preencher depois, sem aparecer no site ou no JSON-LD. Para ativar cada uma, preencha sua resposta, mova o artigo para #faq-list na ordem desejada, ajuste os atrasos em passos de 70 ms e atualize o FAQPage com a mesma pergunta e resposta.
+
+A primeira resposta começa aberta. Botões nativos aceitam Tab, Enter e Espaço, com aria-expanded, aria-controls e regiões identificadas. Apenas uma resposta pode estar aberta. A transição usa grid-template-rows em 450 ms, com opacidade e deslocamento de 8 px; a seta gira em 400 ms. Sem JavaScript, todas as respostas confirmadas permanecem legíveis. O holofote das habilidades foi extraído para uma função compartilhada; no FAQ, a intensidade é de 8%.
+
+Um único campo decorativo atravessa as duas seções. Os blooms usam --electric a 18% e --mint a 10%, a animação bloom e um corredor sem luz atrás dos textos longos. Quatro fios SVG têm loops de 10, 12, 14 e 16 s; no celular, são dois. O grid preserva o período de 100 px sem salto ao repetir. O ponteiro desloca os blooms em até 6% com RAF que termina quando a posição se estabiliza. Pausa global, movimento reduzido, aba oculta e saída da viewport suspendem os efeitos; no celular, não há parallax pelo cursor. As curvas usam --ease.
+
+O contato publica WhatsApp, alisson.segecsmiguel@gmail.com, Instagram e YouTube fornecidos no briefing. O clique no e-mail preserva mailto, copia o endereço e mostra “E-mail copiado.” somente após sucesso real. O CTA entra em 600 ms, com escala de .94 a 1, e recebe uma passagem do brilho original. O rodapé mostra o CNPJ 64.493.187/0001-95, © 2026 e o link #top, que retorna ao início e transfere o foco à marca.
+
+O contato foi refinado em uma composição editorial de duas colunas: headline e CTA à esquerda, fluxo financeiro abstrato à direita. Cédulas SVG com R$ entram em uma carteira de vidro, com rotação e deriva suaves, usando os tokens e --ease. A ilustração é decorativa, sem valores, saldos ou marcas de bancos. Os fios anteriores ficam concentrados no FAQ. Os canais de contato recebem uma hairline superior e alinhamento comum.
+
+São seis cédulas no desktop e quatro no celular, com ciclos CSS de 10 a 14 s. Para ajustar o ritmo, altere --money-duration nos elementos .money-note; --money-delay controla a distribuição ao longo do ciclo. No celular, o texto fica centralizado e a carteira aparece abaixo. Pausa global e movimento reduzido exibem uma composição estática; fora da viewport, o fluxo pausa com IntersectionObserver. Não há RAF nem dependência externa para a animação das cédulas.
+
 ## Conteúdos pessoais e publicação
 
 - Alisson Segecs está no título, descrição, marca e rodapé. A marca usa o ícone de caneta do sistema.
-- Atualize seu.email@example.com no contato. O WhatsApp já está configurado nos três pontos de contato.
-- As fotos e os links dos cases são provisórios. Os materiais ainda têm placeholders.
+- E-mail, WhatsApp e redes sociais estão configurados com os dados fornecidos.
+- As fotos e os links dos cases são provisórios. “Materiais” no menu aponta para as peças já listadas em outros projetos. O bloco vazio de materiais foi removido.
 - Para hospedar, mantenha index.html, assets/cases/, assets/logos/, assets/about/, o clipe Animating_portrait_transforming_…_20261012185500.playback.mp4, portrait-poster.webp e as fontes usadas em referenciais/terrasprint-ai-design-system/.
 - serve.cjs, .preview/ e output/previews/ são ferramentas e artefatos de revisão, não dependências da página.
 
@@ -113,6 +153,10 @@ As imagens abaixo foram renderizadas do HTML real no Chrome sem interface. O mod
 O método passou pelos cinco estados em sete larguras, de 320 a 1440 px, e pela revisão de hover, persistência da escolha, interrupção do autoplay, teclado, trocas rápidas, pausa, movimento reduzido e falha de CDN. Os GIFs mostram o temporizador e os eventos de ponteiro reais do HTML no Chrome, com o intervalo original do autoplay. A captura respeita o tempo observado entre os quadros.
 
 Sobre mim passou pela revisão em sete larguras de 320 a 1440 px, com fotos carregadas localmente, ordem de leitura, ausência de rolagem horizontal, cores da superfície clara, hover nativo, pausa global, movimento reduzido, falha de CDN e apresentação sem JavaScript. Não houve erros JavaScript não tratados. O GIF mostra o desenho do X e o hover nas duas fotos, gravados do HTML real com eventos de ponteiro no Chrome e exportados com FFmpeg.
+
+As seções finais passaram por sete larguras, de 320 a 1440 px, com revisão de ordem, cores, quatro/dois fios, quatro/duas colunas de canais, ausência de rolagem horizontal e equivalência entre respostas publicadas e FAQPage. A revisão nativa verificou Enter/Espaço, foco, trocas rápidas, um card aberto, clipboard real, pausa, fundo fora da tela, movimento reduzido, #top e apresentação sem JavaScript/CDN. O vídeo MP4 usa frames nativos do screencast do Chrome, eventos reais de ponteiro e os tempos observados, exportados com FFmpeg. As prévias da seção escondem apenas a navegação e o botão flutuante para isolar a composição.
+
+O contato refinado foi revisado em sete larguras de 320 a 1440 px, com headline completa, carteira dentro da viewport, canais sem overflow, seis/quatro cédulas, animação independente da rolagem, pausa global, retomada, suspensão fora da tela, movimento reduzido e apresentação sem JavaScript/CDN. Não houve erros JavaScript não tratados. O vídeo de revisão grava o movimento CSS real do navegador.
 
 - [Hero desktop, 1440 × 900](output/previews/hero-desktop.png)
 - [Hero mobile, 390 × 844](output/previews/hero-mobile.png)
@@ -134,5 +178,13 @@ Sobre mim passou pela revisão em sete larguras de 320 a 1440 px, com fotos carr
 - [Sobre mim, desktop](output/previews/about-desktop.png)
 - [Sobre mim, mobile](output/previews/about-mobile.png)
 - [GIF do X e do hover nas fotos](output/previews/about-motion.gif)
+- [Perguntas, contato e rodapé, desktop](output/previews/final-desktop.png)
+- [Perguntas, contato e rodapé, mobile](output/previews/final-mobile.png)
+- [Vídeo das interações finais](output/previews/final-sections-motion.mp4)
+- [Contato refinado, desktop](output/previews/contact-refined-desktop.png)
+- [Contato refinado, mobile](output/previews/contact-refined-mobile.png)
+- [Vídeo do dinheiro entrando na carteira](output/previews/contact-refined-motion.mp4)
+- [Hero com WhatsApp principal, desktop](output/previews/hero-whatsapp-desktop.png)
+- [Hero com WhatsApp principal, mobile](output/previews/hero-whatsapp-mobile.png)
 
 As prévias permitem revisar a composição. A fluidez percebida do scroll e do decodificador ainda varia por dispositivo e não é uma promessa de precisão quadro a quadro.
