@@ -2,9 +2,11 @@
 
 ## Retrato de Marcia Macedo
 
-marcia-macedo.jpg é a foto real enviada por Alisson em 13/10/2026, originalmente images (6).jfif. O JPEG foi copiado sem recodificação e tem 225 × 225 px. A composição amplia a foto, preserva o rosto pelo enquadramento no topo e aplica o preto e branco do sistema em CSS. A resolução de origem limita a nitidez da ampliação. Para melhorar, substitua por um retrato de maior resolução e atualize os atributos width e height em index.html.
+marcia-macedo.jpg é a foto real enviada por Alisson em 13/10/2026, originalmente images (6).jfif. O JPEG foi copiado sem recodificação e tem 225 × 225 px. A composição mostra a foto inteira em uma moldura com ampliação limitada a 340 px, usando object-fit: contain e preto e branco do sistema em CSS. A resolução de origem limita a nitidez da ampliação. Para melhorar, substitua por um retrato de maior resolução e atualize os atributos width e height em index.html.
 
 ## Imagens ilustrativas
+
+dani-martins-empreenda.png e dani-martins-times-square.png são as duas imagens enviadas por Alisson em 13/10/2026, originalmente Downloads/dani e joel.png e Downloads/dani e flavio.png. Os PNGs foram copiados sem recodificação, com 515 × 656 px e 522 × 694 px. A galeria do case da Dani mostra ambos integralmente, com legendas, molduras do sistema e links para abrir os originais em nova aba. O preto e branco é aplicado somente em CSS. O microfone em prosperus.jpg não é mais exibido e permanece como referência ilustrativa.
 
 andre-ferraz.jpg é a foto pública do canal [André Ferraz Aromaterapia](https://www.youtube.com/@andreferraz), consultado em 13/10/2026. O retrato corresponde à foto do anexo enviado por Alisson. A URL do avatar foi identificada no cabeçalho público do canal e servida em 800 × 800 px pelo CDN do YouTube. O JPEG fica local no projeto, com preto e branco em CSS e sem recorte de rosto. A mesma foto corrige o retrato de André na faixa de experts. Fonte da imagem: https://yt3.googleusercontent.com/1sJkZkYNBeRoFsvJyPcUfg8kS1JCl8k24qJmY_KfChhh1wTRf9M8tx_0DU37kNxmvRE24f-unWk=s800-c-k-c0x00ffffff-no-rj
 

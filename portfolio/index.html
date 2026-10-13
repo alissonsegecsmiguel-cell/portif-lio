@@ -7,7 +7,7 @@
   <meta name="description" content="Gestão de lançamentos e copy para experts. Mais de 40 lançamentos, da estratégia à operação. Fale comigo pelo WhatsApp.">
   <title>Alisson Segecs · Gestão de lançamentos e copy</title>
   <link rel="canonical" href="https://alissonsegecs.com.br/portfolio">
-  <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Alisson Segecs">
@@ -22,12 +22,12 @@
   <meta name="twitter:title" content="Alisson Segecs · Gestão de lançamentos e copy">
   <meta name="twitter:description" content="Gestão de lançamentos e copy para experts. Mais de 40 lançamentos, da estratégia à operação. Fale comigo pelo WhatsApp.">
   <meta name="twitter:image" content="https://alissonsegecs.com.br/portfolio/assets/og-image.jpg">
-  <link rel="preload" href="/portfolio/referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     /* Tokens transpostos de assets/design_system_portifolio.html.
        Fontes originais locais; não depende dos estilos dos catálogos. */
-    @font-face{font-family:Manrope;font-style:normal;font-weight:300 800;font-display:swap;src:url('/portfolio/referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2') format('woff2')}
-    @font-face{font-family:Fraunces;font-style:normal;font-weight:300 900;font-display:swap;src:url('/portfolio/referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2') format('woff2')}
+    @font-face{font-family:Manrope;font-style:normal;font-weight:300 800;font-display:swap;src:url('referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2') format('woff2')}
+    @font-face{font-family:Fraunces;font-style:normal;font-weight:300 900;font-display:swap;src:url('referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2') format('woff2')}
     :root{
       --ink:#f1f0ea;--paper:#e7e5de;--void:#050506;--void-soft:#0b0b0d;
       --electric:#6c63ff;--signal:#a9a5ff;--pine:#3f7d53;--mint:#91cba5;
@@ -465,6 +465,68 @@
     html.motion-paused .rp-stage>.signal-line,html.motion-reduced .rp-stage>.signal-line,html.preview-render .rp-stage>.signal-line{transform:none!important}
     @media(prefers-reduced-motion:reduce){.rp-book,.rp-book-reveal{animation:none!important;opacity:1!important;transform:none!important}.rp-book-slot{transform:rotate(-4deg)!important;transition:none!important}.rp-stage>.signal-line{transform:none!important}}
 
+
+    /* Cases: retratos enquadrados e cada projeto agrupado no celular. */
+    .case-identity{display:none}
+    html.js-motion .case-media--dani.is-in .case-portrait{animation:image-arrive 1.7s var(--ease) 90ms both}
+    .case-socials{margin-top:24px}
+    .case-socials .case-instagram{margin-top:0}
+    .case-social-mark{display:grid;place-items:center;width:56px;height:56px;border:1px solid var(--line);border-radius:50%;color:var(--muted)}
+    .case-social-secondary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;padding:14px 0;border-bottom:1px solid var(--line);font:400 14px/1.5 var(--font-ui);color:inherit;text-decoration:none;transition:color .4s var(--ease)}
+    .case-social-secondary[href]:hover{color:var(--signal)}
+    .case-social-secondary .icon{width:16px;height:16px;color:var(--signal)}
+    .case-social-placeholder,.case-social-secondary[aria-disabled=true]{color:var(--muted);cursor:default}
+    .case-social-placeholder:hover{color:var(--muted);border-color:var(--line)}
+    .case-social-placeholder small{min-height:18px}
+    .cases .case-media--portrait .case-portrait,.cases .case-media--dani .case-portrait{inset:64px 28px 84px;display:grid;place-items:center}
+    .case-photo-frame{position:relative;width:min(100%,var(--portrait-width,340px));height:auto;aspect-ratio:var(--portrait-ratio,1);max-height:100%;overflow:hidden;border:1px solid var(--line-dark);border-radius:var(--radius);background:var(--paper)}
+    .cases .case-photo-frame img{position:absolute;inset:0;display:block;width:100%;height:100%;padding:0;object-fit:contain;object-position:center;filter:grayscale(1) contrast(1.1)}
+    .case-media--sanduba{--portrait-width:300px;--portrait-ratio:216/233}
+    .case-media--angelica{--portrait-width:300px;--portrait-ratio:195/225}
+    .case-media--andre{--portrait-width:400px}
+    .case-media--dani{--portrait-width:440px;--portrait-ratio:3/2}
+    .cases .case-media--dani{background:var(--void-soft)}
+    .case-media--portrait .case-portrait-caption{--muted:#58575f;--line:var(--line-dark)}
+    @media(max-width:800px){
+      .cases .case-blocks{display:grid;gap:24px;padding-inline:16px}
+      .cases .case-block{display:flex;flex-direction:column;min-height:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--void-soft)}
+      .case-identity{display:flex;order:-1;align-items:center;gap:18px;padding:20px 22px;border-bottom:1px solid var(--line);background:var(--void-soft);color:var(--ink)}
+      .case-identity-index{flex-shrink:0;color:var(--signal);font-size:9px}
+      .case-identity-copy{display:grid;gap:5px;min-width:0}
+      .case-identity-copy strong{font:500 20px/1.2 var(--font-ui);letter-spacing:-.035em}
+      .case-identity-copy>.caps{font-size:8px;color:var(--muted)}
+      .cases .case-block .case-media{order:0;min-height:0;height:clamp(260px,75vw,360px);aspect-ratio:auto;flex-shrink:0;border-bottom:1px solid var(--line)}
+      .cases .case-block .case-panel{order:1;padding:28px 24px}
+      .cases .case-media--portrait .case-portrait,.cases .case-media--dani .case-portrait{inset:24px}
+      .case-portrait-caption,.cases .rp-caption{display:none}
+      .case-photo-frame{--portrait-width:300px}
+      .cases .rp-stage{padding:38px 28px 24px}
+      .cases .rp-book-slot{width:clamp(128px,38vw,180px);max-width:100%}
+      .cases .rp-hud{top:12px;left:22px;right:22px;font-size:8px}
+      .cases .rp-stage>.signal-line{display:none!important}
+      .cases .case-media::after{border:0}
+    }
+    @media(max-width:430px){
+      .cases .case-blocks{padding-inline:12px;gap:20px}
+      .case-identity{padding:18px;gap:14px}
+      .case-identity-copy strong{font-size:18px}
+      .cases .case-block .case-panel{padding:26px 20px}
+      .cases .case-media--portrait .case-portrait,.cases .case-media--dani .case-portrait{inset:20px}
+      .case-social-mark{width:44px;height:44px}
+      .case-portrait-caption{display:none}
+    }
+
+    /* Dani: duas imagens reais, dentro de uma única composição de case. */
+    .cases .case-media--dani .case-portrait.dani-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .dani-photo{display:grid;gap:12px;min-width:0;width:100%}
+    .dani-photo:nth-child(2){transform:translateY(18px)}
+    .dani-photo .case-photo-frame{width:100%;aspect-ratio:var(--photo-ratio);max-height:none;border-color:var(--line);background:var(--void-soft);transition:border-color .4s var(--ease)}
+    .cases .case-media--dani .case-photo-frame img{transform:none!important}
+    .dani-photo .case-photo-frame:hover{border-color:var(--signal)}
+    .dani-photo-label{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--muted);font-size:9px}
+    .dani-photo-label .icon{width:14px;height:14px;color:var(--signal)}
+    @media(max-width:800px){.cases .case-media--dani .case-portrait.dani-gallery{max-width:420px;margin-inline:auto;gap:14px}.dani-photo{gap:8px}.dani-photo:nth-child(2){transform:none}}
+
     /* Habilidades: os campos, materiais e movimentos vêm do design system. */
     .skills.ds-group{position:relative;isolation:isolate;overflow:hidden;padding:var(--section-space) var(--pad);border-bottom:1px solid var(--line);background:var(--void)}
     .skills.ds-group::before{content:'';position:absolute;width:720px;height:720px;right:-320px;top:-120px;background:radial-gradient(ellipse,#6c63ff0c,transparent 68%);animation:bloom 14s var(--ease) infinite alternate;pointer-events:none;z-index:-1}
@@ -705,6 +767,16 @@
     html.motion-paused .about-cross path,html.motion-reduced .about-cross path,html.preview-render .about-cross path{stroke-dashoffset:0!important;transition:none!important}
     html.motion-paused .about-print,html.motion-reduced .about-print{transform:rotate(var(--photo-angle))!important}
     html.motion-paused .about-print img,html.motion-reduced .about-print img{filter:grayscale(1) contrast(1.08)!important}
+    .about-print.about-video-window{overflow:hidden;aspect-ratio:16/9;background:var(--void);box-shadow:0 20px 50px rgba(5,5,6,.18)}
+    .about .about-video-window .about-video-poster{aspect-ratio:16/9;object-fit:contain;object-position:center;filter:none;box-shadow:none}
+    .about-video-window video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;transition:opacity 800ms var(--ease)}
+    .about-video-window.is-video-ready video{opacity:1}
+    html.js-motion .about-photo--portrait.is-in .about-video-window>.about-video-poster{animation:image-arrive 1.7s var(--ease) both}
+    .about .about-video-caption{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .about-video-play.button{min-height:36px;padding:0 12px;font-size:11px;color:var(--void);border-color:var(--line-dark)}
+    .about-video-play[hidden]{display:none}
+    html.motion-paused .about-video-window>.about-video-poster,html.motion-reduced .about-video-window>.about-video-poster{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+    @media(prefers-reduced-motion:reduce){.about-video-window video{display:none}.about-video-window>.about-video-poster{animation:none!important;filter:none!important}}
     html.motion-paused .about [data-rise]{transition-delay:0s!important}
     @media(max-width:1100px){.about-photo--portrait{--photo-angle:-1.5deg}.about-photo--planning{--photo-angle:1.5deg}.about-mark{width:208px;height:120px;right:4px}.about-mark>.caps{font-size:14px}.about-composition{gap:32px 28px;padding-inline:8px}.about-top>.caps{max-width:24ch}.about-education{grid-template-columns:120px minmax(0,1fr)}.about-mentors{gap:24px 28px}.about-mentors li{flex-basis:165px}}
     @media(max-width:800px){.about-top{display:block;padding-bottom:24px}.about-top>.caps{max-width:none;text-align:left;margin-top:24px;padding:0}.about-composition{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 4px 32px}.about-photo--portrait,.about-story,.about-photo--planning,.about-journey{grid-column:1;grid-row:auto}.about-photo--portrait{--photo-angle:-1deg}.about-photo--planning{--photo-angle:1deg;margin-top:0}.about-story,.about-journey{padding-top:0}.about-photo figcaption{margin-top:20px}.about-education{grid-template-columns:minmax(0,1fr);gap:24px}.about-mentors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.about-mentors li+li::before{display:none}}
@@ -712,16 +784,15 @@
     @media(prefers-reduced-motion:reduce){html.js-motion .about-cross path{stroke-dashoffset:0!important}.about-print{transform:rotate(var(--photo-angle))!important}.about-print img{filter:grayscale(1) contrast(1.08)!important}}
     /* Encerramento: o mesmo campo de luz atravessa perguntas e contato. */
     .closing-field{position:relative;isolation:isolate;overflow:hidden;background:var(--void);--grid-unit:100px;--quiet-band:min(420px,42vw)}
-    .closing-field::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.3;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:100px 100px;mask-image:linear-gradient(90deg,transparent,black);animation:grid-drift 28s var(--ease) infinite}
-    .closing-field__backdrop{--px:0%;--py:0%;position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;mask-image:linear-gradient(90deg,black,black calc(50% - var(--quiet-band) - 80px),transparent calc(50% - var(--quiet-band)),transparent calc(50% + var(--quiet-band)),black calc(50% + var(--quiet-band) + 80px),black)}
-    .field-bloom{position:absolute;width:1400px;height:1400px;left:calc(50% - 280px);top:25%;transform:translate(var(--px),var(--py))}
-    .field-bloom::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--electric) 18%,transparent),transparent 68%);animation:bloom 12s var(--ease) infinite alternate}
+    /* Fundo estático: evita repintar uma superfície que atravessa FAQ e contato. */
+    .closing-field::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.3;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:100px 100px;mask-image:linear-gradient(90deg,transparent,black)}
+    .closing-field__backdrop{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;mask-image:linear-gradient(90deg,black,black calc(50% - var(--quiet-band) - 80px),transparent calc(50% - var(--quiet-band)),transparent calc(50% + var(--quiet-band)),black calc(50% + var(--quiet-band) + 80px),black)}
+    .field-bloom{position:absolute;width:1400px;height:1400px;left:calc(50% - 280px);top:25%}
+    .field-bloom::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--electric) 18%,transparent),transparent 68%);opacity:.45}
     .field-bloom--mint{width:1100px;height:1100px;left:-450px;top:50%}
-    .field-bloom--mint::before{background:radial-gradient(ellipse at center,color-mix(in srgb,var(--mint) 10%,transparent),transparent 68%);animation-delay:-6s}
+    .field-bloom--mint::before{background:radial-gradient(ellipse at center,color-mix(in srgb,var(--mint) 10%,transparent),transparent 68%)}
     .field-wires{position:absolute;inset:0;width:100%;height:100%;overflow:visible;opacity:.35}
     .field-wire use{fill:none;stroke:url(#field-light);stroke-width:1;vector-effect:non-scaling-stroke;opacity:.25}
-    .field-wire .field-wire__spark{opacity:1;stroke-dasharray:80 920;animation:wire-travel var(--wire-duration,12s) var(--ease) infinite}
-    @keyframes wire-travel{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
     .closing-field .ds-group{position:relative;padding:var(--section-space) var(--pad);background:transparent;border-bottom:1px solid var(--line)}
     .closing-field .section-inner{width:100%;max-width:1440px;margin:auto}
     .closing-field .ds-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;margin-bottom:24px;border-bottom:1px solid var(--line);color:var(--signal)}
@@ -780,12 +851,9 @@
     .footer>span{max-width:none}.footer a{justify-self:end;font:inherit}.footer a:hover{color:var(--ink)}
     .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;visibility:hidden;max-width:calc(100% - 32px);width:max-content;padding:12px 20px;border:1px solid #a9a5ff44;border-radius:100px;background:#17131f;backdrop-filter:blur(16px);color:var(--ink);font-size:12px;z-index:300;transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s var(--ease);pointer-events:none}
     .toast.is-visible{visibility:visible;opacity:1;transform:translate(-50%,0)}
-    .is-field-offscreen .closing-field__backdrop *,.is-field-offscreen::after{animation-play-state:paused!important}
     html.motion-paused .closing-cta-wrap,html.motion-reduced .closing-cta-wrap,html.preview-render .closing-cta-wrap{opacity:1!important;transform:none!important;animation:none!important}
     html.motion-paused .closing-cta::after,html.motion-reduced .closing-cta::after,html.preview-render .closing-cta::after{animation:none!important}
     html.motion-paused .closing-field [data-rise]{transition-delay:0s!important}
-    html.motion-paused .field-bloom,html.motion-reduced .field-bloom{transform:none!important}
-    html.motion-paused .field-bloom::before{animation:none!important;transform:none;opacity:1}
     html.motion-paused .faq-card::before,html.motion-paused .faq-card::after,html.motion-reduced .faq-card::before,html.motion-reduced .faq-card::after{opacity:0!important}
     @media(max-width:1100px){.contact-channel{padding-inline:16px}.closing-content{margin-top:48px}.contact-channels{margin-top:48px}.field-bloom{width:1200px;height:1200px;left:calc(50% - 180px)}.field-bloom--mint{left:-400px}}
     @media(max-width:800px){.closing-field .ds-top{font-size:9px}.closing-field .ds-top span:last-child{max-width:25ch}.field-wire--desktop{display:none}.field-bloom{transform:none}.contact-channels{grid-template-columns:repeat(2,minmax(0,1fr));max-width:640px}.contact-channel:nth-child(odd){border-left:0}.contact-channel:nth-child(n+3){border-top:1px solid var(--line)}.contact-channel{padding:20px 16px}.closing-content{margin-top:40px}.footer{grid-template-columns:minmax(0,1fr);text-align:center;gap:12px}.footer a{justify-self:center}.toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}}
@@ -802,19 +870,21 @@
     .closing-layout .closing-caption{margin-top:14px;max-width:330px}
     .closing-eyebrow{color:var(--signal)}
     .closing-visual{position:relative;min-width:0;align-self:stretch;display:grid;align-items:center;pointer-events:none}
-    .money-scene{position:relative;width:100%;height:540px;perspective:1000px;isolation:isolate}
+    .money-scene{position:relative;width:100%;height:540px;isolation:isolate}
     .money-defs{position:absolute;overflow:hidden}
-    .money-stream{position:absolute;inset:0;overflow:hidden;clip-path:inset(0 0 28% 0);mask-image:linear-gradient(transparent,black 12%,black 86%,transparent)}
-    .money-note{position:absolute;left:calc(50% - 56px);top:10%;width:112px;height:64px;color:var(--signal);opacity:0;animation:money-arrive var(--money-duration,12s) var(--ease) var(--money-delay,0s) infinite;will-change:transform,opacity}
+    .money-stream{position:absolute;inset:0 0 28%;overflow:hidden}
+    .money-note{position:absolute;left:calc(50% - 56px);top:10%;width:112px;height:64px;color:var(--signal);opacity:0;animation:money-arrive var(--money-duration,12s) var(--ease) var(--money-delay,0s) infinite}
+    html.js-motion .closing:not(.money-paused) .money-note{will-change:transform,opacity}
     .money-note:nth-child(3n){color:var(--mint)}
     .money-note svg{display:block;width:100%;height:100%;overflow:visible;fill:color-mix(in srgb,var(--void-soft) 80%,transparent);stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
     .money-note text{fill:currentColor;stroke:none;font:500 14px var(--font-mono)}
     @keyframes money-arrive{0%{opacity:0;transform:translate3d(var(--from-x),-100px,0) rotate(var(--from-angle)) scale(.88)}12%{opacity:.4;transform:translate3d(calc(var(--from-x) * .95),-10px,0) rotate(var(--from-angle)) scale(.88)}45%{opacity:.4;transform:translate3d(calc(var(--from-x) * .45),125px,0) rotate(calc(var(--from-angle) * .35)) scale(.82)}75%{opacity:.32;transform:translate3d(calc(var(--from-x) * .12),240px,0) rotate(0deg) scale(.75)}100%{opacity:0;transform:translate3d(0,340px,0) rotate(-3deg) scale(.52)}}
-    .money-account.glass-card{position:absolute;top:60%;left:50%;width:82%;max-width:380px;height:210px;border:1px solid color-mix(in srgb,var(--signal) 30%,transparent);border-radius:var(--radius);padding:24px;background:linear-gradient(120deg,color-mix(in srgb,var(--electric) 8%,var(--void-soft)),var(--void-soft));box-shadow:inset 0 1px 0 #ffffff08;transform:translate(-50%,-12%) rotate(-8deg) rotateY(-10deg);animation:account-float 12s var(--ease) infinite alternate}
+    .money-account.glass-card{position:absolute;top:60%;left:50%;width:82%;max-width:380px;height:210px;border:1px solid color-mix(in srgb,var(--signal) 30%,transparent);border-radius:var(--radius);padding:24px;background:linear-gradient(120deg,color-mix(in srgb,var(--electric) 8%,var(--void-soft)),var(--void-soft));box-shadow:inset 0 1px 0 #ffffff08;transform:translate3d(-50%,-12%,0) rotate(-8deg);animation:account-float 12s var(--ease) infinite alternate}
     .money-account::before{content:'';position:absolute;inset:14px -12px -14px 12px;z-index:-1;border:1px solid var(--line);border-radius:inherit;background:var(--void-soft);transform:rotate(8deg);opacity:.4}
     .money-account__top{display:flex;justify-content:space-between;align-items:center;color:var(--signal)}
     .money-account__top>.icon{width:24px;height:24px}
-    .money-account__top .status-dot{color:var(--mint)}
+    .money-account__top .status-dot{color:var(--mint);animation:money-status 2.6s var(--ease) infinite}
+    @keyframes money-status{0%,100%{opacity:1}50%{opacity:.5}}
     .money-account__mark{position:absolute;width:126px;height:80px;left:calc(50% - 63px);top:48px;fill:none;stroke:var(--signal);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.6}
     .money-account__lines{display:flex;gap:8px;align-items:center;margin-top:106px}
     .money-account__lines i{display:block;width:25px;height:3px;border-radius:100px;background:var(--line)}
@@ -823,18 +893,20 @@
     .money-landing{position:absolute;left:50%;top:72%;width:78%;max-width:380px;height:60px;transform:translateX(-50%);z-index:-1}
     .money-landing span{position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--signal) 30%,transparent);border-radius:50%;opacity:0;animation:account-receive 6s var(--ease) infinite}
     .money-landing span+span{animation-delay:-3s}
-    @keyframes account-float{from{transform:translate(-50%,-12%) rotate(-8deg) rotateY(-10deg)}to{transform:translate(-50%,-16%) rotate(-5deg) rotateY(-6deg)}}
+    @keyframes account-float{from{transform:translate3d(-50%,-12%,0) rotate(-8deg)}to{transform:translate3d(-50%,-16%,0) rotate(-5deg)}}
     @keyframes account-receive{0%{opacity:0;transform:scale(.72)}30%{opacity:.3}100%{opacity:0;transform:scale(1.3)}}
     .closing .contact-channels{margin-top:32px;border-top:1px solid var(--line);padding-top:20px;max-width:none}
     .closing .contact-channel:first-child{padding-left:0}
     .closing .contact-channel:last-child{padding-right:0}
     .field-wires{mask-image:linear-gradient(black 0%,black 38%,transparent 55%)}
     .money-paused .money-scene *,.money-paused .money-scene *::before{animation-play-state:paused!important}
-    html.motion-paused .money-note,html.motion-reduced .money-note,html.preview-render .money-note{animation:none!important;opacity:.32;transform:translate3d(calc(var(--from-x) * .62),var(--rest-y,80px),0) rotate(var(--from-angle)) scale(.86)}
-    html.motion-paused .money-account,html.motion-reduced .money-account,html.preview-render .money-account{animation:none!important}
-    html.motion-paused .money-landing,html.motion-reduced .money-landing,html.preview-render .money-landing{display:none}
+    html:not(.js-motion) .money-scene *,html:not(.js-motion) .money-scene *::before{animation:none!important}
+    html.motion-suspended .money-note,html.motion-paused .money-note,html.motion-reduced .money-note{will-change:auto!important}
+    html:not(.js-motion) .money-note,html.motion-paused .money-note,html.motion-reduced .money-note,html.preview-render .money-note{animation:none!important;opacity:.32;transform:translate3d(calc(var(--from-x) * .62),var(--rest-y,80px),0) rotate(var(--from-angle)) scale(.86)}
+    html:not(.js-motion) .money-account,html.motion-paused .money-account,html.motion-reduced .money-account,html.preview-render .money-account{animation:none!important}
+    html:not(.js-motion) .money-landing,html.motion-paused .money-landing,html.motion-reduced .money-landing,html.preview-render .money-landing{display:none}
     @media(max-width:1100px){.closing-layout{gap:20px}.money-scene{height:500px}.money-note{width:96px;height:55px;left:calc(50% - 48px)}.money-account.glass-card{padding:20px;width:90%;height:200px}.money-account__mark{top:40px}.money-account__lines{margin-top:104px}}
-    @media(max-width:800px){.closing-layout{display:block;position:relative;margin-top:28px}.closing-layout .closing-content{max-width:660px;margin:auto;text-align:center}.closing-layout .section-title{max-width:15ch;margin-inline:auto;text-align:center;font-size:clamp(48px,7.5vw,64px)}.closing-layout .closing-eyebrow{justify-content:center}.closing-layout .closing-lead{margin:auto;max-width:440px}.closing-layout .closing-cta-wrap{margin:28px auto 0}.closing-layout .closing-caption{margin-inline:auto}.closing-visual{height:310px;margin:24px auto 0;max-width:460px;overflow:hidden}.money-scene{height:340px}.money-note--desktop{display:none}.money-stream{clip-path:inset(0 0 22% 0)}.money-note{top:4%;animation-name:money-arrive-mobile}.money-account.glass-card{top:49%;width:72%;height:156px;padding:16px}.money-account__mark{width:96px;height:62px;left:calc(50% - 48px);top:32px}.money-account__lines{margin-top:76px}.money-account__top>.icon{width:20px;height:20px}.money-landing{top:67%;width:70%}.closing .contact-channels{margin-top:32px;padding-top:12px}.closing .contact-channel:first-child{padding-left:16px}.closing .contact-channel:last-child{padding-right:16px}}
+    @media(max-width:800px){.closing-layout{display:block;position:relative;margin-top:28px}.closing-layout .closing-content{max-width:660px;margin:auto;text-align:center}.closing-layout .section-title{max-width:15ch;margin-inline:auto;text-align:center;font-size:clamp(48px,7.5vw,64px)}.closing-layout .closing-eyebrow{justify-content:center}.closing-layout .closing-lead{margin:auto;max-width:440px}.closing-layout .closing-cta-wrap{margin:28px auto 0}.closing-layout .closing-caption{margin-inline:auto}.closing-visual{height:310px;margin:24px auto 0;max-width:460px;overflow:hidden}.money-scene{height:340px}.money-note--desktop{display:none}.money-stream{bottom:22%}.money-note{top:4%;animation-name:money-arrive-mobile}.money-account.glass-card{top:49%;width:72%;height:156px;padding:16px}.money-account__mark{width:96px;height:62px;left:calc(50% - 48px);top:32px}.money-account__lines{margin-top:76px}.money-account__top>.icon{width:20px;height:20px}.money-landing{top:67%;width:70%}.closing .contact-channels{margin-top:32px;padding-top:12px}.closing .contact-channel:first-child{padding-left:16px}.closing .contact-channel:last-child{padding-right:16px}}
     @keyframes money-arrive-mobile{0%{opacity:0;transform:translate3d(calc(var(--from-x) * .65),-65px,0) rotate(var(--from-angle)) scale(.68)}12%{opacity:.35;transform:translate3d(calc(var(--from-x) * .6),0,0) rotate(var(--from-angle)) scale(.68)}45%{opacity:.35;transform:translate3d(calc(var(--from-x) * .3),80px,0) rotate(calc(var(--from-angle) * .35)) scale(.64)}75%{opacity:.28;transform:translate3d(calc(var(--from-x) * .08),155px,0) rotate(0deg) scale(.56)}100%{opacity:0;transform:translate3d(0,235px,0) rotate(-3deg) scale(.4)}}
     @media(max-width:430px){.closing-layout .section-title{font-size:48px}.closing-visual{height:270px;margin-top:12px}.money-scene{height:300px}.money-note{width:88px;height:50px;left:calc(50% - 44px)}.money-account.glass-card{width:76%;top:45%;height:148px}.money-account__lines{margin-top:68px}.money-landing{top:63%}.closing .contact-channel:first-child{padding-left:10px}.closing .contact-channel:last-child{padding-right:10px}}
     @media(prefers-reduced-motion:reduce){.money-note{animation:none!important;opacity:.32;transform:translate3d(calc(var(--from-x) * .5),40px,0) rotate(var(--from-angle)) scale(.72)}.money-account{animation:none!important}.money-landing{display:none}}
@@ -872,10 +944,10 @@
       <div class="scene" id="scene">
         <figure class="hero-visual hero__visual" aria-labelledby="video-caption">
           <div class="video-window">
-            <img class="video-poster hero__image" src="/portfolio/assets/portrait-poster.webp" alt="" width="1280" height="720" fetchpriority="high">
+            <img class="video-poster hero__image" src="assets/portrait-poster.webp" alt="" width="1280" height="720" fetchpriority="high">
             <!-- Vídeo original, com reprodução automática na velocidade nativa. -->
             <!-- Fluxo original sem recodificação, sem áudio e com metadados no início. -->
-            <video id="hero-video" muted playsinline loop preload="auto" poster="/portfolio/assets/portrait-poster.webp" width="1280" height="720" aria-label="Retrato animado com elementos de estratégia e operação" aria-describedby="video-description"><source src="/portfolio/assets/Videos/Animating_portrait_transforming_…_20261012185500.playback.mp4" type="video/mp4"></video>
+            <video id="hero-video" muted playsinline loop preload="auto" poster="assets/portrait-poster.webp" width="1280" height="720" aria-label="Retrato animado com elementos de estratégia e operação" aria-describedby="video-description"><source src="assets/Videos/Animating_portrait_transforming_…_20261012185500.playback.mp4" type="video/mp4"></video>
           </div>
           <figcaption class="sr-only" id="video-caption">Gestão de lançamentos, da copy à operação.</figcaption><span class="sr-only" id="video-status" role="status">Retrato e composição em movimento.</span>
         </figure>
@@ -904,24 +976,24 @@
     </section>
     <section class="signal-strip" aria-label="Experts e marcas com quem trabalhei"><div class="signal-strip__track">
       <div class="ticker-group">
-        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Receita Previsível, @receitaprevisivel, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="André Ferraz, @andreferrazaromaterapia, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Marcia Macedo, @portugues_marciamacedo, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" aria-label="Camila Soares, @engcivilcamilasoares, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" aria-label="Luciano F. Castro, @lucianof.castro, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Dani Martins, @danimartinspro, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" aria-label="Thiago Muniz, @thiagomuniz.rp, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" aria-label="Edmar Lopes, @saradodepoisdos40, abrir Instagram em nova aba"><img src="/portfolio/assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Receita Previsível, @receitaprevisivel, abrir Instagram em nova aba"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="André Ferraz, @andreferrazaromaterapia, abrir Instagram em nova aba"><img src="assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Marcia Macedo, @portugues_marciamacedo, abrir Instagram em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" aria-label="Camila Soares, @engcivilcamilasoares, abrir Instagram em nova aba"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" aria-label="Luciano F. Castro, @lucianof.castro, abrir Instagram em nova aba"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Dani Martins, @danimartinspro, abrir Instagram em nova aba"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" aria-label="Thiago Muniz, @thiagomuniz.rp, abrir Instagram em nova aba"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" aria-label="Edmar Lopes, @saradodepoisdos40, abrir Instagram em nova aba"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
       </div>
       <div class="ticker-group" aria-hidden="true">
-        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="/portfolio/assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
       </div>
     </div></section>
     <section class="results" id="resultados" aria-labelledby="results-title" tabindex="-1">
@@ -968,6 +1040,7 @@
       </div>
       <div class="case-blocks">
         <article class="case-block case-block--paper case-block--marcia" aria-labelledby="case-marcia-title">
+          <header class="case-identity"><span class="caps case-identity-index">01 / CASE</span><span class="case-identity-copy"><strong>Marcia Macedo</strong><span class="caps">Português para estrangeiros</span></span></header>
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <p class="caps case-eyebrow" data-rise>PORTUGUÊS PARA ESTRANGEIROS / MARCIA MACEDO</p>
@@ -977,7 +1050,6 @@
                 <p class="case-description">No nicho de português para estrangeiros, trabalhamos com o <strong>Fluenti</strong>, produto principal dos lançamentos, e o <strong>Português Todo Dia</strong>, nossa assinatura.</p>
                 <p class="case-description">Nesse projeto, me aprofundei na estratégia de lançamento pago da Fórmula e no papel do time comercial dentro da campanha.</p>
               </div>
-              <a class="case-instagram" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Marcia Macedo, @portugues_marciamacedo, abrir em nova aba" data-rise style="--delay:240ms"><img src="/portfolio/assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@portugues_marciamacedo</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               <table class="case-specs" data-rise style="--delay:270ms">
                 <caption class="sr-only">Atuação na parceria com Marcia Macedo</caption>
                 <tbody>
@@ -994,18 +1066,25 @@
                 </tbody>
               </table>
               <p class="case-copy-note" id="marcia-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Várias outras também foram desenvolvidas ao longo da parceria.</p>
+              <nav class="case-socials" aria-label="Redes sociais de Marcia Macedo" data-rise style="--delay:360ms">
+                <a class="case-instagram" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Marcia Macedo, @portugues_marciamacedo, abrir em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@portugues_marciamacedo</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Marcia Macedo. -->
+                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+              </nav>
             </div>
           </div>
           <figure class="case-media case-media--portrait" data-rise style="--delay:90ms">
-            <div class="case-portrait"><img src="/portfolio/assets/cases/marcia-macedo.jpg" alt="Marcia Macedo, sorrindo e usando óculos" width="225" height="225" loading="lazy" decoding="async"></div>
+            <div class="case-portrait"><div class="case-photo-frame"><img src="assets/cases/marcia-macedo.jpg" alt="Marcia Macedo, sorrindo e usando óculos" width="225" height="225" loading="lazy" decoding="async"></div></div>
+            <figcaption class="case-portrait-caption caps"><span>Marcia Macedo</span><span>Gestão · Copy</span></figcaption>
           </figure>
         </article>
         <article class="case-block case-block--dark case-block--rp" aria-labelledby="case-rp-title">
+          <header class="case-identity"><span class="caps case-identity-index">02 / CASE</span><span class="case-identity-copy"><strong>Receita Previsível</strong><span class="caps">Vendas B2B</span></span></header>
           <figure class="case-media case-media--book" data-rise>
             <div class="rp-stage">
               <div class="rp-grid" aria-hidden="true"></div>
               <div class="rp-hud caps" aria-hidden="true"><span>Receita Previsível</span><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v15m0-15C8 2 4 3 3 4v15c3-2 6-1 9 1m0-15c4-3 8-2 9-1v15c-3-2-6-1-9 1"/></svg></div>
-              <div class="rp-book-slot"><div class="rp-book-reveal"><div class="rp-book glass-card"><img src="/portfolio/assets/cases/receita-previsivel-livro.jpg" alt="Capa do livro Receita Previsível, de Aaron Ross e Marylou Tyler" width="387" height="516" loading="lazy" decoding="async"></div></div></div>
+              <div class="rp-book-slot"><div class="rp-book-reveal"><div class="rp-book glass-card"><img src="assets/cases/receita-previsivel-livro.jpg" alt="Capa do livro Receita Previsível, de Aaron Ross e Marylou Tyler" width="387" height="516" loading="lazy" decoding="async"></div></div></div>
               <div class="signal-line" aria-hidden="true"></div>
             </div>
             <figcaption class="rp-caption caps"><span>Livro de referência</span><span>Vendas B2B</span></figcaption>
@@ -1020,7 +1099,6 @@
                 <p class="case-description">Também construí a produção de conteúdo de todas as empresas do ecossistema, incluindo <strong>Receita Previsível</strong>, <strong>Thiago Muniz (CEO)</strong>, <strong>Receita Previsível Agendas</strong>, <strong>Nino Carvalho (Marketing Elevation)</strong>, <strong>CRM7</strong>, entre outras.</p>
                 <p class="case-description">Ali aprendi a lição mais importante: você é responsável pela tarefa e por fazer com que ela dê resultado.</p>
               </div>
-              <a class="case-instagram" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Receita Previsível, @receitaprevisivel, abrir em nova aba" data-rise style="--delay:240ms"><img src="/portfolio/assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@receitaprevisivel</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               <div class="case-links" data-rise style="--delay:270ms" aria-label="Materiais da Receita Previsível, links em preparação">
                 <a class="case-link" data-copy-link="rp-webinar" aria-disabled="true" target="_blank" rel="noopener">Webinar Labora + RP <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                 <a class="case-link" data-copy-link="rp-artigos" aria-disabled="true" target="_blank" rel="noopener">Artigos GazzConecta <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
@@ -1031,17 +1109,22 @@
                 <!-- URL PENDENTE: confirmar a matéria da segunda imagem antes de ativar este material. -->
                 <span class="case-link" data-press-source="forbes-author" aria-disabled="true"><span class="case-press-copy"><strong>Aaron Ross, autor de Receita Previsível</strong><small>Forbes</small></span></span>
               </div>
+              <nav class="case-socials" aria-label="Redes sociais de Receita Previsível" data-rise style="--delay:360ms">
+                <a class="case-instagram" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Receita Previsível, @receitaprevisivel, abrir em nova aba"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@receitaprevisivel</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Receita Previsível. -->
+                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+              </nav>
             </div>
           </div>
         </article>
         <article class="case-block case-block--paper" aria-labelledby="case-dani-title">
+          <header class="case-identity"><span class="caps case-identity-index">03 / CASE</span><span class="case-identity-copy"><strong>Dani Martins</strong><span class="caps">Prosperus Club</span></span></header>
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <!-- NOME OFICIAL PENDENTE: confirmar Dani Martins. -->
               <p class="caps case-eyebrow" data-rise>VENDAS / DANI MARTINS</p>
               <h3 id="case-dani-title" data-rise style="--delay:90ms"><span>Antes de virar</span><em>Prosperus Club.</em></h3>
               <p class="case-description" data-rise style="--delay:180ms">Participei do início do projeto, ajudando a construir a base de comunicação e vendas do que viria a se tornar o Prosperus Club.</p>
-              <a class="case-instagram" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Dani Martins, @danimartinspro, abrir em nova aba" data-rise style="--delay:240ms"><img src="/portfolio/assets/experts/danimartinspro.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@danimartinspro</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               <table class="case-specs" data-rise style="--delay:270ms">
                 <caption class="sr-only">Fase do projeto e função no Prosperus Club</caption>
                 <tbody>
@@ -1055,16 +1138,31 @@
                 </tbody>
               </table>
               <p class="case-copy-note" id="dani-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
+              <nav class="case-socials" aria-label="Redes sociais de Dani Martins" data-rise style="--delay:360ms">
+                <a class="case-instagram" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Dani Martins, @danimartinspro, abrir em nova aba"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@danimartinspro</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Dani Martins. -->
+                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+              </nav>
             </div>
           </div>
-          <figure class="case-media" data-rise style="--delay:90ms">
-            <!-- FOTO PROVISÓRIA: Dani Martins / Prosperus Club. Substituir pela foto real. -->
-            <img src="/portfolio/assets/cases/prosperus.jpg" data-placeholder="true" alt="Microfone em pedestal diante de um palco vazio com luzes desfocadas, imagem ilustrativa de comunicação e vendas" width="1500" height="1000" loading="lazy" decoding="async">
+          <figure class="case-media case-media--dani" data-rise style="--delay:90ms">
+            <div class="case-portrait dani-gallery">
+              <div class="dani-photo" style="--photo-ratio:515/656">
+                <a class="case-photo-frame" href="assets/cases/dani-martins-empreenda.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar a capa da revista Empreenda com Dani Martins e Joel Jota, abrir em nova aba"><img src="assets/cases/dani-martins-empreenda.png" alt="Capa da revista Empreenda com Dani Martins e Joel Jota" width="515" height="656" loading="lazy" decoding="async"></a>
+                <p class="dani-photo-label caps"><span>Empreenda Revista</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></p>
+              </div>
+              <div class="dani-photo" style="--photo-ratio:522/694">
+                <a class="case-photo-frame" href="assets/cases/dani-martins-times-square.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar a foto de Dani Martins na Times Square, abrir em nova aba"><img src="assets/cases/dani-martins-times-square.png" alt="Dani Martins acompanhada na Times Square, com o painel da Nasdaq ao fundo" width="522" height="694" loading="lazy" decoding="async"></a>
+                <p class="dani-photo-label caps"><span>Times Square</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></p>
+              </div>
+            </div>
+            <figcaption class="case-portrait-caption caps"><span>Dani Martins</span><span>Prosperus Club</span></figcaption>
           </figure>
         </article>
         <article class="case-block case-block--dark case-block--sanduba" aria-labelledby="case-sanduba-title">
+          <header class="case-identity"><span class="caps case-identity-index">04 / CASE</span><span class="case-identity-copy"><strong>Sanduba do Careca</strong><span class="caps">Perpétuo · VTSD</span></span></header>
           <figure class="case-media case-media--portrait case-media--sanduba surface-paper" data-rise>
-            <div class="case-portrait"><img src="/portfolio/assets/cases/sanduba-do-careca.jpg" alt="Sanduba do Careca usando uma coroa e segurando dois sanduíches" width="216" height="233" loading="lazy" decoding="async"></div>
+            <div class="case-portrait"><div class="case-photo-frame"><img src="assets/cases/sanduba-do-careca.jpg" alt="Sanduba do Careca usando uma coroa e segurando dois sanduíches" width="216" height="233" loading="lazy" decoding="async"></div></div>
             <figcaption class="case-portrait-caption caps"><span>Sanduba do Careca</span><span>Perpétuo / VTSD</span></figcaption>
           </figure>
           <div class="case-panel">
@@ -1085,10 +1183,17 @@
                 </tbody>
               </table>
               <p class="case-copy-note" id="sanduba-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
+              <nav class="case-socials" aria-label="Redes sociais de Sanduba do Careca" data-rise style="--delay:360ms">
+                <!-- INSTAGRAM PENDENTE: adicionar href somente após confirmar o perfil de Sanduba do Careca. -->
+                <span class="case-instagram case-social-placeholder" aria-disabled="true" data-social-pending="instagram"><span class="case-social-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span class="case-instagram-copy"><strong>Instagram</strong><small data-profile-value aria-hidden="true"></small></span></span>
+                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Sanduba do Careca. -->
+                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+              </nav>
             </div>
           </div>
         </article>
         <article class="case-block case-block--paper case-block--angelica" aria-labelledby="case-angelica-title">
+          <header class="case-identity"><span class="caps case-identity-index">05 / CASE</span><span class="case-identity-copy"><strong>Angélica Gevaerd</strong><span class="caps">Marketplace</span></span></header>
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <p class="caps case-eyebrow" data-rise>MARKETPLACE · VTSD / ANGÉLICA GEVAERD</p>
@@ -1101,17 +1206,24 @@
                 </div></div>
               </div>
               <p class="case-copy-note" id="angelica-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
+              <nav class="case-socials" aria-label="Redes sociais de Angélica Gevaerd" data-rise style="--delay:360ms">
+                <!-- INSTAGRAM PENDENTE: adicionar href somente após confirmar o perfil de Angélica Gevaerd. -->
+                <span class="case-instagram case-social-placeholder" aria-disabled="true" data-social-pending="instagram"><span class="case-social-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span class="case-instagram-copy"><strong>Instagram</strong><small data-profile-value aria-hidden="true"></small></span></span>
+                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Angélica Gevaerd. -->
+                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+              </nav>
             </div>
           </div>
           <figure class="case-media case-media--portrait case-media--angelica surface-paper" data-rise style="--delay:90ms">
-            <div class="case-portrait"><img src="/portfolio/assets/cases/angelica-gevaerd.png" alt="Angélica Gevaerd ao lado de um notebook com uma página de marketplace aberta" width="195" height="225" loading="lazy" decoding="async"></div>
-            <figcaption class="case-portrait-caption caps"><span>Marketplace</span><span>Perpétuo / VTSD</span></figcaption>
+            <div class="case-portrait"><div class="case-photo-frame"><img src="assets/cases/angelica-gevaerd.png" alt="Angélica Gevaerd ao lado de um notebook com uma página de marketplace aberta" width="195" height="225" loading="lazy" decoding="async"></div></div>
+            <figcaption class="case-portrait-caption caps"><span>Angélica Gevaerd</span><span>Marketplace / VTSD</span></figcaption>
           </figure>
         </article>
         <article class="case-block case-block--dark case-block--andre" aria-labelledby="case-andre-title">
+          <header class="case-identity"><span class="caps case-identity-index">06 / CASE</span><span class="case-identity-copy"><strong>André Ferraz</strong><span class="caps">Aromaterapia</span></span></header>
           <figure class="case-media case-media--portrait case-media--andre surface-paper" data-rise>
-            <div class="case-portrait"><img src="/portfolio/assets/cases/andre-ferraz.jpg" alt="André Ferraz sorrindo, com plantas ao fundo" width="800" height="800" loading="lazy" decoding="async"></div>
-            <figcaption class="case-portrait-caption caps"><span>Aromaterapia</span><span>Gestão · Copy · Webdesign</span></figcaption>
+            <div class="case-portrait"><div class="case-photo-frame"><img src="assets/cases/andre-ferraz.jpg" alt="André Ferraz sorrindo, com plantas ao fundo" width="800" height="800" loading="lazy" decoding="async"></div></div>
+            <figcaption class="case-portrait-caption caps"><span>André Ferraz</span><span>Gestão · Copy · Webdesign</span></figcaption>
           </figure>
           <div class="case-panel">
             <div class="case-content">
@@ -1127,10 +1239,10 @@
                 <div><strong>11</strong><span class="caps">PAGOS</span></div>
                 <div><strong><small class="caption muted">até</small> 10</strong><span class="caps">PESSOAS NO TIME</span></div>
               </div>
-              <a class="case-instagram" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de André Ferraz, @andreferrazaromaterapia, abrir em nova aba" data-rise style="--delay:360ms"><img src="/portfolio/assets/cases/andre-ferraz.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@andreferrazaromaterapia</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-              <div class="case-links" data-rise style="--delay:450ms">
-                <a class="case-link" href="https://www.youtube.com/@andreferraz" target="_blank" rel="noopener noreferrer" aria-label="Canal de André Ferraz no YouTube, abrir em nova aba"><span>YouTube <span class="muted">· @andreferraz</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-              </div>
+              <nav class="case-socials" aria-label="Redes sociais de André Ferraz" data-rise style="--delay:360ms">
+                <a class="case-instagram" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de André Ferraz, @andreferrazaromaterapia, abrir em nova aba"><img src="assets/cases/andre-ferraz.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@andreferrazaromaterapia</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <a class="case-social-secondary" href="https://www.youtube.com/@andreferraz" target="_blank" rel="noopener noreferrer" aria-label="Canal de André Ferraz no YouTube, abrir em nova aba"><span>YouTube <span class="muted">· @andreferraz</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              </nav>
             </div>
           </div>
         </article>
@@ -1172,7 +1284,7 @@
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:270ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">04</span>
-            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="Typebot"><img class="tool-logo__color" src="/portfolio/assets/logos/typebot.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
+            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="Typebot"><img class="tool-logo__color" src="assets/logos/typebot.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
             <div class="skill-copy"><h3>Automações</h3><p>Fluxos que tiram o trabalho manual do caminho: chatbots, integrações e disparos que rodam sem depender de alguém apertar o botão.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:360ms"><article class="skill-card glass-card ds-stage">
@@ -1183,7 +1295,7 @@
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:450ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">06</span>
-            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="ClickUp"><img class="tool-logo__color" src="/portfolio/assets/logos/clickup.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
+            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="ClickUp"><img class="tool-logo__color" src="assets/logos/clickup.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
             <div class="skill-copy"><h3>ClickUp</h3><p>O lançamento inteiro num só lugar: tarefas, prazos e responsáveis visíveis para todo o time, sem planilha perdida nem cobrança no grupo.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:540ms">
@@ -1255,19 +1367,14 @@
         </header>
         <div class="about-composition">
           <figure class="about-photo about-photo--portrait" data-rise style="--delay:90ms">
-            <div class="about-print">
-              <!-- Mesmo retrato usado como poster do vídeo da primeira dobra. -->
-              <img src="/portfolio/assets/portrait-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Foto de Alisson Segecs, gestor de lançamentos e copywriter">
-              <div class="about-mark">
-                <span class="caps" aria-hidden="true">SÓ COPYWRITER</span>
-                <span class="sr-only">Antes só copywriter, hoje gestor de lançamentos</span>
-                <svg class="about-cross" viewBox="0 0 260 150" aria-hidden="true">
-                  <defs><filter id="about-dry-brush" x="-15%" y="-25%" width="130%" height="150%"><feTurbulence type="fractalNoise" baseFrequency=".11 .7" numOctaves="3" seed="8" result="grain"/><feDisplacementMap in="SourceGraphic" in2="grain" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-                  <g filter="url(#about-dry-brush)"><path pathLength="1" d="M64 22 103 55 143 86 198 127"/><path pathLength="1" d="m193 21-35 33-41 41-48 34"/></g>
-                </svg>
-              </div>
+            <div class="about-print about-video-window">
+              <img class="about-video-poster" src="assets/about/about-video-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Alisson Segecs com os rótulos Estrategista e Gestor operacional">
+              <video id="about-video" muted loop playsinline preload="none" poster="assets/about/about-video-poster.webp" width="1280" height="720" aria-label="Retrato em movimento de Alisson Segecs" aria-describedby="about-motion-description">
+                <source src="assets/about/Criar_vídeo_com_transição_fluida_20261013164736.mp4" type="video/mp4">
+              </video>
             </div>
-            <figcaption class="caps">01 · ALISSON SEGECS · GESTOR DE LANÇAMENTOS</figcaption>
+            <p class="sr-only" id="about-motion-description">A animação apresenta a evolução de só copywriter para estrategista e gestor operacional. Sem áudio. A pausa global controla sua reprodução.</p>
+            <figcaption class="caps about-video-caption"><span>01 · ALISSON SEGECS · GESTOR DE LANÇAMENTOS</span><button class="button button-ghost button-sm about-video-play" type="button" data-about-video-play hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Reproduzir vídeo</button></figcaption>
           </figure>
           <div class="about-story" data-rise style="--delay:180ms">
             <h3>Comecei escrevendo. Hoje eu seguro a operação inteira.</h3>
@@ -1279,7 +1386,7 @@
           <figure class="about-photo about-photo--planning" data-rise style="--delay:90ms">
             <div class="about-print">
               <!-- Foto provisória de Leeloo The First, Pexels. Substituir por uma foto sua trabalhando. Fonte e licença: assets/about/README.md. -->
-              <img src="/portfolio/assets/about/planning.jpg" width="1200" height="801" loading="lazy" decoding="async" data-placeholder="true" alt="Foto provisória de mãos escrevendo um planejamento em um caderno sobre a mesa">
+              <img src="assets/about/planning.jpg" width="1200" height="801" loading="lazy" decoding="async" data-placeholder="true" alt="Foto provisória de mãos escrevendo um planejamento em um caderno sobre a mesa">
             </div>
             <figcaption class="caps">02 · ONDE O PLANO VIRA CRONOGRAMA</figcaption>
           </figure>
@@ -1318,10 +1425,10 @@
             <path id="field-wire-3" pathLength="1000" d="M-60 650C420 830 540 180 1140 250S1480 650 1520 690"/>
             <path id="field-wire-4" pathLength="1000" d="M-70 1650C440 1050 510 1510 1000 1430S1400 1090 1510 1220"/>
           </defs>
-          <g class="field-wire"><use href="#field-wire-1"/><use class="field-wire__spark" href="#field-wire-1" style="--wire-duration:10s"/></g>
-          <g class="field-wire"><use href="#field-wire-2"/><use class="field-wire__spark" href="#field-wire-2" style="--wire-duration:14s"/></g>
-          <g class="field-wire field-wire--desktop"><use href="#field-wire-3"/><use class="field-wire__spark" href="#field-wire-3" style="--wire-duration:12s"/></g>
-          <g class="field-wire field-wire--desktop"><use href="#field-wire-4"/><use class="field-wire__spark" href="#field-wire-4" style="--wire-duration:16s"/></g>
+          <g class="field-wire"><use href="#field-wire-1"/></g>
+          <g class="field-wire"><use href="#field-wire-2"/></g>
+          <g class="field-wire field-wire--desktop"><use href="#field-wire-3"/></g>
+          <g class="field-wire field-wire--desktop"><use href="#field-wire-4"/></g>
         </svg>
       </div>
       <section class="faq ds-group" id="perguntas" aria-labelledby="faq-title" tabindex="-1">
@@ -1433,7 +1540,7 @@
       const reduced = matchMedia('(prefers-reduced-motion: reduce)');
       let userPaused = false;
       let syncMethodMotion = () => {};
-      let syncClosingMotion = () => {};
+      let syncAboutMotion = () => {};
       let duration = 0, metadataReady = false, libraryReady = false;
       let trigger = null, context = null, failed = false, staticMode = true;
       let metadataTimer, playRequest = null;
@@ -1539,7 +1646,7 @@
         if (pointerMotionOff()) resetPointers();
         if (!proximityAllowed()) { resetSkillsProximity(); faqProximity.reset(); }
         syncMethodMotion();
-        syncClosingMotion();
+        syncAboutMotion();
       }
       function drawRing() {
         ringFrame = 0;
@@ -1620,6 +1727,65 @@
         addEventListener('scroll', updatePlaybackVisibility, {passive:true});
         addEventListener('resize', updatePlaybackVisibility, {passive:true});
       }
+      // Retrato da seção Sobre: reprodução nativa, vinculada à visibilidade.
+      (() => {
+        const clip = $('#about-video');
+        if (!clip) return;
+        const frame = clip.closest('.about-video-window');
+        const photo = clip.closest('.about-photo');
+        const playButton = $('[data-about-video-play]');
+        let visible = false, unavailable = false, request = null;
+        clip.muted = true; clip.defaultMuted = true;
+        const allowed = () => visible && !unavailable && !userPaused && !reduced.matches && !document.hidden && !previewMode;
+        const fail = () => {
+          unavailable = true; clip.pause(); frame.classList.remove('is-video-ready');
+          playButton.hidden = true;
+        };
+        syncAboutMotion = () => {
+          const canPlay = allowed();
+          clip.autoplay = canPlay;
+          if (reduced.matches || previewMode) frame.classList.remove('is-video-ready');
+          if (!canPlay) { clip.pause(); playButton.hidden = true; return; }
+          if (clip.preload === 'none') { clip.preload = 'auto'; clip.load(); }
+          if (clip.readyState < 2 || !clip.paused || request) return;
+          try {
+            request = Promise.resolve(clip.play()).then(() => {
+              if (!allowed()) clip.pause();
+            }).catch(() => {
+              if (allowed()) playButton.hidden = false;
+            }).finally(() => { request = null; });
+          } catch { if (allowed()) playButton.hidden = false; }
+        };
+        clip.addEventListener('loadedmetadata', () => {
+          if (!Number.isFinite(clip.duration) || clip.duration <= 0 || !clip.videoWidth) fail();
+        });
+        clip.addEventListener('loadeddata', syncAboutMotion);
+        clip.addEventListener('canplay', syncAboutMotion);
+        clip.addEventListener('play', () => { if (!allowed()) clip.pause(); });
+        clip.addEventListener('playing', () => {
+          if (!allowed()) { clip.pause(); return; }
+          frame.classList.add('is-video-ready'); playButton.hidden = true;
+        });
+        clip.addEventListener('error', fail);
+        clip.querySelector('source').addEventListener('error', fail);
+        playButton.addEventListener('click', syncAboutMotion);
+        const updateVisibility = () => {
+          const bounds = photo.getBoundingClientRect();
+          visible = bounds.bottom > 0 && bounds.top < innerHeight;
+          syncAboutMotion();
+        };
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(entries => {
+            visible = entries[0].isIntersecting && entries[0].intersectionRatio >= .15;
+            syncAboutMotion();
+          }, {threshold:[0,.15]});
+          observer.observe(photo);
+        } else {
+          addEventListener('scroll', updateVisibility, {passive:true});
+          addEventListener('resize', updateVisibility, {passive:true});
+        }
+        updateVisibility();
+      })();
       fine.addEventListener('change', syncMotionEffects);
       document.addEventListener('visibilitychange', syncMotionEffects);
       addEventListener('resize', syncMotionEffects, {passive:true});
@@ -1657,58 +1823,15 @@
         faq.classList.add('faq-ready');
         if ('ResizeObserver' in window) new ResizeObserver(() => faqProximity.refresh()).observe($('#faq-list'));
       }
-      // Campo de luz compartilhado. O RAF só existe enquanto o cursor muda
-      // de posição; movimento reduzido, toque, pausa e saída da tela o desligam.
+      // Suspende o fluxo quando a ilustração sai da viewport, mesmo com o CTA visível.
       {
-        const field = $('#closing-field'), backdrop = field.querySelector('.closing-field__backdrop');
-        let frame = 0, visible = false, bounds = null, dirty = true;
-        let x = 0, y = 0, targetX = 0, targetY = 0;
-        const allowed = () => proximityAllowed() && innerWidth > 800 && visible && !previewMode;
-        function draw() {
-          frame = 0;
-          if (!allowed()) return;
-          x += (targetX - x) * .18; y += (targetY - y) * .18;
-          const settled = Math.abs(targetX - x) + Math.abs(targetY - y) < .02;
-          if (settled) { x = targetX; y = targetY; }
-          backdrop.style.setProperty('--px', x.toFixed(3) + '%'); backdrop.style.setProperty('--py', y.toFixed(3) + '%');
-          if (!settled) frame = requestAnimationFrame(draw);
-        }
-        function schedule() { if (!frame && allowed()) frame = requestAnimationFrame(draw); }
-        syncClosingMotion = () => {
-          if (!allowed()) {
-            cancelAnimationFrame(frame); frame = 0; x = y = targetX = targetY = 0;
-            backdrop.style.setProperty('--px', '0%'); backdrop.style.setProperty('--py', '0%');
-          }
-        };
-        field.addEventListener('pointermove', event => {
-          if (event.pointerType === 'touch' || !allowed()) return;
-          if (dirty || !bounds) { bounds = field.getBoundingClientRect(); dirty = false; }
-          targetX = clamp((event.clientX - bounds.left) / bounds.width * 12 - 6, -6, 6);
-          targetY = clamp((event.clientY - bounds.top) / bounds.height * 12 - 6, -6, 6);
-          schedule();
-        }, {passive:true});
-        field.addEventListener('pointerleave', () => { targetX = targetY = 0; schedule(); });
-        field.addEventListener('pointercancel', syncClosingMotion);
-        const refresh = () => { dirty = true; };
-        addEventListener('scroll', refresh, {passive:true}); addEventListener('resize', refresh, {passive:true});
-        function setVisible(value) { visible = value; field.classList.toggle('is-field-offscreen', !visible); syncClosingMotion(); }
-        if ('IntersectionObserver' in window) {
-          new IntersectionObserver(entries => setVisible(entries[0].isIntersecting), {threshold:0}).observe(field);
-        } else {
-          const check = () => { const r = field.getBoundingClientRect(); setVisible(r.bottom > 0 && r.top < innerHeight); };
-          addEventListener('scroll', check, {passive:true}); addEventListener('resize', check, {passive:true}); check();
-        }
-        syncClosingMotion();
-      }
-      // Suspende o fluxo financeiro fora da viewport.
-      {
-        const contact = $('#contato');
+        const contact = $('#contato'), visual = contact.querySelector('.closing-visual');
         const setVisible = visible => contact.classList.toggle('money-paused', !visible);
         if ('IntersectionObserver' in window) {
           contact.classList.add('money-paused');
-          new IntersectionObserver(entries => setVisible(entries[0].isIntersecting), {threshold:0}).observe(contact);
+          new IntersectionObserver(entries => setVisible(entries[0].isIntersecting), {threshold:0}).observe(visual);
         } else {
-          const check = () => { const r = contact.getBoundingClientRect(); setVisible(r.bottom > 0 && r.top < innerHeight); };
+          const check = () => { const r = visual.getBoundingClientRect(); setVisible(r.bottom > 0 && r.top < innerHeight); };
           addEventListener('scroll', check, {passive:true}); addEventListener('resize', check, {passive:true}); check();
         }
       }

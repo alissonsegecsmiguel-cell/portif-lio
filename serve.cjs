@@ -3,10 +3,13 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
-// Reproduz os redirecionamentos do vercel.json (inclusive :path*).
-const redirects = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8')).redirects.map(r => ({
+// Reproduz os redirecionamentos e rewrites do vercel.json (inclusive :path*).
+const vercel = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
+const compile = rules => (rules || []).map(r => ({
   ...r, pattern: new RegExp('^' + r.source.replace(/\/:path\*$/, '(?:/(.*))?') + '$')
 }));
+const redirects = compile(vercel.redirects), rewrites = compile(vercel.rewrites);
+const applyRule = (r, match) => r.destination.replace('/:path*', match[1] ? '/' + match[1] : '');
 const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.mp4':'video/mp4','.woff2':'font/woff2','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif'};
 http.createServer((req, res) => {
   if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405).end(); return; }
@@ -16,10 +19,13 @@ http.createServer((req, res) => {
     for (const r of redirects) {
       const match = r.pattern.exec(rawPath);
       if (!match) continue;
-      const location = r.destination.replace('/:path*', match[1] ? '/' + match[1] : '') + (query ? '?' + query : '');
-      res.writeHead(r.permanent ? 308 : 307, {Location: location}).end(); return;
+      res.writeHead(r.permanent ? 308 : 307, {Location: applyRule(r, match) + (query ? '?' + query : '')}).end(); return;
     }
-    const pathname = decodeURIComponent(rawPath);
+    let pathname = decodeURIComponent(rawPath);
+    // Como na Vercel, o rewrite só vale quando o arquivo não existe no caminho original.
+    if (!fs.existsSync(path.resolve(root, '.' + pathname))) {
+      for (const r of rewrites) { const match = r.pattern.exec(pathname); if (match) { pathname = applyRule(r, match); break; } }
+    }
     file = path.resolve(root, '.' + pathname);
     if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
   } catch { res.writeHead(400).end(); return; }
