@@ -56,7 +56,7 @@
     .scene{position:relative;isolation:isolate;display:flex;align-items:center;min-height:760px;height:100svh;overflow:hidden;background:var(--void)}
     .hero-visual{position:absolute;inset:0;margin:0;z-index:0;overflow:hidden;background:var(--void)}
     .video-window{position:absolute;inset:0;overflow:hidden}
-    .video-window video,.video-poster,.hero-floating{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom}
+    .video-window video,.video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom}
     .video-poster{z-index:1;transition:opacity .4s}
     .video-window.is-ready .video-poster{opacity:0;pointer-events:none}.video-window.is-error .video-poster{opacity:1}
     .hero-visual::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,#050506 0%,rgba(5,5,6,.94) 18%,rgba(5,5,6,.55) 39%,rgba(5,5,6,.12) 54%,transparent 68%),linear-gradient(0deg,#050506 0%,transparent 28%,rgba(5,5,6,.05) 100%)}
@@ -210,7 +210,7 @@
       .scene{height:100svh;min-height:700px;align-items:flex-end}
       /* Corte apenas do espaço preto à esquerda: rosto e elementos flutuantes
          permanecem na área superior, com fundo contínuo em toda a viewport. */
-      .video-window video,.video-poster,.hero-floating{inset:112px auto auto -48.837%;width:148.837%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center}
+      .video-window video,.video-poster{inset:112px auto auto -48.837%;width:148.837%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center}
       .hero-visual::after{background:linear-gradient(180deg,#050506aa 0%,transparent 18%,transparent 30%,#050506a6 44%,#050506 65%),linear-gradient(90deg,#05050633,transparent 65%)}
       .hero-inner{padding:300px var(--pad) 185px}.hero__copy{width:100%;max-width:600px}
       h1{font-size:clamp(60px,11vw,86px);line-height:.94;margin:20px 0 18px}
@@ -236,9 +236,9 @@
     @media(max-width:800px){.hero h1{font-size:clamp(52px,8.8vw,72px);margin:18px 0}.hero-inner{padding-top:250px}.headline-intro{margin-bottom:10px!important}.cursor-ring{display:none!important}}
     @media(max-width:430px){.hero h1{font-size:clamp(46px,12.3vw,54px)}.hero-inner{padding-top:220px}.hero__lead{max-width:290px}}
     @media(max-width:800px) and (max-height:740px){.hero h1{font-size:44px;margin:12px 0}.hero-inner{padding-top:195px;padding-bottom:150px}.hero h1 .headline-intro{font-size:15px;margin-bottom:8px}.headline-final small{font-size:10px!important;margin:8px 0 5px!important}.hero__lead{font-size:11px}.hero-actions{margin-top:14px}}
-    @media(min-width:501px) and (max-width:800px){.video-window video,.video-poster,.hero-floating{inset:120px 0 auto;width:100%;height:auto;object-position:center}}
+    @media(min-width:501px) and (max-width:800px){.video-window video,.video-poster{inset:120px 0 auto;width:100%;height:auto;object-position:center}}
     @media(min-width:801px) and (max-height:760px){.hero-card .story{min-height:54px}.hero-card .story h2{font-size:22px}.hero-card .story p{display:none}}
-    @media(max-width:500px) and (max-height:740px){.video-window video,.video-poster,.hero-floating{inset:94px auto auto -39.13%;width:139.13%;height:auto}.hero h1{font-size:40px}.hero h1 .headline-final small{display:inline;margin:0!important;padding-right:8px;vertical-align:baseline}}
+    @media(max-width:500px) and (max-height:740px){.video-window video,.video-poster{inset:94px auto auto -39.13%;width:139.13%;height:auto}.hero h1{font-size:40px}.hero h1 .headline-final small{display:inline;margin:0!important;padding-right:8px;vertical-align:baseline}}
     @media(max-width:1000px){.metric-top{grid-template-columns:108px 1fr;gap:16px}.results-monitor{padding:26px}.metric-label{font-size:14px}.service h3{font-size:20px}.service p{font-size:13px}}
     @media(max-width:900px){.results-layout{grid-template-columns:1fr;gap:48px}.results-monitor,.services{width:100%;max-width:640px;margin-inline:auto}.results::after{left:auto;right:var(--pad)}.results::before{left:auto;right:-60px}}
     @media(max-width:430px){.results-monitor{padding:22px}.monitor-header{padding-bottom:20px}.monitor-header .caps{font-size:9px}.monitor-indicator{font-size:9px}.metric{padding-block:22px}.metric-top{grid-template-columns:106px 1fr;gap:14px}.metric-number{font-size:60px}.metric-label{font-size:13px}.monitor-footer{font-size:8px;gap:10px}.service{padding-left:28px}.service h3{font-size:20px}.service p{font-size:13px}}
@@ -282,10 +282,6 @@
     @keyframes ticker{to{transform:translateX(-50%)}}
     .hero .scroll-cue{font:400 10px/1.5 var(--font-mono);letter-spacing:.15em;text-transform:uppercase}
     .hero__coordinates{font:400 10px/1.8 var(--font-mono);letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}.hero__coordinates b{font-weight:400;color:var(--ink);font-variant-numeric:tabular-nums}
-    .hero-floating{z-index:1;pointer-events:none;overflow:visible}.hero-floating .icon{width:46px;height:46px;color:var(--ink);fill:none;stroke:currentColor;stroke-width:1.5}
-    .float-surface{fill:var(--void-soft);fill-opacity:.65;stroke:var(--line);stroke-width:1}.float-motion{animation:tile-drift 3.6s var(--ease) infinite;animation-delay:var(--delay)}
-    @keyframes tile-drift{0%,100%{transform:translateY(8px)}50%{transform:translateY(-12px)}}
-    .halo-window{position:relative;width:100%;height:100%}.hero__halo{position:absolute;top:50%;left:50%;width:250px;aspect-ratio:1;border:1px solid rgba(169,165,255,.68);border-radius:50%;opacity:1;transform:translate(-50%,-50%) scale(.82);pointer-events:none;box-shadow:inset 0 0 0 10px rgba(108,99,255,.025),0 0 70px rgba(108,99,255,.14)}
     html.motion-paused *,html.motion-paused *::before,html.motion-paused *::after{animation-play-state:paused!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
     html.motion-paused .line-mask>span,html.motion-paused [data-enter],html.motion-paused [data-rise],html.motion-paused .reveal-word{opacity:1!important;transform:none!important;filter:none!important}
     html.motion-paused .cursor-ring{display:none}
@@ -300,11 +296,125 @@
     .hero-actions [hidden]{display:none}
     .hero-actions:has([data-video-play]:not([hidden])){flex-wrap:wrap}
 
+    /* Cases editoriais: proporções da referência e superfícies do sistema. */
+    .cases.projects{padding:0;background:var(--void);border-top:1px solid var(--line)}
+    .cases-intro{padding:var(--section-space) var(--pad) 64px}
+    .cases .ds-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:38px;color:var(--signal)}
+    .cases .ds-top span:last-child{color:var(--muted)}
+    .cases .ds-head{display:grid;grid-template-columns:1.2fr 1fr;align-items:end;gap:60px}
+    .cases .ds-head h2,.case-panel h3{font:500 clamp(36px,4vw,60px)/1.02 var(--font-primary);letter-spacing:-.065em}
+    .cases .ds-head em,.case-panel h3 em{display:block;font:300 1.04em/1 var(--font-editorial);letter-spacing:-.065em;font-style:normal;color:var(--signal)}
+    .cases .ds-head p{font:400 14px/1.8 var(--font-ui);max-width:430px;color:var(--muted)}
+    .cases .ds-head .cases-note{font-size:12px;margin-top:14px}
+    .case-block{display:grid;grid-template-columns:1fr 1fr;min-height:420px;isolation:isolate}
+    .case-block--dark{grid-template-columns:52% 48%;min-height:520px}
+    .case-panel{display:flex;align-items:center;min-width:0;padding:56px var(--pad);background:var(--void-soft);color:var(--ink)}
+    .case-content{width:100%;max-width:620px;margin-inline:auto}
+    .case-panel.surface-paper{--signal:#5047c9;--muted:#58575f;--line:var(--line-dark);background:var(--paper);color:var(--void);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .case-eyebrow{color:var(--muted);margin-bottom:22px;max-width:60ch}
+    .case-panel h3{margin-bottom:22px}
+    .case-panel h3>span{display:block}
+    .case-description{font:400 14px/1.7 var(--font-ui);color:var(--muted);max-width:42ch}
+    .case-specs{width:100%;border-collapse:collapse;margin-top:28px;font:400 12px/1.65 var(--font-ui)}
+    .case-specs th,.case-specs td{padding:12px 0;border-top:1px solid var(--line);vertical-align:top}
+    .case-specs tr:last-child th,.case-specs tr:last-child td{border-bottom:1px solid var(--line)}
+    .case-specs th{text-align:left;font-weight:600;width:35%;padding-right:16px}
+    .case-specs td{text-align:right;color:var(--muted)}
+    .case-copy-group{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+    .case-specs .case-copy-group{justify-content:flex-end}
+    .case-link{display:inline-flex;align-items:center;gap:8px;min-height:32px;max-width:100%;font:400 14px/1.5 var(--font-ui);color:inherit;text-decoration:none;transition:color .4s var(--ease)}
+    .case-specs .case-link{font-size:12px;min-height:26px}
+    .case-link .icon{width:14px;height:14px;color:var(--signal)}
+    .case-link[href]:hover{color:var(--signal)}
+    .case-link[aria-disabled=true]{cursor:default}
+    .case-links{margin-top:28px;border-top:1px solid var(--line)}
+    .case-links .case-link{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line)}
+    .case-highlights{display:flex;gap:42px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+    .case-highlights strong{display:block;font:500 40px/1 var(--font-primary);letter-spacing:-.065em}
+    .case-highlights .caps{display:block;font-size:9px;color:var(--mint);margin-top:10px}
+    .case-deliverables{margin-top:24px}
+    .case-deliverable{padding:12px 0;border-top:1px solid var(--line)}
+    .case-deliverable:last-child{padding-bottom:0}
+    .case-deliverable p{font:500 12px/1.5 var(--font-ui);color:var(--muted);margin-bottom:4px}
+    .case-media{position:relative;min-width:0;min-height:100%;overflow:hidden;background:var(--void-soft);margin:0}
+    .case-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:transform 1200ms var(--ease)}
+    /* Close-up da mesa: preserva os headphones e o teclado, excluindo os logos da tela. */
+    .case-media--b2b img{top:auto;bottom:0;height:225%;object-position:30% 100%}
+    .case-media::after{content:'';position:absolute;inset:0;pointer-events:none;border:1px solid var(--line)}
+    .case-media--split{display:grid;grid-template-columns:1fr 1fr}
+    .case-media--split img{position:relative;inset:auto;min-width:0}
+    .case-media--split img+img{border-left:1px solid var(--line)}
+    @media(hover:hover){.case-block:hover .case-media img{transform:scale(1.04)}}
+    .cases-outro{padding:64px var(--pad) var(--section-space);background:var(--void)}
+    .case-other{display:flex;align-items:baseline;gap:28px;border-bottom:1px solid var(--line);padding-bottom:28px}
+    .case-other>p{flex-shrink:0}
+    .case-other .case-copy-group{gap:10px 16px}
+    .case-other .case-copy-group>span{color:var(--muted)}
+    html.motion-paused .case-media img{transform:none!important}
+    @media(max-width:1100px){.cases .ds-head{gap:40px}.case-panel{padding-block:44px}.case-eyebrow{font-size:9px}.case-specs th{width:40%}.case-other{display:block}.case-other>p{margin-bottom:14px}}
+    @media(max-width:800px){.cases-intro{padding-bottom:48px}.cases .ds-head{grid-template-columns:1fr;gap:24px}.case-block,.case-block--dark{grid-template-columns:1fr;min-height:0}.case-block .case-media{order:-1;min-height:0;height:280px}.case-panel{padding:40px var(--pad)}.case-content{max-width:none}.case-specs .case-copy-group{justify-content:flex-start}.case-specs td{text-align:left}.case-specs th{width:35%}.cases-outro{padding-top:48px}}
+    @media(max-width:430px){.cases .ds-top{font-size:9px;gap:16px;margin-bottom:28px}.case-panel{padding-block:36px}.case-eyebrow{font-size:9px;margin-bottom:18px}.case-panel h3{margin-bottom:18px}.case-panel h3>span{max-width:15ch}.case-specs th,.case-specs td{display:block;width:100%;padding:10px 0}.case-specs td{border-top:0;padding-top:0}.case-specs tr:last-child th{border-bottom:0}.case-highlights{gap:36px}.case-other .case-copy-group{gap:8px 12px}.case-other .case-copy-group>span{display:none}}
+    @media(prefers-reduced-motion:reduce){.case-media img{transform:none!important;transition:none!important}}
+
+    /* Habilidades: os campos, materiais e movimentos vêm do design system. */
+    .skills.ds-group{position:relative;isolation:isolate;overflow:hidden;padding:var(--section-space) var(--pad);border-bottom:1px solid var(--line);background:var(--void)}
+    .skills.ds-group::before{content:'';position:absolute;width:720px;height:720px;right:-320px;top:-120px;background:radial-gradient(ellipse,#6c63ff0c,transparent 68%);animation:bloom 14s var(--ease) infinite alternate;pointer-events:none;z-index:-1}
+    .skills.ds-group::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.3;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:100px 100px;mask-image:linear-gradient(90deg,transparent,black);animation:grid-drift 28s var(--ease) infinite}
+    .skills .section-inner{max-width:1440px;margin:auto}
+    .skills .ds-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:38px;color:var(--signal)}
+    .skills .ds-top span:last-child{color:var(--muted)}
+    .skills .ds-head{display:grid;grid-template-columns:1.2fr 1fr;align-items:end;gap:60px;margin-bottom:50px}
+    .skills .ds-head h2{font:500 clamp(44px,5vw,76px)/1.02 var(--font-primary);letter-spacing:-.065em}
+    .skills .ds-head em{font:300 1.04em/1 var(--font-editorial);letter-spacing:-.06em;font-style:normal;color:var(--signal)}
+    .skills .ds-head p{max-width:430px;font:400 14px/1.8 var(--font-ui);color:var(--muted)}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .skill-reveal{min-width:0;display:flex}
+    .skill-card{--px:50%;--py:50%;--border-gradient:radial-gradient(400px circle at var(--px) var(--py),color-mix(in srgb,var(--signal) 50%,transparent),transparent 60%);position:relative;isolation:isolate;overflow:hidden;width:100%;min-width:0;min-height:148px;display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.02);backdrop-filter:blur(8px);box-shadow:0 4px 30px rgba(0,0,0,.1);color:var(--ink);cursor:default;transition:transform 400ms var(--ease),border-color 400ms var(--ease)}
+    .skill-card::before,.skill-card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 400ms var(--ease)}
+    .skill-card::before{z-index:0;background:radial-gradient(400px circle at var(--px) var(--py),rgba(108,99,255,.12),transparent 60%)}
+    .skill-card::after{z-index:2;padding:1px;border-radius:inherit;background:var(--border-gradient);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+    .skill-card>*{position:relative;z-index:1}
+    .skills-grid.is-proximity-active .skill-card::before,.skills-grid.is-proximity-active .skill-card::after{opacity:1}
+    .skill-card:hover,.skill-card--cta:focus-visible{border-color:color-mix(in srgb,var(--signal) 40%,transparent)}
+    .skills-grid.is-proximity-active .skill-card:hover{transform:translateY(-4px)}
+    .skill-card .skill-index{position:absolute;top:20px;right:20px;color:var(--muted);font-size:9px}
+    .skill-icon{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:12px;background:var(--void-soft);color:var(--signal);transition:border-color 400ms var(--ease),box-shadow 400ms var(--ease)}
+    .skill-icon>svg.icon{width:24px;height:24px}
+    .skill-icon>svg,.skill-icon>.tool-logo{transition:transform 400ms var(--ease)}
+    .skills-grid.is-proximity-active .skill-card:hover .skill-icon{border-color:color-mix(in srgb,var(--signal) 40%,transparent);box-shadow:0 0 24px rgba(108,99,255,.25)}
+    .skills-grid.is-proximity-active .skill-card:hover .skill-icon>svg,.skills-grid.is-proximity-active .skill-card:hover .skill-icon>.tool-logo{transform:translateY(-2px)}
+    .skill-copy{padding-right:22px;min-width:0}
+    .skill-copy h3{font:600 17px/1.3 var(--font-ui);letter-spacing:-.02em;color:var(--ink);margin:0 0 6px}
+    .skill-copy p{font:400 13px/1.6 var(--font-ui);color:var(--muted);max-width:46ch}
+    .tool-logo{position:relative;display:block;width:28px;height:28px}
+    .tool-logo__color{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.7;filter:grayscale(1);transition:opacity 400ms var(--ease),filter 400ms var(--ease)}
+    .skills-grid.is-proximity-active .skill-card:hover .tool-logo__color{opacity:1;filter:grayscale(0)}
+    .skill-card--cta{border-style:dashed;background:transparent;cursor:pointer}
+    .skill-card--cta .skill-copy{padding-right:32px}
+    .skill-card--cta:hover{border-style:solid}
+    .skill-card--cta:focus-visible{outline:2px solid var(--signal);outline-offset:5px}
+    .skill-card--cta .skill-arrow{position:absolute;right:24px;top:24px;width:16px;height:16px;color:var(--signal);transition:transform 400ms var(--ease)}
+    .skills-grid.is-proximity-active .skill-card--cta:hover .skill-arrow{transform:translate(2px,-2px)}
+    html.motion-paused .skills .skill-card,html.motion-reduced .skills .skill-card{transform:none!important}
+    html.motion-paused .skill-card::before,html.motion-paused .skill-card::after,html.motion-reduced .skill-card::before,html.motion-reduced .skill-card::after{opacity:0!important}
+    .results-layout--summary{display:block}
+    .results-layout--summary .results-monitor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;width:100%;margin:0}
+    .results-layout--summary .monitor-header,.results-layout--summary .monitor-footer{grid-column:1/-1}
+    .results-layout--summary .metric{padding:32px 24px;border:0}
+    .results-layout--summary .metric:nth-of-type(2){padding-left:0}
+    .results-layout--summary .metric+.metric{border-left:1px solid var(--line)}
+    .results-layout--summary .metric:nth-last-of-type(2){padding-right:0}
+    .results-layout--summary .metric-top{grid-template-columns:1fr;gap:14px}
+    .results-layout--summary .monitor-footer{margin-top:0}
+    @media(max-width:1100px){.skills .ds-head{gap:40px}.skill-card{padding:22px;gap:14px}.skill-copy{padding-right:16px}}
+    @media(max-width:800px){.skills .ds-head{grid-template-columns:1fr;gap:24px;margin-bottom:32px}.skills-grid{grid-template-columns:1fr}.skill-card{min-height:132px}.results-layout--summary .results-monitor{grid-template-columns:1fr}.results-layout--summary .metric,.results-layout--summary .metric:nth-of-type(2),.results-layout--summary .metric:nth-last-of-type(2){padding:24px 0}.results-layout--summary .metric+.metric{border-left:0;border-top:1px solid var(--line)}.results-layout--summary .metric-top{grid-template-columns:132px 1fr;gap:24px}}
+    @media(max-width:430px){.skills .ds-top{font-size:9px;gap:16px;margin-bottom:28px}.skills .ds-top span:last-child{max-width:22ch;text-align:right}.skills .ds-head h2{font-size:44px}.skill-card{padding:20px;grid-template-columns:40px minmax(0,1fr);gap:14px}.skill-icon{width:40px;height:40px}.skill-index{display:none}.skill-copy{padding-right:0}.skill-card--cta .skill-copy{padding-right:22px}.skill-card--cta .skill-arrow{right:18px;top:20px}.results-layout--summary .metric-top{grid-template-columns:106px 1fr;gap:14px}}
+
   </style>
 </head>
 <body>
   <div class="cursor-ring" aria-hidden="true"></div>
-  <a class="skip-link" href="#projetos">Pular para projetos</a>
+  <a class="skip-link" href="#cases">Pular para cases</a>
   <header class="nav">
     <nav class="nav-inner wrap" aria-label="Navegação principal">
       <!-- SUBSTITUIR: nome e área também aparecem na descrição e no título. -->
@@ -320,17 +430,9 @@
         <figure class="hero-visual hero__visual" aria-labelledby="video-caption">
           <div class="video-window">
             <img class="video-poster hero__image" src="assets/portrait-poster.webp" alt="" width="1280" height="720" fetchpriority="high">
-            <!-- Retrato original recomposto sem os logos gravados no vídeo. -->
-            <video id="hero-video" muted playsinline loop preload="auto" poster="assets/portrait-poster.webp" width="1280" height="720" aria-label="Retrato animado com elementos de estratégia e operação" aria-describedby="video-description"><source src="assets/Videos/Animating_portrait_transforming_…_20261012185500.scrub.mp4" type="video/mp4"></video>
-            <svg class="hero-floating" viewBox="0 0 1280 720" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
-              <foreignObject x="760" y="-10" width="250" height="250"><div xmlns="http://www.w3.org/1999/xhtml" class="halo-window"><div class="hero__halo"></div></div></foreignObject>
-              <g class="float-stage">
-                <g transform="translate(700 135)"><g class="float-motion" style="--delay:0ms"><rect class="float-surface" x="-32" y="-32" width="64" height="64" rx="16"/><svg x="-23" y="-23" width="46" height="46" viewBox="0 0 24 24" class="icon"><path d="m5 19 4-11 5-5 7 7-5 5-11 4ZM5 19l7-7m-3-4 7 7m-4-13 10 10"/><circle cx="13" cy="11" r="1.5"/></svg></g></g>
-                <g transform="translate(1100 185)"><g class="float-motion" style="--delay:90ms"><rect class="float-surface" x="-32" y="-32" width="64" height="64" rx="16"/><svg x="-23" y="-23" width="46" height="46" viewBox="0 0 24 24" class="icon"><path d="M6 19h12l1 3H5l1-3Zm1 0c0-3 1-5 4-7l-4 1-3-3 5-5V2l5 3c5 2 6 7 3 14M9 7h.01"/></svg></g></g>
-                <g transform="translate(820 66)"><g class="float-motion" style="--delay:180ms"><rect class="float-surface" x="-32" y="-32" width="64" height="64" rx="16"/><svg x="-23" y="-23" width="46" height="46" viewBox="0 0 24 24" class="icon"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4m8-4v4M4 10h16m-12 4h2m4 0h2m-8 3h2"/></svg></g></g>
-                <g transform="translate(975 90)"><g class="float-motion" style="--delay:270ms"><rect class="float-surface" x="-32" y="-32" width="64" height="64" rx="16"/><svg x="-23" y="-23" width="46" height="46" viewBox="0 0 24 24" class="icon"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m7 8 1 1 2-2m-3 6 1 1 2-2m-3 6 1 1 2-2m3-10h4m-4 5h4m-4 5h4"/></svg></g></g>
-              </g>
-            </svg>
+            <!-- Vídeo original, com reprodução automática na velocidade nativa. -->
+            <!-- Fluxo original sem recodificação, sem áudio e com metadados no início. -->
+            <video id="hero-video" muted playsinline loop preload="auto" poster="assets/portrait-poster.webp" width="1280" height="720" aria-label="Retrato animado com elementos de estratégia e operação" aria-describedby="video-description"><source src="assets/Videos/Animating_portrait_transforming_…_20261012185500.playback.mp4" type="video/mp4"></video>
           </div>
           <figcaption class="sr-only" id="video-caption">Gestão de lançamentos, da copy à operação.</figcaption><span class="sr-only" id="video-status" role="status">Retrato e composição em movimento.</span>
         </figure>
@@ -340,7 +442,7 @@
           <h1 id="hero-title"><span class="line-mask headline-small body-lg"><span>Lançamentos para experts que querem</span></span> <span class="line-mask"><span>escalar</span></span> <span class="line-mask"><span>sem perder</span></span> <span class="line-mask headline-small body-lg"><span>o controle da</span></span> <span class="line-mask font-fraunces"><span>operação.</span></span></h1>
           <p class="hero__lead" data-enter>+40 lançamentos em 6 nichos. Da copy à entrega, cada peça no lugar certo.</p>
           <div class="hero-actions" data-enter>
-            <a class="button button-primary magnetic" href="#projetos">Ver cases <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+            <a class="button button-primary magnetic" href="#cases">Ver cases <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
             <!-- SUBSTITUIR SEU_NUMERO pelo número internacional no link wa.me. -->
             <a class="button button-ghost magnetic" href="https://wa.me/SEU_NUMERO" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp, abre em nova aba, link a configurar">Conversar no WhatsApp <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H4l2-4A8 8 0 1 1 20 11.5Z"/><path d="M8 10h8m-8 4h5"/></svg></a>
             <button class="button button-ghost" type="button" data-video-play hidden>Reproduzir vídeo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 10 7-10 7Z"/></svg></button>
@@ -354,7 +456,7 @@
             <div class="carousel-slide"><div class="hero-card-top"><span class="caps muted">PROVA / 003</span><span class="badge badge-status"><span class="status-dot" aria-hidden="true"></span>Em movimento</span></div><strong>Da copy à operação.</strong><p class="caption">Uma pessoa, o lançamento inteiro.</p></div>
           </div></div><div class="signal-line" aria-hidden="true"></div>
         </aside>
-        <div class="hero-bottom"><div class="hero-bottom-inner wrap"><a class="scroll-cue" href="#projetos"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg><span id="scroll-label">ROLE PARA VER OS CASES</span></a><span class="caps muted">01 ESTRATÉGIA · 02 COPY · 03 OPERAÇÃO</span><span class="hero__coordinates caps muted" aria-hidden="true">FIELD / PORTFÓLIO-01<br>FRAME / <b id="video-time">00:00</b> / <b id="video-duration">00:04</b></span></div></div>
+        <div class="hero-bottom"><div class="hero-bottom-inner wrap"><a class="scroll-cue" href="#cases"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg><span id="scroll-label">ROLE PARA VER OS CASES</span></a><span class="caps muted">01 ESTRATÉGIA · 02 COPY · 03 OPERAÇÃO</span><span class="hero__coordinates caps muted" aria-hidden="true">FIELD / PORTFÓLIO-01<br>FRAME / <b id="video-time">00:00</b> / <b id="video-duration">00:04</b></span></div></div>
         <div class="panel-progress" aria-hidden="true"></div>
       </div>
     </section>
@@ -366,7 +468,7 @@
       <div class="wrap">
         <div class="section-top caps" data-rise><span>01 / Experiência em números</span><span>Copy · Gestão · Estratégia</span></div>
         <h2 class="sr-only" id="results-title">Experiência em lançamentos e projetos perpétuos</h2>
-        <div class="results-layout">
+        <div class="results-layout results-layout--summary">
           <div class="results-monitor" id="results-monitor" data-rise>
             <div class="monitor-header"><span class="caps">Construído na prática</span><span class="monitor-indicator">Em números</span></div>
             <!-- Valores finais permanecem acessíveis; apenas a apresentação visual conta. -->
@@ -375,42 +477,188 @@
             <div class="metric"><span class="sr-only">Mais de 4 projetos perpétuos criados</span><div class="metric-top" aria-hidden="true"><span class="metric-number"><span data-counter="4">4</span><span class="metric-plus">+</span></span><span class="metric-label">projetos perpétuos<br>criados</span></div><div class="metric-track" aria-hidden="true"><div class="metric-fill" style="--meter-share:.133333"></div></div></div>
             <div class="monitor-footer caps"><span>Experiência acumulada</span><span>Intenção em cada entrega</span></div>
           </div>
-          <div class="services" data-rise style="--delay:90ms">
-            <p class="caps">Da estratégia à execução</p>
-            <article class="service"><span class="service-index caps" aria-hidden="true">01</span><h3>Copy para lançamentos e perpétuos</h3><p>VSLs, páginas de vendas, anúncios, e-mails, sequências de WhatsApp e roteiros.</p></article>
-            <article class="service"><span class="service-index caps" aria-hidden="true">02</span><h3>Gestão de projetos de lançamento</h3><p>Cronograma, time, entregas e prazos sob controle. Organização dá ROI.</p></article>
-            <article class="service"><span class="service-index caps" aria-hidden="true">03</span><h3>Coprodução e estratégia</h3><p>Visão do funil inteiro, da captação ao pós-venda, incluindo funis low ticket e operações com time comercial.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="cases projects" id="cases" aria-labelledby="cases-title" tabindex="-1">
+      <div class="cases-intro">
+        <div class="wrap">
+          <div class="ds-top caps" data-rise><span>02 / CASES</span><span>PROJETOS SELECIONADOS</span></div>
+          <header class="ds-head" data-rise style="--delay:90ms">
+            <h2 id="cases-title">Experts diferentes.<br><em>A mesma organização.</em></h2>
+            <div><p>Em cada projeto, o meu papel e as peças que produzi. As copies originais estão abertas para leitura.</p><p class="cases-note">Links das copies em preparação.</p></div>
+          </header>
+        </div>
+      </div>
+      <div class="case-blocks">
+        <article class="case-block case-block--paper" aria-labelledby="case-marcia-title">
+          <div class="case-panel surface-paper glass-panel">
+            <div class="case-content">
+              <p class="caps case-eyebrow" data-rise>PORTUGUÊS PARA ESTRANGEIROS / MARCIA MACEDO</p>
+              <h3 id="case-marcia-title" data-rise style="--delay:90ms"><span>Mais de 8 lançamentos.</span><em>Uma só parceria.</em></h3>
+              <p class="case-description" data-rise style="--delay:180ms">Atuei como copywriter, gestor de projetos e coprodutor. É a parceria responsável pela maior parte do faturamento que mostro nesta página.</p>
+              <table class="case-specs" data-rise style="--delay:270ms">
+                <caption class="sr-only">Atuação na parceria com Marcia Macedo</caption>
+                <tbody>
+                  <tr><th scope="row">Lançamentos juntos</th><td>8+</td></tr>
+                  <tr><th scope="row">Atuação</th><td>Copy · Gestão · Coprodução</td></tr>
+                  <tr><th scope="row">Copies</th><td><div class="case-copy-group">
+                    <!-- LINKS PENDENTES: preencher href e retirar aria-disabled quando receber as URLs. -->
+                    <a class="case-link" data-copy-link="marcia-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-04" aria-disabled="true" target="_blank" rel="noopener">Copy 04 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-05" aria-disabled="true" target="_blank" rel="noopener">Copy 05 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="marcia-ptd" aria-disabled="true" target="_blank" rel="noopener">Página de vendas PTD <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  </div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <figure class="case-media" data-rise style="--delay:90ms">
+            <!-- FOTO PROVISÓRIA: Marcia Macedo, português para estrangeiros. Substituir pela foto real. -->
+            <img src="assets/cases/portugues.jpg" data-placeholder="true" alt="Passaporte sobre um mapa, imagem ilustrativa do nicho de português para estrangeiros" width="1500" height="1000" loading="lazy" decoding="async">
+          </figure>
+        </article>
+        <article class="case-block case-block--dark" aria-labelledby="case-rp-title">
+          <figure class="case-media case-media--b2b" data-rise>
+            <!-- FOTO PROVISÓRIA: Receita Previsível, vendas B2B. Substituir pela foto real. -->
+            <img src="assets/cases/b2b.jpg" data-placeholder="true" alt="Headphones e teclado de notebook sobre uma mesa de trabalho, imagem ilustrativa de vendas B2B" width="1500" height="685" loading="lazy" decoding="async">
+          </figure>
+          <div class="case-panel">
+            <div class="case-content">
+              <p class="caps case-eyebrow" data-rise>VENDAS B2B / RECEITA PREVISÍVEL</p>
+              <h3 id="case-rp-title" data-rise style="--delay:90ms"><span>De copywriter</span><em>a braço direito.</em></h3>
+              <p class="case-description" data-rise style="--delay:180ms">Entrei no time como copywriter e me tornei braço direito do CEO, Thiago Muniz. Escrevi para a empresa e para outros negócios do ecossistema.</p>
+              <div class="case-links" data-rise style="--delay:270ms" aria-label="Materiais da Receita Previsível, links em preparação">
+                <a class="case-link" data-copy-link="rp-webinar" aria-disabled="true" target="_blank" rel="noopener">Webinar Labora + RP <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <a class="case-link" data-copy-link="rp-artigos" aria-disabled="true" target="_blank" rel="noopener">Artigos GazzConecta <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="case-block case-block--paper" aria-labelledby="case-dani-title">
+          <div class="case-panel surface-paper glass-panel">
+            <div class="case-content">
+              <!-- NOME OFICIAL PENDENTE: confirmar Dani Martins. -->
+              <p class="caps case-eyebrow" data-rise>VENDAS / [NOME OFICIAL: DANI MARTINS]</p>
+              <h3 id="case-dani-title" data-rise style="--delay:90ms"><span>Antes de virar</span><em>Prosperus Club.</em></h3>
+              <p class="case-description" data-rise style="--delay:180ms">Participei do início do projeto, ajudando a construir a base de comunicação e vendas do que viria a se tornar o Prosperus Club.</p>
+              <table class="case-specs" data-rise style="--delay:270ms">
+                <caption class="sr-only">Entregas na fundação do Prosperus Club</caption>
+                <tbody>
+                  <tr><th scope="row">Fase do projeto</th><td>Fundação</td></tr>
+                  <tr><th scope="row">Entregas</th><td>Copies de vendas</td></tr>
+                  <tr><th scope="row">Copies</th><td><div class="case-copy-group">
+                    <a class="case-link" data-copy-link="dani-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="dani-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                    <a class="case-link" data-copy-link="dani-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  </div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <figure class="case-media" data-rise style="--delay:90ms">
+            <!-- FOTO PROVISÓRIA: Dani Martins / Prosperus Club. Substituir pela foto real. -->
+            <img src="assets/cases/prosperus.jpg" data-placeholder="true" alt="Microfone em pedestal diante de um palco vazio com luzes desfocadas, imagem ilustrativa de comunicação e vendas" width="1500" height="1000" loading="lazy" decoding="async">
+          </figure>
+        </article>
+        <article class="case-block case-block--dark" aria-labelledby="case-vtsd-title">
+          <figure class="case-media case-media--split" data-rise>
+            <!-- FOTOS PROVISÓRIAS: Sanduba do Careca e Angélica Gevaerd. Substituir pelas fotos reais. -->
+            <img src="assets/cases/sanduba.jpg" data-placeholder="true" alt="Sanduíche artesanal em close-up, imagem ilustrativa do mercado de alimentação" width="1500" height="1000" loading="lazy" decoding="async">
+            <img src="assets/cases/marketplace.jpg" data-placeholder="true" alt="Caixas de papelão empilhadas, imagem ilustrativa do mercado de marketplace" width="1500" height="1000" loading="lazy" decoding="async">
+          </figure>
+          <div class="case-panel">
+            <div class="case-content">
+              <p class="caps case-eyebrow" data-rise>PERPÉTUO · VTSD / SANDUBA DO CARECA E ANGÉLICA GEVAERD</p>
+              <h3 id="case-vtsd-title" data-rise style="--delay:90ms"><span>Dois perpétuos.</span><em>O mesmo método.</em></h3>
+              <p class="case-description" data-rise style="--delay:180ms">VSL, anúncios de conversão e remarketing no método VTSD, em dois mercados que não têm nada em comum: alimentação e marketplace.</p>
+              <div class="case-highlights" data-rise style="--delay:270ms"><div><strong>2</strong><span class="caps">PERPÉTUOS</span></div><div><strong>2</strong><span class="caps">VSLS</span></div></div>
+              <div class="case-deliverables" data-rise style="--delay:360ms">
+                <div class="case-deliverable"><p>Sanduba do Careca</p><div class="case-copy-group">
+                  <a class="case-link" data-copy-link="sanduba-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  <a class="case-link" data-copy-link="sanduba-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  <a class="case-link" data-copy-link="sanduba-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                </div></div>
+                <div class="case-deliverable"><p>Angélica Gevaerd</p><div class="case-copy-group">
+                  <a class="case-link" data-copy-link="angelica-01" aria-disabled="true" target="_blank" rel="noopener">Copy 01 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  <a class="case-link" data-copy-link="angelica-02" aria-disabled="true" target="_blank" rel="noopener">Copy 02 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                  <a class="case-link" data-copy-link="angelica-03" aria-disabled="true" target="_blank" rel="noopener">Copy 03 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Case 05, Engª Camila Soares: incluir somente após receber título, papel e entregas. -->
+      </div>
+      <div class="cases-outro">
+        <div class="wrap">
+          <div class="case-other" data-rise><p class="caps muted">Outros projetos</p><div class="case-copy-group">
+            <a class="case-link" data-copy-link="outros-typebot" aria-disabled="true" target="_blank" rel="noopener">Typebot <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><span aria-hidden="true">·</span>
+            <a class="case-link" data-copy-link="outros-b2b" aria-disabled="true" target="_blank" rel="noopener">Copies B2B para prospecção <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><span aria-hidden="true">·</span>
+            <a class="case-link" data-copy-link="outros-blueberry" aria-disabled="true" target="_blank" rel="noopener">Anúncios Blueberry <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills ds-group" id="habilidades" aria-labelledby="skills-title" tabindex="-1">
+      <div class="section-inner">
+        <div class="ds-top caps" data-rise><span>03 / HABILIDADES</span><span>O QUE EU LEVO PARA O SEU LANÇAMENTO</span></div>
+        <header class="ds-head" data-rise style="--delay:90ms">
+          <h2 id="skills-title">Sete habilidades.<br><em>Um só lançamento.</em></h2>
+          <p>Em vez de um especialista isolado em uma etapa, alguém que conecta as áreas que normalmente ficam espalhadas entre várias pessoas.</p>
+        </header>
+        <div class="skills-grid" data-proximity-grid>
+          <div class="skill-reveal" data-rise><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">01</span>
+            <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/></svg></span>
+            <div class="skill-copy"><h3>Gestão de projetos</h3><p>Cronograma, responsáveis e prazos amarrados do planejamento ao carrinho fechado. Mais de 40 lançamentos geridos assim.</p></div>
+          </article></div>
+          <div class="skill-reveal" data-rise style="--delay:90ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">02</span>
+            <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+            <div class="skill-copy"><h3>Estratégia</h3><p>Antes da primeira peça, o plano: tipo de lançamento, oferta, funil e metas que fazem sentido para o momento do expert.</p></div>
+          </article></div>
+          <div class="skill-reveal" data-rise style="--delay:180ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">03</span>
+            <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m5 19 4-11 5-5 7 7-5 5-11 4Zm0 0 7-7m-3-4 7 7m-4-13 10 10"/><circle cx="13" cy="11" r="1.5"/></svg></span>
+            <div class="skill-copy"><h3>Copy</h3><p>VSLs, páginas, anúncios, e-mails e sequências de WhatsApp escritos por quem sabe exatamente onde cada peça vai entrar.</p></div>
+          </article></div>
+          <div class="skill-reveal" data-rise style="--delay:270ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">04</span>
+            <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="8" width="7" height="8" rx="2"/><rect x="15" y="8" width="7" height="8" rx="2"/><path d="M9 10h6m-6 4h6m-10-6V5m0 11v3m14-11V5m0 11v3"/></svg></span>
+            <div class="skill-copy"><h3>Coprodução</h3><p>Olhar de sócio sobre o projeto inteiro, da captação ao pós-venda, incluindo funis low ticket e operações com time comercial.</p></div>
+          </article></div>
+          <div class="skill-reveal" data-rise style="--delay:360ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">05</span>
+            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="Typebot"><img class="tool-logo__color" src="assets/logos/typebot.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
+            <div class="skill-copy"><h3>Automações</h3><p>Fluxos que tiram o trabalho manual do caminho: chatbots, integrações e disparos que rodam sem depender de alguém apertar o botão.</p></div>
+          </article></div>
+          <div class="skill-reveal" data-rise style="--delay:450ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">06</span>
+            <!-- Ferramenta de Webdesign não informada: ícone de navegador conforme o briefing. -->
+            <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 9v11m-2-14h.01M9 6h.01m2.99 7h6m-6 4h6"/></svg></span>
+            <div class="skill-copy"><h3>Webdesign</h3><p>Páginas de captura e de vendas pensadas para converter, com hierarquia clara e leitura confortável no celular.</p></div>
+          </article></div>
+          <div class="skill-reveal" data-rise style="--delay:540ms"><article class="skill-card glass-card ds-stage">
+            <span class="skill-index caps" aria-hidden="true">07</span>
+            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="ClickUp"><img class="tool-logo__color" src="assets/logos/clickup.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
+            <div class="skill-copy"><h3>ClickUp</h3><p>O lançamento inteiro num só lugar: tarefas, prazos e responsáveis visíveis para todo o time, sem planilha perdida nem cobrança no grupo.</p></div>
+          </article></div>
+          <div class="skill-reveal" data-rise style="--delay:630ms">
+            <!-- WHATSAPP PENDENTE: substituir #contato por seu link wa.me e adicionar target="_blank" rel="noopener". -->
+            <a class="skill-card skill-card--cta glass-card ds-stage" href="#contato">
+              <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8m-4-4h8"/></svg></span>
+              <div class="skill-copy"><h3>E o que mais o seu lançamento pedir.</h3><p>Me conta o projeto e eu digo como posso ajudar.</p></div>
+              <svg class="icon skill-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
           </div>
         </div>
       </div>
     </section>
-    <section class="projects" id="projetos" aria-labelledby="projects-title" tabindex="-1">
-      <div class="wrap">
-        <div class="section-top caps" data-rise><span>02 / Cases selecionados</span><span>Intenção em cada detalhe</span></div>
-        <header class="section-head" data-rise><h2 class="section-title" id="projects-title">O pensamento<br>vira <em>experiência.</em></h2><p>Espaços reservados para seus cases. Substitua os estudos de composição abaixo pelos seus cases, imagens e links reais.</p></header>
-        <!-- SUBSTITUIR: cards demonstrativos; nenhuma credencial ou resultado real. -->
-        <div class="project-grid">
-          <article class="work-card" data-rise>
-            <div class="work-media" aria-hidden="true"><span class="work-index caps">Estudo visual / 01</span><div class="demo-interface"><div class="demo-top"><i></i><i></i><i></i></div><div class="demo-title">Menos ruído.<br>Mais intenção.</div><div class="demo-line"></div><div class="demo-line short"></div><div class="demo-pill"></div></div></div>
-            <div class="work-meta"><div><span class="badge">Placeholder · Projeto 01</span><h3>[Nome do projeto]</h3><p>[Categoria] · [Seu papel no projeto]</p></div><a class="button work-arrow" href="#contato" aria-label="Conversar sobre o espaço do Projeto 01"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
-          </article>
-          <article class="work-card" data-rise style="--delay:90ms">
-            <div class="work-media paper" aria-hidden="true"><span class="work-index caps">Estudo visual / 02</span><div class="editorial-art"><span class="big">Aa.</span><span class="small">Forma & função</span></div></div>
-            <div class="work-meta"><div><span class="badge">Placeholder · Projeto 02</span><h3>[Nome do projeto]</h3><p>[Categoria] · [Seu papel no projeto]</p></div><a class="button work-arrow" href="#contato" aria-label="Conversar sobre o espaço do Projeto 02"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="portfolio-section" id="habilidades" aria-labelledby="skills-title" tabindex="-1">
-      <div class="wrap">
-        <div class="section-top caps" data-rise><span>03 / Habilidades</span><span>Estratégia · mensagem · execução</span></div>
-        <div class="section-head" data-rise>
-          <h2 class="section-title" id="skills-title">Habilidades<br>em <em>ação.</em></h2>
-          <!-- SUBSTITUIR: liste suas competências reais. -->
-          <ul class="placeholder-list"><li><span>[Sua habilidade principal]</span><span class="caps">01</span></li><li><span>[Sua segunda habilidade]</span><span class="caps">02</span></li><li><span>[Sua terceira habilidade]</span><span class="caps">03</span></li></ul>
-        </div>
-      </div>
-    </section>
+
     <section class="portfolio-section" id="materiais" aria-labelledby="materials-title" tabindex="-1">
       <div class="wrap">
         <div class="section-top caps" data-rise><span>04 / Materiais</span><span>Conteúdo para explorar</span></div>
@@ -428,8 +676,8 @@
   <script>
     (() => {
       'use strict';
-      // AJUSTES: distância da cena fixada, independente da reprodução do vídeo.
-      const CONFIG = { sceneScroll: 2080, mobileSceneScroll: 1600, metadataTimeout: 12000, libraryTimeout: 8000 };
+      // Reprodução nativa na cadência original. A rolagem controla somente a cena.
+      const CONFIG = { playbackRate: 1, metadataTimeout: 12000, libraryTimeout: 8000 };
       const $ = selector => document.querySelector(selector);
       const hero = $('#inicio'), scene = $('#scene'), video = $('#hero-video');
       const videoWindow = $('.video-window'), status = $('#video-status');
@@ -450,6 +698,8 @@
       // Autoplay é habilitado por JS após consultar movimento reduzido.
       video.muted = true;
       video.defaultMuted = true;
+      video.defaultPlaybackRate = CONFIG.playbackRate;
+      video.playbackRate = CONFIG.playbackRate;
       const curve = getComputedStyle(root).getPropertyValue('--ease').match(/[\d.]+/g).map(Number);
       function systemEase(progress) {
         const [x1,y1,x2,y2] = curve, value = (t,a,b) => 3*(1-t)*(1-t)*t*a + 3*(1-t)*t*t*b + t*t*t;
@@ -457,6 +707,50 @@
         return value((lo+hi)/2,y1,y2);
       }
       const fine = matchMedia('(hover: hover) and (pointer: fine)');
+      // O holofote compartilha uma atualização por frame entre os oito cards.
+      // Só lê os retângulos quando a grade muda de posição ou de tamanho.
+      const proximityGrid = $('[data-proximity-grid]');
+      const proximityCards = Array.from(proximityGrid.querySelectorAll('.skill-card'));
+      let proximityFrame = 0, proximityPointer = null, proximityBounds = [], proximityGridBounds;
+      let proximityBoundsDirty = true;
+      const proximityAllowed = () => fine.matches && !userPaused && !reduced.matches && !document.hidden;
+      function resetSkillsProximity() {
+        cancelAnimationFrame(proximityFrame); proximityFrame = 0;
+        proximityPointer = null; proximityBoundsDirty = true;
+        proximityGrid.classList.remove('is-proximity-active');
+      }
+      function renderSkillsProximity() {
+        proximityFrame = 0;
+        if (!proximityPointer || !proximityAllowed()) { resetSkillsProximity(); return; }
+        if (proximityBoundsDirty) {
+          proximityGridBounds = proximityGrid.getBoundingClientRect();
+          proximityBounds = proximityCards.map(card => card.parentElement.getBoundingClientRect());
+          proximityBoundsDirty = false;
+        }
+        const {x,y} = proximityPointer;
+        if (x < proximityGridBounds.left || x > proximityGridBounds.right || y < proximityGridBounds.top || y > proximityGridBounds.bottom) {
+          resetSkillsProximity(); return;
+        }
+        proximityCards.forEach((card,index) => {
+          card.style.setProperty('--px', (x - proximityBounds[index].left).toFixed(1) + 'px');
+          card.style.setProperty('--py', (y - proximityBounds[index].top).toFixed(1) + 'px');
+        });
+        proximityGrid.classList.add('is-proximity-active');
+      }
+      function scheduleSkillsProximity() {
+        if (!proximityFrame && proximityPointer) proximityFrame = requestAnimationFrame(renderSkillsProximity);
+      }
+      proximityGrid.addEventListener('pointermove', event => {
+        if (event.pointerType === 'touch' || !proximityAllowed()) { resetSkillsProximity(); return; }
+        proximityPointer = {x:event.clientX,y:event.clientY};
+        scheduleSkillsProximity();
+      }, {passive:true});
+      proximityGrid.addEventListener('pointerleave', resetSkillsProximity);
+      proximityGrid.addEventListener('pointercancel', resetSkillsProximity);
+      function refreshSkillsProximity() { proximityBoundsDirty = true; scheduleSkillsProximity(); }
+      addEventListener('scroll', refreshSkillsProximity, {passive:true});
+      addEventListener('resize', refreshSkillsProximity, {passive:true});
+
       const ring = $('.cursor-ring');
       const magneticButtons = Array.from(document.querySelectorAll('.button'));
       let ringFrame = 0, pointer = null, ringX = 0, ringY = 0;
@@ -478,6 +772,7 @@
         });
         root.classList.toggle('motion-suspended', document.hidden);
         if (pointerMotionOff()) resetPointers();
+        if (!proximityAllowed()) resetSkillsProximity();
       }
       function drawRing() {
         ringFrame = 0;
@@ -532,7 +827,7 @@
         const loops = new IntersectionObserver(entries => entries.forEach(entry => {
           entry.target.classList.toggle('motion-offscreen', !entry.isIntersecting);
         }), {rootMargin:'100px'});
-        document.querySelectorAll('.scene,.signal-strip,.results,.projects,.portfolio-section,.contact').forEach(node => loops.observe(node));
+        document.querySelectorAll('.scene,.signal-strip,.results,.projects,.skills,.portfolio-section,.contact').forEach(node => loops.observe(node));
         // A reprodução usa a viewport real, sem a margem dos loops decorativos.
         const playbackObserver = new IntersectionObserver(entries => {
           heroVisible = entries[0].isIntersecting;
@@ -556,7 +851,7 @@
       const nav = $('.nav');
       const navLinks = Array.from(document.querySelectorAll('.nav-capsule a'));
       function setCurrentNavigation(hash) {
-        const navigationHash = hash === '#projetos' ? '#resultados' : hash;
+        const navigationHash = hash === '#cases' ? '#resultados' : hash;
         navLinks.forEach(link => {
           if (link.hash === navigationHash) link.setAttribute('aria-current', 'location');
           else link.removeAttribute('aria-current');
@@ -662,7 +957,6 @@
       function renderComposition(progress) {
         if (userPaused || reduced.matches) return;
         $('.panel-progress').style.transform = 'scaleX(' + progress + ')';
-        $('.float-stage').style.transform = 'translateY(' + (-8 * systemEase(progress)) + 'px)';
       }
       function clearExperience() {
         staticMode = true;
@@ -686,24 +980,18 @@
         status.textContent = 'Em movimento';
         $('#scroll-label').textContent = 'ROLE PARA VER OS CASES';
         gsap.registerPlugin(ScrollTrigger);
-        // A rolagem controla somente a fixação e o parallax.
+        // A hero acompanha a rolagem nativa, sem fixação ou espaço extra.
         // O player mantém seu próprio relógio, sem buscas concorrentes.
         context = gsap.context(() => {
           const visualMotion = gsap.timeline({paused:true}).fromTo('.hero-bloom', {y:8}, {y:-8, duration:1, ease:systemEase});
           trigger = ScrollTrigger.create({
-            id:'portfolio-scene', trigger:hero, pin:scene, start:'top top',
-            end:() => '+=' + (innerWidth <= 800 ? CONFIG.mobileSceneScroll : CONFIG.sceneScroll),
-            pinSpacing:true, anticipatePin:1, invalidateOnRefresh:true,
+            id:'portfolio-scene', trigger:hero, start:'top top',
+            end:'bottom top', invalidateOnRefresh:true,
             onUpdate(self) { if (userPaused) return; renderComposition(self.progress); visualMotion.progress(self.progress); },
             onRefresh(self) { if (userPaused) return; renderComposition(self.progress); visualMotion.progress(self.progress); }
           });
         }, hero);
         ScrollTrigger.refresh();
-        // Hash navigation must be resolved after pin spacing exists.
-        if (['#resultados','#projetos','#habilidades','#materiais','#contato'].includes(location.hash)) {
-          const destination = document.querySelector(location.hash);
-          destination.scrollIntoView({behavior:'instant'});
-        }
       }
       video.addEventListener('loadedmetadata', () => {
         clearTimeout(metadataTimer);
@@ -762,8 +1050,8 @@
         else if (trigger) renderComposition(trigger.progress);
         syncPlayback();
       }));
-      // Anchor links keep native behavior without JS/libraries; enhanced links
-      // account for the pin, move keyboard focus and maintain usable history.
+      // Links da hero avançam imediatamente. Os demais mantêm rolagem suave.
+      // A navegação considera o cabeçalho, move o foco e preserva o histórico.
       document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', event => {
         const destination = document.querySelector(link.getAttribute('href'));
         if (!destination || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
@@ -771,7 +1059,7 @@
         history.pushState(null, '', link.getAttribute('href'));
         setCurrentNavigation(link.getAttribute('href'));
         const top = destination === hero ? 0 : window.scrollY + destination.getBoundingClientRect().top - nav.getBoundingClientRect().height - 24;
-        window.scrollTo({top, behavior:reduced.matches ? 'instant' : 'smooth'});
+        window.scrollTo({top, behavior:reduced.matches || hero.contains(link) ? 'instant' : 'smooth'});
         if (destination === hero) $('.brand').focus({preventScroll:true});
         else destination.focus({preventScroll:true});
       }));
