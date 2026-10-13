@@ -1,12 +1,53 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/portfolio", "permanent": false },
-    { "source": "/portifolio", "destination": "/portfolio", "permanent": true },
-    { "source": "/portifolio/:path*", "destination": "/portfolio/:path*", "permanent": true }
+    {
+      "source": "/",
+      "destination": "/portfolio",
+      "permanent": false
+    },
+    {
+      "source": "/portifolio",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/portifolio/:path*",
+      "destination": "/portfolio/:path*",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/assets/:path*", "destination": "/portfolio/assets/:path*" },
-    { "source": "/referenciais/:path*", "destination": "/portfolio/referenciais/:path*" },
-    { "source": "/favicon.svg", "destination": "/portfolio/favicon.svg" }
+    {
+      "source": "/assets/:path*",
+      "destination": "/portfolio/assets/:path*"
+    },
+    {
+      "source": "/referenciais/:path*",
+      "destination": "/portfolio/referenciais/:path*"
+    },
+    {
+      "source": "/favicon.svg",
+      "destination": "/portfolio/favicon.svg"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/optimized/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/portfolio/assets/optimized/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }

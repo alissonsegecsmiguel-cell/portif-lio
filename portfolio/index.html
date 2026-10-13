@@ -22,12 +22,14 @@
   <meta name="twitter:title" content="Alisson Segecs · Gestão de lançamentos e copy">
   <meta name="twitter:description" content="Gestão de lançamentos e copy para experts. Mais de 40 lançamentos, da estratégia à operação. Fale comigo pelo WhatsApp.">
   <meta name="twitter:image" content="https://alissonsegecs.com.br/portfolio/assets/og-image.jpg">
-  <link rel="preload" href="referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/optimized/manrope-e310b55a7f.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/optimized/fraunces-48282a415e.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/portrait-poster.webp" as="image" fetchpriority="high">
   <style>
     /* Tokens transpostos de assets/design_system_portifolio.html.
        Fontes originais locais; não depende dos estilos dos catálogos. */
-    @font-face{font-family:Manrope;font-style:normal;font-weight:300 800;font-display:swap;src:url('referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2') format('woff2')}
-    @font-face{font-family:Fraunces;font-style:normal;font-weight:300 900;font-display:swap;src:url('referenciais/terrasprint-ai-design-system/assets/overview/assets/fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2') format('woff2')}
+    @font-face{font-family:Manrope;font-style:normal;font-weight:300 800;font-display:swap;src:url('assets/optimized/manrope-e310b55a7f.woff2') format('woff2')}
+    @font-face{font-family:Fraunces;font-style:normal;font-weight:300 900;font-display:swap;src:url('assets/optimized/fraunces-48282a415e.woff2') format('woff2')}
     :root{
       --ink:#f1f0ea;--paper:#e7e5de;--void:#050506;--void-soft:#0b0b0d;
       --electric:#6c63ff;--signal:#a9a5ff;--pine:#3f7d53;--mint:#91cba5;
@@ -77,6 +79,7 @@
     .hero-bloom{position:absolute;inset:20% 8% 8% 40%;z-index:1;pointer-events:none}
     .hero-bloom::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 55%,#6c63ff10,transparent 65%);animation:bloom 9s var(--ease) infinite alternate}
     /* Retira as camadas do vídeo da pintura fora da primeira dobra. */
+    .scene::after{background-size:180px 180px}
     .scene.is-offscreen .hero-visual,.scene.is-offscreen .hero-bloom{visibility:hidden}
     .scene::after{content:'';position:absolute;inset:0;opacity:.14;pointer-events:none;z-index:5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
     .hero-inner{position:relative;z-index:3;width:100%;max-width:1600px;padding:145px var(--pad) 150px;margin-inline:auto}
@@ -339,7 +342,7 @@
     .case-block--dark{grid-template-columns:52% 48%;min-height:520px}
     .case-panel{display:flex;align-items:center;min-width:0;padding:56px var(--pad);background:var(--void-soft);color:var(--ink)}
     .case-content{width:100%;max-width:620px;margin-inline:auto}
-    .case-panel.surface-paper{--signal:#5047c9;--muted:#58575f;--line:var(--line-dark);background:var(--paper);color:var(--void);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .case-panel.surface-paper{--signal:#5047c9;--muted:#58575f;--line:var(--line-dark);background:var(--paper);color:var(--void)}
     .case-eyebrow{color:var(--muted);margin-bottom:22px;max-width:60ch}
     .case-panel h3{margin-bottom:22px}
     .case-panel h3>span{display:block}
@@ -771,7 +774,11 @@
     .about .about-video-window .about-video-poster{aspect-ratio:16/9;object-fit:contain;object-position:center;filter:none;box-shadow:none}
     .about-video-window video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;transition:opacity 800ms var(--ease)}
     .about-video-window.is-video-ready video{opacity:1}
-    html.js-motion .about-photo--portrait.is-in .about-video-window>.about-video-poster{animation:image-arrive 1.7s var(--ease) both}
+    html.js-motion .about-photo.is-in .about-video-window>.about-video-poster{animation:image-arrive 1.7s var(--ease) both}
+    .about-photo--planning .about-video-window{outline:1px solid var(--line-dark);outline-offset:6px}
+    .planning-frame-line{position:absolute;inset:0 0 auto;height:1px;z-index:2;background:linear-gradient(90deg,var(--signal),var(--mint),transparent);transform-origin:left;pointer-events:none}
+    html.js-motion .about-photo--planning.is-in .planning-frame-line{animation:planning-line-arrive 1.25s var(--ease) 180ms both}
+    @keyframes planning-line-arrive{from{opacity:0;transform:scaleX(0)}to{opacity:.7;transform:scaleX(1)}}
     .about .about-video-caption{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
     .about-video-play.button{min-height:36px;padding:0 12px;font-size:11px;color:var(--void);border-color:var(--line-dark)}
     .about-video-play[hidden]{display:none}
@@ -926,6 +933,15 @@
     html.motion-paused .hero-whatsapp::before,html.motion-paused .hero-whatsapp::after,html.motion-reduced .hero-whatsapp::before,html.motion-reduced .hero-whatsapp::after,html.preview-render .hero-whatsapp::before,html.preview-render .hero-whatsapp::after{animation:none!important}
     @media(max-width:800px){.hero-actions{gap:12px}.hero-actions .hero-whatsapp{min-height:50px;padding-inline:18px;font-size:12px;gap:10px}.hero-actions .hero-cases{padding-inline:8px;gap:8px;font-size:12px}}
     @media(max-width:430px){.hero-actions{gap:8px}.hero-actions .hero-whatsapp{min-height:48px;padding-inline:12px;font-size:11px;gap:6px}.hero-whatsapp .hero-whatsapp__chat{width:16px;height:16px}.hero-whatsapp__arrow{width:20px;height:22px}.hero-whatsapp__arrow .icon{width:12px;height:12px}.hero-actions .hero-cases{font-size:11px;padding-inline:6px}.hero-cases>.icon{display:none}}
+    /* No celular, a entrada usa o espaço do topo e mantém o vídeo como apoio. */
+    .hero-motion-toggle{display:none}
+    @media(max-width:800px){
+      html.js-motion .nav.nav--hero{visibility:hidden;pointer-events:none}
+      .hero-motion-toggle{display:inline-flex}
+      .hero .scene{align-items:flex-start}
+      .hero .hero-inner{padding-top:clamp(44px,8svh,72px)}
+      .hero-visual::after{background:linear-gradient(180deg,#05050666 0%,#05050655 24%,#050506a6 48%,var(--void) 72%),linear-gradient(90deg,#05050666,transparent 90%)}
+    }
   </style>
 </head>
 <body id="top">
@@ -940,14 +956,14 @@
     </nav>
   </header>
   <main>
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <section class="hero" id="inicio" aria-labelledby="hero-title" tabindex="-1">
       <div class="scene" id="scene">
         <figure class="hero-visual hero__visual" aria-labelledby="video-caption">
           <div class="video-window">
             <img class="video-poster hero__image" src="assets/portrait-poster.webp" alt="" width="1280" height="720" fetchpriority="high">
             <!-- Vídeo original, com reprodução automática na velocidade nativa. -->
             <!-- Fluxo original sem recodificação, sem áudio e com metadados no início. -->
-            <video id="hero-video" muted playsinline loop preload="auto" poster="assets/portrait-poster.webp" width="1280" height="720" aria-label="Retrato animado com elementos de estratégia e operação" aria-describedby="video-description"><source src="assets/Videos/Animating_portrait_transforming_…_20261012185500.playback.mp4" type="video/mp4"></video>
+            <video id="hero-video" muted playsinline loop preload="none" poster="assets/portrait-poster.webp" width="1280" height="720" aria-label="Retrato animado com elementos de estratégia e operação" aria-describedby="video-description"><source data-src="assets/Videos/Animating_portrait_transforming_…_20261012185500.playback.mp4" type="video/mp4"></video>
           </div>
           <figcaption class="sr-only" id="video-caption">Gestão de lançamentos, da copy à operação.</figcaption><span class="sr-only" id="video-status" role="status">Retrato e composição em movimento.</span>
         </figure>
@@ -962,7 +978,7 @@
             <button class="button button-ghost" type="button" data-video-play hidden>Reproduzir vídeo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 10 7-10 7Z"/></svg></button>
           </div>
         </div></div>
-        <p class="sr-only" id="video-description">Vídeo original do retrato sobre fundo preto, com elementos flutuantes, em reprodução automática e contínua, sem som. Use o controle de pausa no topo para suspender as animações.</p>
+        <p class="sr-only" id="video-description">Vídeo original do retrato sobre fundo preto, com elementos flutuantes, em reprodução automática e contínua, sem som. Use o controle de pausa para suspender as animações.</p>
         <aside class="hero-card glass-card" data-enter tabindex="0" aria-label="Provas de experiência, pause a alternância com foco ou ponteiro">
           <div class="carousel-window"><div class="carousel-track">
             <div class="carousel-slide"><div class="hero-card-top"><span class="caps muted">PROVA / 001</span><span class="badge badge-status"><span class="status-dot" aria-hidden="true"></span>Em movimento</span></div><strong>+40 lançamentos geridos.</strong><p class="caption">Pagos e clássicos.</p></div>
@@ -970,30 +986,30 @@
             <div class="carousel-slide"><div class="hero-card-top"><span class="caps muted">PROVA / 003</span><span class="badge badge-status"><span class="status-dot" aria-hidden="true"></span>Em movimento</span></div><strong>Da copy à operação.</strong><p class="caption">Uma pessoa, o lançamento inteiro.</p></div>
           </div></div><div class="signal-line" aria-hidden="true"></div>
         </aside>
-        <div class="hero-bottom"><div class="hero-bottom-inner wrap"><a class="scroll-cue" href="#cases"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg><span id="scroll-label">ROLE PARA VER OS CASES</span></a><span class="caps muted">01 ESTRATÉGIA · 02 COPY · 03 OPERAÇÃO</span><span class="hero__coordinates caps muted" aria-hidden="true">FIELD / PORTFÓLIO-01<br>FRAME / <b id="video-time">00:00</b> / <b id="video-duration">00:04</b></span></div></div>
+        <div class="hero-bottom"><div class="hero-bottom-inner wrap"><a class="scroll-cue" href="#cases"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg><span id="scroll-label">ROLE PARA VER OS CASES</span></a><span class="caps muted">01 ESTRATÉGIA · 02 COPY · 03 OPERAÇÃO</span><button class="button button-icon button-sm hero-motion-toggle" type="button" data-motion-toggle aria-pressed="false" aria-label="Pausar animações"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path data-pause-icon d="M8 5v14M16 5v14"/></svg></button><span class="hero__coordinates caps muted" aria-hidden="true">FIELD / PORTFÓLIO-01<br>FRAME / <b id="video-time">00:00</b> / <b id="video-duration">00:04</b></span></div></div>
         <div class="panel-progress" aria-hidden="true"></div>
       </div>
     </section>
     <section class="signal-strip" aria-label="Experts e marcas com quem trabalhei"><div class="signal-strip__track">
       <div class="ticker-group">
-        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Receita Previsível, @receitaprevisivel, abrir Instagram em nova aba"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="André Ferraz, @andreferrazaromaterapia, abrir Instagram em nova aba"><img src="assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Marcia Macedo, @portugues_marciamacedo, abrir Instagram em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" aria-label="Camila Soares, @engcivilcamilasoares, abrir Instagram em nova aba"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" aria-label="Luciano F. Castro, @lucianof.castro, abrir Instagram em nova aba"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Dani Martins, @danimartinspro, abrir Instagram em nova aba"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" aria-label="Thiago Muniz, @thiagomuniz.rp, abrir Instagram em nova aba"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" aria-label="Edmar Lopes, @saradodepoisdos40, abrir Instagram em nova aba"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Receita Previsível, @receitaprevisivel, abrir Instagram em nova aba"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="André Ferraz, @andreferrazaromaterapia, abrir Instagram em nova aba"><img src="assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Marcia Macedo, @portugues_marciamacedo, abrir Instagram em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" aria-label="Camila Soares, @engcivilcamilasoares, abrir Instagram em nova aba"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" aria-label="Luciano F. Castro, @lucianof.castro, abrir Instagram em nova aba"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Dani Martins, @danimartinspro, abrir Instagram em nova aba"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" aria-label="Thiago Muniz, @thiagomuniz.rp, abrir Instagram em nova aba"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" aria-label="Edmar Lopes, @saradodepoisdos40, abrir Instagram em nova aba"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
       </div>
       <div class="ticker-group" aria-hidden="true">
-        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/andreferrazaromaterapia.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
-        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Receita Previsível</span><span class="expert-handle">@receitaprevisivel</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">André Ferraz</span><span class="expert-handle">@andreferrazaromaterapia</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Marcia Macedo</span><span class="expert-handle">@portugues_marciamacedo</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/engcivilcamilasoares/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/engcivilcamilasoares.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Camila Soares</span><span class="expert-handle">@engcivilcamilasoares</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/lucianof.castro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/lucianof.castro.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Luciano F. Castro</span><span class="expert-handle">@lucianof.castro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Dani Martins</span><span class="expert-handle">@danimartinspro</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/thiagomuniz.rp/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/thiagomuniz.rp.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Thiago Muniz</span><span class="expert-handle">@thiagomuniz.rp</span></span></a>
+        <a class="expert-link" href="https://www.instagram.com/saradodepoisdos40/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/experts/saradodepoisdos40.jpg" alt="" width="100" height="100" decoding="async" fetchpriority="low"><span class="expert-copy"><span class="expert-name">Edmar Lopes</span><span class="expert-handle">@saradodepoisdos40</span></span></a>
       </div>
     </div></section>
     <section class="results" id="resultados" aria-labelledby="results-title" tabindex="-1">
@@ -1067,7 +1083,7 @@
               </table>
               <p class="case-copy-note" id="marcia-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Várias outras também foram desenvolvidas ao longo da parceria.</p>
               <nav class="case-socials" aria-label="Redes sociais de Marcia Macedo" data-rise style="--delay:360ms">
-                <a class="case-instagram" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Marcia Macedo, @portugues_marciamacedo, abrir em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@portugues_marciamacedo</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <a class="case-instagram" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Marcia Macedo, @portugues_marciamacedo, abrir em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low"><span class="case-instagram-copy"><strong>Instagram</strong><small>@portugues_marciamacedo</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                 <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Marcia Macedo. -->
                 <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
               </nav>
@@ -1084,7 +1100,7 @@
             <div class="rp-stage">
               <div class="rp-grid" aria-hidden="true"></div>
               <div class="rp-hud caps" aria-hidden="true"><span>Receita Previsível</span><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v15m0-15C8 2 4 3 3 4v15c3-2 6-1 9 1m0-15c4-3 8-2 9-1v15c-3-2-6-1-9 1"/></svg></div>
-              <div class="rp-book-slot"><div class="rp-book-reveal"><div class="rp-book glass-card"><img src="assets/cases/receita-previsivel-livro.jpg" alt="Capa do livro Receita Previsível, de Aaron Ross e Marylou Tyler" width="387" height="516" loading="lazy" decoding="async"></div></div></div>
+              <div class="rp-book-slot"><div class="rp-book-reveal"><div class="rp-book glass-card"><img src="assets/optimized/receita-previsivel-livro-387-df4d53a1f6.webp" alt="Capa do livro Receita Previsível, de Aaron Ross e Marylou Tyler" width="387" height="516" loading="lazy" decoding="async"></div></div></div>
               <div class="signal-line" aria-hidden="true"></div>
             </div>
             <figcaption class="rp-caption caps"><span>Livro de referência</span><span>Vendas B2B</span></figcaption>
@@ -1110,7 +1126,7 @@
                 <span class="case-link" data-press-source="forbes-author" aria-disabled="true"><span class="case-press-copy"><strong>Aaron Ross, autor de Receita Previsível</strong><small>Forbes</small></span></span>
               </div>
               <nav class="case-socials" aria-label="Redes sociais de Receita Previsível" data-rise style="--delay:360ms">
-                <a class="case-instagram" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Receita Previsível, @receitaprevisivel, abrir em nova aba"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@receitaprevisivel</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <a class="case-instagram" href="https://www.instagram.com/receitaprevisivel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Receita Previsível, @receitaprevisivel, abrir em nova aba"><img src="assets/experts/receitaprevisivel.jpg" alt="" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low"><span class="case-instagram-copy"><strong>Instagram</strong><small>@receitaprevisivel</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                 <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Receita Previsível. -->
                 <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
               </nav>
@@ -1139,7 +1155,7 @@
               </table>
               <p class="case-copy-note" id="dani-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
               <nav class="case-socials" aria-label="Redes sociais de Dani Martins" data-rise style="--delay:360ms">
-                <a class="case-instagram" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Dani Martins, @danimartinspro, abrir em nova aba"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@danimartinspro</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <a class="case-instagram" href="https://www.instagram.com/danimartinspro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Dani Martins, @danimartinspro, abrir em nova aba"><img src="assets/experts/danimartinspro.jpg" alt="" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low"><span class="case-instagram-copy"><strong>Instagram</strong><small>@danimartinspro</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                 <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Dani Martins. -->
                 <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
               </nav>
@@ -1148,11 +1164,11 @@
           <figure class="case-media case-media--dani" data-rise style="--delay:90ms">
             <div class="case-portrait dani-gallery">
               <div class="dani-photo" style="--photo-ratio:515/656">
-                <a class="case-photo-frame" href="assets/cases/dani-martins-empreenda.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar a capa da revista Empreenda com Dani Martins e Joel Jota, abrir em nova aba"><img src="assets/cases/dani-martins-empreenda.png" alt="Capa da revista Empreenda com Dani Martins e Joel Jota" width="515" height="656" loading="lazy" decoding="async"></a>
+                <a class="case-photo-frame" href="assets/cases/dani-martins-empreenda.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar a capa da revista Empreenda com Dani Martins e Joel Jota, abrir em nova aba"><img src="assets/optimized/dani-martins-empreenda-515-97d99b0ad3.webp" alt="Capa da revista Empreenda com Dani Martins e Joel Jota" width="515" height="656" loading="lazy" decoding="async"></a>
                 <p class="dani-photo-label caps"><span>Empreenda Revista</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></p>
               </div>
               <div class="dani-photo" style="--photo-ratio:522/694">
-                <a class="case-photo-frame" href="assets/cases/dani-martins-times-square.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar a foto de Dani Martins na Times Square, abrir em nova aba"><img src="assets/cases/dani-martins-times-square.png" alt="Dani Martins acompanhada na Times Square, com o painel da Nasdaq ao fundo" width="522" height="694" loading="lazy" decoding="async"></a>
+                <a class="case-photo-frame" href="assets/cases/dani-martins-times-square.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar a foto de Dani Martins na Times Square, abrir em nova aba"><img src="assets/optimized/dani-martins-times-square-522-aca3cb9bc2.webp" alt="Dani Martins acompanhada na Times Square, com o painel da Nasdaq ao fundo" width="522" height="694" loading="lazy" decoding="async"></a>
                 <p class="dani-photo-label caps"><span>Times Square</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></p>
               </div>
             </div>
@@ -1215,14 +1231,14 @@
             </div>
           </div>
           <figure class="case-media case-media--portrait case-media--angelica surface-paper" data-rise style="--delay:90ms">
-            <div class="case-portrait"><div class="case-photo-frame"><img src="assets/cases/angelica-gevaerd.png" alt="Angélica Gevaerd ao lado de um notebook com uma página de marketplace aberta" width="195" height="225" loading="lazy" decoding="async"></div></div>
+            <div class="case-portrait"><div class="case-photo-frame"><img src="assets/optimized/angelica-gevaerd-195-9686f1c361.webp" alt="Angélica Gevaerd ao lado de um notebook com uma página de marketplace aberta" width="195" height="225" loading="lazy" decoding="async"></div></div>
             <figcaption class="case-portrait-caption caps"><span>Angélica Gevaerd</span><span>Marketplace / VTSD</span></figcaption>
           </figure>
         </article>
         <article class="case-block case-block--dark case-block--andre" aria-labelledby="case-andre-title">
           <header class="case-identity"><span class="caps case-identity-index">06 / CASE</span><span class="case-identity-copy"><strong>André Ferraz</strong><span class="caps">Aromaterapia</span></span></header>
           <figure class="case-media case-media--portrait case-media--andre surface-paper" data-rise>
-            <div class="case-portrait"><div class="case-photo-frame"><img src="assets/cases/andre-ferraz.jpg" alt="André Ferraz sorrindo, com plantas ao fundo" width="800" height="800" loading="lazy" decoding="async"></div></div>
+            <div class="case-portrait"><div class="case-photo-frame"><img srcset="assets/optimized/andre-ferraz-400-4c80ddd2db.webp 400w, assets/optimized/andre-ferraz-800-cc1d564dfc.webp 800w" sizes="(max-width: 430px) 70vw, 400px" src="assets/optimized/andre-ferraz-400-4c80ddd2db.webp" alt="André Ferraz sorrindo, com plantas ao fundo" width="800" height="800" loading="lazy" decoding="async"></div></div>
             <figcaption class="case-portrait-caption caps"><span>André Ferraz</span><span>Gestão · Copy · Webdesign</span></figcaption>
           </figure>
           <div class="case-panel">
@@ -1240,7 +1256,7 @@
                 <div><strong><small class="caption muted">até</small> 10</strong><span class="caps">PESSOAS NO TIME</span></div>
               </div>
               <nav class="case-socials" aria-label="Redes sociais de André Ferraz" data-rise style="--delay:360ms">
-                <a class="case-instagram" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de André Ferraz, @andreferrazaromaterapia, abrir em nova aba"><img src="assets/cases/andre-ferraz.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><span class="case-instagram-copy"><strong>Instagram</strong><small>@andreferrazaromaterapia</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <a class="case-instagram" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de André Ferraz, @andreferrazaromaterapia, abrir em nova aba"><img src="assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp" alt="" width="200" height="200" loading="lazy" decoding="async" fetchpriority="low"><span class="case-instagram-copy"><strong>Instagram</strong><small>@andreferrazaromaterapia</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
                 <a class="case-social-secondary" href="https://www.youtube.com/@andreferraz" target="_blank" rel="noopener noreferrer" aria-label="Canal de André Ferraz no YouTube, abrir em nova aba"><span>YouTube <span class="muted">· @andreferraz</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               </nav>
             </div>
@@ -1284,7 +1300,7 @@
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:270ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">04</span>
-            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="Typebot"><img class="tool-logo__color" src="assets/logos/typebot.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
+            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="Typebot"><img class="tool-logo__color" src="assets/logos/typebot.svg" alt="" aria-hidden="true" width="28" height="28" loading="lazy" decoding="async"></span></span>
             <div class="skill-copy"><h3>Automações</h3><p>Fluxos que tiram o trabalho manual do caminho: chatbots, integrações e disparos que rodam sem depender de alguém apertar o botão.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:360ms"><article class="skill-card glass-card ds-stage">
@@ -1295,7 +1311,7 @@
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:450ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">06</span>
-            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="ClickUp"><img class="tool-logo__color" src="assets/logos/clickup.svg" alt="" aria-hidden="true" width="28" height="28"></span></span>
+            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="ClickUp"><img class="tool-logo__color" src="assets/logos/clickup.svg" alt="" aria-hidden="true" width="28" height="28" loading="lazy" decoding="async"></span></span>
             <div class="skill-copy"><h3>ClickUp</h3><p>O lançamento inteiro num só lugar: tarefas, prazos e responsáveis visíveis para todo o time, sem planilha perdida nem cobrança no grupo.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:540ms">
@@ -1369,8 +1385,8 @@
           <figure class="about-photo about-photo--portrait" data-rise style="--delay:90ms">
             <div class="about-print about-video-window">
               <img class="about-video-poster" src="assets/about/about-video-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Alisson Segecs com os rótulos Estrategista e Gestor operacional">
-              <video id="about-video" muted loop playsinline preload="none" poster="assets/about/about-video-poster.webp" width="1280" height="720" aria-label="Retrato em movimento de Alisson Segecs" aria-describedby="about-motion-description">
-                <source src="assets/about/Criar_vídeo_com_transição_fluida_20261013164736.mp4" type="video/mp4">
+              <video id="about-video" muted loop playsinline preload="none" width="1280" height="720" aria-label="Retrato em movimento de Alisson Segecs" aria-describedby="about-motion-description">
+                <source data-src="assets/about/Criar_vídeo_com_transição_fluida_20261013164736.mp4" type="video/mp4">
               </video>
             </div>
             <p class="sr-only" id="about-motion-description">A animação apresenta a evolução de só copywriter para estrategista e gestor operacional. Sem áudio. A pausa global controla sua reprodução.</p>
@@ -1384,20 +1400,24 @@
             <p>Hoje são mais de 40 lançamentos geridos, pagos e clássicos, em B2B e B2C, com um time de prestadores que trabalha no mesmo método.</p>
           </div>
           <figure class="about-photo about-photo--planning" data-rise style="--delay:90ms">
-            <div class="about-print">
-              <!-- Foto provisória de Leeloo The First, Pexels. Substituir por uma foto sua trabalhando. Fonte e licença: assets/about/README.md. -->
-              <img src="assets/about/planning.jpg" width="1200" height="801" loading="lazy" decoding="async" data-placeholder="true" alt="Foto provisória de mãos escrevendo um planejamento em um caderno sobre a mesa">
+            <div class="about-print about-video-window">
+              <img class="about-video-poster" src="assets/about/timeline-video-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Livro se transformando em uma linha do tempo e um cronograma, ao lado de Alisson">
+              <video id="planning-video" muted loop playsinline preload="none" width="1280" height="720" aria-label="Livro e cronograma em movimento" aria-describedby="planning-motion-description">
+                <source data-src="assets/about/Animation_from_book_to_timeline_20261013171036.mp4" type="video/mp4">
+              </video>
+              <span class="planning-frame-line" aria-hidden="true"></span>
             </div>
-            <figcaption class="caps">02 · ONDE O PLANO VIRA CRONOGRAMA</figcaption>
+            <p class="sr-only" id="planning-motion-description">Um livro se transforma em uma linha do tempo e em um cronograma. Animação sem áudio, controlada pela pausa global.</p>
+            <figcaption class="caps about-video-caption"><span>02 · ONDE O PLANO VIRA CRONOGRAMA</span><button class="button button-ghost button-sm about-video-play" type="button" data-about-video-play hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Reproduzir vídeo</button></figcaption>
           </figure>
           <div class="about-journey">
             <p class="caps" data-rise>TRAJETÓRIA</p>
             <ol class="about-timeline">
-              <li data-rise style="--delay:90ms"><div class="about-milestone"><span class="caps">01 ·</span><h4>Agências</h4></div><p>Primeiros textos, escrevendo conteúdo para agências.</p></li>
+              <li data-rise style="--delay:90ms"><div class="about-milestone"><span class="caps">01 ·</span><h4>Agências</h4></div><p>Comecei trabalhando como copywriter para agências.</p></li>
               <li data-rise style="--delay:180ms"><div class="about-milestone"><span class="caps">02 ·</span><h4>Dani Martins</h4></div><p>Participei do início do que viria a ser o Prosperus Club, construindo a base de comunicação e vendas.</p></li>
-              <li data-rise style="--delay:270ms"><div class="about-milestone"><span class="caps">03 ·</span><h4>Receita Previsível</h4></div><p>Entrei como copywriter e me tornei braço direito do CEO, Thiago Muniz.</p></li>
-              <li data-rise style="--delay:360ms"><div class="about-milestone"><span class="caps">04 ·</span><h4>Marcia Macedo</h4></div><p>Mais de 8 lançamentos juntos, como copywriter, gestor de projetos e coprodutor.</p></li>
-              <li data-rise style="--delay:450ms"><div class="about-milestone"><span class="caps">05 ·</span><h4>Hoje</h4><span class="badge badge-status"><span class="status-dot" aria-hidden="true"></span>Em movimento</span></div><p>Mais de 40 lançamentos geridos, com time próprio de prestadores.</p></li>
+              <li data-rise style="--delay:270ms"><div class="about-milestone"><span class="caps">03 ·</span><h4>Marcia Macedo</h4></div><p>Mais de 8 lançamentos juntos, como copywriter, gestor de projetos e coprodutor. Me tornei braço direito estratégico e operacional do projeto.</p></li>
+              <li data-rise style="--delay:360ms"><div class="about-milestone"><span class="caps">04 ·</span><h4>Receita Previsível</h4></div><p>Entrei como copywriter de todo o ecossistema, da produção à estratégia de conteúdo. Evoluí muito como profissional.</p></li>
+              <li data-rise style="--delay:450ms"><div class="about-milestone"><span class="caps">05 ·</span><h4>Hoje</h4><span class="badge badge-status"><span class="status-dot" aria-hidden="true"></span>Em movimento</span></div><p>Nos últimos 12 meses, foram mais de 20 lançamentos entre clássicos e pagos, como gestor de projetos e, em alguns deles, também como copywriter.</p></li>
             </ol>
           </div>
         </div>
@@ -1533,7 +1553,7 @@
     (() => {
       'use strict';
       // Reprodução nativa na cadência original. A rolagem controla somente a cena.
-      const CONFIG = { playbackRate: 1, metadataTimeout: 12000, libraryTimeout: 8000 };
+      const CONFIG = { playbackRate: 1, metadataTimeout: 12000 };
       const $ = selector => document.querySelector(selector);
       const hero = $('#inicio'), scene = $('#scene'), video = $('#hero-video');
       const videoWindow = $('.video-window'), status = $('#video-status');
@@ -1541,8 +1561,9 @@
       let userPaused = false;
       let syncMethodMotion = () => {};
       let syncAboutMotion = () => {};
-      let duration = 0, metadataReady = false, libraryReady = false;
-      let trigger = null, context = null, failed = false, staticMode = true;
+      let duration = 0, metadataReady = false, failed = false;
+      let compositionFrame = 0, heroStart = 0, heroHeight = 1;
+      const heroSource = video.querySelector('source'), heroBloom = $('.hero-bloom');
       let metadataTimer, playRequest = null;
       const initialBounds = scene.getBoundingClientRect();
       let heroVisible = initialBounds.bottom > 0 && initialBounds.top < innerHeight;
@@ -1567,7 +1588,7 @@
         });
       }
 
-      // Interações e reveals da referência, independentes do CDN do vídeo.
+      // Interações e reveals nativos, sem dependências de rede externas.
       const root = document.documentElement;
       if (new URLSearchParams(location.search).has('preview')) root.classList.add('preview-render');
       const previewMode = root.classList.contains('preview-render');
@@ -1715,6 +1736,7 @@
         // A reprodução usa a viewport real, sem a margem dos loops decorativos.
         const playbackObserver = new IntersectionObserver(entries => {
           heroVisible = entries[0].isIntersecting;
+          updateNavigationSurface();
           syncPlayback();
         }, {threshold:0});
         playbackObserver.observe(scene);
@@ -1727,64 +1749,70 @@
         addEventListener('scroll', updatePlaybackVisibility, {passive:true});
         addEventListener('resize', updatePlaybackVisibility, {passive:true});
       }
-      // Retrato da seção Sobre: reprodução nativa, vinculada à visibilidade.
+      // Vídeos da seção Sobre: um controlador por quadro, com visibilidade independente.
       (() => {
-        const clip = $('#about-video');
-        if (!clip) return;
-        const frame = clip.closest('.about-video-window');
-        const photo = clip.closest('.about-photo');
-        const playButton = $('[data-about-video-play]');
-        let visible = false, unavailable = false, request = null;
-        clip.muted = true; clip.defaultMuted = true;
-        const allowed = () => visible && !unavailable && !userPaused && !reduced.matches && !document.hidden && !previewMode;
-        const fail = () => {
-          unavailable = true; clip.pause(); frame.classList.remove('is-video-ready');
-          playButton.hidden = true;
-        };
-        syncAboutMotion = () => {
-          const canPlay = allowed();
-          clip.autoplay = canPlay;
-          if (reduced.matches || previewMode) frame.classList.remove('is-video-ready');
-          if (!canPlay) { clip.pause(); playButton.hidden = true; return; }
-          if (clip.preload === 'none') { clip.preload = 'auto'; clip.load(); }
-          if (clip.readyState < 2 || !clip.paused || request) return;
-          try {
-            request = Promise.resolve(clip.play()).then(() => {
-              if (!allowed()) clip.pause();
-            }).catch(() => {
-              if (allowed()) playButton.hidden = false;
-            }).finally(() => { request = null; });
-          } catch { if (allowed()) playButton.hidden = false; }
-        };
-        clip.addEventListener('loadedmetadata', () => {
-          if (!Number.isFinite(clip.duration) || clip.duration <= 0 || !clip.videoWidth) fail();
+        const players = Array.from($('#sobre').querySelectorAll('.about-video-window')).map(frame => {
+          const clip = frame.querySelector('video');
+          const photo = clip.closest('.about-photo');
+          const playButton = photo.querySelector('[data-about-video-play]');
+          let visible = false, unavailable = false, request = null;
+          clip.muted = true; clip.defaultMuted = true;
+          const allowed = () => visible && !unavailable && !userPaused && !reduced.matches && !document.hidden && !previewMode;
+          const fail = () => {
+            unavailable = true; clip.pause(); frame.classList.remove('is-video-ready');
+            playButton.hidden = true;
+          };
+          const syncPlayerMotion = () => {
+            const canPlay = allowed();
+            clip.autoplay = canPlay;
+            if (reduced.matches || previewMode) frame.classList.remove('is-video-ready');
+            if (!canPlay) { clip.pause(); playButton.hidden = true; return; }
+            if (clip.preload === 'none') {
+              const source = clip.querySelector('source');
+              source.src = source.dataset.src; clip.preload = 'auto'; clip.load();
+            }
+            if (clip.readyState < 2 || !clip.paused || request) return;
+            try {
+              request = Promise.resolve(clip.play()).then(() => {
+                if (!allowed()) clip.pause();
+              }).catch(() => {
+                if (allowed()) playButton.hidden = false;
+              }).finally(() => { request = null; });
+            } catch { if (allowed()) playButton.hidden = false; }
+          };
+          clip.addEventListener('loadedmetadata', () => {
+            if (!Number.isFinite(clip.duration) || clip.duration <= 0 || !clip.videoWidth) fail();
+          });
+          clip.addEventListener('loadeddata', syncPlayerMotion);
+          clip.addEventListener('canplay', syncPlayerMotion);
+          clip.addEventListener('play', () => { if (!allowed()) clip.pause(); });
+          clip.addEventListener('playing', () => {
+            if (!allowed()) { clip.pause(); return; }
+            frame.classList.add('is-video-ready'); playButton.hidden = true;
+          });
+          const failLoadedClip = () => { if (clip.querySelector('source').hasAttribute('src')) fail(); };
+          clip.addEventListener('error', failLoadedClip);
+          clip.querySelector('source').addEventListener('error', failLoadedClip);
+          playButton.addEventListener('click', syncPlayerMotion);
+          const updateVisibility = () => {
+            const bounds = photo.getBoundingClientRect();
+            visible = bounds.bottom > 0 && bounds.top < innerHeight;
+            syncPlayerMotion();
+          };
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(entries => {
+              visible = entries[0].isIntersecting && entries[0].intersectionRatio >= .15;
+              syncPlayerMotion();
+            }, {threshold:[0,.15]});
+            observer.observe(photo);
+          } else {
+            addEventListener('scroll', updateVisibility, {passive:true});
+            addEventListener('resize', updateVisibility, {passive:true});
+          }
+          updateVisibility();
+          return syncPlayerMotion;
         });
-        clip.addEventListener('loadeddata', syncAboutMotion);
-        clip.addEventListener('canplay', syncAboutMotion);
-        clip.addEventListener('play', () => { if (!allowed()) clip.pause(); });
-        clip.addEventListener('playing', () => {
-          if (!allowed()) { clip.pause(); return; }
-          frame.classList.add('is-video-ready'); playButton.hidden = true;
-        });
-        clip.addEventListener('error', fail);
-        clip.querySelector('source').addEventListener('error', fail);
-        playButton.addEventListener('click', syncAboutMotion);
-        const updateVisibility = () => {
-          const bounds = photo.getBoundingClientRect();
-          visible = bounds.bottom > 0 && bounds.top < innerHeight;
-          syncAboutMotion();
-        };
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver(entries => {
-            visible = entries[0].isIntersecting && entries[0].intersectionRatio >= .15;
-            syncAboutMotion();
-          }, {threshold:[0,.15]});
-          observer.observe(photo);
-        } else {
-          addEventListener('scroll', updateVisibility, {passive:true});
-          addEventListener('resize', updateVisibility, {passive:true});
-        }
-        updateVisibility();
+        syncAboutMotion = () => players.forEach(sync => sync());
       })();
       fine.addEventListener('change', syncMotionEffects);
       document.addEventListener('visibilitychange', syncMotionEffects);
@@ -1800,8 +1828,14 @@
           else link.removeAttribute('aria-current');
         });
       }
-      function updateNavigationSurface() { nav.classList.toggle('is-scrolled', scrollY > 40); }
+      function updateNavigationSurface() {
+        nav.classList.toggle('is-scrolled', scrollY > 40);
+        const hiddenOnHero = innerWidth <= 800 && heroVisible;
+        nav.classList.toggle('nav--hero', hiddenOnHero);
+        if (nav.inert !== hiddenOnHero) nav.inert = hiddenOnHero;
+      }
       addEventListener('scroll', updateNavigationSurface, {passive:true});
+      addEventListener('resize', updateNavigationSurface, {passive:true});
       updateNavigationSurface();
       // Acordeão progressivo: sem JavaScript, as respostas permanecem legíveis.
       {
@@ -2058,6 +2092,14 @@
           $('[data-video-play]').hidden = true;
           return;
         }
+        if (!heroSource.hasAttribute('src')) {
+          // O pôster e as fontes já têm prioridade no head; não atrasa o player.
+          heroSource.src = heroSource.dataset.src; video.preload = 'auto'; video.load();
+          metadataTimer = setTimeout(() => {
+            if (!metadataReady) failVideo('A imagem permanece. Continue para os projetos.');
+          }, CONFIG.metadataTimeout);
+          return;
+        }
         if (!metadataReady || video.readyState < 2 || !video.paused || playRequest) return;
         try {
           playRequest = Promise.resolve(video.play()).then(() => {
@@ -2087,17 +2129,33 @@
       video.addEventListener('timeupdate', () => { $('#video-time').textContent = timecode(video.currentTime); });
       $('[data-video-play]').addEventListener('click', syncPlayback);
 
-      function renderComposition(progress) {
-        if (userPaused || reduced.matches) return;
+      // Um RAF por evento de rolagem, somente enquanto a hero está visível.
+      function renderComposition() {
+        compositionFrame = 0;
+        if (userPaused || reduced.matches || document.hidden || !metadataReady || failed) return;
+        const progress = clamp((scrollY - heroStart) / heroHeight, 0, 1);
         $('.panel-progress').style.transform = 'scaleX(' + progress + ')';
+        heroBloom.style.transform = 'translateY(' + (8 - 16 * systemEase(progress)) + 'px)';
       }
+      function scheduleComposition() {
+        if (!compositionFrame && heroVisible && !userPaused && !reduced.matches && !document.hidden && metadataReady) {
+          compositionFrame = requestAnimationFrame(renderComposition);
+        }
+      }
+      function refreshComposition() {
+        const bounds = hero.getBoundingClientRect();
+        heroStart = bounds.top + scrollY; heroHeight = Math.max(1, bounds.height);
+        scheduleComposition();
+      }
+      addEventListener('scroll', scheduleComposition, {passive:true});
+      addEventListener('resize', refreshComposition, {passive:true});
+      if ('ResizeObserver' in window) new ResizeObserver(refreshComposition).observe(hero);
       function clearExperience() {
-        staticMode = true;
-        if (trigger) { trigger.kill(true); trigger = null; }
-        if (context) { context.revert(); context = null; }
+        cancelAnimationFrame(compositionFrame); compositionFrame = 0;
+        heroBloom.style.removeProperty('transform');
         hero.classList.remove('has-scrub'); hero.classList.add('is-static');
         if (reduced.matches || failed) videoWindow.classList.remove('is-ready');
-        renderComposition(0);
+        $('.panel-progress').style.transform = 'scaleX(0)';
         $('#scroll-label').textContent = 'ROLE PARA VER OS CASES';
         syncPlayback();
       }
@@ -2106,25 +2164,11 @@
         clearExperience(); videoWindow.classList.add('is-error'); status.textContent = 'Cena estática'; status.setAttribute('aria-label', message);
       }
       function initialize() {
-        if (reduced.matches || failed || !metadataReady || !libraryReady) return;
-        clearExperience();
-        staticMode = false; hero.classList.remove('is-static'); hero.classList.add('has-scrub');
+        if (reduced.matches || failed || !metadataReady) return;
+        hero.classList.remove('is-static'); hero.classList.add('has-scrub');
         if (video.readyState >= 2) videoWindow.classList.add('is-ready');
         status.textContent = 'Em movimento';
-        $('#scroll-label').textContent = 'ROLE PARA VER OS CASES';
-        gsap.registerPlugin(ScrollTrigger);
-        // A hero acompanha a rolagem nativa, sem fixação ou espaço extra.
-        // O player mantém seu próprio relógio, sem buscas concorrentes.
-        context = gsap.context(() => {
-          const visualMotion = gsap.timeline({paused:true}).fromTo('.hero-bloom', {y:8}, {y:-8, duration:1, ease:systemEase});
-          trigger = ScrollTrigger.create({
-            id:'portfolio-scene', trigger:hero, start:'top top',
-            end:'bottom top', invalidateOnRefresh:true,
-            onUpdate(self) { if (userPaused) return; renderComposition(self.progress); visualMotion.progress(self.progress); },
-            onRefresh(self) { if (userPaused) return; renderComposition(self.progress); visualMotion.progress(self.progress); }
-          });
-        }, hero);
-        ScrollTrigger.refresh();
+        refreshComposition();
       }
       video.addEventListener('loadedmetadata', () => {
         clearTimeout(metadataTimer);
@@ -2136,36 +2180,10 @@
         syncPlayback();
         initialize();
       }, {once:true});
-      video.addEventListener('error', () => failVideo('A imagem permanece. Os projetos continuam abaixo.'));
-      metadataTimer = setTimeout(() => {
-        if (!metadataReady) failVideo('A imagem permanece. Continue para os projetos.');
-      }, CONFIG.metadataTimeout);
-
-      function loadScript(src) {
-        return new Promise((resolve, reject) => {
-          const script = document.createElement('script');
-          const timeout = setTimeout(() => { script.remove(); reject(new Error('CDN timeout')); }, CONFIG.libraryTimeout);
-          script.src = src; script.async = true;
-          script.onload = () => { clearTimeout(timeout); resolve(); };
-          script.onerror = () => { clearTimeout(timeout); script.remove(); reject(new Error('CDN unavailable')); };
-          document.head.appendChild(script);
-        });
-      }
-      // Compatible pinned versions, loaded in order. Content is visible before JS.
-      async function loadMotion() {
-        try {
-          await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js');
-          await loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js');
-          if (!window.gsap || !window.ScrollTrigger) throw new Error('Missing library');
-          libraryReady = true;
-          initialize();
-        } catch {
-          clearExperience();
-          if (!failed) status.textContent = 'Da visão à ação';
-        }
-      }
+      const failLoadedHero = () => { if (heroSource.hasAttribute('src')) failVideo('A imagem permanece. Os projetos continuam abaixo.'); };
+      video.addEventListener('error', failLoadedHero);
+      heroSource.addEventListener('error', failLoadedHero);
       clearExperience();
-      loadMotion();
       reduced.addEventListener('change', () => {
         syncMotionEffects();
         if (reduced.matches) { finishCounters(); clearExperience(); status.textContent = 'Da visão à ação'; }
@@ -2180,7 +2198,7 @@
         if (reduced.matches) return;
         userPaused = !userPaused; syncMotionEffects();
         if (userPaused) finishCounters();
-        else if (trigger) renderComposition(trigger.progress);
+        else initialize();
         syncPlayback();
       }));
       // Links da hero avançam imediatamente. Os demais mantêm rolagem suave.
@@ -2194,10 +2212,10 @@
         const isTop = destination === hero || destination.id === 'top';
         const top = isTop ? 0 : window.scrollY + destination.getBoundingClientRect().top - nav.getBoundingClientRect().height - 24;
         window.scrollTo({top, behavior:reduced.matches || hero.contains(link) ? 'instant' : 'smooth'});
-        if (isTop) $('.brand').focus({preventScroll:true});
+        if (isTop) (innerWidth <= 800 ? hero : $('.brand')).focus({preventScroll:true});
         else destination.focus({preventScroll:true});
       }));
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (trigger) ScrollTrigger.refresh(); });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(refreshComposition);
       // If metadata was loaded from cache before the listener was installed.
       if (video.readyState >= 1 && !metadataReady) video.dispatchEvent(new Event('loadedmetadata'));
     })();

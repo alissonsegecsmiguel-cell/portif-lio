@@ -31,3 +31,7 @@ Todas as páginas abaixo indicam uso gratuito sob a [licença Unsplash](https://
 As fotos antigas da mesa e do passaporte permanecem como referências locais. A imagem do passaporte traz o brasão do documento, sem marca comercial ou rosto.
 
 Os arquivos foram baixados de images.unsplash.com com largura de 1500 px e qualidade 85. O projeto usa as cópias locais, sem depender do serviço durante a navegação.
+
+## Versões de carregamento
+
+A apresentação usa WebP menor para Dani, Angélica, André e o livro da Receita Previsível, conforme assets/optimized/README.md. Os PNGs da Dani continuam nos links de ampliação. Os originais descritos acima permanecem disponíveis. Retratos de Marcia e Sanduba já eram menores que as versões WebP testadas, por isso continuam em JPEG.
