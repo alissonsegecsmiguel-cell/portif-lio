@@ -12,8 +12,11 @@ portfolio/              site publicado em /portfolio
   favicon.svg
   assets/               imagens, vídeos, logos, og-image.jpg e design_system_portifolio.html
   referenciais/         design systems de referência e fontes locais
+dashboards/             painéis de clientes, um por pasta, publicados em /dashboards/<cliente> (ver dashboards/README.md)
+  natalia/index.html    fechamento financeiro da Natália
+  natalia/fonte/        planilha de origem; fora do git e da publicação
 vercel.json             redirecionamentos (/ → /portfolio temporário, /portifolio → /portfolio permanente) e rewrites de /assets, /referenciais e /favicon.svg
-.vercelignore           exclui output/, serve.cjs e README.md da publicação
+.vercelignore           exclui output/, serve.cjs, README.md e as fontes de dados dos dashboards da publicação
 serve.cjs               servidor local de prévia
 output/previews/        capturas de revisão
 ```

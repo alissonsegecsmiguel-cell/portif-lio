@@ -6,3 +6,9 @@
 /AGENTS.md
 /.preview
 /node_modules
+# Dashboards: publica só o index.html de cada cliente, nunca as fontes de dados.
+/dashboards/*/fonte
+/dashboards/**/*.xlsx
+/dashboards/**/*.xls
+/dashboards/**/*.csv
+/dashboards/README.md
