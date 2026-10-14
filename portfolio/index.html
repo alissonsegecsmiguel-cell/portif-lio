@@ -478,6 +478,27 @@
     .case-social-secondary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;padding:14px 0;border-bottom:1px solid var(--line);font:400 14px/1.5 var(--font-ui);color:inherit;text-decoration:none;transition:color .4s var(--ease)}
     .case-social-secondary[href]:hover{color:var(--signal)}
     .case-social-secondary .icon{width:16px;height:16px;color:var(--signal)}
+    .case-channel{display:block;padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,color-mix(in srgb,var(--signal) 8%,transparent),transparent 75%);color:inherit;text-decoration:none;transition:border-color .4s var(--ease),transform .4s var(--ease),background-color .4s var(--ease)}
+    .case-channel-head{display:grid;grid-template-columns:52px minmax(0,1fr) 20px;align-items:center;gap:14px}
+    .case-channel-mark{display:grid;place-items:center;width:52px;height:52px;border:1px solid color-mix(in srgb,var(--signal) 35%,transparent);border-radius:16px;color:var(--signal);background:color-mix(in srgb,var(--signal) 8%,transparent)}
+    .case-channel-mark .icon{width:28px;height:28px}
+    .case-channel-copy{display:grid;gap:8px;min-width:0}
+    .case-channel-copy strong{font:500 clamp(30px,3vw,40px)/1 var(--font-primary);letter-spacing:-.065em}
+    .case-channel-copy small{font:400 12px/1.5 var(--font-ui);color:var(--muted);overflow-wrap:anywhere}
+    .case-channel-head>.icon{width:20px;height:20px;color:var(--signal);transition:transform .4s var(--ease)}
+    .case-channel-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+    .case-channel-stat{display:grid;gap:8px}
+    .case-channel-stat+.case-channel-stat{border-left:1px solid var(--line);padding-left:20px}
+    .case-channel-stat strong{font:300 clamp(30px,3vw,38px)/1 var(--font-editorial);letter-spacing:-.055em;color:var(--signal)}
+    .case-channel-stat .caps{font-size:9px;color:var(--muted)}
+    .case-social-label{display:flex;align-items:center;gap:10px;min-width:0}
+    .case-social-label>.icon{flex-shrink:0}
+    .case-social-label>span{overflow-wrap:anywhere}
+    .case-social-label small{font:400 12px/1.5 var(--font-ui);color:var(--muted)}
+    .case-social-secondary>.icon{flex-shrink:0}
+    .case-channel:focus-visible{outline:2px solid var(--signal);outline-offset:5px}
+    @media(hover:hover){.case-channel:hover{border-color:var(--signal);transform:translateY(-2px);background-color:color-mix(in srgb,var(--signal) 4%,transparent)}.case-channel:hover .case-channel-head>.icon{transform:translate(2px,-2px)}}
+    @media(max-width:430px){.case-channel{padding:16px}.case-channel-head{grid-template-columns:40px minmax(0,1fr) 16px;gap:10px}.case-channel-mark{width:40px;height:40px;border-radius:12px}.case-channel-mark .icon{width:24px;height:24px}.case-channel-head>.icon{width:16px;height:16px}.case-channel-copy small{font-size:11px}.case-channel-stats{gap:14px}.case-channel-stat+.case-channel-stat{padding-left:14px}.case-social-label{gap:8px}.case-social-label small{font-size:11px}}
     .case-social-placeholder,.case-social-secondary[aria-disabled=true]{color:var(--muted);cursor:default}
     .case-social-placeholder:hover{color:var(--muted);border-color:var(--line)}
     .case-social-placeholder small{min-height:18px}
@@ -570,8 +591,11 @@
     .skill-copy{padding-right:22px;min-width:0}
     .skill-copy h3{font:600 17px/1.3 var(--font-ui);letter-spacing:-.02em;color:var(--ink);margin:0 0 6px}
     .skill-copy p{font:400 13px/1.6 var(--font-ui);color:var(--muted);max-width:46ch}
+    .skill-copy p+p{margin-top:12px}
     .tool-logo{position:relative;display:block;width:28px;height:28px}
     .tool-logo__color{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.7;filter:grayscale(1);transition:opacity 400ms var(--ease),filter 400ms var(--ease)}
+    .tool-logo--n8n{width:32px}
+    .tool-logo--n8n .tool-logo__color{opacity:1;filter:none}
     .skills-grid.is-proximity-active .skill-card:hover .tool-logo__color{opacity:1;filter:grayscale(0)}
     .skill-card--cta{border-style:dashed;background:transparent;cursor:pointer}
     .skill-card--cta .skill-copy{padding-right:32px}
@@ -668,7 +692,9 @@
     .method-sheet-title{font:600 15px/1.5 var(--font-ui);letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
     .method-checklist{display:grid;gap:8px;list-style:none;padding:0;margin:0}
     .method-checklist li{display:flex;align-items:center;gap:12px;min-height:38px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;color:var(--muted);font:400 12px/1.4 var(--font-ui)}
-    .method-checklist .icon{width:16px;height:16px;color:var(--mint)}
+    .method-checklist .icon{width:16px;height:16px;flex-shrink:0;color:var(--mint)}
+    .method-screen.glass-card:has([data-method-screen="0"]:not([hidden])){aspect-ratio:auto}
+    .method-screen:has([data-method-screen="0"]:not([hidden])) .method-canvas{min-height:auto}
     .method-checklist .method-bottleneck{border-color:color-mix(in srgb,var(--signal) 40%,transparent);color:var(--ink)}
     .method-schedule{display:grid;gap:0}
     .method-task{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:10px;min-height:48px;padding:10px 0;border-bottom:1px solid var(--line);font:400 12px/1.4 var(--font-ui);color:var(--ink)}
@@ -690,23 +716,76 @@
     .method-result-notes i{display:block;height:4px;border-radius:100px;background:var(--line);margin:8px 0;width:88%}
     .method-result-notes i:last-child{width:62%}
     .method-description{max-width:52ch;min-height:5.1em;margin-top:24px;color:var(--muted);font:400 16px/1.7 var(--font-ui)}
+    .method-description p+p{margin-top:16px;color:var(--ink)}
     .method-proof{margin-top:24px;color:var(--signal);font-size:9px;line-height:1.8}
     .method-cases-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:8px;color:var(--ink);font:500 14px/1.5 var(--font-ui)}
     .method-cases-link .icon{width:16px;height:16px;transition:transform 400ms var(--ease)}
     .method-cases-link:hover .icon{transform:translate(2px,-2px)}
     .method-fallback{margin-top:36px;display:grid;gap:24px;color:var(--muted);font:400 16px/1.7 var(--font-ui)}
     .method-fallback h3{color:var(--ink);font-weight:500;margin-bottom:6px}
-    .method-audience{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
-    .method-audience>h3{font:300 32px/1.2 var(--font-editorial);letter-spacing:-.04em;color:var(--ink)}
-    .method-audience-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:28px}
-    .method-audience .principle{padding-top:20px;border-top:1px solid var(--line)}
-    .method-audience .caps{font-size:9px;color:var(--signal)}
-    .method-audience h4{margin:16px 0 8px;font:500 18px/1.3 var(--font-ui);letter-spacing:-.035em;color:var(--ink)}
-    .method-audience p{max-width:40ch;font:400 13px/1.7 var(--font-ui);color:var(--muted)}
+    .method-fallback p+p{margin-top:16px}
     html.motion-reduced .method-flow-light{display:none}
     @media(max-width:1100px){.method-layout{gap:40px}.method-tab-name{font-size:40px}.method-tab{min-height:62px;gap:14px}.method-timer{left:38px}.method-screen.glass-card{padding:22px}.method .ds-sheet{padding:18px}.method-task{gap:6px;font-size:11px}.method .badge{font-size:9px}.method-flow{gap:12px}.method-flow-step{font-size:11px;padding-inline:6px}.method-flow-step .method-flow-arrow{right:-12px;width:10px}.method-description{min-height:6.8em}}
-    @media(max-width:800px){.method .ds-head{margin-bottom:28px}.method-audience-list{grid-template-columns:1fr;gap:24px}.method-audience p{max-width:52ch}.method-layout{grid-template-columns:minmax(0,1fr);gap:36px}.method-intro{max-width:52ch}.method-tabs{display:flex;gap:10px;margin-top:28px;padding:6px 6px 10px;margin-inline:-6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.method-tabs::-webkit-scrollbar{display:none}.method-tab{display:inline-flex;flex:none;width:auto;min-height:48px;gap:10px;padding:10px 16px 14px;border:1px solid var(--line);border-radius:100px;scroll-snap-align:center}.method-tab-name{font:500 14px/1.5 var(--font-ui);letter-spacing:-.02em}.method-tab-index{font-size:8px}.method-tab>.icon{width:18px;height:18px}.method-tab[aria-selected="true"]{color:var(--signal);border-color:color-mix(in srgb,var(--signal) 40%,transparent)}.method-timer{left:16px;right:16px;bottom:5px}.method-screen.glass-card{padding:24px}.method .ds-sheet{padding:22px}.method-task{font-size:12px;gap:12px}.method .badge{font-size:10px}.method-description{min-height:5.1em}.method-flow-step{font-size:12px;min-height:112px}.method-result-notes .caps{font-size:9px}}
+    @media(max-width:800px){.method .ds-head{margin-bottom:28px}.method-layout{grid-template-columns:minmax(0,1fr);gap:36px}.method-intro{max-width:52ch}.method-tabs{display:flex;gap:10px;margin-top:28px;padding:6px 6px 10px;margin-inline:-6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.method-tabs::-webkit-scrollbar{display:none}.method-tab{display:inline-flex;flex:none;width:auto;min-height:48px;gap:10px;padding:10px 16px 14px;border:1px solid var(--line);border-radius:100px;scroll-snap-align:center}.method-tab-name{font:500 14px/1.5 var(--font-ui);letter-spacing:-.02em}.method-tab-index{font-size:8px}.method-tab>.icon{width:18px;height:18px}.method-tab[aria-selected="true"]{color:var(--signal);border-color:color-mix(in srgb,var(--signal) 40%,transparent)}.method-timer{left:16px;right:16px;bottom:5px}.method-screen.glass-card{padding:24px}.method .ds-sheet{padding:22px}.method-task{font-size:12px;gap:12px}.method .badge{font-size:10px}.method-description{min-height:5.1em}.method-flow-step{font-size:12px;min-height:112px}.method-result-notes .caps{font-size:9px}}
     @media(max-width:430px){.method .ds-top{font-size:9px;gap:16px;margin-bottom:24px}.method .ds-top span:last-child{max-width:18ch;text-align:right}.method .ds-head h2{font-size:44px}.method .ds-head em{margin-top:14px}.method-screen.glass-card{aspect-ratio:4/5;min-height:0;padding:16px}.method-screen-top{gap:8px;padding-bottom:16px}.method-screen-top .caps{font-size:8px}.method-screen-top .badge{font-size:8px;padding:5px 7px}.method .ds-sheet{padding:16px}.method-sheet-title{font-size:13px}.method-checklist{grid-template-columns:repeat(2,minmax(0,1fr))}.method-checklist li{padding:8px;gap:6px;font-size:10px;min-height:52px}.method-checklist .icon{width:14px;height:14px}.method-task{grid-template-columns:minmax(0,1fr) auto;gap:8px;min-height:70px;font-size:12px}.method-task .method-week{grid-column:1/-1;justify-self:start;font-size:8px;margin-top:-6px}.method-task:nth-child(n+4){display:none}.method-task:nth-child(3){border-bottom:0}.method-flow{gap:8px}.method-flow-step{gap:10px;min-height:96px;padding:12px 4px;font-size:10px}.method-flow-step>.icon{width:20px;height:20px}.method-flow-step .method-flow-arrow{right:-8px;width:7px}.method-status-row{gap:8px;font-size:11px;min-height:64px}.method-status-row:nth-child(2){display:none}.method-status-row .badge{font-size:8px;padding:5px 7px}.method-result-bars{height:154px;gap:10px;padding-inline:0}.method-result-notes{gap:8px;margin-top:20px}.method-result-notes .caps{font-size:7px;min-height:34px;overflow-wrap:anywhere}.method-description{min-height:8.5em}.method-proof{font-size:8px}}
+    @media(max-width:430px){.method-checklist{grid-template-columns:1fr}.method-checklist li{font-size:11px;min-height:38px}}
+    /* Públicos: faixa contínua Noema, superfícies GenLabs e ícones com traço de 1,5 px. */
+    .audience{--audience-card-width:clamp(300px,27vw,360px);--audience-gap:20px;--audience-peek:clamp(28px,6vw,88px);--audience-group-width:calc(4 * (var(--audience-card-width) + var(--audience-gap)));--audience-start:calc(var(--audience-peek) - var(--audience-group-width));position:relative;isolation:isolate;overflow:hidden;padding:var(--section-space) 0;background:var(--void-soft);color:var(--ink);border-block:1px solid var(--line);scroll-margin-top:var(--nav-offset,104px)}
+    .audience::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 18% 52%,#6c63ff0c,transparent 55%),radial-gradient(ellipse at 90% 72%,#91cba508,transparent 48%)}
+    .audience>.wrap{max-width:1600px;margin-inline:auto;padding-inline:var(--pad)}
+    .audience-top{display:flex;justify-content:space-between;gap:24px;padding-bottom:16px;border-bottom:1px solid var(--line);font-size:9px;color:var(--signal)}
+    .audience-top>span:last-child{color:var(--muted)}
+    .audience-heading{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;margin:28px 0}
+    .audience-heading h2{font:500 clamp(44px,5vw,76px)/1.02 var(--font-primary);letter-spacing:-.065em}
+    .audience-heading h2 em{display:block;font:300 1.04em/1.04 var(--font-editorial);letter-spacing:-.065em;color:var(--signal)}
+    .audience-heading>p{max-width:38ch;font:400 15px/1.7 var(--font-ui);padding-bottom:4px;color:var(--muted)}
+    .audience-controls:not([hidden]){display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+    .audience-controls>.caps{font-size:8px;color:var(--muted)}
+    .audience-controls>div{display:flex;gap:8px}
+    .audience-controls .button{width:44px;min-height:44px;padding:0;color:var(--signal)}
+    .audience-controls .button:disabled{opacity:.35;cursor:default}
+    .audience-defs{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+    .audience-rail{position:relative}
+    html.js-motion .audience-rail[data-rise]{transform:translateX(24px)}
+    html.js-motion .audience-rail[data-rise].is-in{transform:none}
+    .audience-rail::before,.audience-rail::after{content:'';position:absolute;inset:0 auto 8px 0;width:clamp(16px,3vw,48px);z-index:3;pointer-events:none;background:linear-gradient(90deg,var(--void-soft),transparent)}
+    .audience-rail::after{left:auto;right:0;transform:rotate(180deg)}
+    .audience-gallery{overflow:hidden;width:100%;padding-bottom:8px;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#a9a5ff66 transparent}
+    .audience-gallery:focus-visible{outline-offset:-2px}
+    .audience-track{display:flex;width:max-content;transform:translateX(var(--audience-start));animation:audience-drift 48s linear infinite}
+    .audience-group{display:flex;flex:none;gap:var(--audience-gap);padding-right:var(--audience-gap)}
+    .audience-card{position:relative;flex:none;width:var(--audience-card-width);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#f1f0ea09,transparent 56%),var(--void-soft);box-shadow:inset 0 1px 0 #f1f0ea08;scroll-snap-align:start;transition:border-color 400ms var(--ease)}
+    .audience-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px 0}
+    .audience-tag{display:inline-flex;align-items:center;gap:8px;font-size:9px;color:var(--signal)}
+    .audience-tag::before{content:'';width:5px;height:5px;flex:none;border-radius:50%;background:var(--mint)}
+    .audience-index{font-size:10px;color:var(--muted)}
+    .audience-stage{position:relative;isolation:isolate;display:grid;place-items:center;height:210px;overflow:hidden;background:radial-gradient(ellipse at center,#6c63ff10,transparent 66%)}
+    .audience-stage::before{content:'';position:absolute;width:172px;height:172px;border:1px solid #a9a5ff12;border-radius:24px;transform:rotate(-8deg);background:linear-gradient(#f1f0ea05 1px,transparent 1px),linear-gradient(90deg,#f1f0ea05 1px,transparent 1px);background-size:24px 24px}
+    .audience-orbit{position:absolute;width:154px;height:154px;border:1px solid #a9a5ff20;border-radius:50%;animation:audience-orbit 18s linear infinite}
+    .audience-orbit::after{content:'';position:absolute;left:calc(50% - 2px);top:-2px;width:4px;height:4px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px #91cba540}
+    .audience-symbol{position:relative;width:112px;height:112px;color:var(--ink);fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;animation:audience-float 6s var(--ease) infinite alternate;animation-delay:var(--icon-delay,0s)}
+    .audience-icon-accent{stroke:var(--signal)}
+    .audience-icon-mint{stroke:var(--mint)}
+    .audience-icon-muted{stroke:var(--muted);opacity:.4}
+    .audience-card-copy{flex:1;padding:0 24px 24px}
+    .audience-card-copy::before{content:'';display:block;height:1px;margin-bottom:20px;background:var(--line)}
+    .audience-card-copy h3{max-width:18ch;margin:0 0 12px;font:500 26px/1.15 var(--font-ui);letter-spacing:-.045em;color:var(--ink);text-wrap:balance}
+    .audience-card-copy p{font:400 13px/1.7 var(--font-ui);color:var(--muted)}
+    .audience:hover .audience-track,.audience:focus-within .audience-track,.audience-card:hover .audience-symbol,.audience-card:hover .audience-orbit{animation-play-state:paused}
+    .audience-card:hover{border-color:color-mix(in srgb,var(--signal) 40%,transparent)}
+    @keyframes audience-drift{from{transform:translateX(var(--audience-start))}to{transform:translateX(calc(var(--audience-start) - var(--audience-group-width)))}}
+    @keyframes audience-orbit{to{transform:rotate(360deg)}}
+    @keyframes audience-float{from{transform:translateY(3px)}to{transform:translateY(-3px)}}
+    .audience.is-manual .audience-gallery,html.motion-reduced .audience-gallery,html:not(.js-motion) .audience-gallery{overflow-x:auto;padding-inline:var(--pad);scroll-padding-inline:var(--pad);scroll-snap-type:x proximity}
+    .audience.is-manual .audience-track,html.motion-reduced .audience-track,html:not(.js-motion) .audience-track{animation:none;transform:none;margin-inline:auto}
+    .audience.is-manual .audience-group[aria-hidden],html.motion-reduced .audience-group[aria-hidden],html:not(.js-motion) .audience-group[aria-hidden]{display:none}
+    .audience.is-manual .audience-group,html.motion-reduced .audience-group,html:not(.js-motion) .audience-group{padding-right:0}
+    .audience.is-manual .audience-rail::before,.audience.is-manual .audience-rail::after,html.motion-reduced .audience-rail::before,html.motion-reduced .audience-rail::after,html:not(.js-motion) .audience-rail::before,html:not(.js-motion) .audience-rail::after{display:none}
+    html:not(.js-motion) .audience-symbol,html:not(.js-motion) .audience-orbit,html.motion-reduced .audience-symbol,html.motion-reduced .audience-orbit{animation:none;transform:none}
+    @media(prefers-reduced-motion:reduce){.audience-gallery{overflow-x:auto;padding-inline:var(--pad);scroll-padding-inline:var(--pad)}.audience-track{animation:none!important;transform:none!important;margin-inline:auto}.audience-group[aria-hidden]{display:none}.audience-group{padding-right:0}.audience-rail::before,.audience-rail::after{display:none}.audience-symbol,.audience-orbit{animation:none!important;transform:none!important}}
+    @media(max-width:1100px){.audience-heading{gap:32px}}
+    @media(max-width:800px){.audience{--audience-card-width:min(82vw,340px);--audience-gap:16px}.audience-top>span:last-child{display:none}.audience-heading{grid-template-columns:1fr;gap:20px;margin:24px 0}.audience-heading h2{font-size:clamp(44px,8vw,64px)}.audience-heading>p{max-width:46ch;font-size:13px}.audience-stage{height:190px}.audience-card-copy h3{font-size:24px}.audience-card-copy{padding-inline:20px}}
+    @media(max-width:430px){.audience-heading h2{font-size:48px}.audience-card-top{padding-inline:20px}.audience-controls>.caps{max-width:24ch}.audience-card-copy h3{font-size:23px}}
     /* Contato persistente: ação violeta, sheen e movimento do sistema. */
     .whatsapp-float.button{position:fixed;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:80;width:232px;min-height:64px;gap:12px;padding:12px 18px;animation:rise .9s var(--ease) 1s backwards}
     .whatsapp-float .whatsapp-float__symbol{width:26px;height:26px}
@@ -745,9 +824,14 @@
     html.js-motion .about-cross path+path{transition-delay:870ms}
     html.js-motion .about-photo.is-in .about-cross path{stroke-dashoffset:0}
     .about-story{grid-column:8/-1;grid-row:1;min-width:0;padding-top:12px}
-    .about-story h3{max-width:22ch;margin-bottom:24px;font:600 28px/1.1 var(--font-primary);letter-spacing:-.03em}
+    .about-story h3{margin-bottom:16px;font:600 28px/1.15 var(--font-primary);letter-spacing:-.03em}
     .about-story p{font:400 16px/1.75 var(--font-ui);color:var(--void)}
-    .about-story p+p{margin-top:20px}
+    .about-story p+p{margin-top:18px}
+    .about-story strong{font-weight:700}
+    .about-story .about-story-lead{font-size:20px;line-height:1.5;letter-spacing:-.025em;margin-bottom:24px}
+    .about-story .about-story-insight{padding:16px 18px;border-left:2px solid var(--signal);border-radius:0 12px 12px 0;background:color-mix(in srgb,var(--signal) 6%,transparent)}
+    .about-story .about-story-turn{margin-top:24px;font:300 26px/1.25 var(--font-editorial);letter-spacing:-.04em;color:var(--signal)}
+    .about-story .about-story-proof{padding-top:20px;border-top:1px solid var(--line-dark)}
     .about-journey{grid-column:1/7;grid-row:2;min-width:0;padding-top:12px}
     .about-journey>.caps{color:#5047c9;margin-bottom:24px}
     .about-timeline{list-style:none;margin:0 0 0 6px;padding:0;border-left:1px solid var(--line-dark)}
@@ -862,7 +946,9 @@
     .contact-channels{display:grid;grid-template-columns:1fr 1.3fr 1fr 1fr;width:100%;max-width:1240px;margin:64px auto 0}
     .contact-channel{min-width:0;display:flex;flex-direction:column;gap:10px;padding:16px 24px;color:var(--ink)}
     .contact-channel+.contact-channel{border-left:1px solid var(--line)}
-    .contact-channel>.caps{color:var(--muted)}
+    .contact-channel__label{display:flex;align-items:center;gap:10px}
+    .contact-channel__label>.caps{color:var(--muted)}
+    .contact-channel__label>.icon{width:20px;height:20px;color:var(--signal);opacity:1;transform:none}
     .contact-channel__value{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;font:500 15px/1.7 var(--font-ui);overflow-wrap:anywhere}
     .contact-channel__value .icon{width:14px;height:14px;opacity:0;transform:translate(-2px,2px);transition:opacity 400ms var(--ease),transform 400ms var(--ease);color:var(--signal)}
     .contact-channel:hover .icon,.contact-channel:focus-visible .icon{opacity:1;transform:none}
@@ -963,6 +1049,17 @@
     @media(max-width:800px) and (max-height:740px){.hero .hero__copy h1{margin:16px 0 14px}.hero .hero-card.glass-card{margin-top:18px;padding-block:12px}}
     @media(max-width:430px) and (max-height:740px){.hero .hero-inner{padding-top:28px}.hero .hero__copy h1{font-size:clamp(50px,15vw,62px)}.hero .hero-card strong{font-size:20px}.hero .hero-card .carousel-window,.hero .hero-card .carousel-slide{height:48px}.hero .hero-card .carousel-track{height:144px}}
     @media(max-width:350px) and (max-height:740px){.hero .hero-inner{padding-top:22px}.hero .hero__copy h1{font-size:48px}.hero .hero__lead{font-size:12px}.hero .hero-card.glass-card{padding-block:10px}}
+    /* Encerramentos compartilhados: CTA visível, centralizado e sem reveal de opacidade. */
+    .fold-cta{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;margin:24px auto 0;padding:8px var(--pad);text-align:center}
+    .fold-whatsapp.hero-whatsapp{min-width:244px;min-height:54px;padding:0 20px;gap:12px;font-size:13px;letter-spacing:-.02em;opacity:1;visibility:visible}
+    .fold-whatsapp .hero-whatsapp__chat{width:20px;height:20px}
+    .fold-whatsapp .hero-whatsapp__arrow{width:28px;height:26px}
+    .fold-whatsapp:focus-visible{outline-color:var(--ink);outline-offset:5px}
+    html:not(.js-motion) .fold-whatsapp::before,html:not(.js-motion) .fold-whatsapp::after{animation:none}
+    @media(max-width:800px){
+      .fold-cta{margin-top:20px;padding:8px 0}
+      .fold-whatsapp.hero-whatsapp{min-height:52px;padding-inline:16px;font-size:12px}
+    }
   </style>
 </head>
 <body id="top">
@@ -993,11 +1090,7 @@
           <p class="eyebrow" data-enter>GESTÃO DE LANÇAMENTOS / PORTFÓLIO</p>
           <h1 id="hero-title"><span class="line-mask headline-small body-lg"><span>Experts que querem</span></span> <span class="line-mask"><span>escalar</span></span> <span class="line-mask"><span>sem perder</span></span> <span class="line-mask headline-small body-lg"><span>o controle da</span></span> <span class="line-mask font-fraunces"><span>operação.</span></span></h1>
           <p class="hero__lead" data-enter>+40 lançamentos em 6 nichos. Crio a campanha e organizo o seu time: da gestão à copy, da estratégia a operação.</p>
-          <div class="hero-actions" data-enter>
-            <a class="button button-primary magnetic hero-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H4l2-4A8 8 0 1 1 20 11.5Z"/><path d="M8 10h8m-8 4h5"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
-            <a class="button button-ghost magnetic hero-cases" href="#cases">Ver cases <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-            <button class="button button-ghost" type="button" data-video-play hidden>Reproduzir vídeo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 10 7-10 7Z"/></svg></button>
-          </div>
+          <div class="hero-actions" data-enter><a class="button button-primary magnetic hero-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><a class="button button-ghost magnetic hero-cases" href="#cases">Ver cases <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a><button class="button button-ghost" type="button" data-video-play hidden>Reproduzir vídeo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 10 7-10 7Z"/></svg></button></div>
         </div></div>
         <p class="sr-only" id="video-description">Vídeo original do retrato sobre fundo preto, com elementos flutuantes, em reprodução automática e contínua, sem som. Use o controle de pausa para suspender as animações.</p>
         <aside class="hero-card glass-card" data-enter tabindex="0" aria-label="Provas de experiência, pause a alternância com foco ou ponteiro">
@@ -1066,6 +1159,7 @@
           </div>
         </div>
       </div>
+      <div class="fold-cta"><a class="button button-primary magnetic hero-whatsapp fold-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
     </section>
     <section class="cases projects" id="cases" aria-labelledby="cases-title" tabindex="-1">
       <div class="cases-intro">
@@ -1076,8 +1170,39 @@
         </div>
       </div>
       <div class="case-blocks">
+        <article class="case-block case-block--dark case-block--andre" aria-labelledby="case-andre-title">
+          <header class="case-identity"><span class="caps case-identity-index">01 / CASE</span><span class="case-identity-copy"><strong>André Ferraz</strong><span class="caps">Aromaterapia</span></span></header>
+          <figure class="case-media case-media--portrait case-media--andre surface-paper" data-rise>
+            <div class="case-portrait"><div class="case-photo-frame"><img srcset="assets/optimized/andre-ferraz-400-4c80ddd2db.webp 400w, assets/optimized/andre-ferraz-800-cc1d564dfc.webp 800w" sizes="(max-width: 430px) 70vw, 400px" src="assets/optimized/andre-ferraz-400-4c80ddd2db.webp" alt="André Ferraz sorrindo, com plantas ao fundo" width="800" height="800" loading="lazy" decoding="async"></div></div>
+            <figcaption class="case-portrait-caption caps"><span>André Ferraz</span><span>Gestão · Copy · Webdesign</span></figcaption>
+          </figure>
+          <div class="case-panel">
+            <div class="case-content">
+              <p class="caps case-eyebrow" data-rise>AROMATERAPIA / ANDRÉ FERRAZ</p>
+              <h3 id="case-andre-title" data-rise style="--delay:90ms"><span>André</span><em>Ferraz.</em></h3>
+              <div class="case-narrative" data-rise style="--delay:180ms">
+                <p class="case-description">O maior expert de aromaterapia do mundo.</p>
+                <p class="case-description">Foram mais de 14 lançamentos, sendo 11 pagos, abertos e secretos.</p>
+                <p class="case-description">Atuei como gestor de projetos de uma equipe que chegou a 10 pessoas. Nos últimos meses do projeto, também atuei como copywriter e webdesigner.</p>
+              </div>
+              <div class="case-highlights" data-rise style="--delay:270ms" aria-label="Mais de 14 lançamentos, 11 pagos e equipe de até 10 pessoas">
+                <div><strong>14+</strong><span class="caps">LANÇAMENTOS</span></div>
+                <div><strong>11</strong><span class="caps">PAGOS</span></div>
+                <div><strong><small class="caption muted">até</small> 10</strong><span class="caps">PESSOAS NO TIME</span></div>
+              </div>
+              <nav class="case-socials" aria-label="Redes sociais de André Ferraz" data-rise style="--delay:360ms">
+                <!-- Inscritos e vídeos conforme os anexos enviados; sem consultas externas no carregamento. -->
+                <a class="case-channel" href="https://www.youtube.com/@andreferraz" target="_blank" rel="noopener noreferrer" aria-label="Canal de André Ferraz no YouTube, 471 mil inscritos e 753 vídeos, abrir em nova aba">
+                  <span class="case-channel-head"><span class="case-channel-mark"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3Z"/></svg></span><span class="case-channel-copy"><strong>YouTube</strong><small>@andreferraz</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+                  <span class="case-channel-stats"><span class="case-channel-stat"><strong>471 mil</strong><span class="caps">Inscritos</span></span><span class="case-channel-stat"><strong>753</strong><span class="caps">Vídeos</span></span></span>
+                </a>
+                <a class="case-social-secondary" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de André Ferraz, @andreferrazaromaterapia, abrir em nova aba"><span class="case-social-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".75" fill="currentColor" stroke="none"/></svg><span>Instagram <small>· @andreferrazaromaterapia</small></span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              </nav>
+            </div>
+          </div>
+        </article>
         <article class="case-block case-block--paper case-block--marcia" aria-labelledby="case-marcia-title">
-          <header class="case-identity"><span class="caps case-identity-index">01 / CASE</span><span class="case-identity-copy"><strong>Marcia Macedo</strong><span class="caps">Português para estrangeiros</span></span></header>
+          <header class="case-identity"><span class="caps case-identity-index">02 / CASE</span><span class="case-identity-copy"><strong>Marcia Macedo</strong><span class="caps">Português para estrangeiros</span></span></header>
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <p class="caps case-eyebrow" data-rise>PORTUGUÊS PARA ESTRANGEIROS / MARCIA MACEDO</p>
@@ -1104,9 +1229,12 @@
               </table>
               <p class="case-copy-note" id="marcia-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Várias outras também foram desenvolvidas ao longo da parceria.</p>
               <nav class="case-socials" aria-label="Redes sociais de Marcia Macedo" data-rise style="--delay:360ms">
-                <a class="case-instagram" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Marcia Macedo, @portugues_marciamacedo, abrir em nova aba"><img src="assets/experts/portugues_marciamacedo.jpg" alt="" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low"><span class="case-instagram-copy"><strong>Instagram</strong><small>@portugues_marciamacedo</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Marcia Macedo. -->
-                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+                <!-- Inscritos e vídeos conforme os anexos enviados; sem consultas externas no carregamento. -->
+                <a class="case-channel" href="https://www.youtube.com/@portuguescommarciamacedobr/videos" target="_blank" rel="noopener noreferrer" aria-label="Canal de Marcia Macedo no YouTube, 724 mil inscritos e 760 vídeos, abrir em nova aba">
+                  <span class="case-channel-head"><span class="case-channel-mark"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3Z"/></svg></span><span class="case-channel-copy"><strong>YouTube</strong><small>@portuguescommarciamacedobr</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+                  <span class="case-channel-stats"><span class="case-channel-stat"><strong>724 mil</strong><span class="caps">Inscritos</span></span><span class="case-channel-stat"><strong>760</strong><span class="caps">Vídeos</span></span></span>
+                </a>
+                <a class="case-social-secondary" href="https://www.instagram.com/portugues_marciamacedo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Marcia Macedo, @portugues_marciamacedo, abrir em nova aba"><span class="case-social-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".75" fill="currentColor" stroke="none"/></svg><span>Instagram <small>· @portugues_marciamacedo</small></span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               </nav>
             </div>
           </div>
@@ -1116,7 +1244,7 @@
           </figure>
         </article>
         <article class="case-block case-block--dark case-block--rp" aria-labelledby="case-rp-title">
-          <header class="case-identity"><span class="caps case-identity-index">02 / CASE</span><span class="case-identity-copy"><strong>Receita Previsível</strong><span class="caps">Vendas B2B</span></span></header>
+          <header class="case-identity"><span class="caps case-identity-index">03 / CASE</span><span class="case-identity-copy"><strong>Receita Previsível</strong><span class="caps">Vendas B2B</span></span></header>
           <figure class="case-media case-media--book" data-rise>
             <div class="rp-stage">
               <div class="rp-grid" aria-hidden="true"></div>
@@ -1155,7 +1283,7 @@
           </div>
         </article>
         <article class="case-block case-block--paper" aria-labelledby="case-dani-title">
-          <header class="case-identity"><span class="caps case-identity-index">03 / CASE</span><span class="case-identity-copy"><strong>Dani Martins</strong><span class="caps">Prosperus Club</span></span></header>
+          <header class="case-identity"><span class="caps case-identity-index">04 / CASE</span><span class="case-identity-copy"><strong>Dani Martins</strong><span class="caps">Prosperus Club</span></span></header>
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <!-- NOME OFICIAL PENDENTE: confirmar Dani Martins. -->
@@ -1197,7 +1325,7 @@
           </figure>
         </article>
         <article class="case-block case-block--dark case-block--sanduba" aria-labelledby="case-sanduba-title">
-          <header class="case-identity"><span class="caps case-identity-index">04 / CASE</span><span class="case-identity-copy"><strong>Sanduba do Careca</strong><span class="caps">Perpétuo · VTSD</span></span></header>
+          <header class="case-identity"><span class="caps case-identity-index">05 / CASE</span><span class="case-identity-copy"><strong>Sanduba do Careca</strong><span class="caps">Perpétuo · VTSD</span></span></header>
           <figure class="case-media case-media--portrait case-media--sanduba surface-paper" data-rise>
             <div class="case-portrait"><div class="case-photo-frame"><img src="assets/cases/sanduba-do-careca.jpg" alt="Sanduba do Careca usando uma coroa e segurando dois sanduíches" width="216" height="233" loading="lazy" decoding="async"></div></div>
             <figcaption class="case-portrait-caption caps"><span>Sanduba do Careca</span><span>Perpétuo / VTSD</span></figcaption>
@@ -1221,16 +1349,13 @@
               </table>
               <p class="case-copy-note" id="sanduba-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
               <nav class="case-socials" aria-label="Redes sociais de Sanduba do Careca" data-rise style="--delay:360ms">
-                <!-- INSTAGRAM PENDENTE: adicionar href somente após confirmar o perfil de Sanduba do Careca. -->
-                <span class="case-instagram case-social-placeholder" aria-disabled="true" data-social-pending="instagram"><span class="case-social-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span class="case-instagram-copy"><strong>Instagram</strong><small data-profile-value aria-hidden="true"></small></span></span>
-                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Sanduba do Careca. -->
-                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+                <a class="case-instagram" href="https://www.instagram.com/sandubadocareca/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Sanduba do Careca, @sandubadocareca, abrir em nova aba"><span class="case-social-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span class="case-instagram-copy"><strong>Instagram</strong><small>@sandubadocareca</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               </nav>
             </div>
           </div>
         </article>
         <article class="case-block case-block--paper case-block--angelica" aria-labelledby="case-angelica-title">
-          <header class="case-identity"><span class="caps case-identity-index">05 / CASE</span><span class="case-identity-copy"><strong>Angélica Gevaerd</strong><span class="caps">Marketplace</span></span></header>
+          <header class="case-identity"><span class="caps case-identity-index">06 / CASE</span><span class="case-identity-copy"><strong>Angélica Gevaerd</strong><span class="caps">Marketplace</span></span></header>
           <div class="case-panel surface-paper glass-panel">
             <div class="case-content">
               <p class="caps case-eyebrow" data-rise>MARKETPLACE · VTSD / ANGÉLICA GEVAERD</p>
@@ -1244,10 +1369,7 @@
               </div>
               <p class="case-copy-note" id="angelica-copy-note" data-rise style="--delay:360ms">Estas são apenas algumas das copies produzidas. Muitas outras foram desenvolvidas ao longo do projeto.</p>
               <nav class="case-socials" aria-label="Redes sociais de Angélica Gevaerd" data-rise style="--delay:360ms">
-                <!-- INSTAGRAM PENDENTE: adicionar href somente após confirmar o perfil de Angélica Gevaerd. -->
-                <span class="case-instagram case-social-placeholder" aria-disabled="true" data-social-pending="instagram"><span class="case-social-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span class="case-instagram-copy"><strong>Instagram</strong><small data-profile-value aria-hidden="true"></small></span></span>
-                <!-- YOUTUBE PENDENTE: adicionar href somente após confirmar o canal de Angélica Gevaerd. -->
-                <span class="case-social-secondary" aria-disabled="true" data-social-pending="youtube"><span>YouTube</span><span data-profile-value aria-hidden="true"></span></span>
+                <a class="case-instagram" href="https://www.instagram.com/angelicagevaerd/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Angélica Gevaerd, @angelicagevaerd, abrir em nova aba"><span class="case-social-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span class="case-instagram-copy"><strong>Instagram</strong><small>@angelicagevaerd</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
               </nav>
             </div>
           </div>
@@ -1255,33 +1377,6 @@
             <div class="case-portrait"><div class="case-photo-frame"><img src="assets/optimized/angelica-gevaerd-195-9686f1c361.webp" alt="Angélica Gevaerd ao lado de um notebook com uma página de marketplace aberta" width="195" height="225" loading="lazy" decoding="async"></div></div>
             <figcaption class="case-portrait-caption caps"><span>Angélica Gevaerd</span><span>Marketplace / VTSD</span></figcaption>
           </figure>
-        </article>
-        <article class="case-block case-block--dark case-block--andre" aria-labelledby="case-andre-title">
-          <header class="case-identity"><span class="caps case-identity-index">06 / CASE</span><span class="case-identity-copy"><strong>André Ferraz</strong><span class="caps">Aromaterapia</span></span></header>
-          <figure class="case-media case-media--portrait case-media--andre surface-paper" data-rise>
-            <div class="case-portrait"><div class="case-photo-frame"><img srcset="assets/optimized/andre-ferraz-400-4c80ddd2db.webp 400w, assets/optimized/andre-ferraz-800-cc1d564dfc.webp 800w" sizes="(max-width: 430px) 70vw, 400px" src="assets/optimized/andre-ferraz-400-4c80ddd2db.webp" alt="André Ferraz sorrindo, com plantas ao fundo" width="800" height="800" loading="lazy" decoding="async"></div></div>
-            <figcaption class="case-portrait-caption caps"><span>André Ferraz</span><span>Gestão · Copy · Webdesign</span></figcaption>
-          </figure>
-          <div class="case-panel">
-            <div class="case-content">
-              <p class="caps case-eyebrow" data-rise>AROMATERAPIA / ANDRÉ FERRAZ</p>
-              <h3 id="case-andre-title" data-rise style="--delay:90ms"><span>André</span><em>Ferraz.</em></h3>
-              <div class="case-narrative" data-rise style="--delay:180ms">
-                <p class="case-description">O maior expert de aromaterapia do mundo.</p>
-                <p class="case-description">Foram mais de 14 lançamentos, sendo 11 pagos, abertos e secretos.</p>
-                <p class="case-description">Atuei como gestor de projetos de uma equipe que chegou a 10 pessoas. Nos últimos meses do projeto, também atuei como copywriter e webdesigner.</p>
-              </div>
-              <div class="case-highlights" data-rise style="--delay:270ms" aria-label="Mais de 14 lançamentos, 11 pagos e equipe de até 10 pessoas">
-                <div><strong>14+</strong><span class="caps">LANÇAMENTOS</span></div>
-                <div><strong>11</strong><span class="caps">PAGOS</span></div>
-                <div><strong><small class="caption muted">até</small> 10</strong><span class="caps">PESSOAS NO TIME</span></div>
-              </div>
-              <nav class="case-socials" aria-label="Redes sociais de André Ferraz" data-rise style="--delay:360ms">
-                <a class="case-instagram" href="https://www.instagram.com/andreferrazaromaterapia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de André Ferraz, @andreferrazaromaterapia, abrir em nova aba"><img src="assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp" alt="" width="200" height="200" loading="lazy" decoding="async" fetchpriority="low"><span class="case-instagram-copy"><strong>Instagram</strong><small>@andreferrazaromaterapia</small></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-                <a class="case-social-secondary" href="https://www.youtube.com/@andreferraz" target="_blank" rel="noopener noreferrer" aria-label="Canal de André Ferraz no YouTube, abrir em nova aba"><span>YouTube <span class="muted">· @andreferraz</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-              </nav>
-            </div>
-          </div>
         </article>
         <!-- Engª Camila Soares: incluir somente após receber título, papel e entregas. -->
       </div>
@@ -1294,6 +1389,7 @@
           </div></div>
         </div>
       </div>
+      <div class="fold-cta"><a class="button button-primary magnetic hero-whatsapp fold-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
     </section>
 
     <section class="skills ds-group" id="habilidades" aria-labelledby="skills-title" tabindex="-1">
@@ -1317,23 +1413,23 @@
           <div class="skill-reveal" data-rise style="--delay:180ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">03</span>
             <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m5 19 4-11 5-5 7 7-5 5-11 4Zm0 0 7-7m-3-4 7 7m-4-13 10 10"/><circle cx="13" cy="11" r="1.5"/></svg></span>
-            <div class="skill-copy"><h3>Copy</h3><p>VSLs, páginas, anúncios, e-mails e sequências de WhatsApp escritos por quem sabe exatamente onde cada peça vai entrar.</p></div>
+            <div class="skill-copy"><h3>Copy</h3><p>VSLs, páginas, anúncios, e-mails e sequências de WhatsApp escritos por quem sabe exatamente cada peça encaixa dentro da campanha.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:270ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">04</span>
-            <span class="skill-icon"><span class="tool-logo" role="img" aria-label="Typebot"><img class="tool-logo__color" src="assets/logos/typebot.svg" alt="" aria-hidden="true" width="28" height="28" loading="lazy" decoding="async"></span></span>
-            <div class="skill-copy"><h3>Automações</h3><p>Fluxos que tiram o trabalho manual do caminho: chatbots, integrações e disparos que rodam sem depender de alguém apertar o botão.</p></div>
+            <span class="skill-icon"><span class="tool-logo tool-logo--n8n" role="img" aria-label="n8n"><img class="tool-logo__color" src="assets/logos/n8n.svg" alt="" aria-hidden="true" width="32" height="28" loading="lazy" decoding="async"></span></span>
+            <div class="skill-copy"><h3>Automações</h3><p>Fluxos necessários para construir onboardings, disparos e construir dashboards automáticos com dados em tempo real.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:360ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">05</span>
             <!-- Ferramenta de Webdesign não informada: ícone de navegador conforme o briefing. -->
             <span class="skill-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 9v11m-2-14h.01M9 6h.01m2.99 7h6m-6 4h6"/></svg></span>
-            <div class="skill-copy"><h3>Webdesign</h3><p>Páginas de captura e de vendas pensadas para converter, com hierarquia clara e leitura confortável no celular.</p></div>
+            <div class="skill-copy"><h3>Webdesign</h3><p>Páginas de captura e de vendas pensadas para ser diferente das que você vê todo dia feitas por IA. Aqui elas são bonitas (como essa) e convertem.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:450ms"><article class="skill-card glass-card ds-stage">
             <span class="skill-index caps" aria-hidden="true">06</span>
             <span class="skill-icon"><span class="tool-logo" role="img" aria-label="ClickUp"><img class="tool-logo__color" src="assets/logos/clickup.svg" alt="" aria-hidden="true" width="28" height="28" loading="lazy" decoding="async"></span></span>
-            <div class="skill-copy"><h3>ClickUp</h3><p>O lançamento inteiro num só lugar: tarefas, prazos e responsáveis visíveis para todo o time, sem planilha perdida nem cobrança no grupo.</p></div>
+            <div class="skill-copy"><h3>ClickUp</h3><p>O lançamento inteiro num só lugar: tarefas, prazos e responsáveis visíveis para todo o time (principalmente você). A melhor forma de toda campanha ser um caos confortável para todos.</p><p>Além de permitir estar 3 passos a frente de qualquer problema.</p></div>
           </article></div>
           <div class="skill-reveal" data-rise style="--delay:540ms">
             <a class="skill-card skill-card--cta glass-card ds-stage" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson sobre seu lançamento no WhatsApp, abre em nova aba">
@@ -1344,15 +1440,16 @@
           </div>
         </div>
       </div>
+      <div class="fold-cta"><a class="button button-primary magnetic hero-whatsapp fold-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
     </section>
 
     <section class="method ds-group" id="metodo" aria-labelledby="method-title" tabindex="-1">
       <div class="section-inner">
         <div class="ds-top caps" data-rise><span>05 / COMO EU TRABALHO</span><span>DA COPY À OPERAÇÃO</span></div>
-        <header class="ds-head" data-rise style="--delay:90ms"><h2 id="method-title"><span>A copy raramente é o que derruba um lançamento.</span><em>É o que acontece entre uma peça e outra.</em></h2></header>
+        <header class="ds-head" data-rise style="--delay:90ms"><h2 id="method-title"><span>A copy é uma alavanca dentro de uma campanha.</span><em>Mas é preciso avaliar todas as outras alavancas com estratégia e experiência.</em></h2></header>
         <div class="method-layout">
           <div class="method-left" data-rise style="--delay:180ms">
-            <div class="method-intro"><p>Anúncio no ar com a página fora. E-mail com a data errada. Comercial sem saber o que foi prometido na live.</p><p>Nada disso é falta de talento. É falta de alguém segurando as pontas. Esse é o meu trabalho.</p></div>
+            <div class="method-intro"><p>Anúncio no ar com a página fora. E-mail com a data errada. Comercial sem saber o que foi prometido na live. Tráfego com a segmentação fora do que a pesquisa de alunos diz.</p><p>Esse olhar para toda a operação, além das responsabilidades de gestão, é o que faz uma campanha funcionar ou não.</p></div>
             <div class="method-tabs" role="tablist" aria-label="Etapas de como eu trabalho" aria-orientation="vertical">
               <button class="method-tab" id="method-tab-01" type="button" role="tab" aria-selected="true" aria-controls="method-panel" aria-label="01 Diagnóstico" tabindex="0"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="method-tab-name">Diagnóstico</span><span class="method-tab-index caps" aria-hidden="true">01</span><span class="method-timer" aria-hidden="true"><span class="method-timer-fill"></span></span></button>
               <button class="method-tab" id="method-tab-02" type="button" role="tab" aria-selected="false" aria-controls="method-panel" aria-label="02 Planejamento" tabindex="-1"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 3 3 5-5"/></svg><span class="method-tab-name">Planejamento</span><span class="method-tab-index caps" aria-hidden="true">02</span><span class="method-timer" aria-hidden="true"><span class="method-timer-fill"></span></span></button>
@@ -1366,40 +1463,61 @@
               <div class="method-screen glass-card">
                 <div class="method-screen-top" aria-hidden="true"><span class="caps muted" data-method-stage>ETAPA 01 / 05</span><span class="badge badge-status"><span class="status-dot"></span>Em movimento</span></div>
                 <div class="method-canvas" aria-hidden="true">
-                  <div class="method-illustration" data-method-screen="0"><div class="ds-sheet"><p class="method-sheet-title">Diagnóstico do lançamento</p><ul class="method-checklist"><li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Produto</li><li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Público</li><li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Último lançamento</li><li class="method-bottleneck"><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Gargalo</li></ul></div></div>
+                  <div class="method-illustration" data-method-screen="0"><div class="ds-sheet"><p class="method-sheet-title">Diagnóstico do lançamento</p><ul class="method-checklist"><li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Pesquisa de alunos</li><li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Pesquisas de lançamentos</li><li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Resultados dos anos</li><li><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Debriefings e dashboards dos lançamentos anteriores</li><li class="method-bottleneck"><svg class="icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Alavancas estratégicas</li></ul></div></div>
                   <div class="method-illustration" data-method-screen="1" hidden><div class="method-schedule"><div class="method-task"><span>Página de captura</span><span class="badge">Design</span><span class="badge method-week">Semana 1</span></div><div class="method-task"><span>Anúncios</span><span class="badge">Tráfego</span><span class="badge method-week">Semana 1</span></div><div class="method-task"><span>Sequência de e-mails</span><span class="badge">Copy</span><span class="badge method-week">Semana 1</span></div><div class="method-task"><span>Grupo de WhatsApp</span><span class="badge">Comercial</span><span class="badge method-week">Semana 2</span></div><div class="method-task"><span>Roteiro da live</span><span class="badge">Copy</span><span class="badge method-week">Semana 2</span></div></div></div>
                   <div class="method-illustration" data-method-screen="2" hidden><div class="method-flow"><span class="method-flow-rail"><span class="method-flow-light"></span></span><div class="method-flow-step"><svg class="icon" viewBox="0 0 24 24"><path d="m4 10 14-6v16L4 14v-4Zm0 0H2v4h2m4 2 1 5h3l-2-6"/></svg><span>Anúncio</span><svg class="icon method-flow-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-5-5 5 5-5 5"/></svg></div><div class="method-flow-step"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18m-14 4h10m-10 4h7"/></svg><span>Página</span><svg class="icon method-flow-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-5-5 5 5-5 5"/></svg></div><div class="method-flow-step"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>E-mail</span><svg class="icon method-flow-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-5-5 5 5-5 5"/></svg></div><div class="method-flow-step"><svg class="icon" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8 8H4l2-4A8 8 0 1 1 20 11.5Z"/><path d="M8 10h8m-8 4h5"/></svg><span>WhatsApp</span></div></div></div>
                   <div class="method-illustration" data-method-screen="3" hidden><div class="method-status-list"><div class="method-status-row"><span>Página de vendas</span><span class="badge badge-status">No ar</span></div><div class="method-status-row"><span>Anúncios</span><span class="badge badge-status">No ar</span></div><div class="method-status-row"><span>Sequência de e-mails</span><span class="badge badge-warning">Em revisão</span></div><div class="method-status-row"><span>Link do checkout corrigido antes de subir</span><span class="badge badge-accent">Resolvido</span></div></div></div>
                   <div class="method-illustration" data-method-screen="4" hidden><div class="method-result-bars"><i style="--bar-height:36%;--bar-opacity:.25"></i><i style="--bar-height:57%;--bar-opacity:.45"></i><i style="--bar-height:48%;--bar-opacity:.65"></i><i style="--bar-height:83%;--bar-opacity:1"></i><i style="--bar-height:68%;--bar-opacity:.65"></i><i style="--bar-height:95%;--bar-opacity:.45"></i></div><div class="method-result-notes"><div><span class="caps">FUNCIONOU</span><i></i><i></i></div><div><span class="caps">NÃO FUNCIONOU</span><i></i><i></i></div><div><span class="caps">MUDA NO PRÓXIMO</span><i></i><i></i></div></div></div>
                 </div>
               </div>
-              <p class="method-description" data-method-description="0">Antes de escrever uma linha, entendo o produto, o público e o que travou no último lançamento. Você sai dessa etapa sabendo onde está o gargalo.</p>
-              <p class="method-description" data-method-description="1" hidden>Cada peça vira uma linha no cronograma, com dono e data, tudo no ClickUp. Você para de perguntar no grupo "quem está com isso?".</p>
+              <div class="method-description" data-method-description="0"><p>Antes de escrever uma linha, entendo todo o contexto do projeto. Aprendi que a copy é apenas uma alavanca do todo e ganha força quando a estratégia, a narrativa e a estrutura estão bem definidas.</p><p>Copy não é escrever. Copy é pensar.</p></div>
+              <div class="method-description" data-method-description="1" hidden><p>Tudo entra na ferramenta de gestão de tarefas. Recomendo o ClickUp, mas a minha metodologia funciona em qualquer ferramenta.</p><p>Ali, além de acompanhar, gerenciar e revisar todas as tarefas, podemos trazer mais segurança e menos ansiedade para quem trabalha no projeto.</p></div>
               <p class="method-description" data-method-description="2" hidden>Escrevo as peças já sabendo onde cada uma entra. A página conversa com o anúncio, o e-mail com o WhatsApp, a live com o comercial.</p>
-              <p class="method-description" data-method-description="3" hidden>Acompanho a execução no dia a dia, junto com o time e o comercial. Quando algo sai do trilho, você fica sabendo pela solução, não pelo problema.</p>
-              <p class="method-description" data-method-description="4" hidden>Carrinho fechado, olhamos os números juntos: o que funcionou, o que não funcionou e o que muda. O próximo lançamento já começa mais perto do certo.</p>
+              <div class="method-description" data-method-description="3" hidden><p>Acompanho a execução no dia a dia, logo no primeiro horário. Quando algo sai do trilho, eu ajo e encontro a solução.</p><p>Todo lançamento (e tenho muita experiência com isso) tem problemas e correria. Mas, quando você olha de cima e gerencia a operação, fica mais fácil antecipar problemas e propor soluções.</p></div>
+              <p class="method-description" data-method-description="4" hidden>Carrinho fechado, olhamos os números juntos: o que funcionou, o que não funcionou e o que precisa mudar. O mercado está mais sofisticado do que nunca, por isso precisamos olhar com cuidado e atenção antes de começar um próximo lançamento.</p>
             </div>
-            <p class="method-proof caps">É O MESMO PROCESSO QUE USEI EM MAIS DE 40 LANÇAMENTOS.</p>
             <a class="method-cases-link" href="#cases">Ver os cases <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
           </div>
         </div>
-        <noscript><div class="method-fallback"><div><h3>Planejamento</h3><p>Cada peça vira uma linha no cronograma, com dono e data, tudo no ClickUp. Você para de perguntar no grupo "quem está com isso?".</p></div><div><h3>Produção</h3><p>Escrevo as peças já sabendo onde cada uma entra. A página conversa com o anúncio, o e-mail com o WhatsApp, a live com o comercial.</p></div><div><h3>Operação</h3><p>Acompanho a execução no dia a dia, junto com o time e o comercial. Quando algo sai do trilho, você fica sabendo pela solução, não pelo problema.</p></div><div><h3>Resultados</h3><p>Carrinho fechado, olhamos os números juntos: o que funcionou, o que não funcionou e o que muda. O próximo lançamento já começa mais perto do certo.</p></div></div></noscript>
-        <div class="method-audience" data-rise>
-          <h3>Para quem faz sentido</h3>
-          <div class="method-audience-list">
-            <article class="principle"><span class="caps">EXPERTS</span><h4>Uma oferta pronta para escalar.</h4><p>Você já tem uma oferta e precisa organizar copy, equipe e execução para o próximo lançamento.</p></article>
-            <article class="principle"><span class="caps">TIMES</span><h4>Muitas peças. Uma direção.</h4><p>Seu time precisa de clareza sobre responsáveis, entregas e prazos, da captação ao pós-venda.</p></article>
-            <article class="principle"><span class="caps">OPERAÇÕES</span><h4>Lançamentos e perpétuos.</h4><p>Você precisa conectar as peças do funil e acompanhar a operação junto com o time e o comercial.</p></article>
-          </div>
-        </div>
+        <noscript><div class="method-fallback"><div><h3>Planejamento</h3><p>Tudo entra na ferramenta de gestão de tarefas. Recomendo o ClickUp, mas a minha metodologia funciona em qualquer ferramenta.</p><p>Ali, além de acompanhar, gerenciar e revisar todas as tarefas, podemos trazer mais segurança e menos ansiedade para quem trabalha no projeto.</p></div><div><h3>Produção</h3><p>Escrevo as peças já sabendo onde cada uma entra. A página conversa com o anúncio, o e-mail com o WhatsApp, a live com o comercial.</p></div><div><h3>Operação</h3><p>Acompanho a execução no dia a dia, logo no primeiro horário. Quando algo sai do trilho, eu ajo e encontro a solução.</p><p>Todo lançamento (e tenho muita experiência com isso) tem problemas e correria. Mas, quando você olha de cima e gerencia a operação, fica mais fácil antecipar problemas e propor soluções.</p></div><div><h3>Resultados</h3><p>Carrinho fechado, olhamos os números juntos: o que funcionou, o que não funcionou e o que precisa mudar. O mercado está mais sofisticado do que nunca, por isso precisamos olhar com cuidado e atenção antes de começar um próximo lançamento.</p></div></div></noscript>
       </div>
+      <div class="fold-cta"><a class="button button-primary magnetic hero-whatsapp fold-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
+    </section>
+
+    <section class="audience" id="para-quem" aria-labelledby="audience-title" tabindex="-1">
+      <div class="wrap">
+        <div class="audience-top caps" data-rise><span>PARA QUEM É O MEU TRABALHO</span><span>DO PRIMEIRO LANÇAMENTO À ESCALA</span></div>
+        <header class="audience-heading" data-rise style="--delay:90ms"><h2 id="audience-title">Para quem<em>faz sentido.</em></h2><p>Do primeiro lançamento à próxima escala, pessoas, peças e prazos precisam trabalhar na mesma direção.</p></header>
+        <div class="audience-controls" data-audience-controls hidden><span class="caps">QUATRO CONTEXTOS. A MESMA DIREÇÃO.</span><div><button class="button button-icon" type="button" data-audience-prev aria-label="Ver público anterior" aria-controls="audience-gallery"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button class="button button-icon" type="button" data-audience-next aria-label="Ver próximo público" aria-controls="audience-gallery"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div>
+      </div>
+      <svg class="audience-defs" width="0" height="0" aria-hidden="true"><defs>
+        <symbol id="audience-icon-expert" viewBox="0 0 128 128"><circle cx="61" cy="42" r="15"/><path d="M34 96v-8a27 27 0 0 1 54 0v8"/><path class="audience-icon-accent" d="m95 25 4 10 10 4-10 4-4 10-4-10-10-4 10-4Z"/><path class="audience-icon-muted" d="M34 105h54"/></symbol>
+        <symbol id="audience-icon-team" viewBox="0 0 128 128"><circle class="audience-icon-accent" cx="64" cy="40" r="12"/><circle cx="34" cy="51" r="9"/><circle cx="94" cy="51" r="9"/><path class="audience-icon-accent" d="M44 94V82a20 20 0 0 1 40 0v12"/><path d="M17 94V82a17 17 0 0 1 25-15m69 27V82a17 17 0 0 0-25-15"/><path class="audience-icon-mint" d="M34 108h60m-60-4v8m30-4v-7m30 3v8"/></symbol>
+        <symbol id="audience-icon-operations" viewBox="0 0 128 128"><rect x="16" y="24" width="32" height="26" rx="6"/><rect x="80" y="24" width="32" height="26" rx="6"/><rect x="48" y="80" width="32" height="26" rx="6"/><path class="audience-icon-accent" d="M48 37h32m16 13v10a10 10 0 0 1-10 10H74a10 10 0 0 0-10 10m-7-7 7 7 7-7"/><circle class="audience-icon-mint" cx="32" cy="37" r="3"/><circle class="audience-icon-mint" cx="96" cy="37" r="3"/><path class="audience-icon-mint" d="m58 93 4 4 8-8"/></symbol>
+        <symbol id="audience-icon-beginner" viewBox="0 0 128 128"><path d="M48 75c-1-23 13-44 46-53-3 33-20 51-42 55Z"/><circle class="audience-icon-accent" cx="77" cy="42" r="8"/><path d="M51 47H36L23 68l25 7m33-18v17L58 98l-6-21"/><path class="audience-icon-mint" d="M42 86c-7 1-13 7-15 16 9-2 15-8 16-15m-3-3-9 9"/><path class="audience-icon-muted" d="M23 110h81"/></symbol>
+      </defs></svg>
+      <div class="audience-rail" data-rise><div class="audience-gallery" id="audience-gallery" role="region" tabindex="0" aria-label="Públicos atendidos: experts, times, operações e quem está começando. Use as setas para explorar."><div class="audience-track">
+        <div class="audience-group" role="list"><article class="audience-card" role="listitem" aria-labelledby="audience-experts-title" style="--icon-delay:-0s"><div class="audience-card-top"><span class="audience-tag caps">EXPERTS</span><span class="audience-index caps" aria-hidden="true">01</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-expert"/></svg></div><div class="audience-card-copy"><h3 id="audience-experts-title">Uma oferta pronta para escalar.</h3><p>Você já tem uma oferta e precisa organizar copy, equipe e execução para o próximo lançamento.</p></div></article>
+        <article class="audience-card" role="listitem" aria-labelledby="audience-times-title" style="--icon-delay:-1.5s"><div class="audience-card-top"><span class="audience-tag caps">TIMES</span><span class="audience-index caps" aria-hidden="true">02</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-team"/></svg></div><div class="audience-card-copy"><h3 id="audience-times-title">Muitas peças.<br>Uma direção.</h3><p>Seu time precisa de clareza sobre responsáveis, entregas e prazos, da captação ao pós-venda.</p></div></article>
+        <article class="audience-card" role="listitem" aria-labelledby="audience-operations-title" style="--icon-delay:-3s"><div class="audience-card-top"><span class="audience-tag caps">OPERAÇÕES</span><span class="audience-index caps" aria-hidden="true">03</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-operations"/></svg></div><div class="audience-card-copy"><h3 id="audience-operations-title">Lançamentos<br>e perpétuos.</h3><p>Você precisa conectar as peças do funil e acompanhar a operação junto com o time e o comercial.</p></div></article>
+        <article class="audience-card" role="listitem" aria-labelledby="audience-beginners-title" style="--icon-delay:-4.5s"><div class="audience-card-top"><span class="audience-tag caps">PRIMEIRO LANÇAMENTO</span><span class="audience-index caps" aria-hidden="true">04</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-beginner"/></svg></div><div class="audience-card-copy"><h3 id="audience-beginners-title">Você quer lançar seu produto.</h3><p>Começar do zero não é fácil, mas precisa ser feito. Melhor ainda com alguém que pode te mostrar o caminho.</p></div></article></div>
+        <div class="audience-group" aria-hidden="true"><article class="audience-card" role="listitem" style="--icon-delay:-0s"><div class="audience-card-top"><span class="audience-tag caps">EXPERTS</span><span class="audience-index caps" aria-hidden="true">01</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-expert"/></svg></div><div class="audience-card-copy"><h3>Uma oferta pronta para escalar.</h3><p>Você já tem uma oferta e precisa organizar copy, equipe e execução para o próximo lançamento.</p></div></article>
+        <article class="audience-card" role="listitem" style="--icon-delay:-1.5s"><div class="audience-card-top"><span class="audience-tag caps">TIMES</span><span class="audience-index caps" aria-hidden="true">02</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-team"/></svg></div><div class="audience-card-copy"><h3>Muitas peças.<br>Uma direção.</h3><p>Seu time precisa de clareza sobre responsáveis, entregas e prazos, da captação ao pós-venda.</p></div></article>
+        <article class="audience-card" role="listitem" style="--icon-delay:-3s"><div class="audience-card-top"><span class="audience-tag caps">OPERAÇÕES</span><span class="audience-index caps" aria-hidden="true">03</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-operations"/></svg></div><div class="audience-card-copy"><h3>Lançamentos<br>e perpétuos.</h3><p>Você precisa conectar as peças do funil e acompanhar a operação junto com o time e o comercial.</p></div></article>
+        <article class="audience-card" role="listitem" style="--icon-delay:-4.5s"><div class="audience-card-top"><span class="audience-tag caps">PRIMEIRO LANÇAMENTO</span><span class="audience-index caps" aria-hidden="true">04</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-beginner"/></svg></div><div class="audience-card-copy"><h3>Você quer lançar seu produto.</h3><p>Começar do zero não é fácil, mas precisa ser feito. Melhor ainda com alguém que pode te mostrar o caminho.</p></div></article></div>
+        <div class="audience-group" aria-hidden="true"><article class="audience-card" role="listitem" style="--icon-delay:-0s"><div class="audience-card-top"><span class="audience-tag caps">EXPERTS</span><span class="audience-index caps" aria-hidden="true">01</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-expert"/></svg></div><div class="audience-card-copy"><h3>Uma oferta pronta para escalar.</h3><p>Você já tem uma oferta e precisa organizar copy, equipe e execução para o próximo lançamento.</p></div></article>
+        <article class="audience-card" role="listitem" style="--icon-delay:-1.5s"><div class="audience-card-top"><span class="audience-tag caps">TIMES</span><span class="audience-index caps" aria-hidden="true">02</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-team"/></svg></div><div class="audience-card-copy"><h3>Muitas peças.<br>Uma direção.</h3><p>Seu time precisa de clareza sobre responsáveis, entregas e prazos, da captação ao pós-venda.</p></div></article>
+        <article class="audience-card" role="listitem" style="--icon-delay:-3s"><div class="audience-card-top"><span class="audience-tag caps">OPERAÇÕES</span><span class="audience-index caps" aria-hidden="true">03</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-operations"/></svg></div><div class="audience-card-copy"><h3>Lançamentos<br>e perpétuos.</h3><p>Você precisa conectar as peças do funil e acompanhar a operação junto com o time e o comercial.</p></div></article>
+        <article class="audience-card" role="listitem" style="--icon-delay:-4.5s"><div class="audience-card-top"><span class="audience-tag caps">PRIMEIRO LANÇAMENTO</span><span class="audience-index caps" aria-hidden="true">04</span></div><div class="audience-stage" aria-hidden="true"><span class="audience-orbit"></span><svg class="audience-symbol" viewBox="0 0 128 128"><use href="#audience-icon-beginner"/></svg></div><div class="audience-card-copy"><h3>Você quer lançar seu produto.</h3><p>Começar do zero não é fácil, mas precisa ser feito. Melhor ainda com alguém que pode te mostrar o caminho.</p></div></article></div>
+      </div></div></div>
+      <div class="fold-cta"><a class="button button-primary magnetic hero-whatsapp fold-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
     </section>
 
     <section class="about surface-paper" id="sobre" aria-labelledby="about-title" tabindex="-1">
       <div class="noise" aria-hidden="true"></div>
       <div class="wrap">
         <header class="about-top" data-rise>
-          <h2 id="about-title">Entrei pela copy.<em>Fiquei pelo resto.</em></h2>
+          <h2 id="about-title">Entrei pela copy.<em>Mas percebi que não era o suficiente.</em></h2>
           <p class="caps">06 / SOBRE · DA COPY À OPERAÇÃO</p>
         </header>
         <div class="about-composition">
@@ -1414,11 +1532,14 @@
             <figcaption class="caps about-video-caption"><span>01 · ALISSON SEGECS · GESTOR DE LANÇAMENTOS</span><button class="button button-ghost button-sm about-video-play" type="button" data-about-video-play hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>Reproduzir vídeo</button></figcaption>
           </figure>
           <div class="about-story" data-rise style="--delay:180ms">
-            <h3>Comecei escrevendo. Hoje eu seguro a operação inteira.</h3>
-            <p>Comecei como a maioria: escrevendo conteúdo para agências, sem ver o que acontecia depois que o texto saía da minha mão.</p>
-            <p>Foi trabalhando direto com experts que percebi o padrão. A copy era aprovada, elogiada, e mesmo assim o lançamento tropeçava. Na página que atrasou. No e-mail que ninguém revisou. No comercial que não sabia o que tinha sido prometido.</p>
-            <p>Então comecei a cuidar do resto também.</p>
-            <p>Hoje são mais de 40 lançamentos geridos, pagos e clássicos, em B2B e B2C, com um time de prestadores que trabalha no mesmo método.</p>
+            <h3>Comecei escrevendo.</h3>
+            <p class="about-story-lead">Hoje, depois de anos, tenho a experiência para tocar <strong>a operação e a parte tática de uma campanha inteira.</strong></p>
+            <p>Comecei com agências de pequenos negócios, escrevendo conteúdos estáticos focados em <strong>branding e posicionamento</strong>, sem o objetivo direto de gerar resultados.</p>
+            <p>Mas foi trabalhando direto com experts que percebi o padrão. A copy era aprovada, elogiada e, mesmo assim, <strong>não era suficiente.</strong></p>
+            <p class="about-story-insight">Como já disse nesta página, <strong>copy e narrativa são apenas algumas das alavancas de resultado</strong> de uma boa campanha.</p>
+            <p>Todo o restante também importa para gerar resultados a curto e longo prazo: <strong>tráfego, design, estratégia, oferta, produto e gestão.</strong></p>
+            <p class="about-story-turn">Então comecei a olhar para o resto também.</p>
+            <p class="about-story-proof">Hoje são <strong>mais de 40 lançamentos geridos</strong>, pagos e clássicos, com time comercial. Em parte deles, atuei como <strong>gestor e copywriter.</strong></p>
           </div>
           <div class="about-trajectory">
             <figure class="about-photo about-photo--planning" data-rise style="--delay:90ms">
@@ -1483,11 +1604,11 @@
           <div class="faq-list" id="faq-list">
             <article class="faq-card glass-card is-open" data-rise>
               <h3><button class="faq-question" type="button" id="faq-question-01" aria-expanded="true" aria-controls="faq-answer-01"><span>Você faz só a copy ou também a gestão do lançamento?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
-              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-01" role="region" aria-labelledby="faq-question-01"><p>Depende do momento do projeto. Posso atuar na copy, na gestão do lançamento ou nas duas frentes juntas. Em alguns projetos, entro também como coprodutor, com visão do funil inteiro.</p></div></div>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-01" role="region" aria-labelledby="faq-question-01"><p>Depende do momento do projeto. Posso atuar na copy, na gestão do lançamento ou nas duas frentes juntas.</p></div></div>
             </article>
             <article class="faq-card glass-card" data-rise style="--delay:70ms">
               <h3><button class="faq-question" type="button" id="faq-question-02" aria-expanded="true" aria-controls="faq-answer-02"><span>Trabalha só com lançamentos ou também com perpétuo?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
-              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-02" role="region" aria-labelledby="faq-question-02"><p>Com os dois. Já geri mais de 40 lançamentos, pagos e clássicos, e criei mais de 4 projetos perpétuos, incluindo funis low ticket.</p></div></div>
+              <div class="faq-answer-shell"><div class="faq-answer" id="faq-answer-02" role="region" aria-labelledby="faq-question-02"><p>Com os dois. O mercado não trabalha apenas com lançamentos como antigamente. Hoje é preciso ter habilidade para construir DR (direct response), low tickets e outros funis que vendem todo santo dia. <strong>Importante: o objetivo é que um fortaleça o outro.</strong></p></div></div>
             </article>
             <article class="faq-card glass-card" data-rise style="--delay:140ms">
               <h3><button class="faq-question" type="button" id="faq-question-03" aria-expanded="true" aria-controls="faq-answer-03"><span>Em quais nichos você já atuou?</span><span class="faq-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></h3>
@@ -1516,7 +1637,8 @@
             </article>
           </template>
         </div>
-      </section>
+        <div class="fold-cta"><a class="button button-primary magnetic hero-whatsapp fold-whatsapp" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
+    </section>
       <section class="contact closing ds-group" id="contato" aria-labelledby="contact-title" tabindex="-1">
         <div class="section-inner">
           <div class="ds-top caps" data-rise><span>08 / CONTATO</span><span>ATENDIMENTO REMOTO EM TODO O BRASIL</span></div>
@@ -1525,9 +1647,7 @@
             <p class="eyebrow caps closing-eyebrow" data-rise>PRÓXIMO PASSO</p>
             <h2 class="section-title" id="contact-title" data-lines-reveal><span class="line-mask" style="--delay:90ms"><span>Seu próximo lançamento</span></span><span class="line-mask" style="--delay:200ms"><span><em>já pode começar organizado.</em></span></span></h2>
             <p class="closing-lead" data-rise style="--delay:350ms">Quanto antes a operação é planejada, menos peça fica para a última hora. Me conta em que momento você está e eu digo como posso ajudar.</p>
-            <div class="closing-cta-wrap" data-contact-enter>
-              <a class="button button-primary magnetic closing-cta" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/></svg>Conversar no WhatsApp <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-            </div>
+            <div class="closing-cta-wrap" data-contact-enter><a class="button button-primary magnetic hero-whatsapp closing-cta" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com Alisson no WhatsApp, abre em nova aba"><svg class="icon hero-whatsapp__chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span>Conversar no WhatsApp</span><span class="hero-whatsapp__arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div>
             <p class="caption closing-caption" data-rise style="--delay:540ms">A conversa já abre com a mensagem pronta.</p>
           </div>
           <div class="closing-visual" aria-hidden="true">
@@ -1552,13 +1672,13 @@
           </div>
           </div>
           <div class="contact-channels" aria-label="Canais de contato">
-            <a class="contact-channel" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" data-rise><span class="caps">WHATSAPP</span><span class="contact-channel__value">+55 11 93618-8143 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
-            <a class="contact-channel" href="mailto:alisson.segecsmiguel@gmail.com" data-copy-email data-rise style="--delay:90ms"><span class="caps">E-MAIL</span><span class="contact-channel__value">alisson.segecsmiguel@gmail.com <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
-            <a class="contact-channel" href="https://www.instagram.com/asegecs/" target="_blank" rel="noopener noreferrer" data-rise style="--delay:180ms"><span class="caps">INSTAGRAM</span><span class="contact-channel__value">@asegecs <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
-            <a class="contact-channel" href="https://www.youtube.com/@alissonsegecs5304" target="_blank" rel="noopener noreferrer" data-rise style="--delay:270ms"><span class="caps">YOUTUBE</span><span class="contact-channel__value">@alissonsegecs5304 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="contact-channel" href="https://wa.me/5511936188143?text=Alisson%2C%20posso%20te%20apresentar%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" data-rise><span class="contact-channel__label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.65L3 20.5l1.35-5.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5h1.5l1 3-1.25 1.25a9 9 0 0 0 3.5 3.5L14 14l3 1v1.5a1 1 0 0 1-1 1A10.5 10.5 0 0 1 6.5 8.5a1 1 0 0 1 1-1H8Z"/></svg><span class="caps">WHATSAPP</span></span><span class="contact-channel__value">+55 11 93618-8143 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="contact-channel" href="mailto:alisson.segecsmiguel@gmail.com" data-copy-email data-rise style="--delay:90ms"><span class="contact-channel__label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="caps">E-MAIL</span></span><span class="contact-channel__value">alisson.segecsmiguel@gmail.com <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="contact-channel" href="https://www.instagram.com/asegecs/" target="_blank" rel="noopener noreferrer" data-rise style="--delay:180ms"><span class="contact-channel__label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".75" fill="currentColor" stroke="none"/></svg><span class="caps">INSTAGRAM</span></span><span class="contact-channel__value">@asegecs <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <a class="contact-channel" href="https://www.youtube.com/@alissonsegecs5304" target="_blank" rel="noopener noreferrer" data-rise style="--delay:270ms"><span class="contact-channel__label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3Z"/></svg><span class="caps">YOUTUBE</span></span><span class="contact-channel__value">@alissonsegecs5304 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
           </div>
         </div>
-      </section>
+    </section>
     </div>
   </main>
   <footer class="footer" data-rise><span>Alisson Segecs · CNPJ 64.493.187/0001-95</span><span>Gestão de lançamentos e copy · © 2026</span><a href="#top">Voltar ao início ↑</a></footer>
@@ -1569,7 +1689,7 @@
     <svg class="icon whatsapp-float__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
   </a>
   <script type="application/ld+json" id="faq-schema">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Você faz só a copy ou também a gestão do lançamento?","acceptedAnswer":{"@type":"Answer","text":"Depende do momento do projeto. Posso atuar na copy, na gestão do lançamento ou nas duas frentes juntas. Em alguns projetos, entro também como coprodutor, com visão do funil inteiro."}},{"@type":"Question","name":"Trabalha só com lançamentos ou também com perpétuo?","acceptedAnswer":{"@type":"Answer","text":"Com os dois. Já geri mais de 40 lançamentos, pagos e clássicos, e criei mais de 4 projetos perpétuos, incluindo funis low ticket."}},{"@type":"Question","name":"Em quais nichos você já atuou?","acceptedAnswer":{"@type":"Answer","text":"Aromaterapia, engenharia civil, português para estrangeiros, reconstrução de casamento, vendas, marketplace e alimentação, em projetos B2B e B2C."}}]}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Você faz só a copy ou também a gestão do lançamento?","acceptedAnswer":{"@type":"Answer","text":"Depende do momento do projeto. Posso atuar na copy, na gestão do lançamento ou nas duas frentes juntas."}},{"@type":"Question","name":"Trabalha só com lançamentos ou também com perpétuo?","acceptedAnswer":{"@type":"Answer","text":"Com os dois. O mercado não trabalha apenas com lançamentos como antigamente. Hoje é preciso ter habilidade para construir DR (direct response), low tickets e outros funis que vendem todo santo dia. Importante: o objetivo é que um fortaleça o outro."}},{"@type":"Question","name":"Em quais nichos você já atuou?","acceptedAnswer":{"@type":"Answer","text":"Aromaterapia, engenharia civil, português para estrangeiros, reconstrução de casamento, vendas, marketplace e alimentação, em projetos B2B e B2C."}}]}
   </script>
   <script>
     (() => {
@@ -1666,6 +1786,54 @@
       const faqProximity = createCardProximity($('#faq-list'), '.faq-card');
       const resetSkillsProximity = () => skillsProximity.reset();
 
+      // O loop visual é CSS. Uma interação assume a rolagem nativa e encerra o loop.
+      const audienceGallery = $('#audience-gallery');
+      const audience = $('#para-quem'), audienceTrack = audienceGallery.querySelector('.audience-track');
+      const audienceControls = $('[data-audience-controls]');
+      const audiencePrev = $('[data-audience-prev]'), audienceNext = $('[data-audience-next]');
+      let audienceManual = false;
+      function syncAudienceControls() {
+        const limit = audienceGallery.scrollWidth - audienceGallery.clientWidth;
+        audienceControls.hidden = limit <= 1;
+        audiencePrev.disabled = audienceManual && audienceGallery.scrollLeft <= 1;
+        audienceNext.disabled = audienceManual && audienceGallery.scrollLeft >= limit - 1;
+      }
+      function audienceStep() {
+        const group = audienceTrack.firstElementChild;
+        return group.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(group).columnGap);
+      }
+      function stopAudienceAuto() {
+        if (audienceManual) return;
+        const step = audienceStep(), group = audienceTrack.firstElementChild;
+        const offset = group.firstElementChild.getBoundingClientRect().left - audienceGallery.getBoundingClientRect().left;
+        const index = ((Math.round(-offset / step) % 4) + 4) % 4;
+        audienceManual = true;
+        audience.classList.add('is-manual');
+        audienceGallery.scrollTo({left:index * step,behavior:'instant'});
+        syncAudienceControls();
+      }
+      function moveAudience(direction) {
+        const wasAuto = !audienceManual;
+        stopAudienceAuto();
+        const step = audienceStep(), behavior = userPaused || reduced.matches || previewMode ? 'instant' : 'smooth';
+        if (wasAuto && direction < 0 && audienceGallery.scrollLeft < step / 2) {
+          audienceGallery.scrollTo({left:audienceGallery.scrollWidth,behavior});
+        } else audienceGallery.scrollBy({left:direction * step,behavior});
+      }
+      audiencePrev.addEventListener('click', () => moveAudience(-1));
+      audienceNext.addEventListener('click', () => moveAudience(1));
+      audienceGallery.addEventListener('pointerdown', stopAudienceAuto, {passive:true});
+      audienceGallery.addEventListener('focusin', stopAudienceAuto);
+      audienceGallery.addEventListener('wheel', event => { if (event.deltaX || event.shiftKey) stopAudienceAuto(); }, {passive:true});
+      audienceGallery.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); moveAudience(event.key === 'ArrowLeft' ? -1 : 1); }
+        else if (event.key === 'Home' || event.key === 'End') { event.preventDefault(); stopAudienceAuto(); audienceGallery.scrollTo({left:event.key === 'Home' ? 0 : audienceGallery.scrollWidth,behavior:'instant'}); }
+      });
+      audienceGallery.addEventListener('scroll', syncAudienceControls, {passive:true});
+      addEventListener('resize', syncAudienceControls, {passive:true});
+      if (reduced.matches) stopAudienceAuto();
+      syncAudienceControls();
+
       const ring = $('.cursor-ring');
       const magneticButtons = Array.from(document.querySelectorAll('.button'));
       let ringFrame = 0, pointer = null, ringX = 0, ringY = 0;
@@ -1680,6 +1848,7 @@
       function syncMotionEffects() {
         root.classList.toggle('motion-reduced', reduced.matches);
         root.classList.toggle('motion-paused', userPaused || reduced.matches);
+        if (reduced.matches) stopAudienceAuto();
         document.querySelectorAll('[data-motion-toggle]').forEach(button => {
           button.setAttribute('aria-pressed', String(userPaused || reduced.matches));
           button.setAttribute('aria-label', reduced.matches ? 'Animações reduzidas pela preferência do sistema' : userPaused ? 'Retomar animações' : 'Pausar animações');
@@ -1754,7 +1923,7 @@
         const loops = new IntersectionObserver(entries => entries.forEach(entry => {
           entry.target.classList.toggle('motion-offscreen', !entry.isIntersecting);
         }), {rootMargin:'100px'});
-        document.querySelectorAll('.scene,.signal-strip,.results,.projects,.case-media--book,.skills,.method,.about,.faq,.closing-field,.contact').forEach(node => loops.observe(node));
+        document.querySelectorAll('.scene,.signal-strip,.results,.projects,.case-media--book,.skills,.method,.about,.faq,.closing-field,.contact,.fold-cta,.audience,.audience-gallery,.audience-card').forEach(node => loops.observe(node));
         // A reprodução usa a viewport real, sem a margem dos loops decorativos.
         const playbackObserver = new IntersectionObserver(entries => {
           heroVisible = entries[0].isIntersecting;
