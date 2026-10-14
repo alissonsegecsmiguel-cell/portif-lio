@@ -1036,11 +1036,11 @@
     @media(max-width:800px){
       html.js-motion .nav.nav--hero{visibility:hidden;pointer-events:none}
       .hero-motion-toggle{display:inline-flex}
-      .hero .scene{height:auto;min-height:calc(100svh - 88px);flex-direction:column;align-items:flex-start;padding-bottom:76px}
+      .hero .scene{height:auto;min-height:0;flex-direction:column;align-items:flex-start;padding-bottom:76px}
       .hero .hero-inner{padding-top:clamp(32px,5svh,48px);padding-bottom:0}
       .hero .hero-card.glass-card{position:relative;left:auto;right:auto;bottom:auto;width:calc(100% - var(--pad)*2);margin:22px var(--pad) 0}
       .hero .hero-bottom{bottom:14px}
-      body:has(.nav.nav--hero) .whatsapp-float.button{bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+      body:has(.nav.nav--hero) .whatsapp-float.button{bottom:max(calc(20px + env(safe-area-inset-bottom,0px)),calc(100dvh - var(--hero-fold-height,calc(100dvh - 88px)) + 14px + env(safe-area-inset-bottom,0px)))}
       .results{padding-top:8px}
       .results .section-top{margin-bottom:16px}
       .hero-visual::after{background:linear-gradient(180deg,#05050666 0%,#05050655 24%,#050506a6 48%,var(--void) 72%),linear-gradient(90deg,#05050666,transparent 90%)}
@@ -2336,6 +2336,7 @@
       function refreshComposition() {
         const bounds = hero.getBoundingClientRect();
         heroStart = bounds.top + scrollY; heroHeight = Math.max(1, bounds.height);
+        root.style.setProperty('--hero-fold-height', heroHeight + 'px');
         scheduleComposition();
       }
       addEventListener('scroll', scheduleComposition, {passive:true});
