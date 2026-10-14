@@ -1,0 +1,112 @@
+<div id="natalia-periodos" aria-label="Proposta de navegação mensal do dashboard da Natália">
+  <style>
+    #natalia-periodos{--nt-bg:#050506;--nt-surface:#101013;--nt-text:#f1f0ea;--nt-muted:#bab8c3;--nt-line:rgba(241,240,234,.16);--nt-accent:#a9a5ff;--nt-good:#91cba5;--nt-bad:#f3a6ad;--nt-warning:#edc27b;--nt-ease:cubic-bezier(.16,1,.3,1);font:400 14px/1.5 'Manrope',Arial,sans-serif;color:var(--nt-text);background:var(--nt-bg);border:1px solid var(--nt-line);border-radius:20px;overflow:hidden;color-scheme:dark}
+    #natalia-periodos *{box-sizing:border-box}
+    #natalia-periodos .nt-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;border-bottom:1px solid var(--nt-line)}
+    #natalia-periodos .nt-brand{font-weight:500;font-size:18px;letter-spacing:-.03em}
+    #natalia-periodos .nt-sub{color:var(--nt-muted);font-size:12px}
+    #natalia-periodos .nt-year{font:400 12px 'Courier New',monospace;color:var(--nt-muted)}
+    #natalia-periodos .nt-content{padding:24px;display:grid;gap:20px}
+    #natalia-periodos .nt-toolbar{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+    #natalia-periodos .nt-control-label{display:block;color:var(--nt-muted);font-size:12px;margin-bottom:8px}
+    #natalia-periodos .nt-months{display:flex;gap:4px;flex-wrap:wrap}
+    #natalia-periodos button,#natalia-periodos select{font:inherit;color:var(--nt-text);border:1px solid var(--nt-line);background:var(--nt-surface);border-radius:10px;min-height:44px;padding:10px 14px}
+    #natalia-periodos button{cursor:pointer;transition:background .25s var(--nt-ease),border-color .25s var(--nt-ease)}
+    #natalia-periodos button[aria-pressed="true"]{background:#24213d;border-color:var(--nt-accent);color:var(--nt-accent)}
+    #natalia-periodos button:disabled{color:var(--nt-muted);cursor:default;border-style:dashed;opacity:.75}
+    #natalia-periodos .nt-selector{display:none;align-items:center;gap:6px}
+    #natalia-periodos .nt-selector select{flex:1;min-width:0;font-size:16px}
+    #natalia-periodos select{max-width:100%;font-size:14px}
+    #natalia-periodos .nt-picker{min-width:0}
+    #natalia-periodos[data-month-view="Seletor"] .nt-months{display:none}
+    #natalia-periodos[data-month-view="Seletor"] .nt-selector{display:flex}
+    #natalia-periodos .nt-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    #natalia-periodos h2{margin:0;font:500 28px/1.15 Arial,sans-serif;letter-spacing:-.04em}
+    #natalia-periodos .nt-status{color:var(--nt-good);font-size:12px;white-space:nowrap}
+    #natalia-periodos .nt-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    #natalia-periodos .nt-metric{padding:18px 14px;border:1px solid var(--nt-line);border-radius:16px;background:var(--nt-surface);min-width:0}
+    #natalia-periodos .nt-metric-label{color:var(--nt-muted);font-size:12px;min-height:36px}
+    #natalia-periodos .nt-number{font:500 25px/1.2 Arial,sans-serif;letter-spacing:-.04em;margin:8px 0;font-variant-numeric:tabular-nums}
+    #natalia-periodos .nt-delta{font-size:12px;color:var(--nt-muted)}
+    #natalia-periodos .nt-delta[data-tone="good"]{color:var(--nt-good)}
+    #natalia-periodos .nt-delta[data-tone="bad"]{color:var(--nt-bad)}
+    #natalia-periodos .nt-reading{padding:18px 0 0;border-top:1px solid var(--nt-line)}
+    #natalia-periodos .nt-reading p{margin:6px 0 0;font-size:15px}
+    #natalia-periodos .nt-reading b{font-weight:500;color:var(--nt-accent)}
+    #natalia-periodos .nt-note{color:var(--nt-warning);font-size:12px}
+    #natalia-periodos[data-density="Compacto"] .nt-content{gap:14px;padding:18px}
+    #natalia-periodos[data-density="Compacto"] .nt-metric{padding:14px 12px}
+    #natalia-periodos .nt-foot{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--nt-muted)}
+    @media(max-width:650px){#natalia-periodos .nt-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:460px){#natalia-periodos .nt-header{padding:18px}#natalia-periodos .nt-content{padding:18px}#natalia-periodos .nt-months{display:none}#natalia-periodos .nt-selector{display:flex}#natalia-periodos .nt-toolbar{display:grid;grid-template-columns:1fr}#natalia-periodos .nt-compare{display:flex;align-items:center;justify-content:space-between;gap:10px}#natalia-periodos .nt-compare .nt-control-label{margin:0}#natalia-periodos .nt-compare select{max-width:190px;font-size:16px}#natalia-periodos h2{font-size:24px}#natalia-periodos .nt-number{font-size:23px}#natalia-periodos .nt-metric{padding:14px 12px}}
+    @media(prefers-reduced-motion:reduce){#natalia-periodos button{transition:none}}
+    @media(max-width:360px){#natalia-periodos .nt-number{font-size:20px}}
+  </style>
+  <div class="nt-header"><div><div class="nt-brand">Natália</div><div class="nt-sub">Resultados do negócio</div></div><span class="nt-year">Histórico · 2026</span></div>
+  <div class="nt-content">
+    <div class="nt-toolbar">
+      <div class="nt-picker">
+        <span class="nt-control-label" id="nt-period-label">Período</span>
+        <div class="nt-months" role="group" aria-labelledby="nt-period-label">
+          <button type="button" data-month="0" aria-pressed="false">Jun</button>
+          <button type="button" data-month="1" aria-pressed="false">Jul</button>
+          <button type="button" data-month="2" aria-pressed="false">Ago</button>
+          <button type="button" data-month="3" aria-pressed="true">Set</button>
+          <button type="button" disabled>Out · parcial</button>
+        </div>
+        <div class="nt-selector"><button type="button" id="nt-prev" aria-label="Mês anterior">‹</button><select id="nt-month" aria-label="Mês do resultado"><option value="0">Junho 2026</option><option value="1">Julho 2026</option><option value="2">Agosto 2026</option><option value="3" selected>Setembro 2026</option><option disabled>Outubro · parcial</option></select><button type="button" id="nt-next" aria-label="Próximo mês fechado">›</button></div>
+      </div>
+      <label class="nt-compare"><span class="nt-control-label">Comparar com</span><select id="nt-comparison"><option value="previous">Mês anterior</option><option value="none">Sem comparação</option></select></label>
+    </div>
+    <div class="nt-title-row"><h2 id="nt-heading">Setembro 2026</h2><span class="nt-status">Fechado</span></div>
+    <div class="nt-metrics">
+      <div class="nt-metric"><div class="nt-metric-label">Receita bruta</div><div class="nt-number" id="nt-revenue">R$ 222,2 mil</div><div class="nt-delta" id="nt-revenue-delta">+4,4% vs. agosto</div></div>
+      <div class="nt-metric"><div class="nt-metric-label">Lucro antes de impostos</div><div class="nt-number" id="nt-profit">R$ 102,4 mil</div><div class="nt-delta" id="nt-profit-delta">−15,7% vs. agosto</div></div>
+      <div class="nt-metric"><div class="nt-metric-label">Margem após taxas</div><div class="nt-number" id="nt-margin">49,4%</div><div class="nt-delta" id="nt-margin-delta">−12,0 p.p. vs. agosto</div></div>
+      <div class="nt-metric"><div class="nt-metric-label">Vendas</div><div class="nt-number" id="nt-sales">561</div><div class="nt-delta" id="nt-sales-delta">−39,5% vs. agosto</div></div>
+    </div>
+    <div class="nt-reading" role="status" aria-live="polite" aria-atomic="true"><span class="nt-control-label">Leitura do período</span><p id="nt-reading">Receita cresceu, mas o <b>lucro caiu 15,7%</b>. Despesas aumentaram 37,4%.</p></div>
+    <div class="nt-note">Impostos pendentes de lançamento · resultado antes de impostos</div>
+    <div class="nt-foot"><span>Fonte: DRE Natália · aba Análise</span><span>Margem calculada sobre a receita após taxas</span></div>
+  </div>
+  <script>
+    (()=>{
+      const root=document.getElementById('natalia-periodos');
+      const q=s=>root.querySelector(s);
+      const records=[
+        {name:'Junho',revenue:156967.44,net:146773.94,profit:90078.75,sales:522,expenses:56695.19},
+        {name:'Julho',revenue:111544.58,net:104525.69,profit:10759.96,sales:464,expenses:93765.73},
+        {name:'Agosto',revenue:212704.27,net:197852.75,profit:121514.30,sales:927,expenses:76338.45},
+        {name:'Setembro',revenue:222162.33,net:207289.37,profit:102411.48,sales:561,expenses:104877.89}
+      ];
+      const state={index:3,compare:'previous',monthView:'Barra',density:'Confortável'};
+      const f=n=>n.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1});
+      const signed=n=>(n<0?'−':'+')+f(Math.abs(n));
+      function render(){
+        const d=records[state.index],p=state.index>0?records[state.index-1]:null,use=p&&state.compare==='previous';
+        root.dataset.monthView=state.monthView;root.dataset.density=state.density;
+        q('#nt-heading').textContent=d.name+' 2026';q('#nt-month').value=String(state.index);
+        q('#nt-prev').disabled=state.index===0;q('#nt-next').disabled=state.index===records.length-1;
+        root.querySelectorAll('[data-month]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.month)===state.index)));
+        q('#nt-revenue').textContent='R$ '+f(d.revenue/1000)+' mil';q('#nt-profit').textContent='R$ '+f(d.profit/1000)+' mil';q('#nt-margin').textContent=f(d.profit/d.net*100)+'%';q('#nt-sales').textContent=d.sales.toLocaleString('pt-BR');
+        for(const key of ['revenue','profit','margin','sales']){
+          const el=q('#nt-'+key+'-delta');
+          if(!use){el.textContent=p?'Sem comparação':'Sem mês anterior neste recorte';el.dataset.tone='neutral';continue;}
+          const delta=key==='margin'?(d.profit/d.net-p.profit/p.net)*100:(d[key]/p[key]-1)*100;
+          el.textContent=signed(delta)+(key==='margin'?' p.p.':'%')+' vs. '+p.name.toLowerCase();el.dataset.tone=delta<0?'bad':'good';
+        }
+        if(!use){q('#nt-reading').textContent=d.name+': resultado antes de impostos de R$ '+f(d.profit/1000)+' mil e '+d.sales+' vendas.';}
+        else {const rd=(d.revenue/p.revenue-1)*100,pd=(d.profit/p.profit-1)*100,ed=(d.expenses/p.expenses-1)*100;
+          q('#nt-reading').textContent='Receita '+(rd<0?'caiu ':'cresceu ')+f(Math.abs(rd))+'%, e o lucro '+(pd<0?'caiu ':'cresceu ')+f(Math.abs(pd))+'%. Despesas '+(ed<0?'caíram ':'aumentaram ')+f(Math.abs(ed))+'%.';
+        }
+      }
+      root.querySelectorAll('[data-month]').forEach(b=>b.addEventListener('click',()=>{state.index=Number(b.dataset.month);render();}));
+      q('#nt-month').addEventListener('change',e=>{state.index=Number(e.target.value);render();});
+      q('#nt-comparison').addEventListener('change',e=>{state.compare=e.target.value;render();});
+      q('#nt-prev').addEventListener('click',()=>{if(state.index>0){state.index--;render();}});
+      q('#nt-next').addEventListener('click',()=>{if(state.index<records.length-1){state.index++;render();}});
+      render();
+      if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addSelect(state,'monthView',{label:'Navegação de meses',options:['Barra','Seletor']});tweak.addSelect(state,'density',{label:'Espaçamento',options:['Confortável','Compacto']});}
+    })();
+  </script>
+</div>

@@ -1,0 +1,277 @@
+{
+  "loads": [
+    {
+      "name": "functional",
+      "url": "http://127.0.0.1:4173/dashboards/natalia",
+      "fcp": 904,
+      "lcp": {
+        "ms": 904,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0,
+      "tasks": [
+        {
+          "ms": 488.60000002384186,
+          "duration": 326
+        },
+        {
+          "ms": 841.7000000476837,
+          "duration": 51
+        },
+        {
+          "ms": 896.1000000238419,
+          "duration": 75
+        },
+        {
+          "ms": 988.8000000119209,
+          "duration": 60
+        }
+      ],
+      "ttfb": 11.900000035762787,
+      "dom": 839,
+      "load": 897,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 5220,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 442.75
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1006.46875
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1403.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1591.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1779.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1967.09375
+        },
+        {
+          "id": "despesas",
+          "visible": "0",
+          "top": 2155.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 2749.453125
+        },
+        {
+          "id": "socios",
+          "visible": "0",
+          "top": 3383.09375
+        },
+        {
+          "id": "receita",
+          "visible": "0",
+          "top": 3926.46875
+        },
+        {
+          "id": "leitura",
+          "visible": "0",
+          "top": 4412.28125
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 461,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": [
+        {
+          "exceptionId": 1,
+          "text": "Uncaught",
+          "lineNumber": 0,
+          "columnNumber": 42,
+          "scriptId": "12",
+          "stackTrace": {
+            "callFrames": [
+              {
+                "functionName": "document.createElementNS",
+                "scriptId": "12",
+                "url": "",
+                "lineNumber": 0,
+                "columnNumber": 42
+              },
+              {
+                "functionName": "svgEl",
+                "scriptId": "5",
+                "url": "http://127.0.0.1:4173/dashboards/natalia",
+                "lineNumber": 578,
+                "columnNumber": 21
+              },
+              {
+                "functionName": "linha",
+                "scriptId": "5",
+                "url": "http://127.0.0.1:4173/dashboards/natalia",
+                "lineNumber": 597,
+                "columnNumber": 14
+              },
+              {
+                "functionName": "",
+                "scriptId": "5",
+                "url": "http://127.0.0.1:4173/dashboards/natalia",
+                "lineNumber": 729,
+                "columnNumber": 2
+              },
+              {
+                "functionName": "",
+                "scriptId": "5",
+                "url": "http://127.0.0.1:4173/dashboards/natalia",
+                "lineNumber": 785,
+                "columnNumber": 2
+              }
+            ]
+          },
+          "exception": {
+            "type": "object",
+            "subtype": "error",
+            "className": "Error",
+            "description": "Error: Audit: simulated SVG initialization failure\n    at document.createElementNS (<anonymous>:1:43)\n    at svgEl (http://127.0.0.1:4173/dashboards/natalia:579:22)\n    at linha (http://127.0.0.1:4173/dashboards/natalia:598:15)\n    at http://127.0.0.1:4173/dashboards/natalia:730:3\n    at http://127.0.0.1:4173/dashboards/natalia:786:3",
+            "objectId": "8035719509662731739.4.1",
+            "preview": {
+              "type": "object",
+              "subtype": "error",
+              "description": "Error: Audit: simulated SVG initialization failure\n    at document.createElementNS (<anonymous>:1:43)\n    at svgEl (http://127.0.0.1:4173/dashboards/natalia:579:22)\n    at linha (http://127.0.0.1:4173/dashboards/natalia:598:15)\n    at http://127.0.0.1:4173/dashboards/natalia:730:3\n    at http://127.0.0.1:4173/dashboards/natalia:786:3",
+              "overflow": false,
+              "properties": [
+                {
+                  "name": "stack",
+                  "type": "string",
+                  "value": "Error: Audit: simulated SVG initialization failure…at http://127.0.0.1:4173/dashboards/natalia:786:3"
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "value": "Audit: simulated SVG initialization failure"
+                }
+              ]
+            }
+          },
+          "executionContextId": 4
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "print-from-top",
+      "state": {
+        "hidden": 10,
+        "background": "rgb(5, 5, 6)"
+      }
+    },
+    {
+      "name": "reduce-after-load",
+      "state": {
+        "classes": "js-motion",
+        "hidden": 10,
+        "label": "Pausar animações"
+      }
+    },
+    {
+      "name": "svg-js-failure",
+      "state": {
+        "classes": "js-motion",
+        "hidden": 11
+      }
+    }
+  ],
+  "motion": [
+    {
+      "name": "baseline",
+      "paint": 438,
+      "paintMs": 210.102,
+      "layout": 73,
+      "styleMs": 81.697,
+      "animations": 11
+    },
+    {
+      "name": "grid-static",
+      "paint": 325,
+      "paintMs": 275.902,
+      "layout": 65,
+      "styleMs": 112.738,
+      "animations": 10
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/155.0.8059.40",
+    "revision": "@cfaadc5a132d78e1828635aa8405a499f3e14864",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "jsVersion": "15.5.35.20"
+  }
+}

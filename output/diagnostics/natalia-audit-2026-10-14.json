@@ -1,0 +1,1231 @@
+{
+  "loads": [
+    {
+      "name": "desktop",
+      "url": "http://127.0.0.1:4173/dashboards/natalia",
+      "fcp": 908,
+      "lcp": {
+        "ms": 908,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0.03237069780445265,
+      "tasks": [
+        {
+          "ms": 479.7999999523163,
+          "duration": 266
+        },
+        {
+          "ms": 770.5,
+          "duration": 122
+        },
+        {
+          "ms": 896.6999999880791,
+          "duration": 72
+        },
+        {
+          "ms": 995.1999999880791,
+          "duration": 199
+        },
+        {
+          "ms": 1197.5,
+          "duration": 109
+        },
+        {
+          "ms": 1310.5,
+          "duration": 82
+        },
+        {
+          "ms": 1412.8999999761581,
+          "duration": 65
+        },
+        {
+          "ms": 1489,
+          "duration": 78
+        },
+        {
+          "ms": 1573.699999988079,
+          "duration": 96
+        },
+        {
+          "ms": 1675.5,
+          "duration": 90
+        },
+        {
+          "ms": 1773,
+          "duration": 74
+        },
+        {
+          "ms": 1856.2999999523163,
+          "duration": 75
+        },
+        {
+          "ms": 1937.8999999761581,
+          "duration": 76
+        },
+        {
+          "ms": 2021.8999999761581,
+          "duration": 94
+        },
+        {
+          "ms": 2121.599999964237,
+          "duration": 102
+        },
+        {
+          "ms": 2238.099999964237,
+          "duration": 95
+        },
+        {
+          "ms": 2338.399999976158,
+          "duration": 111
+        },
+        {
+          "ms": 2454.7999999523163,
+          "duration": 103
+        },
+        {
+          "ms": 2561.7999999523163,
+          "duration": 103
+        }
+      ],
+      "ttfb": 12.5,
+      "dom": 766.3999999761581,
+      "load": 897.6999999880791,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 2797,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 460.71875
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 460.71875
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "despesas",
+          "visible": "0",
+          "top": 1131.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1131.34375
+        },
+        {
+          "id": "socios",
+          "visible": "0",
+          "top": 1790.984375
+        },
+        {
+          "id": "receita",
+          "visible": "0",
+          "top": 1790.984375
+        },
+        {
+          "id": "leitura",
+          "visible": "0",
+          "top": 2337.1875
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 450.80000001192093,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "mobile-slow-1",
+      "url": "http://127.0.0.1:4173/dashboards/natalia",
+      "fcp": 884,
+      "lcp": {
+        "ms": 884,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0,
+      "tasks": [
+        {
+          "ms": 809.8999999761581,
+          "duration": 148
+        },
+        {
+          "ms": 1007.6999999880791,
+          "duration": 139
+        },
+        {
+          "ms": 1175.5,
+          "duration": 151
+        },
+        {
+          "ms": 1326.8999999761581,
+          "duration": 105
+        },
+        {
+          "ms": 1444.6000000238419,
+          "duration": 127
+        }
+      ],
+      "ttfb": 10.899999976158142,
+      "dom": 987.1999999880791,
+      "load": 1445.5,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 5220,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 442.75
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1006.46875
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1403.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1591.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1779.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1967.09375
+        },
+        {
+          "id": "despesas",
+          "visible": "0",
+          "top": 2155.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 2749.453125
+        },
+        {
+          "id": "socios",
+          "visible": "0",
+          "top": 3383.09375
+        },
+        {
+          "id": "receita",
+          "visible": "0",
+          "top": 3926.46875
+        },
+        {
+          "id": "leitura",
+          "visible": "0",
+          "top": 4412.28125
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 163,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "mobile-slow-2",
+      "url": "http://127.0.0.1:4173/dashboards/natalia",
+      "fcp": 960,
+      "lcp": {
+        "ms": 960,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0,
+      "tasks": [
+        {
+          "ms": 369.80000001192093,
+          "duration": 473
+        },
+        {
+          "ms": 876.1999999880791,
+          "duration": 78
+        },
+        {
+          "ms": 960.1000000238419,
+          "duration": 88
+        },
+        {
+          "ms": 1060.5,
+          "duration": 202
+        },
+        {
+          "ms": 1262.800000011921,
+          "duration": 67
+        },
+        {
+          "ms": 1342.6000000238419,
+          "duration": 100
+        },
+        {
+          "ms": 1443.6000000238419,
+          "duration": 84
+        },
+        {
+          "ms": 1581.699999988079,
+          "duration": 56
+        },
+        {
+          "ms": 1643.8999999761581,
+          "duration": 66
+        },
+        {
+          "ms": 1726.699999988079,
+          "duration": 67
+        },
+        {
+          "ms": 1794.6000000238419,
+          "duration": 91
+        },
+        {
+          "ms": 1977.3999999761581,
+          "duration": 51
+        },
+        {
+          "ms": 2030.3999999761581,
+          "duration": 70
+        },
+        {
+          "ms": 2103.199999988079,
+          "duration": 96
+        },
+        {
+          "ms": 2260.5,
+          "duration": 53
+        },
+        {
+          "ms": 2326.600000023842,
+          "duration": 87
+        },
+        {
+          "ms": 2413.699999988079,
+          "duration": 92
+        }
+      ],
+      "ttfb": 13.800000011920929,
+      "dom": 870.1999999880791,
+      "load": 2201.5,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 5220,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 442.75
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1006.46875
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1403.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1591.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1779.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1967.09375
+        },
+        {
+          "id": "despesas",
+          "visible": "0",
+          "top": 2155.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 2749.453125
+        },
+        {
+          "id": "socios",
+          "visible": "0",
+          "top": 3383.09375
+        },
+        {
+          "id": "receita",
+          "visible": "0",
+          "top": 3926.46875
+        },
+        {
+          "id": "leitura",
+          "visible": "0",
+          "top": 4412.28125
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 193.10000002384186,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "mobile-reduced",
+      "url": "http://127.0.0.1:4173/dashboards/natalia",
+      "fcp": 2036,
+      "lcp": {
+        "ms": 2036,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0.00017937372107314383,
+      "tasks": [
+        {
+          "ms": 434.5999999642372,
+          "duration": 1453
+        },
+        {
+          "ms": 2225.2999999523163,
+          "duration": 142
+        }
+      ],
+      "ttfb": 11.399999976158142,
+      "dom": 1976.0999999642372,
+      "load": 2230,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 5220,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 442.75
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 982.46875
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 1379.09375
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 1567.09375
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 1755.09375
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 1943.09375
+        },
+        {
+          "id": "despesas",
+          "visible": "1",
+          "top": 2131.09375
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 2725.453125
+        },
+        {
+          "id": "socios",
+          "visible": "1",
+          "top": 3359.09375
+        },
+        {
+          "id": "receita",
+          "visible": "1",
+          "top": 3902.46875
+        },
+        {
+          "id": "leitura",
+          "visible": "1",
+          "top": 4388.28125
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 156,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "slash",
+      "url": "http://127.0.0.1:4173/dashboards/natalia/",
+      "fcp": 600,
+      "lcp": {
+        "ms": 600,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0,
+      "tasks": [
+        {
+          "ms": 148.69999998807907,
+          "duration": 327
+        },
+        {
+          "ms": 505.69999998807907,
+          "duration": 85
+        },
+        {
+          "ms": 597.8000000119209,
+          "duration": 105
+        },
+        {
+          "ms": 729.3000000119209,
+          "duration": 79
+        },
+        {
+          "ms": 1136.699999988079,
+          "duration": 99
+        },
+        {
+          "ms": 1238.0999999642372,
+          "duration": 72
+        },
+        {
+          "ms": 1321.3999999761581,
+          "duration": 85
+        },
+        {
+          "ms": 1520.8999999761581,
+          "duration": 57
+        },
+        {
+          "ms": 1587.800000011921,
+          "duration": 72
+        }
+      ],
+      "ttfb": 11.099999964237213,
+      "dom": 502.30000001192093,
+      "load": 598.5999999642372,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 5220,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 442.75
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1006.46875
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1403.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1591.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1779.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1967.09375
+        },
+        {
+          "id": "despesas",
+          "visible": "0",
+          "top": 2155.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 2749.453125
+        },
+        {
+          "id": "socios",
+          "visible": "0",
+          "top": 3383.09375
+        },
+        {
+          "id": "receita",
+          "visible": "0",
+          "top": 3926.46875
+        },
+        {
+          "id": "leitura",
+          "visible": "0",
+          "top": 4412.28125
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 122.69999998807907,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia/",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "local-file",
+      "url": "file:///C:/Users/Alisson/OneDrive/%C3%81rea%20de%20Trabalho/portif%C3%B3lio/dashboards/natalia/index.html",
+      "fcp": 716,
+      "lcp": {
+        "ms": 716,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0,
+      "tasks": [
+        {
+          "ms": 384.7999999523163,
+          "duration": 251
+        },
+        {
+          "ms": 657.3999999761581,
+          "duration": 51
+        },
+        {
+          "ms": 711.8999999761581,
+          "duration": 64
+        },
+        {
+          "ms": 2336.399999976158,
+          "duration": 68
+        },
+        {
+          "ms": 2404.699999988079,
+          "duration": 98
+        },
+        {
+          "ms": 2502.899999976158,
+          "duration": 52
+        }
+      ],
+      "ttfb": 0.699999988079071,
+      "dom": 655.0999999642372,
+      "load": 712.7999999523163,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 5220,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 442.75
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1006.46875
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1403.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1591.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1779.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1967.09375
+        },
+        {
+          "id": "despesas",
+          "visible": "0",
+          "top": 2155.09375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 2749.453125
+        },
+        {
+          "id": "socios",
+          "visible": "0",
+          "top": 3383.09375
+        },
+        {
+          "id": "receita",
+          "visible": "0",
+          "top": 3926.46875
+        },
+        {
+          "id": "leitura",
+          "visible": "0",
+          "top": 4412.28125
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 357.19999998807907,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "file:///C:/Users/Alisson/OneDrive/%C3%81rea%20de%20Trabalho/portif%C3%B3lio/dashboards/natalia/index.html",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "motion",
+      "url": "http://127.0.0.1:4173/dashboards/natalia",
+      "fcp": 740,
+      "lcp": {
+        "ms": 740,
+        "tag": "EM",
+        "text": "Expert × Co-Produtor"
+      },
+      "cls": 0.03223614101774904,
+      "tasks": [
+        {
+          "ms": 144.19999998807907,
+          "duration": 350
+        },
+        {
+          "ms": 524.1999999880791,
+          "duration": 196
+        },
+        {
+          "ms": 721.1999999880791,
+          "duration": 91
+        },
+        {
+          "ms": 844.6999999880791,
+          "duration": 187
+        },
+        {
+          "ms": 1040.5999999642372,
+          "duration": 100
+        },
+        {
+          "ms": 1140.8999999761581,
+          "duration": 88
+        },
+        {
+          "ms": 1239.8999999761581,
+          "duration": 116
+        },
+        {
+          "ms": 1356.800000011921,
+          "duration": 126
+        },
+        {
+          "ms": 1489.3999999761581,
+          "duration": 137
+        },
+        {
+          "ms": 1640.8999999761581,
+          "duration": 225
+        },
+        {
+          "ms": 1872.800000011921,
+          "duration": 160
+        },
+        {
+          "ms": 2040.199999988079,
+          "duration": 121
+        },
+        {
+          "ms": 2173.599999964237,
+          "duration": 119
+        },
+        {
+          "ms": 2307,
+          "duration": 122
+        }
+      ],
+      "ttfb": 12,
+      "dom": 520.1999999880791,
+      "load": 724,
+      "fonts": "loaded",
+      "overflow": false,
+      "scrollHeight": 2797,
+      "nodes": 431,
+      "values": [
+        "33.139,60",
+        "31,3",
+        "222,2K",
+        "102,4K",
+        "3,2",
+        "561"
+      ],
+      "cards": [
+        {
+          "id": "resumo",
+          "visible": "1",
+          "top": 460.71875
+        },
+        {
+          "id": "",
+          "visible": "1",
+          "top": 460.71875
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 907.34375
+        },
+        {
+          "id": "despesas",
+          "visible": "0",
+          "top": 1131.34375
+        },
+        {
+          "id": "",
+          "visible": "0",
+          "top": 1131.34375
+        },
+        {
+          "id": "socios",
+          "visible": "0",
+          "top": 1790.984375
+        },
+        {
+          "id": "receita",
+          "visible": "0",
+          "top": 1790.984375
+        },
+        {
+          "id": "leitura",
+          "visible": "0",
+          "top": 2337.1875
+        }
+      ],
+      "resources": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "ms": 116.5,
+          "bytes": 806
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/dashboards/natalia",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+          "status": 200
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "pause",
+      "state": {
+        "classes": "js-motion motion-paused",
+        "values": [
+          "33.139,60",
+          "31,3",
+          "222,2K",
+          "102,4K",
+          "3,2",
+          "561"
+        ],
+        "hidden": 0
+      }
+    },
+    {
+      "name": "320",
+      "state": {
+        "overflow": false,
+        "nav": [
+          {
+            "x": 16,
+            "y": 25.5,
+            "width": 110.8125,
+            "height": 25,
+            "top": 25.5,
+            "right": 126.8125,
+            "bottom": 50.5,
+            "left": 16
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          {
+            "x": 142.8125,
+            "y": 18,
+            "width": 161.1875,
+            "height": 40,
+            "top": 18,
+            "right": 304,
+            "bottom": 58,
+            "left": 142.8125
+          }
+        ],
+        "hero": {
+          "x": 39,
+          "y": -1171,
+          "width": 242,
+          "height": 38,
+          "top": -1171,
+          "right": 281,
+          "bottom": -1133,
+          "left": 39
+        }
+      }
+    },
+    {
+      "name": "print",
+      "state": {
+        "bodyBG": "rgb(5, 5, 6)",
+        "text": "rgb(241, 240, 234)",
+        "hiddenCards": 0
+      }
+    },
+    {
+      "name": "no-js",
+      "state": {
+        "charts": 0,
+        "hiddenCards": 0,
+        "gaugeHeight": 0
+      }
+    }
+  ],
+  "motion": [
+    {
+      "name": "top-running",
+      "paint": 186,
+      "paintMs": 76.32,
+      "layout": 31,
+      "styleMs": 23.957,
+      "animations": 11
+    },
+    {
+      "name": "bottom-running",
+      "paint": 74,
+      "paintMs": 13.732,
+      "layout": 12,
+      "styleMs": 7.253,
+      "animations": 11
+    },
+    {
+      "name": "bottom-paused",
+      "paint": 18,
+      "paintMs": 9.601,
+      "layout": 2,
+      "styleMs": 23.081,
+      "animations": 0
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/155.0.8059.40",
+    "revision": "@cfaadc5a132d78e1828635aa8405a499f3e14864",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "jsVersion": "15.5.35.20"
+  }
+}
