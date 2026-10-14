@@ -1,0 +1,2006 @@
+{
+  "date": "2026-10-14",
+  "loading": [],
+  "motion": [
+    {
+      "name": "audience-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 492,
+      "paintMs": 428.933,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 457.295,
+      "taskMs": 2789.213,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 9
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 164,
+          "ms": 351.78,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 164,
+          "ms": 48.91200000000002,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        },
+        {
+          "id": 944,
+          "count": 164,
+          "ms": 28.240999999999996,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "metodo",
+          "pseudo": null
+        },
+        {
+          "name": "audience-drift",
+          "target": "audience-track",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::after"
+        },
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "audience-promoted",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 534,
+      "paintMs": 372.063,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 500.766,
+      "taskMs": 2917.484,
+      "scriptMs": 0.2539999999999973,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 9
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 178,
+          "ms": 317.055,
+          "tag": "#document"
+        },
+        {
+          "id": 944,
+          "count": 178,
+          "ms": 29.81499999999999,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot"
+          ]
+        },
+        {
+          "id": 945,
+          "count": 178,
+          "ms": 25.192999999999984,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "metodo",
+          "pseudo": null
+        },
+        {
+          "name": "audience-drift",
+          "target": "audience-track",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::after"
+        },
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "skills-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 364,
+      "paintMs": 144.856,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 69.575,
+      "taskMs": 1347.639000000001,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 2
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 182,
+          "ms": 104.33999999999999,
+          "tag": "#document"
+        },
+        {
+          "id": 481,
+          "count": 182,
+          "ms": 40.515999999999984,
+          "tag": "SECTION",
+          "attributes": [
+            "class",
+            "skills ds-group",
+            "id",
+            "habilidades",
+            "aria-labelledby",
+            "skills-title",
+            "tabindex",
+            "-1"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "skills ds-group",
+          "section": "habilidades",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "skills ds-group",
+          "section": "habilidades",
+          "pseudo": "::after"
+        }
+      ]
+    },
+    {
+      "name": "skills-grid-frozen",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 0,
+      "taskMs": 13.723999999999847,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 1
+      },
+      "paintNodes": [],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "skills ds-group",
+          "section": "habilidades",
+          "pseudo": "::before"
+        }
+      ]
+    },
+    {
+      "name": "skills-grid-transform",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 0,
+      "taskMs": 113.11399999999949,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 2
+      },
+      "paintNodes": [],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "skills ds-group",
+          "section": "habilidades",
+          "pseudo": "::before"
+        },
+        {
+          "name": "diagnostic-grid",
+          "target": "skills ds-group",
+          "section": "habilidades",
+          "pseudo": "::after"
+        }
+      ]
+    },
+    {
+      "name": "results-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 485,
+      "paintMs": 493.563,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 183.444,
+      "taskMs": 1712.3899999999992,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 13
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 97,
+          "ms": 333.2909999999999,
+          "tag": "#document"
+        },
+        {
+          "id": 954,
+          "count": 97,
+          "ms": 52.076999999999984,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:0ms"
+          ]
+        },
+        {
+          "id": 956,
+          "count": 97,
+          "ms": 45.185,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:90ms"
+          ]
+        },
+        {
+          "id": 958,
+          "count": 97,
+          "ms": 44.265,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:180ms"
+          ]
+        },
+        {
+          "id": 953,
+          "count": 97,
+          "ms": 18.745,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "monitor-indicator"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "hero-bloom",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::after"
+        },
+        {
+          "name": "vertical-scroll",
+          "target": "carousel-track",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "scroll-cue",
+          "target": "icon",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "ticker",
+          "target": "signal-strip__track",
+          "section": "",
+          "pseudo": null
+        },
+        {
+          "name": "bloom",
+          "target": "results",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "status-pulse",
+          "target": "monitor-indicator",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "resultados",
+          "pseudo": "::after"
+        }
+      ]
+    },
+    {
+      "name": "results-grid-frozen",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 346,
+      "paintMs": 159.523,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 259.605,
+      "taskMs": 2324.5520000000006,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 10
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 173,
+          "ms": 132.35499999999993,
+          "tag": "#document"
+        },
+        {
+          "id": 953,
+          "count": 173,
+          "ms": 27.168000000000003,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "monitor-indicator"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "hero-bloom",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::after"
+        },
+        {
+          "name": "vertical-scroll",
+          "target": "carousel-track",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "scroll-cue",
+          "target": "icon",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "ticker",
+          "target": "signal-strip__track",
+          "section": "",
+          "pseudo": null
+        },
+        {
+          "name": "bloom",
+          "target": "results",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "status-pulse",
+          "target": "monitor-indicator",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "resultados",
+          "pseudo": "::after"
+        }
+      ]
+    },
+    {
+      "name": "book-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 358,
+      "paintMs": 570.057,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 272.303,
+      "taskMs": 2211.6050000000023,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 3
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 179,
+          "ms": 417.6149999999998,
+          "tag": "#document"
+        },
+        {
+          "id": 965,
+          "count": 179,
+          "ms": 152.44199999999984,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "rp-grid",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "rp-stage",
+          "section": "cases",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "rp-grid",
+          "section": "cases",
+          "pseudo": null
+        },
+        {
+          "name": "tile-drift",
+          "target": "rp-book glass-card",
+          "section": "cases",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "book-grid-frozen",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 0,
+      "taskMs": 16.165000000000873,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 2
+      },
+      "paintNodes": [],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "rp-stage",
+          "section": "cases",
+          "pseudo": "::before"
+        },
+        {
+          "name": "tile-drift",
+          "target": "rp-book glass-card",
+          "section": "cases",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "hero-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 862,
+      "paintMs": 620.451,
+      "layoutCount": 1,
+      "layoutMs": 0.515,
+      "styleMs": 316.603,
+      "taskMs": 2190.369999999998,
+      "scriptMs": 1.7029999999999963,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 11
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 172,
+          "ms": 411.1899999999999,
+          "tag": "#document"
+        },
+        {
+          "id": 954,
+          "count": 172,
+          "ms": 64.21699999999998,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:0ms"
+          ]
+        },
+        {
+          "id": 956,
+          "count": 172,
+          "ms": 61.08799999999999,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:90ms"
+          ]
+        },
+        {
+          "id": 958,
+          "count": 172,
+          "ms": 59.79600000000003,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:180ms"
+          ]
+        },
+        {
+          "id": 953,
+          "count": 172,
+          "ms": 23.994999999999997,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "monitor-indicator"
+          ]
+        },
+        {
+          "id": 14,
+          "count": 2,
+          "ms": 0.16499999999999998,
+          "tag": "VIDEO",
+          "attributes": [
+            "id",
+            "hero-video",
+            "muted",
+            "",
+            "playsinline",
+            "",
+            "loop",
+            "",
+            "preload",
+            "auto",
+            "poster",
+            "assets/portrait-poster.webp",
+            "width",
+            "1280",
+            "height",
+            "720",
+            "aria-label",
+            "Retrato animado com elementos de estratégia e operação",
+            "aria-describedby",
+            "video-description",
+            "autoplay",
+            ""
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "hero-bloom",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::after"
+        },
+        {
+          "name": "vertical-scroll",
+          "target": "carousel-track",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "scroll-cue",
+          "target": "icon",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "ticker",
+          "target": "signal-strip__track",
+          "section": "",
+          "pseudo": null
+        },
+        {
+          "name": "bloom",
+          "target": "results",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "status-pulse",
+          "target": "monitor-indicator",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        }
+      ]
+    },
+    {
+      "name": "hero-promoted",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 890,
+      "paintMs": 338.9,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 165.595,
+      "taskMs": 1717.5119999999993,
+      "scriptMs": 1.5369999999999968,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 11
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 178,
+          "ms": 234.31600000000003,
+          "tag": "#document"
+        },
+        {
+          "id": 954,
+          "count": 178,
+          "ms": 33.78100000000002,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:0ms"
+          ]
+        },
+        {
+          "id": 956,
+          "count": 178,
+          "ms": 30.947000000000003,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:90ms"
+          ]
+        },
+        {
+          "id": 958,
+          "count": 178,
+          "ms": 28.40000000000001,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:180ms"
+          ]
+        },
+        {
+          "id": 953,
+          "count": 178,
+          "ms": 11.456000000000001,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "monitor-indicator"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "hero-bloom",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::after"
+        },
+        {
+          "name": "vertical-scroll",
+          "target": "carousel-track",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "scroll-cue",
+          "target": "icon",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "ticker",
+          "target": "signal-strip__track",
+          "section": "",
+          "pseudo": null
+        },
+        {
+          "name": "bloom",
+          "target": "results",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "status-pulse",
+          "target": "monitor-indicator",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        }
+      ]
+    },
+    {
+      "name": "hero-no-noise",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 902,
+      "paintMs": 665.874,
+      "layoutCount": 1,
+      "layoutMs": 0.393,
+      "styleMs": 249.436,
+      "taskMs": 2307.8549999999964,
+      "scriptMs": 2.5030000000000054,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 11
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 180,
+          "ms": 442.52499999999986,
+          "tag": "#document"
+        },
+        {
+          "id": 954,
+          "count": 180,
+          "ms": 71.69999999999997,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:0ms"
+          ]
+        },
+        {
+          "id": 956,
+          "count": 180,
+          "ms": 65.65700000000007,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:90ms"
+          ]
+        },
+        {
+          "id": 958,
+          "count": 180,
+          "ms": 61.437,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric is-in",
+            "data-rise",
+            "",
+            "style",
+            "--delay:180ms"
+          ]
+        },
+        {
+          "id": 953,
+          "count": 180,
+          "ms": 24.389000000000003,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "monitor-indicator"
+          ]
+        },
+        {
+          "id": 14,
+          "count": 2,
+          "ms": 0.16599999999999998,
+          "tag": "VIDEO",
+          "attributes": [
+            "id",
+            "hero-video",
+            "muted",
+            "",
+            "playsinline",
+            "",
+            "loop",
+            "",
+            "preload",
+            "auto",
+            "poster",
+            "assets/portrait-poster.webp",
+            "width",
+            "1280",
+            "height",
+            "720",
+            "aria-label",
+            "Retrato animado com elementos de estratégia e operação",
+            "aria-describedby",
+            "video-description",
+            "autoplay",
+            ""
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "hero-bloom",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::after"
+        },
+        {
+          "name": "vertical-scroll",
+          "target": "carousel-track",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "scroll-cue",
+          "target": "icon",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "ticker",
+          "target": "signal-strip__track",
+          "section": "",
+          "pseudo": null
+        },
+        {
+          "name": "bloom",
+          "target": "results",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "status-pulse",
+          "target": "monitor-indicator",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric is-in",
+          "section": "resultados",
+          "pseudo": "::before"
+        }
+      ]
+    },
+    {
+      "name": "bio-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 338,
+      "paintMs": 356.288,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 182.687,
+      "taskMs": 2297.9979999999996,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": false
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 3
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 169,
+          "ms": 315.82699999999994,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 169,
+          "ms": 40.461000000000006,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::after"
+        },
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "bio-noise-promoted",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 344,
+      "paintMs": 300.433,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 271.21,
+      "taskMs": 2532.308999999998,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": false
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 4
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 172,
+          "ms": 263.2349999999999,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 172,
+          "ms": 37.19799999999999,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "audience-drift",
+          "target": "audience-track",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::after"
+        },
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "bio-no-noise",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 344,
+      "paintMs": 346.29,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 314.03,
+      "taskMs": 2745.5029999999992,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": false
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 4
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 172,
+          "ms": 303.0759999999999,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 172,
+          "ms": 43.214000000000034,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "audience-drift",
+          "target": "audience-track",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::after"
+        },
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "timeline-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 342,
+      "paintMs": 411.672,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 87.194,
+      "taskMs": 2444.769999999998,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": false
+          }
+        ],
+        "runningAnimations": 1
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 171,
+          "ms": 361.4700000000001,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 171,
+          "ms": 50.20199999999999,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "timeline-overlay-fade",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 352,
+      "paintMs": 378.474,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 72.221,
+      "taskMs": 2205.475,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": false
+          }
+        ],
+        "runningAnimations": 1
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 176,
+          "ms": 328.9850000000002,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 176,
+          "ms": 49.48899999999998,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "faq-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 352,
+      "paintMs": 344.521,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 319.108,
+      "taskMs": 2436.535999999997,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 5
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 176,
+          "ms": 298.4010000000001,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 176,
+          "ms": 46.120000000000026,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::after"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::after"
+        }
+      ]
+    },
+    {
+      "name": "faq-wires-promoted",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 354,
+      "paintMs": 263.1,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 213.368,
+      "taskMs": 2178.4010000000007,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 5
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 177,
+          "ms": 231.98999999999998,
+          "tag": "#document"
+        },
+        {
+          "id": 945,
+          "count": 177,
+          "ms": 31.110000000000003,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::after"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::after"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "startup": {
+    "events": [
+      {
+        "name": "ParseHTML",
+        "count": 46,
+        "ms": 1031.763,
+        "maxMs": 934.476
+      },
+      {
+        "name": "EvaluateScript",
+        "count": 2,
+        "ms": 931.703,
+        "maxMs": 931.388
+      },
+      {
+        "name": "FunctionCall",
+        "count": 50,
+        "ms": 2173.439,
+        "maxMs": 1539.081
+      },
+      {
+        "name": "RecalculateStyles",
+        "count": 0,
+        "ms": 0,
+        "maxMs": 0
+      },
+      {
+        "name": "UpdateLayoutTree",
+        "count": 223,
+        "ms": 4287.211,
+        "maxMs": 1534.135
+      },
+      {
+        "name": "Layout",
+        "count": 26,
+        "ms": 1885.467,
+        "maxMs": 834.556
+      },
+      {
+        "name": "PrePaint",
+        "count": 218,
+        "ms": 287.849,
+        "maxMs": 54.562
+      },
+      {
+        "name": "Paint",
+        "count": 1088,
+        "ms": 687.16,
+        "maxMs": 52.979
+      }
+    ],
+    "calls": [
+      {
+        "name": "FunctionCall",
+        "ms": 1539.081,
+        "data": {
+          "columnNumber": 33,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "functionName": "syncMotionEffects",
+          "isolate": "16065170875082738386",
+          "lineNumber": 1848,
+          "sampleTraceId": 35675142404786,
+          "scriptId": "4",
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      },
+      {
+        "name": "EvaluateScript",
+        "ms": 931.388,
+        "data": {
+          "columnNumber": 11,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "lineNumber": 1694,
+          "scriptId": 0,
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      },
+      {
+        "name": "FunctionCall",
+        "ms": 538.058,
+        "data": {
+          "columnNumber": 59,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "functionName": "IntersectionObserver.threshold",
+          "isolate": "16803348629312235537",
+          "lineNumber": 1928,
+          "sampleTraceId": 7079331344552395,
+          "scriptId": "4",
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      },
+      {
+        "name": "FunctionCall",
+        "ms": 22.929,
+        "data": {
+          "columnNumber": 48,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "functionName": "video.addEventListener.once",
+          "isolate": "16803348629312235537",
+          "lineNumber": 2365,
+          "sampleTraceId": 7079331344555879,
+          "scriptId": "4",
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      },
+      {
+        "name": "FunctionCall",
+        "ms": 22.169,
+        "data": {
+          "columnNumber": 28,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "functionName": "syncMethodMotion",
+          "isolate": "16803348629312235537",
+          "lineNumber": 2200,
+          "sampleTraceId": 7079331344556007,
+          "scriptId": "4",
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      },
+      {
+        "name": "FunctionCall",
+        "ms": 13.576,
+        "data": {
+          "columnNumber": 44,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "functionName": "",
+          "isolate": "16803348629312235537",
+          "lineNumber": 2308,
+          "sampleTraceId": 7079331344555957,
+          "scriptId": "4",
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      },
+      {
+        "name": "FunctionCall",
+        "ms": 6.371,
+        "data": {
+          "columnNumber": 44,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "functionName": "",
+          "isolate": "16803348629312235537",
+          "lineNumber": 2320,
+          "sampleTraceId": 7079331344548962,
+          "scriptId": "4",
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      },
+      {
+        "name": "FunctionCall",
+        "ms": 5.528,
+        "data": {
+          "columnNumber": 34,
+          "frame": "CC2F4F4FDAFE0229EE71FAF0CB63817B",
+          "functionName": "refreshComposition",
+          "isolate": "16803348629312235537",
+          "lineNumber": 2336,
+          "sampleTraceId": 7079331344552660,
+          "scriptId": "4",
+          "url": "http://127.0.0.1:4183/portfolio"
+        }
+      }
+    ],
+    "nodes": 1511,
+    "cssRules": 952
+  }
+}

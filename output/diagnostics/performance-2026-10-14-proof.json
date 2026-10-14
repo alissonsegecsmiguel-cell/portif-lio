@@ -1,0 +1,900 @@
+{
+  "date": "2026-10-14",
+  "loading": [],
+  "motion": [
+    {
+      "name": "hero-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 907,
+      "paintMs": 576.508,
+      "layoutCount": 1,
+      "layoutMs": 0.386,
+      "styleMs": 252.088,
+      "taskMs": 2147.9769999999994,
+      "scriptMs": 5.254000000000001,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 11
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 181,
+          "ms": 391.42799999999994,
+          "tag": "#document"
+        },
+        {
+          "id": 944,
+          "count": 181,
+          "ms": 71.40399999999997,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric",
+            "data-rise",
+            "",
+            "style",
+            "--delay:0ms"
+          ]
+        },
+        {
+          "id": 946,
+          "count": 181,
+          "ms": 47.858,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric",
+            "data-rise",
+            "",
+            "style",
+            "--delay:90ms"
+          ]
+        },
+        {
+          "id": 948,
+          "count": 181,
+          "ms": 46.672999999999995,
+          "tag": "DIV",
+          "attributes": [
+            "class",
+            "metric",
+            "data-rise",
+            "",
+            "style",
+            "--delay:180ms"
+          ]
+        },
+        {
+          "id": 943,
+          "count": 181,
+          "ms": 19.01699999999999,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "monitor-indicator"
+          ]
+        },
+        {
+          "id": 14,
+          "count": 2,
+          "ms": 0.128,
+          "tag": "VIDEO",
+          "attributes": [
+            "id",
+            "hero-video",
+            "muted",
+            "",
+            "playsinline",
+            "",
+            "loop",
+            "",
+            "preload",
+            "auto",
+            "poster",
+            "assets/portrait-poster.webp",
+            "width",
+            "1280",
+            "height",
+            "720",
+            "aria-label",
+            "Retrato animado com elementos de estratégia e operação",
+            "aria-describedby",
+            "video-description",
+            "autoplay",
+            ""
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "hero-bloom",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::after"
+        },
+        {
+          "name": "vertical-scroll",
+          "target": "carousel-track",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "scroll-cue",
+          "target": "icon",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "ticker",
+          "target": "signal-strip__track",
+          "section": "",
+          "pseudo": null
+        },
+        {
+          "name": "bloom",
+          "target": "results",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "status-pulse",
+          "target": "monitor-indicator",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "grid-drift",
+          "target": "metric",
+          "section": "resultados",
+          "pseudo": "::before"
+        }
+      ]
+    },
+    {
+      "name": "hero-composite-candidate",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 80.556,
+      "taskMs": 272.41800000000006,
+      "scriptMs": 1.9730000000000025,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 11
+      },
+      "paintNodes": [],
+      "animations": [
+        {
+          "name": "bloom",
+          "target": "hero-bloom",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp",
+          "section": "inicio",
+          "pseudo": "::after"
+        },
+        {
+          "name": "vertical-scroll",
+          "target": "carousel-track",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "scroll-cue",
+          "target": "icon",
+          "section": "inicio",
+          "pseudo": null
+        },
+        {
+          "name": "ticker",
+          "target": "signal-strip__track",
+          "section": "",
+          "pseudo": null
+        },
+        {
+          "name": "bloom",
+          "target": "results",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "status-pulse",
+          "target": "monitor-indicator",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "diagnostic-grid",
+          "target": "metric",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "diagnostic-grid",
+          "target": "metric",
+          "section": "resultados",
+          "pseudo": "::before"
+        },
+        {
+          "name": "diagnostic-grid",
+          "target": "metric",
+          "section": "resultados",
+          "pseudo": "::before"
+        }
+      ]
+    },
+    {
+      "name": "audience-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 501,
+      "paintMs": 354.354,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 554.954,
+      "taskMs": 2760.064,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 9
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 167,
+          "ms": 305.56599999999975,
+          "tag": "#document"
+        },
+        {
+          "id": 956,
+          "count": 167,
+          "ms": 29.78899999999999,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot"
+          ]
+        },
+        {
+          "id": 957,
+          "count": 167,
+          "ms": 18.998999999999988,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "metodo",
+          "pseudo": null
+        },
+        {
+          "name": "audience-drift",
+          "target": "audience-track",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::after"
+        },
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "audience-composite-candidate",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 0,
+      "taskMs": 10.166999999999149,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 9
+      },
+      "paintNodes": [],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "metodo",
+          "pseudo": null
+        },
+        {
+          "name": "audience-drift",
+          "target": "audience-track",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-orbit",
+          "target": "audience-orbit",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "audience-float",
+          "target": "audience-symbol",
+          "section": "para-quem",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "para-quem",
+          "pseudo": "::after"
+        },
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "timeline-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 338,
+      "paintMs": 310.773,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 91.324,
+      "taskMs": 2605.7950000000005,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": false
+          }
+        ],
+        "runningAnimations": 1
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 169,
+          "ms": 258.03100000000006,
+          "tag": "#document"
+        },
+        {
+          "id": 957,
+          "count": 169,
+          "ms": 52.74200000000001,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "timeline-composite-candidate",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 0,
+      "taskMs": 217.03799999999873,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": false
+          }
+        ],
+        "runningAnimations": 1
+      },
+      "paintNodes": [],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        }
+      ]
+    },
+    {
+      "name": "faq-baseline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 342,
+      "paintMs": 253.171,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 381.814,
+      "taskMs": 2608.0080000000016,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 5
+      },
+      "paintNodes": [
+        {
+          "id": 16,
+          "count": 171,
+          "ms": 213.42700000000002,
+          "tag": "#document"
+        },
+        {
+          "id": 957,
+          "count": 171,
+          "ms": 39.744,
+          "tag": "SPAN",
+          "attributes": [
+            "class",
+            "status-dot",
+            "aria-hidden",
+            "true"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::after"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::after"
+        }
+      ]
+    },
+    {
+      "name": "faq-composite-candidate",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 0,
+      "taskMs": 10.90600000000208,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 5
+      },
+      "paintNodes": [],
+      "animations": [
+        {
+          "name": "status-pulse",
+          "target": "status-dot",
+          "section": "sobre",
+          "pseudo": null
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp fold-whatsapp",
+          "section": "perguntas",
+          "pseudo": "::after"
+        },
+        {
+          "name": "hero-cta-border",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::before"
+        },
+        {
+          "name": "hero-cta-shine",
+          "target": "button button-primary magnetic hero-whatsapp closing-cta",
+          "section": "contato",
+          "pseudo": "::after"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "cache": {
+    "cold": [
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+        "bytes": 24876,
+        "body": 24576
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+        "bytes": 67688,
+        "body": 67388
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+        "bytes": 33486,
+        "body": 33186
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+        "bytes": 2341,
+        "body": 2041
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+        "bytes": 9638,
+        "body": 9338
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+        "bytes": 3172,
+        "body": 2872
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+        "bytes": 2993,
+        "body": 2693
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+        "bytes": 3076,
+        "body": 2776
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+        "bytes": 2858,
+        "body": 2558
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+        "bytes": 3454,
+        "body": 3154
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+        "bytes": 3805,
+        "body": 3505
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+        "bytes": 645401,
+        "body": 645101
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+        "bytes": 20024,
+        "body": 19724
+      },
+      {
+        "url": "https://alissonsegecs.com.br/favicon.svg",
+        "bytes": 651,
+        "body": 351
+      }
+    ],
+    "warm": [
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+        "bytes": 0,
+        "body": 24576
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+        "bytes": 0,
+        "body": 67388
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+        "bytes": 300,
+        "body": 33186
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+        "bytes": 300,
+        "body": 2041
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+        "bytes": 0,
+        "body": 9338
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+        "bytes": 300,
+        "body": 2872
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+        "bytes": 300,
+        "body": 2693
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+        "bytes": 300,
+        "body": 2776
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+        "bytes": 300,
+        "body": 2558
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+        "bytes": 300,
+        "body": 3154
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+        "bytes": 300,
+        "body": 3505
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+        "bytes": 645401,
+        "body": 645101
+      },
+      {
+        "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+        "bytes": 0,
+        "body": 19724
+      }
+    ]
+  }
+}

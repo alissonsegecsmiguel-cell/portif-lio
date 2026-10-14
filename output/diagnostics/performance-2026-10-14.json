@@ -1,0 +1,3965 @@
+{
+  "date": "2026-10-14",
+  "loading": [
+    {
+      "url": "https://alissonsegecs.com.br/portfolio",
+      "fcpMs": 2440,
+      "lcp": {
+        "ms": 3240,
+        "size": 921600,
+        "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+        "tag": "VIDEO",
+        "class": ""
+      },
+      "cls": 0.00006863006566122908,
+      "shifts": [
+        {
+          "ms": 1093.300000011921,
+          "value": 0.00006863006566122908,
+          "sources": [
+            {
+              "tag": "DIV",
+              "class": "nav-capsule",
+              "before": {
+                "x": 492.109375,
+                "y": 24,
+                "width": 440.53125,
+                "height": 50,
+                "top": 24,
+                "right": 932.640625,
+                "bottom": 74,
+                "left": 492.109375
+              },
+              "after": {
+                "x": 487.109375,
+                "y": 24,
+                "width": 450.78125,
+                "height": 50,
+                "top": 24,
+                "right": 937.890625,
+                "bottom": 74,
+                "left": 487.109375
+              }
+            },
+            {
+              "before": {
+                "x": 101.234375,
+                "y": 38.5,
+                "width": 111.71875,
+                "height": 21,
+                "top": 38.5,
+                "right": 212.953125,
+                "bottom": 59.5,
+                "left": 101.234375
+              },
+              "after": {
+                "x": 102.234375,
+                "y": 38.5,
+                "width": 115.40625,
+                "height": 21,
+                "top": 38.5,
+                "right": 217.640625,
+                "bottom": 59.5,
+                "left": 102.234375
+              }
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "ms": 259.60000002384186,
+          "duration": 470
+        },
+        {
+          "ms": 747.8000000119209,
+          "duration": 137
+        },
+        {
+          "ms": 1101.300000011921,
+          "duration": 108
+        }
+      ],
+      "videoFirstPlay": 3214.899999976158,
+      "ttfbMs": 191.69999998807907,
+      "domMs": 744.1000000238419,
+      "loadMs": 3215.800000011921,
+      "domNodes": 1511,
+      "resources": [
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "encodedBytes": 24576,
+          "transferBytes": 24876,
+          "ms": 319.30000001192093,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "encodedBytes": 67388,
+          "transferBytes": 67688,
+          "ms": 290.5999999642372,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "encodedBytes": 33186,
+          "transferBytes": 33486,
+          "ms": 274,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "encodedBytes": 2041,
+          "transferBytes": 2341,
+          "ms": 248.39999997615814,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "encodedBytes": 9338,
+          "transferBytes": 9638,
+          "ms": 283.19999998807907,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "encodedBytes": 2872,
+          "transferBytes": 3172,
+          "ms": 267.80000001192093,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "encodedBytes": 2693,
+          "transferBytes": 2993,
+          "ms": 268.80000001192093,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "encodedBytes": 2776,
+          "transferBytes": 3076,
+          "ms": 240.89999997615814,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "encodedBytes": 2558,
+          "transferBytes": 2858,
+          "ms": 241.5,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "encodedBytes": 3154,
+          "transferBytes": 3454,
+          "ms": 240.9000000357628,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "encodedBytes": 3505,
+          "transferBytes": 3805,
+          "ms": 292.30000001192093,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "encodedBytes": 645101,
+          "transferBytes": 645401,
+          "ms": 556,
+          "type": "video"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "encodedBytes": 19724,
+          "transferBytes": 20024,
+          "ms": 262.30000001192093,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "encodedBytes": 351,
+          "transferBytes": 651,
+          "ms": 247.5,
+          "type": "other"
+        }
+      ],
+      "videos": [
+        {
+          "id": "hero-video",
+          "paused": false,
+          "src": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "quality": {
+            "total": 53,
+            "dropped": 1
+          }
+        },
+        {
+          "id": "about-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        },
+        {
+          "id": "planning-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        }
+      ],
+      "network": [
+        {
+          "url": "https://alissonsegecs.com.br/portfolio",
+          "type": "Document",
+          "status": 200,
+          "headers": {
+            "access-control-allow-origin": "*",
+            "age": "104",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "content-disposition": "inline; filename=\"portfolio\"",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "etag": "W/\"a518e9bb4da7c141fa34c14985ca42c1\"",
+            "last-modified": "Wed, 14 Oct 2026 17:35:42 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000",
+            "x-vercel-cache": "HIT",
+            "x-vercel-id": "gru1::st8hg-1791999447066-f23cea1336f6"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 59145
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "MISS",
+            "etag": "\"101877a7a906c31436104fe33740ae44\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "24576",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"manrope-e310b55a7f.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::nr6df-1791999447177-ada826c94bce"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 24732
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "MISS",
+            "etag": "\"5d283517432688cbc312a7a954516cce\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "67388",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"fraunces-48282a415e.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::76qcv-1791999447177-00c13233266a"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 67570
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"db7b610de5b5342340b6db0b8f204067\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "33186",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"portrait-poster.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::rrwnr-1791999447177-5edbe0a8ac23"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 33347
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"c6cfd00f3d841d3a49d6c0c6f75760c5\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2041",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"receitaprevisivel.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::fn4l8-1791999447185-bcdd6b55a3e4"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2175
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "MISS",
+            "etag": "\"4c5a2caa3426394132e4c0f47d8cc727\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "9338",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"andreferrazaromaterapia-200-96d3da3e61.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::mfbbd-1791999447185-39495af1bd3d"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 9522
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"1d8445f4f1b046dcf069eeb6cddea912\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2872",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"portugues_marciamacedo.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::h9z8k-1791999447186-3ff3c686cebc"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3008
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"cac7a0e2500f2257b6bf6b1b05ec7cb3\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2693",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"engcivilcamilasoares.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::9gc9z-1791999447186-d408f75be3f3"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2828
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"7801d51951025d697d9f65aabb74b7dc\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2776",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"lucianof.castro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::qkbwz-1791999447186-96eb619becd8"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2954
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"fc08e4b89b70227d485232eb080d43fa\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2558",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"danimartinspro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::k6xnv-1791999447187-4ec53aa54d8c"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2689
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"75d2fceca087faf5116c0a574f06d989\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3154",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"thiagomuniz.rp.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::lq8s2-1791999447187-6b72e3096ecd"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3294
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"5328a2ce516738e326b582cd97cbb54d\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3505",
+            "date": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "content-disposition": "inline; filename=\"saradodepoisdos40.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::mvhrq-1791999447187-2f7e5185cb64"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3654
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "type": "Media",
+          "status": 206,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"0407ac66afc6efcb7aeff8c3941a47ee\"",
+            "age": "0",
+            "Content-Range": "bytes 0-645100/645101",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "Content-Length": "645101",
+            "date": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "content-disposition": "inline; filename=\"Animating_portrait_transforming_â¦_20261012185500.playback.mp4\"",
+            "content-type": "video/mp4",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::st8hg-1791999447683-fb06bd110bb1"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 645755
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "MISS",
+            "etag": "\"51c26f14157fd066a514393270736d45\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "19724",
+            "date": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "content-disposition": "inline; filename=\"andre-ferraz-400-4c80ddd2db.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "x-vercel-id": "gru1::9gc9z-1791999447851-73e37f89ab7c"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 19944
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "type": "Other",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "etag": "\"ee946ae8b2871f4e682ed4add4a6f5f7\"",
+            "age": "0",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "351",
+            "date": "Wed, 14 Oct 2026 17:37:30 GMT",
+            "content-disposition": "inline; filename=\"favicon.svg\"",
+            "content-type": "image/svg+xml",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:30 GMT",
+            "x-vercel-id": "gru1::bfv8k-1791999450204-f636f1b2091d"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 536
+        }
+      ],
+      "name": "production-desktop",
+      "simulation": {
+        "width": 1440,
+        "height": 900,
+        "cpuRate": 1,
+        "latencyMs": 0,
+        "throughputKiBs": "unlimited",
+        "cache": false,
+        "reduced": false
+      },
+      "htmlSha256": "ac8e9a434130b8aa3ae910a451ad7c2fe83201092bae92986329330493c324f3",
+      "documentBytes": 280688,
+      "localSourceMatches": true
+    },
+    {
+      "url": "https://alissonsegecs.com.br/portfolio",
+      "fcpMs": 2376,
+      "lcp": {
+        "ms": 3060,
+        "size": 128837,
+        "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+        "tag": "VIDEO",
+        "class": ""
+      },
+      "cls": 0,
+      "shifts": [],
+      "tasks": [
+        {
+          "ms": 303.60000002384186,
+          "duration": 61
+        },
+        {
+          "ms": 3211.600000023842,
+          "duration": 67
+        },
+        {
+          "ms": 3429.199999988079,
+          "duration": 901
+        },
+        {
+          "ms": 4331.199999988079,
+          "duration": 259
+        },
+        {
+          "ms": 4593,
+          "duration": 77
+        },
+        {
+          "ms": 4709.600000023842,
+          "duration": 473
+        },
+        {
+          "ms": 5910.800000011921,
+          "duration": 59
+        }
+      ],
+      "videoFirstPlay": 5734.800000011921,
+      "ttfbMs": 62.90000003576279,
+      "domMs": 4671.5,
+      "loadMs": 5736.600000023842,
+      "domNodes": 1511,
+      "resources": [
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "encodedBytes": 24576,
+          "transferBytes": 24876,
+          "ms": 834.8000000119209,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "encodedBytes": 67388,
+          "transferBytes": 67688,
+          "ms": 1176.5,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "encodedBytes": 33186,
+          "transferBytes": 33486,
+          "ms": 941.1999999880791,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "encodedBytes": 2041,
+          "transferBytes": 2341,
+          "ms": 246.69999998807907,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "encodedBytes": 9338,
+          "transferBytes": 9638,
+          "ms": 465.39999997615814,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "encodedBytes": 2872,
+          "transferBytes": 3172,
+          "ms": 292.5999999642372,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "encodedBytes": 2693,
+          "transferBytes": 2993,
+          "ms": 495.30000001192093,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "encodedBytes": 2776,
+          "transferBytes": 3076,
+          "ms": 543.5,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "encodedBytes": 2558,
+          "transferBytes": 2858,
+          "ms": 702.5,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "encodedBytes": 3154,
+          "transferBytes": 3454,
+          "ms": 732.1999999880791,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "encodedBytes": 3505,
+          "transferBytes": 3805,
+          "ms": 795.6999999880791,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "encodedBytes": 19724,
+          "transferBytes": 20024,
+          "ms": 357.69999998807907,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "encodedBytes": 645101,
+          "transferBytes": 645401,
+          "ms": 4489.899999976158,
+          "type": "video"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "encodedBytes": 351,
+          "transferBytes": 651,
+          "ms": 150.5999999642372,
+          "type": "other"
+        }
+      ],
+      "videos": [
+        {
+          "id": "hero-video",
+          "paused": false,
+          "src": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "quality": {
+            "total": 107,
+            "dropped": 2
+          }
+        },
+        {
+          "id": "about-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        },
+        {
+          "id": "planning-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        }
+      ],
+      "network": [
+        {
+          "url": "https://alissonsegecs.com.br/portfolio",
+          "type": "Document",
+          "status": 200,
+          "headers": {
+            "access-control-allow-origin": "*",
+            "age": "110",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "content-disposition": "inline; filename=\"portfolio\"",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Wed, 14 Oct 2026 17:37:33 GMT",
+            "etag": "W/\"a518e9bb4da7c141fa34c14985ca42c1\"",
+            "last-modified": "Wed, 14 Oct 2026 17:35:42 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000",
+            "x-vercel-cache": "HIT",
+            "x-vercel-id": "gru1::rrwnr-1791999453473-dd1911821b18"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 59077
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"101877a7a906c31436104fe33740ae44\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "24576",
+            "date": "Wed, 14 Oct 2026 17:37:33 GMT",
+            "content-disposition": "inline; filename=\"manrope-e310b55a7f.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::m6hgs-1791999453723-5af5653e0598"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 24693
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"5d283517432688cbc312a7a954516cce\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "67388",
+            "date": "Wed, 14 Oct 2026 17:37:33 GMT",
+            "content-disposition": "inline; filename=\"fraunces-48282a415e.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::qz5xw-1791999453723-485b9259540f"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 67496
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"db7b610de5b5342340b6db0b8f204067\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "33186",
+            "date": "Wed, 14 Oct 2026 17:37:33 GMT",
+            "content-disposition": "inline; filename=\"portrait-poster.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::knx5w-1791999453723-aeb79cc47475"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 33350
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"c6cfd00f3d841d3a49d6c0c6f75760c5\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2041",
+            "date": "Wed, 14 Oct 2026 17:37:33 GMT",
+            "content-disposition": "inline; filename=\"receitaprevisivel.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::fn442-1791999453867-eaf7c702167e"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2177
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"4c5a2caa3426394132e4c0f47d8cc727\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "9338",
+            "date": "Wed, 14 Oct 2026 17:37:33 GMT",
+            "content-disposition": "inline; filename=\"andreferrazaromaterapia-200-96d3da3e61.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::m6hgs-1791999453868-9fb690c1a896"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 9495
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"1d8445f4f1b046dcf069eeb6cddea912\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2872",
+            "date": "Wed, 14 Oct 2026 17:37:33 GMT",
+            "content-disposition": "inline; filename=\"portugues_marciamacedo.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::6ftff-1791999453868-23f7d9735ecc"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3023
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"cac7a0e2500f2257b6bf6b1b05ec7cb3\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2693",
+            "date": "Wed, 14 Oct 2026 17:37:34 GMT",
+            "content-disposition": "inline; filename=\"engcivilcamilasoares.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::s2h68-1791999454114-f4621111553d"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2851
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"7801d51951025d697d9f65aabb74b7dc\"",
+            "age": "6",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2776",
+            "date": "Wed, 14 Oct 2026 17:37:34 GMT",
+            "content-disposition": "inline; filename=\"lucianof.castro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::tp8vx-1791999454251-7deb4c422e9f"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2921
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"fc08e4b89b70227d485232eb080d43fa\"",
+            "age": "7",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2558",
+            "date": "Wed, 14 Oct 2026 17:37:34 GMT",
+            "content-disposition": "inline; filename=\"danimartinspro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::k6xnv-1791999454339-3cd1243812fc"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2745
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"75d2fceca087faf5116c0a574f06d989\"",
+            "age": "7",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3154",
+            "date": "Wed, 14 Oct 2026 17:37:34 GMT",
+            "content-disposition": "inline; filename=\"thiagomuniz.rp.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::rv6mf-1791999454376-10ac2fe9a0d2"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3294
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"5328a2ce516738e326b582cd97cbb54d\"",
+            "age": "7",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3505",
+            "date": "Wed, 14 Oct 2026 17:37:34 GMT",
+            "content-disposition": "inline; filename=\"saradodepoisdos40.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::wdf4s-1791999454517-44f705537ab7"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3648
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"51c26f14157fd066a514393270736d45\"",
+            "age": "7",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "19724",
+            "date": "Wed, 14 Oct 2026 17:37:35 GMT",
+            "content-disposition": "inline; filename=\"andre-ferraz-400-4c80ddd2db.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "x-vercel-id": "gru1::rv6mf-1791999455706-b7738259cb33"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 19932
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "type": "Media",
+          "status": 206,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"0407ac66afc6efcb7aeff8c3941a47ee\"",
+            "age": "10",
+            "Content-Range": "bytes 0-645100/645101",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "Content-Length": "645101",
+            "date": "Wed, 14 Oct 2026 17:37:38 GMT",
+            "content-disposition": "inline; filename=\"Animating_portrait_transforming_â¦_20261012185500.playback.mp4\"",
+            "content-type": "video/mp4",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "x-vercel-id": "gru1::m6hgs-1791999458152-6c4eee4a8514"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 645715
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "type": "Other",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"ee946ae8b2871f4e682ed4add4a6f5f7\"",
+            "age": "9",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "351",
+            "date": "Wed, 14 Oct 2026 17:37:39 GMT",
+            "content-disposition": "inline; filename=\"favicon.svg\"",
+            "content-type": "image/svg+xml",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:30 GMT",
+            "x-vercel-id": "gru1::knx5w-1791999459361-32da1966c94d"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 539
+        }
+      ],
+      "name": "production-mobile-1",
+      "simulation": {
+        "width": 390,
+        "height": 844,
+        "cpuRate": 4,
+        "latencyMs": 120,
+        "throughputKiBs": 180,
+        "cache": false,
+        "reduced": false
+      },
+      "htmlSha256": "ac8e9a434130b8aa3ae910a451ad7c2fe83201092bae92986329330493c324f3",
+      "documentBytes": 280688,
+      "localSourceMatches": true
+    },
+    {
+      "url": "https://alissonsegecs.com.br/portfolio",
+      "fcpMs": 3028,
+      "lcp": {
+        "ms": 5080,
+        "size": 128226,
+        "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+        "tag": "VIDEO",
+        "class": ""
+      },
+      "cls": 0.0009818926742436154,
+      "shifts": [
+        {
+          "ms": 6770.099999964237,
+          "value": 0.0009818926742436154,
+          "sources": [
+            {
+              "tag": "A",
+              "class": "expert-link",
+              "before": {
+                "x": 26.47674560546875,
+                "y": 642.796875,
+                "width": 176.765625,
+                "height": 60,
+                "top": 642.796875,
+                "right": 203.24237060546875,
+                "bottom": 702.796875,
+                "left": 26.47674560546875
+              },
+              "after": {
+                "x": 39.07049560546875,
+                "y": 642.796875,
+                "width": 176.765625,
+                "height": 60,
+                "top": 642.796875,
+                "right": 215.83612060546875,
+                "bottom": 702.796875,
+                "left": 39.07049560546875
+              }
+            },
+            {
+              "tag": "A",
+              "class": "expert-link",
+              "before": {
+                "x": 227.24237060546875,
+                "y": 642.796875,
+                "width": 143.015625,
+                "height": 60,
+                "top": 642.796875,
+                "right": 370.25799560546875,
+                "bottom": 702.796875,
+                "left": 227.24237060546875
+              },
+              "after": {
+                "x": 239.83612060546875,
+                "y": 642.796875,
+                "width": 143.015625,
+                "height": 60,
+                "top": 642.796875,
+                "right": 382.85174560546875,
+                "bottom": 702.796875,
+                "left": 239.83612060546875
+              }
+            },
+            {
+              "tag": "A",
+              "class": "expert-link",
+              "before": {
+                "x": 0,
+                "y": 642.796875,
+                "width": 2.47674560546875,
+                "height": 60,
+                "top": 642.796875,
+                "right": 2.47674560546875,
+                "bottom": 702.796875,
+                "left": 0
+              },
+              "after": {
+                "x": 0,
+                "y": 642.796875,
+                "width": 15.07049560546875,
+                "height": 60,
+                "top": 642.796875,
+                "right": 15.07049560546875,
+                "bottom": 702.796875,
+                "left": 0
+              }
+            }
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "ms": 5047.199999988079,
+          "duration": 1667
+        },
+        {
+          "ms": 6715.5,
+          "duration": 453
+        },
+        {
+          "ms": 7220.300000011921,
+          "duration": 622
+        },
+        {
+          "ms": 7882.800000011921,
+          "duration": 81
+        },
+        {
+          "ms": 8116.699999988079,
+          "duration": 55
+        },
+        {
+          "ms": 8494.899999976158,
+          "duration": 63
+        }
+      ],
+      "videoFirstPlay": 8287.5,
+      "ttfbMs": 2402.099999964237,
+      "domMs": 7175.800000011921,
+      "loadMs": 8289.800000011921,
+      "domNodes": 1511,
+      "resources": [
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "encodedBytes": 24576,
+          "transferBytes": 24876,
+          "ms": 1461.7999999523163,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "encodedBytes": 67388,
+          "transferBytes": 67688,
+          "ms": 1735.5,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "encodedBytes": 33186,
+          "transferBytes": 33486,
+          "ms": 1513.300000011921,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "encodedBytes": 2041,
+          "transferBytes": 2341,
+          "ms": 389.7999999523163,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "encodedBytes": 9338,
+          "transferBytes": 9638,
+          "ms": 559.6000000238419,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "encodedBytes": 2872,
+          "transferBytes": 3172,
+          "ms": 393.5,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "encodedBytes": 2693,
+          "transferBytes": 2993,
+          "ms": 659.3000000119209,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "encodedBytes": 2776,
+          "transferBytes": 3076,
+          "ms": 651.6999999880791,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "encodedBytes": 2558,
+          "transferBytes": 2858,
+          "ms": 802.6000000238419,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "encodedBytes": 3154,
+          "transferBytes": 3454,
+          "ms": 915.6999999880791,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "encodedBytes": 3505,
+          "transferBytes": 3805,
+          "ms": 921.9000000357628,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "encodedBytes": 19724,
+          "transferBytes": 20024,
+          "ms": 264,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "encodedBytes": 645101,
+          "transferBytes": 645401,
+          "ms": 3919,
+          "type": "video"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "encodedBytes": 351,
+          "transferBytes": 651,
+          "ms": 168.80000001192093,
+          "type": "other"
+        }
+      ],
+      "videos": [
+        {
+          "id": "hero-video",
+          "paused": false,
+          "src": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "quality": {
+            "total": 106,
+            "dropped": 1
+          }
+        },
+        {
+          "id": "about-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        },
+        {
+          "id": "planning-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        }
+      ],
+      "network": [
+        {
+          "url": "https://alissonsegecs.com.br/portfolio",
+          "type": "Document",
+          "status": 200,
+          "headers": {
+            "access-control-allow-origin": "*",
+            "age": "122",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "content-disposition": "inline; filename=\"portfolio\"",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Wed, 14 Oct 2026 17:37:44 GMT",
+            "etag": "W/\"a518e9bb4da7c141fa34c14985ca42c1\"",
+            "last-modified": "Wed, 14 Oct 2026 17:35:42 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000",
+            "x-vercel-cache": "HIT",
+            "x-vercel-id": "gru1::gw2j7-1791999464784-cb1ee5ed295e"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 59078
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"101877a7a906c31436104fe33740ae44\"",
+            "age": "19",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "24576",
+            "date": "Wed, 14 Oct 2026 17:37:47 GMT",
+            "content-disposition": "inline; filename=\"manrope-e310b55a7f.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::2m6dz-1791999467117-d0a75ac2bdf6"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 24758
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"5d283517432688cbc312a7a954516cce\"",
+            "age": "19",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "67388",
+            "date": "Wed, 14 Oct 2026 17:37:47 GMT",
+            "content-disposition": "inline; filename=\"fraunces-48282a415e.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::4s25x-1791999467117-25451f1a64d8"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 67619
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"db7b610de5b5342340b6db0b8f204067\"",
+            "age": "19",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "33186",
+            "date": "Wed, 14 Oct 2026 17:37:47 GMT",
+            "content-disposition": "inline; filename=\"portrait-poster.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::m6hgs-1791999467117-51df6abec0d7"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 33375
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"c6cfd00f3d841d3a49d6c0c6f75760c5\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2041",
+            "date": "Wed, 14 Oct 2026 17:37:47 GMT",
+            "content-disposition": "inline; filename=\"receitaprevisivel.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::4s25x-1791999467619-b513c5c85b8d"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2175
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"4c5a2caa3426394132e4c0f47d8cc727\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "9338",
+            "date": "Wed, 14 Oct 2026 17:37:47 GMT",
+            "content-disposition": "inline; filename=\"andreferrazaromaterapia-200-96d3da3e61.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::j49mj-1791999467619-3264d99078d1"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 9496
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"1d8445f4f1b046dcf069eeb6cddea912\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2872",
+            "date": "Wed, 14 Oct 2026 17:37:47 GMT",
+            "content-disposition": "inline; filename=\"portugues_marciamacedo.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::2m6dz-1791999467620-a93e6ca65385"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3046
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"cac7a0e2500f2257b6bf6b1b05ec7cb3\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2693",
+            "date": "Wed, 14 Oct 2026 17:37:48 GMT",
+            "content-disposition": "inline; filename=\"engcivilcamilasoares.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::cxhph-1791999467995-54e3dd0e607b"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2828
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"7801d51951025d697d9f65aabb74b7dc\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2776",
+            "date": "Wed, 14 Oct 2026 17:37:48 GMT",
+            "content-disposition": "inline; filename=\"lucianof.castro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::phff4-1791999467997-a48452790fe6"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2946
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"fc08e4b89b70227d485232eb080d43fa\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2558",
+            "date": "Wed, 14 Oct 2026 17:37:48 GMT",
+            "content-disposition": "inline; filename=\"danimartinspro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::5gpzs-1791999468150-ea0053ac6537"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2689
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"75d2fceca087faf5116c0a574f06d989\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3154",
+            "date": "Wed, 14 Oct 2026 17:37:48 GMT",
+            "content-disposition": "inline; filename=\"thiagomuniz.rp.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::gw2j7-1791999468297-6cd0f70e9f37"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3294
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"5328a2ce516738e326b582cd97cbb54d\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3505",
+            "date": "Wed, 14 Oct 2026 17:37:48 GMT",
+            "content-disposition": "inline; filename=\"saradodepoisdos40.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::4s25x-1791999468298-f11561656d02"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3648
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"51c26f14157fd066a514393270736d45\"",
+            "age": "20",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "19724",
+            "date": "Wed, 14 Oct 2026 17:37:48 GMT",
+            "content-disposition": "inline; filename=\"andre-ferraz-400-4c80ddd2db.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "x-vercel-id": "gru1::97zjz-1791999468847-d1c9d929c8bd"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 19915
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "type": "Media",
+          "status": 206,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"0407ac66afc6efcb7aeff8c3941a47ee\"",
+            "age": "23",
+            "Content-Range": "bytes 0-645100/645101",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "Content-Length": "645101",
+            "date": "Wed, 14 Oct 2026 17:37:51 GMT",
+            "content-disposition": "inline; filename=\"Animating_portrait_transforming_â¦_20261012185500.playback.mp4\"",
+            "content-type": "video/mp4",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "x-vercel-id": "gru1::m7zh8-1791999471796-c80689f34328"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 645706
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "type": "Other",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"ee946ae8b2871f4e682ed4add4a6f5f7\"",
+            "age": "22",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "351",
+            "date": "Wed, 14 Oct 2026 17:37:53 GMT",
+            "content-disposition": "inline; filename=\"favicon.svg\"",
+            "content-type": "image/svg+xml",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:30 GMT",
+            "x-vercel-id": "gru1::b8z84-1791999473103-57799f33f59d"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 545
+        }
+      ],
+      "name": "production-mobile-2",
+      "simulation": {
+        "width": 390,
+        "height": 844,
+        "cpuRate": 4,
+        "latencyMs": 120,
+        "throughputKiBs": 180,
+        "cache": false,
+        "reduced": false
+      },
+      "htmlSha256": "ac8e9a434130b8aa3ae910a451ad7c2fe83201092bae92986329330493c324f3",
+      "documentBytes": 280688,
+      "localSourceMatches": true
+    },
+    {
+      "url": "https://alissonsegecs.com.br/portfolio",
+      "fcpMs": 2336,
+      "lcp": {
+        "ms": 5072,
+        "size": 127530,
+        "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+        "tag": "VIDEO",
+        "class": ""
+      },
+      "cls": 0,
+      "shifts": [],
+      "tasks": [
+        {
+          "ms": 451.4000000357628,
+          "duration": 63
+        },
+        {
+          "ms": 3309.800000011921,
+          "duration": 1241
+        },
+        {
+          "ms": 4552.800000011921,
+          "duration": 492
+        },
+        {
+          "ms": 5159.199999988079,
+          "duration": 680
+        },
+        {
+          "ms": 5844.300000011921,
+          "duration": 59
+        },
+        {
+          "ms": 6322.800000011921,
+          "duration": 55
+        }
+      ],
+      "videoFirstPlay": 6162.600000023842,
+      "ttfbMs": 66.69999998807907,
+      "domMs": 5079.199999988079,
+      "loadMs": 6164.699999988079,
+      "domNodes": 1511,
+      "resources": [
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "encodedBytes": 24576,
+          "transferBytes": 24876,
+          "ms": 725.6999999880791,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "encodedBytes": 67388,
+          "transferBytes": 67688,
+          "ms": 1213.5,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "encodedBytes": 33186,
+          "transferBytes": 33486,
+          "ms": 959.3999999761581,
+          "type": "link"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "encodedBytes": 2041,
+          "transferBytes": 2341,
+          "ms": 213.5,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "encodedBytes": 9338,
+          "transferBytes": 9638,
+          "ms": 437.5,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "encodedBytes": 2872,
+          "transferBytes": 3172,
+          "ms": 242.80000001192093,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "encodedBytes": 2693,
+          "transferBytes": 2993,
+          "ms": 427.89999997615814,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "encodedBytes": 2776,
+          "transferBytes": 3076,
+          "ms": 458.9000000357628,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "encodedBytes": 2558,
+          "transferBytes": 2858,
+          "ms": 522.5999999642372,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "encodedBytes": 3154,
+          "transferBytes": 3454,
+          "ms": 649.0999999642372,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "encodedBytes": 3505,
+          "transferBytes": 3805,
+          "ms": 651.4000000357628,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "encodedBytes": 19724,
+          "transferBytes": 20024,
+          "ms": 289,
+          "type": "img"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "encodedBytes": 645101,
+          "transferBytes": 645401,
+          "ms": 3815.300000011921,
+          "type": "video"
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "encodedBytes": 351,
+          "transferBytes": 651,
+          "ms": 129.30000001192093,
+          "type": "other"
+        }
+      ],
+      "videos": [
+        {
+          "id": "hero-video",
+          "paused": false,
+          "src": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "quality": {
+            "total": 101,
+            "dropped": 1
+          }
+        },
+        {
+          "id": "about-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        },
+        {
+          "id": "planning-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        }
+      ],
+      "network": [
+        {
+          "url": "https://alissonsegecs.com.br/portfolio",
+          "type": "Document",
+          "status": 200,
+          "headers": {
+            "access-control-allow-origin": "*",
+            "age": "135",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "content-disposition": "inline; filename=\"portfolio\"",
+            "content-encoding": "br",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Wed, 14 Oct 2026 17:37:58 GMT",
+            "etag": "W/\"a518e9bb4da7c141fa34c14985ca42c1\"",
+            "last-modified": "Wed, 14 Oct 2026 17:35:42 GMT",
+            "server": "Vercel",
+            "strict-transport-security": "max-age=63072000",
+            "x-vercel-cache": "HIT",
+            "x-vercel-id": "gru1::kfxcb-1791999478269-545dbba84e28"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 59099
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/manrope-e310b55a7f.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"101877a7a906c31436104fe33740ae44\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "24576",
+            "date": "Wed, 14 Oct 2026 17:37:58 GMT",
+            "content-disposition": "inline; filename=\"manrope-e310b55a7f.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::cxhph-1791999478400-1ea0f3ddd430"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 24730
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/fraunces-48282a415e.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"5d283517432688cbc312a7a954516cce\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "67388",
+            "date": "Wed, 14 Oct 2026 17:37:58 GMT",
+            "content-disposition": "inline; filename=\"fraunces-48282a415e.woff2\"",
+            "content-type": "font/woff2",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::2rkrd-1791999478400-9e8ecb90fc72"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 67638
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/portrait-poster.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"db7b610de5b5342340b6db0b8f204067\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "33186",
+            "date": "Wed, 14 Oct 2026 17:37:58 GMT",
+            "content-disposition": "inline; filename=\"portrait-poster.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::m7zh8-1791999478402-2243974b5f93"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 33347
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/receitaprevisivel.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"c6cfd00f3d841d3a49d6c0c6f75760c5\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2041",
+            "date": "Wed, 14 Oct 2026 17:37:58 GMT",
+            "content-disposition": "inline; filename=\"receitaprevisivel.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::4nnjc-1791999478785-8fae10c768d5"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2184
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"4c5a2caa3426394132e4c0f47d8cc727\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "9338",
+            "date": "Wed, 14 Oct 2026 17:37:58 GMT",
+            "content-disposition": "inline; filename=\"andreferrazaromaterapia-200-96d3da3e61.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::g9s65-1791999478788-9cc969ec78d7"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 9495
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/portugues_marciamacedo.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"1d8445f4f1b046dcf069eeb6cddea912\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2872",
+            "date": "Wed, 14 Oct 2026 17:37:58 GMT",
+            "content-disposition": "inline; filename=\"portugues_marciamacedo.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::tqt4f-1791999478788-c613ea597f4f"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3014
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/engcivilcamilasoares.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"cac7a0e2500f2257b6bf6b1b05ec7cb3\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2693",
+            "date": "Wed, 14 Oct 2026 17:37:59 GMT",
+            "content-disposition": "inline; filename=\"engcivilcamilasoares.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::x6kdp-1791999478998-ae4c11643a98"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2853
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/lucianof.castro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"7801d51951025d697d9f65aabb74b7dc\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2776",
+            "date": "Wed, 14 Oct 2026 17:37:59 GMT",
+            "content-disposition": "inline; filename=\"lucianof.castro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::2m6dz-1791999479035-f88d759e5665"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2922
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/danimartinspro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"fc08e4b89b70227d485232eb080d43fa\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "2558",
+            "date": "Wed, 14 Oct 2026 17:37:59 GMT",
+            "content-disposition": "inline; filename=\"danimartinspro.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::97zjz-1791999479129-1eddf2ae9fb6"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 2694
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/thiagomuniz.rp.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"75d2fceca087faf5116c0a574f06d989\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3154",
+            "date": "Wed, 14 Oct 2026 17:37:59 GMT",
+            "content-disposition": "inline; filename=\"thiagomuniz.rp.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::k4vlx-1791999479222-2e89f349860a"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3294
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/experts/saradodepoisdos40.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"5328a2ce516738e326b582cd97cbb54d\"",
+            "age": "31",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "3505",
+            "date": "Wed, 14 Oct 2026 17:37:59 GMT",
+            "content-disposition": "inline; filename=\"saradodepoisdos40.jpg\"",
+            "content-type": "image/jpeg",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:27 GMT",
+            "x-vercel-id": "gru1::67cpz-1791999479226-c173d43d775f"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 3674
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=31536000, immutable",
+            "x-vercel-cache": "HIT",
+            "etag": "\"51c26f14157fd066a514393270736d45\"",
+            "age": "32",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "19724",
+            "date": "Wed, 14 Oct 2026 17:38:00 GMT",
+            "content-disposition": "inline; filename=\"andre-ferraz-400-4c80ddd2db.webp\"",
+            "content-type": "image/webp",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "x-vercel-id": "gru1::phff4-1791999480501-2c907050b825"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 19934
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "https://alissonsegecs.com.br/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "type": "Media",
+          "status": 206,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"0407ac66afc6efcb7aeff8c3941a47ee\"",
+            "age": "35",
+            "Content-Range": "bytes 0-645100/645101",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "Content-Length": "645101",
+            "date": "Wed, 14 Oct 2026 17:38:03 GMT",
+            "content-disposition": "inline; filename=\"Animating_portrait_transforming_â¦_20261012185500.playback.mp4\"",
+            "content-type": "video/mp4",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:28 GMT",
+            "x-vercel-id": "gru1::tn4m9-1791999483316-6d010abfa5d3"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 645724
+        },
+        {
+          "url": "https://alissonsegecs.com.br/favicon.svg",
+          "type": "Other",
+          "status": 200,
+          "headers": {
+            "strict-transport-security": "max-age=63072000",
+            "cache-control": "public, max-age=0, must-revalidate",
+            "x-vercel-cache": "HIT",
+            "etag": "\"ee946ae8b2871f4e682ed4add4a6f5f7\"",
+            "age": "34",
+            "accept-ranges": "bytes",
+            "access-control-allow-origin": "*",
+            "content-length": "351",
+            "date": "Wed, 14 Oct 2026 17:38:04 GMT",
+            "content-disposition": "inline; filename=\"favicon.svg\"",
+            "content-type": "image/svg+xml",
+            "server": "Vercel",
+            "last-modified": "Wed, 14 Oct 2026 17:37:30 GMT",
+            "x-vercel-id": "gru1::rbmq7-1791999484515-85a8a52704c8"
+          },
+          "fromDiskCache": false,
+          "protocol": "h2",
+          "bytes": 539
+        }
+      ],
+      "name": "production-mobile-3",
+      "simulation": {
+        "width": 390,
+        "height": 844,
+        "cpuRate": 4,
+        "latencyMs": 120,
+        "throughputKiBs": 180,
+        "cache": false,
+        "reduced": false
+      },
+      "htmlSha256": "ac8e9a434130b8aa3ae910a451ad7c2fe83201092bae92986329330493c324f3",
+      "documentBytes": 280688,
+      "localSourceMatches": true
+    },
+    {
+      "url": "http://127.0.0.1:4183/portfolio",
+      "fcpMs": 2260,
+      "lcp": {
+        "ms": 4892,
+        "size": 127530,
+        "url": "http://127.0.0.1:4183/assets/portrait-poster.webp",
+        "tag": "VIDEO",
+        "class": ""
+      },
+      "cls": 0,
+      "shifts": [],
+      "tasks": [
+        {
+          "ms": 289.9000000357628,
+          "duration": 60
+        },
+        {
+          "ms": 2197.5,
+          "duration": 970
+        },
+        {
+          "ms": 3183.400000035763,
+          "duration": 1609
+        },
+        {
+          "ms": 4862.100000023842,
+          "duration": 544
+        },
+        {
+          "ms": 5412.900000035763,
+          "duration": 114
+        },
+        {
+          "ms": 5533.600000023842,
+          "duration": 57
+        },
+        {
+          "ms": 6074.400000035763,
+          "duration": 53
+        }
+      ],
+      "videoFirstPlay": 5904.800000011921,
+      "ttfbMs": 45.69999998807907,
+      "domMs": 4811.100000023842,
+      "loadMs": 5907.300000011921,
+      "domNodes": 1511,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/manrope-e310b55a7f.woff2",
+          "encodedBytes": 24576,
+          "transferBytes": 24876,
+          "ms": 761,
+          "type": "link"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/fraunces-48282a415e.woff2",
+          "encodedBytes": 67388,
+          "transferBytes": 67688,
+          "ms": 1172.1000000238419,
+          "type": "link"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/portrait-poster.webp",
+          "encodedBytes": 33186,
+          "transferBytes": 33486,
+          "ms": 946.3000000119209,
+          "type": "link"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/receitaprevisivel.jpg",
+          "encodedBytes": 2041,
+          "transferBytes": 2341,
+          "ms": 210.30000001192093,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "encodedBytes": 9338,
+          "transferBytes": 9638,
+          "ms": 461.30000001192093,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/portugues_marciamacedo.jpg",
+          "encodedBytes": 2872,
+          "transferBytes": 3172,
+          "ms": 462.80000001192093,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/engcivilcamilasoares.jpg",
+          "encodedBytes": 2693,
+          "transferBytes": 2993,
+          "ms": 632.1999999880791,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/lucianof.castro.jpg",
+          "encodedBytes": 2776,
+          "transferBytes": 3076,
+          "ms": 663.7999999523163,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/danimartinspro.jpg",
+          "encodedBytes": 2558,
+          "transferBytes": 2858,
+          "ms": 710.8999999761581,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/thiagomuniz.rp.jpg",
+          "encodedBytes": 3154,
+          "transferBytes": 3454,
+          "ms": 757.5,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/saradodepoisdos40.jpg",
+          "encodedBytes": 3505,
+          "transferBytes": 3805,
+          "ms": 805.3000000119209,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "encodedBytes": 19724,
+          "transferBytes": 20024,
+          "ms": 293.10000002384186,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "encodedBytes": 645101,
+          "transferBytes": 645401,
+          "ms": 3666.599999964237,
+          "type": "video"
+        },
+        {
+          "url": "http://127.0.0.1:4183/favicon.svg",
+          "encodedBytes": 245,
+          "transferBytes": 545,
+          "ms": 134.5,
+          "type": "other"
+        }
+      ],
+      "videos": [
+        {
+          "id": "hero-video",
+          "paused": false,
+          "src": "http://127.0.0.1:4183/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "quality": {
+            "total": 108,
+            "dropped": 1
+          }
+        },
+        {
+          "id": "about-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        },
+        {
+          "id": "planning-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        }
+      ],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4183/portfolio",
+          "type": "Document",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "Content-Encoding": "br",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Wed, 14 Oct 2026 17:38:08 GMT",
+            "ETag": "W/\"44870-1a13b777e50.b4e\"",
+            "Keep-Alive": "timeout=5",
+            "Transfer-Encoding": "chunked",
+            "Vary": "Accept-Encoding"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 56340
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/manrope-e310b55a7f.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "ETag": "W/\"6000-1a136fbb1d7.17a\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "24576",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "font/woff2"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 24834
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/fraunces-48282a415e.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "ETag": "W/\"1073c-1a136fbb1da.b2\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "67388",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "font/woff2"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 67646
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/portrait-poster.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"81a2-1a1322015ac.856\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "33186",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/webp"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 33417
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/receitaprevisivel.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"7f9-1a135933bb4.b41\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2041",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 2270
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "ETag": "W/\"247a-1a136f7f466.15e\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "9338",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/webp"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 9595
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/portugues_marciamacedo.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"b38-1a135933bbe.839\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2872",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3101
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/engcivilcamilasoares.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"a85-1a135933b4b.ac2\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2693",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 2922
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/lucianof.castro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"ad8-1a135933b87.09b\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2776",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3005
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/danimartinspro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"9fe-1a1359339c5.c7c\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2558",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 2787
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/thiagomuniz.rp.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"c52-1a135933c37.095\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3154",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3383
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/saradodepoisdos40.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"db1-1a135933baa.b56\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3505",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:09 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3734
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/andre-ferraz-400-4c80ddd2db.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "ETag": "W/\"4d0c-1a136f7ff7d.6a\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "19724",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:11 GMT",
+            "Content-Type": "image/webp"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 19981
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/Videos/Animating_portrait_transforming_%E2%80%A6_20261012185500.playback.mp4",
+          "type": "Media",
+          "status": 206,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"9d7ed-1a132f54381.e13\"",
+            "Connection": "keep-alive",
+            "Content-Range": "bytes 0-645100/645101",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Content-Length": "645101",
+            "Date": "Wed, 14 Oct 2026 17:38:13 GMT",
+            "Content-Type": "video/mp4"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 645384
+        },
+        {
+          "url": "http://127.0.0.1:4183/favicon.svg",
+          "type": "Other",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "no-cache",
+            "Content-Encoding": "br",
+            "ETag": "W/\"15f-1a1361f9e6c.e1c\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:14 GMT",
+            "Content-Type": "image/svg+xml",
+            "Vary": "Accept-Encoding"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 539
+        }
+      ],
+      "name": "local-mobile",
+      "simulation": {
+        "width": 390,
+        "height": 844,
+        "cpuRate": 4,
+        "latencyMs": 120,
+        "throughputKiBs": 180,
+        "cache": false,
+        "reduced": false
+      },
+      "htmlSha256": "ac8e9a434130b8aa3ae910a451ad7c2fe83201092bae92986329330493c324f3",
+      "documentBytes": 280688,
+      "localSourceMatches": true
+    },
+    {
+      "url": "http://127.0.0.1:4183/portfolio",
+      "fcpMs": 2420,
+      "lcp": {
+        "ms": 2436,
+        "size": 127530,
+        "url": "http://127.0.0.1:4183/assets/portrait-poster.webp",
+        "tag": "VIDEO",
+        "class": ""
+      },
+      "cls": 0,
+      "shifts": [],
+      "tasks": [
+        {
+          "ms": 288.7999999523163,
+          "duration": 76
+        },
+        {
+          "ms": 2363,
+          "duration": 1786
+        },
+        {
+          "ms": 4152,
+          "duration": 233
+        },
+        {
+          "ms": 4413.799999952316,
+          "duration": 282
+        },
+        {
+          "ms": 4727.699999988079,
+          "duration": 50
+        }
+      ],
+      "videoFirstPlay": null,
+      "ttfbMs": 21.19999998807907,
+      "domMs": 4391.199999988079,
+      "loadMs": 4707.599999964237,
+      "domNodes": 1511,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/manrope-e310b55a7f.woff2",
+          "encodedBytes": 24576,
+          "transferBytes": 24876,
+          "ms": 760.1999999880791,
+          "type": "link"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/fraunces-48282a415e.woff2",
+          "encodedBytes": 67388,
+          "transferBytes": 67688,
+          "ms": 1198.300000011921,
+          "type": "link"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/portrait-poster.webp",
+          "encodedBytes": 33186,
+          "transferBytes": 33486,
+          "ms": 952.1999999880791,
+          "type": "link"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/receitaprevisivel.jpg",
+          "encodedBytes": 2041,
+          "transferBytes": 2341,
+          "ms": 205.5,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "encodedBytes": 9338,
+          "transferBytes": 9638,
+          "ms": 437.89999997615814,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/portugues_marciamacedo.jpg",
+          "encodedBytes": 2872,
+          "transferBytes": 3172,
+          "ms": 469.5,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/engcivilcamilasoares.jpg",
+          "encodedBytes": 2693,
+          "transferBytes": 2993,
+          "ms": 611,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/lucianof.castro.jpg",
+          "encodedBytes": 2776,
+          "transferBytes": 3076,
+          "ms": 673.8999999761581,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/danimartinspro.jpg",
+          "encodedBytes": 2558,
+          "transferBytes": 2858,
+          "ms": 689.8999999761581,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/thiagomuniz.rp.jpg",
+          "encodedBytes": 3154,
+          "transferBytes": 3454,
+          "ms": 739.5999999642372,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/saradodepoisdos40.jpg",
+          "encodedBytes": 3505,
+          "transferBytes": 3805,
+          "ms": 784.6999999880791,
+          "type": "img"
+        },
+        {
+          "url": "http://127.0.0.1:4183/favicon.svg",
+          "encodedBytes": 245,
+          "transferBytes": 545,
+          "ms": 149.19999998807907,
+          "type": "other"
+        }
+      ],
+      "videos": [
+        {
+          "id": "hero-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        },
+        {
+          "id": "about-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        },
+        {
+          "id": "planning-video",
+          "paused": true,
+          "src": "",
+          "quality": {
+            "total": 0,
+            "dropped": 0
+          }
+        }
+      ],
+      "network": [
+        {
+          "url": "http://127.0.0.1:4183/portfolio",
+          "type": "Document",
+          "status": 200,
+          "headers": {
+            "Accept-Ranges": "bytes",
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "Content-Encoding": "br",
+            "Content-Type": "text/html; charset=utf-8",
+            "Date": "Wed, 14 Oct 2026 17:38:19 GMT",
+            "ETag": "W/\"44870-1a13b777e50.b4e\"",
+            "Keep-Alive": "timeout=5",
+            "Transfer-Encoding": "chunked",
+            "Vary": "Accept-Encoding"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 56340
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/manrope-e310b55a7f.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "ETag": "W/\"6000-1a136fbb1d7.17a\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "24576",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:19 GMT",
+            "Content-Type": "font/woff2"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 24834
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/fraunces-48282a415e.woff2",
+          "type": "Font",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "ETag": "W/\"1073c-1a136fbb1da.b2\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "67388",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:19 GMT",
+            "Content-Type": "font/woff2"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 67646
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/portrait-poster.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"81a2-1a1322015ac.856\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "33186",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:19 GMT",
+            "Content-Type": "image/webp"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 33417
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/receitaprevisivel.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"7f9-1a135933bb4.b41\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2041",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 2270
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/optimized/andreferrazaromaterapia-200-96d3da3e61.webp",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "public, max-age=31536000, immutable",
+            "ETag": "W/\"247a-1a136f7f466.15e\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "9338",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/webp"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 9595
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/portugues_marciamacedo.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"b38-1a135933bbe.839\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2872",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3101
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/engcivilcamilasoares.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"a85-1a135933b4b.ac2\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2693",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 2922
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/lucianof.castro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"ad8-1a135933b87.09b\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2776",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3005
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/danimartinspro.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"9fe-1a1359339c5.c7c\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "2558",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 2787
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/thiagomuniz.rp.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"c52-1a135933c37.095\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3154",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3383
+        },
+        {
+          "url": "http://127.0.0.1:4183/assets/experts/saradodepoisdos40.jpg",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Cache-Control": "no-cache",
+            "ETag": "W/\"db1-1a135933baa.b56\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Content-Length": "3505",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:20 GMT",
+            "Content-Type": "image/jpeg"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 3734
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E",
+          "type": "Image",
+          "status": 200,
+          "headers": {
+            "Content-Type": "image/svg+xml"
+          },
+          "fromDiskCache": false,
+          "protocol": "data",
+          "bytes": 0
+        },
+        {
+          "url": "http://127.0.0.1:4183/favicon.svg",
+          "type": "Other",
+          "status": 200,
+          "headers": {
+            "Transfer-Encoding": "chunked",
+            "Cache-Control": "no-cache",
+            "Content-Encoding": "br",
+            "ETag": "W/\"15f-1a1361f9e6c.e1c\"",
+            "Connection": "keep-alive",
+            "Accept-Ranges": "bytes",
+            "Keep-Alive": "timeout=5",
+            "Date": "Wed, 14 Oct 2026 17:38:24 GMT",
+            "Content-Type": "image/svg+xml",
+            "Vary": "Accept-Encoding"
+          },
+          "fromDiskCache": false,
+          "protocol": "http/1.1",
+          "bytes": 539
+        }
+      ],
+      "name": "local-mobile-reduced",
+      "simulation": {
+        "width": 390,
+        "height": 844,
+        "cpuRate": 4,
+        "latencyMs": 120,
+        "throughputKiBs": 180,
+        "cache": false,
+        "reduced": true
+      },
+      "htmlSha256": "ac8e9a434130b8aa3ae910a451ad7c2fe83201092bae92986329330493c324f3",
+      "documentBytes": 280688,
+      "localSourceMatches": true
+    }
+  ],
+  "motion": [
+    {
+      "name": "hero",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 852,
+      "paintMs": 845.422,
+      "layoutCount": 1,
+      "layoutMs": 0.766,
+      "styleMs": 489.647,
+      "taskMs": 2731.21,
+      "scriptMs": 3.332000000000005,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 11
+      }
+    },
+    {
+      "name": "results",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 485,
+      "paintMs": 498.649,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 194.872,
+      "taskMs": 1617.6130000000005,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 13
+      }
+    },
+    {
+      "name": "book",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 358,
+      "paintMs": 506.786,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 196.486,
+      "taskMs": 1821.0259999999998,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 3
+      }
+    },
+    {
+      "name": "skills",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 360,
+      "paintMs": 190.84,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 78.253,
+      "taskMs": 1269.1169999999995,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 2
+      }
+    },
+    {
+      "name": "method",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 343,
+      "paintMs": 390.354,
+      "layoutCount": 3,
+      "layoutMs": 20.194,
+      "styleMs": 282.371,
+      "taskMs": 2276.2129999999984,
+      "scriptMs": 8.687000000000001,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 2
+      }
+    },
+    {
+      "name": "audience",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 510,
+      "paintMs": 394.104,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 511.447,
+      "taskMs": 2956.0170000000026,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 9
+      }
+    },
+    {
+      "name": "bio",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 328,
+      "paintMs": 452.16,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 191.972,
+      "taskMs": 2786.450000000002,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": false
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 3
+      }
+    },
+    {
+      "name": "timeline",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 364,
+      "paintMs": 260.055,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 45.738,
+      "taskMs": 1882.1589999999978,
+      "scriptMs": 0.08499999999998786,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": false
+          }
+        ],
+        "runningAnimations": 1
+      }
+    },
+    {
+      "name": "faq",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 352,
+      "paintMs": 290.641,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 264.216,
+      "taskMs": 2133.9100000000003,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 5
+      }
+    },
+    {
+      "name": "contact",
+      "width": 390,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 49.081,
+      "taskMs": 268.0549999999968,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 10
+      }
+    },
+    {
+      "name": "hero",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 1393,
+      "paintMs": 956.932,
+      "layoutCount": 11,
+      "layoutMs": 17.946,
+      "styleMs": 459.547,
+      "taskMs": 2965.1059999999998,
+      "scriptMs": 3.4450000000000003,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 15
+      }
+    },
+    {
+      "name": "results",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 687,
+      "paintMs": 372.68,
+      "layoutCount": 11,
+      "layoutMs": 12.292,
+      "styleMs": 123.612,
+      "taskMs": 1116.1720000000007,
+      "scriptMs": 2.4480000000000057,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": false
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 17
+      }
+    },
+    {
+      "name": "book",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 382,
+      "paintMs": 514.566,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 212.819,
+      "taskMs": 2408.6119999999996,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 4
+      }
+    },
+    {
+      "name": "skills",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 528,
+      "paintMs": 591.942,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 169.377,
+      "taskMs": 2537.9830000000006,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 5
+      }
+    },
+    {
+      "name": "method",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 355,
+      "paintMs": 424.196,
+      "layoutCount": 3,
+      "layoutMs": 15.928,
+      "styleMs": 292.088,
+      "taskMs": 2556.737000000002,
+      "scriptMs": 5.807999999999994,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 4
+      }
+    },
+    {
+      "name": "audience",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 510,
+      "paintMs": 404.238,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 438.567,
+      "taskMs": 2517.4699999999993,
+      "scriptMs": 0.03300000000000525,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 15
+      }
+    },
+    {
+      "name": "bio",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 356,
+      "paintMs": 367.149,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 66.691,
+      "taskMs": 2094.529999999999,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": false
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 1
+      }
+    },
+    {
+      "name": "timeline",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 354,
+      "paintMs": 254.687,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 54.342,
+      "taskMs": 1749.417000000001,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": false
+          }
+        ],
+        "runningAnimations": 1
+      }
+    },
+    {
+      "name": "faq",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 310,
+      "paintMs": 279.427,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 962.881,
+      "taskMs": 3024.531000000003,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 16
+      }
+    },
+    {
+      "name": "contact",
+      "width": 1440,
+      "seconds": 3,
+      "paintCount": 0,
+      "paintMs": 0,
+      "layoutCount": 0,
+      "layoutMs": 0,
+      "styleMs": 8.008,
+      "taskMs": 31.660000000002242,
+      "scriptMs": 0,
+      "state": {
+        "visible": true,
+        "animationName": "none",
+        "videos": [
+          {
+            "id": "hero-video",
+            "paused": true
+          },
+          {
+            "id": "about-video",
+            "paused": true
+          },
+          {
+            "id": "planning-video",
+            "paused": true
+          }
+        ],
+        "runningAnimations": 14
+      }
+    }
+  ],
+  "errors": [],
+  "source": {
+    "bytes": 280688,
+    "brotliBytes": 45376,
+    "gzipBytes": 54614,
+    "cssBytes": 132779,
+    "scriptBytes": 41482
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/155.0.8059.40",
+    "revision": "@cfaadc5a132d78e1828635aa8405a499f3e14864",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "jsVersion": "15.5.35.20"
+  }
+}
