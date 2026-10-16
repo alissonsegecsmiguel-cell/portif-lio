@@ -768,6 +768,21 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     box.insertBefore(svg, box.firstChild);
   }
 
+  /* ---------- Meses do seletor ----------
+     A planilha devolve o histórico só até o mês pedido (?mes=2026-07 traz jun e jul).
+     Por isso o seletor guarda todos os meses já vistos e completa a sequência até o mês do calendário:
+     escolher um mês antigo não some com os mais recentes. */
+  var mesesVistos = {};
+  function proximoMes(id) { var a = +id.slice(0, 4), m = +id.slice(5, 7) + 1; if (m > 12) { m = 1; a++; } return a + '-' + (m < 10 ? '0' : '') + m; }
+  function mesesDoSeletor(d) {
+    d.hist.forEach(function (h) { mesesVistos[h.mes] = 1; });
+    if (d.mes) mesesVistos[d.mes] = 1;
+    var hoje = new Date(), atual = hoje.getFullYear() + '-' + (hoje.getMonth() < 9 ? '0' : '') + (hoje.getMonth() + 1);
+    var ks = Object.keys(mesesVistos).filter(function (k) { return /^\d{4}-\d{2}$/.test(k); }).sort(), fim = ks[ks.length - 1] > atual ? ks[ks.length - 1] : atual, ms = [];
+    for (var m = ks[0]; m && m <= fim && ms.length < 120; m = proximoMes(m)) ms.push(m);
+    return ms.reverse();
+  }
+
   /* ---------- Render do mês ---------- */
   var dados = null;
   function render(d, primeira) {
@@ -778,10 +793,7 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     $('periodo').textContent = nm;
     var at = d.atualizado ? new Date(d.atualizado) : new Date();
     $('atualizado').textContent = 'Atualizado em ' + (isNaN(at) ? String(d.atualizado) : at.toLocaleDateString('pt-BR') + ' às ' + at.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }));
-    var ms = d.hist.map(function (h) { return h.mes; });
-    if (d.mes && ms.indexOf(d.mes) < 0) ms.push(d.mes);
-    ms.sort().reverse();
-    var sel = $('mesSelect');
+    var ms = mesesDoSeletor(d), sel = $('mesSelect');
     sel.innerHTML = ms.map(function (m) { return '<option value="' + esc(m) + '">' + nomeMes(m) + '</option>'; }).join('');
     sel.value = d.mes; sel.hidden = ms.length < 2;
     var chips = '';
