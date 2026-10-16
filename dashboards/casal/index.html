@@ -178,6 +178,21 @@ html.js-motion .flow-track>i{transition-delay:.45s}html.js-motion .flow-out>i{tr
 .chart .t-ink{fill:var(--ink)}
 .chart .gridline{stroke:var(--grid);stroke-width:1}
 .chart .baseline{stroke:var(--line);stroke-width:1}
+.flow-legend i.dot,.dot{display:inline-block;border:0;width:8px;height:8px;margin-right:6px;border-radius:2px;vertical-align:0;background:var(--c)}
+
+/* Comida no mês: mercado + comer fora */
+.comida{display:grid;gap:12px;padding-top:18px;border-top:1px solid var(--line-soft)}
+.comida-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.comida-head span{font:500 13px/1.4 var(--font-ui);letter-spacing:-.01em}
+.comida-head small{display:block;margin-top:2px;color:var(--muted)}
+.comida-head b{font:300 26px/1 var(--font-editorial);letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.comida-bar{display:flex;gap:2px;height:8px}
+.comida-bar>i{display:block;min-width:0;border-radius:3px}
+.comida-bar>i:first-child{width:var(--w,0%);border-radius:100px 3px 3px 100px;background:var(--mint);opacity:.9;transition:width 1.2s var(--ease) .7s}
+.comida-bar>i:last-child{flex:1;border-radius:3px 100px 100px 3px;background:linear-gradient(90deg,var(--electric),var(--signal))}
+.comida-bar.is-so>i:first-child,.comida-bar.is-so>i:last-child{border-radius:100px}
+.comida-bar.is-fora>i:first-child{display:none}.comida-bar.is-casa>i:last-child{display:none}
+html.js-motion [data-rise]:not(.is-in) .comida-bar>i:first-child{width:0}
 .chart-wrap{position:relative}
 .chart-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:-8px 0 10px;font-size:11px;color:var(--muted)}
 .chart-legend i{display:inline-block;width:14px;height:0;margin-right:7px;vertical-align:3px}
@@ -267,6 +282,18 @@ html.js-motion [data-rise]:not(.is-in) .progress-bar>i{width:0}
 .data-table tbody tr:last-child td{border-bottom:0}
 .data-table tfoot td{border-bottom:0;border-top:1px solid var(--line);font-weight:600;background:rgba(237,194,123,.05)}
 .data-table td small{display:block;font-size:11px;color:var(--muted)}
+/* "Outras categorias": abre a lista ao passar o mouse, tocar ou focar pelo teclado */
+.legend li.has-pop{position:relative;cursor:help;outline:none}
+.legend li.has-pop small::after{content:' · ver quais';color:var(--signal)}
+.legend li.has-pop:focus-visible{background:rgba(241,240,234,.05);box-shadow:0 0 0 2px var(--signal)}
+.legend-pop{position:absolute;left:0;right:0;bottom:calc(100% + 8px);z-index:6;max-height:min(360px,60vh);overflow:auto;padding:12px 14px;border:1px solid #a9a5ff44;border-radius:10px;background:var(--pop);box-shadow:0 14px 40px #0008;cursor:default;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,visibility .2s,transform .3s var(--ease)}
+.legend li.has-pop:hover .legend-pop,.legend li.has-pop.is-active .legend-pop,.legend li.has-pop:focus .legend-pop{opacity:1;visibility:visible;transform:none}
+.legend-pop .caps{display:block;margin-bottom:6px;color:var(--muted)}
+.legend-pop li{display:flex!important;justify-content:space-between;gap:12px;margin:0!important;padding:4px 0!important;border-radius:0!important;background:none!important;opacity:1!important;font-size:12px;border-bottom:1px solid var(--line-soft)}
+.legend-pop li:last-child{border-bottom:0}
+.legend-pop li span{color:var(--ink-2)}
+.legend-pop li b{font-size:12px}
+.legend-pop li em{font-style:normal;color:var(--muted);margin-left:6px;font-weight:400}
 .data-table .td-sub{display:none}
 .data-table .dia{white-space:nowrap;color:var(--ink-2)}
 .data-table .dia .badge{margin-left:6px;padding:3px 8px;font-size:9px}
@@ -282,18 +309,6 @@ html.js-motion [data-rise]:not(.is-in) .progress-bar>i{width:0}
 .rank-bar{position:relative;flex:1;height:6px;border:1px solid #ffffff0b;border-radius:100px;background:repeating-linear-gradient(-45deg,#ffffff08 0 1px,transparent 1px 6px)}
 .rank-bar>i{display:block;height:100%;width:max(6px,var(--w,0%));border-radius:inherit;background:linear-gradient(90deg,rgba(108,99,255,.7),rgba(169,165,255,.7));transition:width 1.1s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
 .rank li:first-child .rank-bar>i{background:linear-gradient(90deg,var(--electric),var(--signal));box-shadow:inset 0 1px 0 #ffffff55,0 0 16px #6c63ff33}
-/* "Outras categorias": abre a lista ao passar o mouse, tocar ou focar pelo teclado */
-.legend li.has-pop{position:relative;cursor:help;outline:none}
-.legend li.has-pop small::after{content:' · ver quais';color:var(--signal)}
-.legend li.has-pop:focus-visible{background:rgba(241,240,234,.05);box-shadow:0 0 0 2px var(--signal)}
-.legend-pop{position:absolute;left:0;right:0;bottom:calc(100% + 8px);z-index:6;max-height:min(360px,60vh);overflow:auto;padding:12px 14px;border:1px solid #a9a5ff44;border-radius:10px;background:var(--pop);box-shadow:0 14px 40px #0008;cursor:default;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,visibility .2s,transform .3s var(--ease)}
-.legend li.has-pop:hover .legend-pop,.legend li.has-pop.is-active .legend-pop,.legend li.has-pop:focus .legend-pop{opacity:1;visibility:visible;transform:none}
-.legend-pop .caps{display:block;margin-bottom:6px;color:var(--muted)}
-.legend-pop li{display:flex!important;justify-content:space-between;gap:12px;margin:0!important;padding:4px 0!important;border-radius:0!important;background:none!important;opacity:1!important;font-size:12px;border-bottom:1px solid var(--line-soft)}
-.legend-pop li:last-child{border-bottom:0}
-.legend-pop li span{color:var(--ink-2)}
-.legend-pop li b{font-size:12px}
-.legend-pop li em{font-style:normal;color:var(--muted);margin-left:6px;font-weight:400}
 .rank--warn .rank-bar>i,.rank--warn li:first-child .rank-bar>i{background:linear-gradient(90deg,rgba(237,194,123,.45),var(--warning));box-shadow:none}
 .rank-mark{position:absolute;top:-5px;bottom:-5px;left:var(--x);width:2px;margin-left:-1px;border-radius:2px;background:var(--ink);opacity:.7}
 .rank-sub{grid-column:2/4;font-size:11px;line-height:1.4;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -423,11 +438,12 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
         </div>
         <div class="hero-foot" id="heroFoot"></div>
       </div>
-      <figure class="hero-side" id="heroSide" hidden>
+      <div class="hero-side" id="heroSide" hidden>
         <h3>Entrou × saiu<span class="caps" id="fluxoSub">no mês</span></h3>
         <div class="flow" id="fluxo" role="img"></div>
-        <figcaption class="flow-legend" id="fluxoLegenda"></figcaption>
-      </figure>
+        <p class="flow-legend" id="fluxoLegenda"></p>
+        <div class="comida" id="comida"></div>
+      </div>
     </section>
 
     <!-- 01 · Renda do trabalho vs. custo de vida -->
@@ -608,6 +624,19 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     requestAnimationFrame(frame);
   }
   // Primeiro aparecimento conta do zero; trocas de mês partem do valor atual.
+  /* ---------- Comida: categorias de mercado (em casa) e de comer fora ---------- */
+  var COMIDA = { casa: /mercado|feira|padaria|acougue|hortifruti/, fora: /alimentacao fora|comer fora|restaurante|delivery|ifood|lanche/ };
+  function semAcento(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+  function comida(cats) {
+    var r = { casa: 0, fora: 0, nomesCasa: [], nomesFora: [] };
+    cats.forEach(function (c) {
+      var n = semAcento(c.nome);
+      if (COMIDA.fora.test(n)) { r.fora += c.v; r.nomesFora.push(c.nome); }
+      else if (COMIDA.casa.test(n)) { r.casa += c.v; r.nomesCasa.push(c.nome); }
+    });
+    return r;
+  }
+
   function setNum(el, v, f) {
     var de = parseFloat(el.dataset.value);
     el.dataset.f = f; el.dataset.value = v;
@@ -760,7 +789,8 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     if (!d.completo) chips += badge('warn', 'dia a dia não lançado: sobra superestimada');
     $('resumo').innerHTML = (d.andamento ? 'Até agora, em ' + mesNome : 'Em ' + mesNome) + ', entraram <b>' + brl(d.ent.total) + '</b> e saíram <b>' + brl(d.sai.total) + '</b>. ' +
       (d.sobra >= 0 ? 'Sobraram <b>' + brl(d.sobra) + '</b>' : 'Faltaram <b>' + brl(-d.sobra) + '</b>') +
-      (d.taxa !== null ? ', ' + pct(Math.abs(d.taxa)) + ' do que entrou.' : '.');
+      (d.taxa !== null ? ', ' + pct(Math.abs(d.taxa)) + ' do que entrou.' : '.') +
+      (function () { var c = comida(d.sai.cats), t = c.casa + c.fora; return t > 0 ? ' Com comida foram <b>' + brl(t) + '</b>.' : ''; })();
 
     // Hero · Sobra do mês
     $('heroEstado').hidden = true; $('heroNumero').hidden = false; $('heroSide').hidden = false;
@@ -855,6 +885,15 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     }
 
     // 06 · De onde veio a renda
+    var cm = comida(d.sai.cats), cmTotal = cm.casa + cm.fora;
+    $('comida').innerHTML = '<div class="comida-head"><span>Comida no mês<small class="caps">mercado + comer fora</small></span><b>' + brl(cmTotal) + '</b></div>' +
+      (cmTotal > 0
+        ? '<div class="comida-bar' + (!cm.casa ? ' is-so is-fora' : !cm.fora ? ' is-so is-casa' : '') + '" role="img" aria-label="Mercado ' + brl(cm.casa) + ', comer fora ' + brl(cm.fora) + '"><i data-w="' + (cm.casa / cmTotal * 100).toFixed(1) + '%"></i><i></i></div>' +
+          '<p class="flow-legend"><span title="' + esc(cm.nomesCasa.join(', ')) + '"><i class="dot" style="--c:var(--mint)"></i>Mercado <b>' + brl(cm.casa) + '</b></span>' +
+          '<span title="' + esc(cm.nomesFora.join(', ')) + '"><i class="dot" style="--c:var(--signal)"></i>Comer fora <b>' + brl(cm.fora) + '</b></span>' +
+          (d.sai.total ? '<span>' + pct(cmTotal / d.sai.total) + ' das saídas</span>' : '') + '</p>'
+        : '<p class="flow-legend">Nenhum gasto com comida lançado no mês.</p>');
+    barras($('comida'));
     var cl = d.ent.clientes.slice(0, 4), fo = '';
     if (!cl.length) fo = vazio('Nenhuma renda do trabalho lançada.');
     else {
@@ -891,7 +930,7 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
       : '<blockquote class="insight-quote is-good">Mês dentro do esperado.</blockquote>';
 
     $('grade').classList.remove('is-loading');
-    if (!primeira) ['resumo', 'heroFoot', 'fluxoLegenda', 'linhaStats', 'gaugeCopy', 'legenda', 'contas', 'acima', 'fontes', 'maiores', 'parcelas', 'leitura'].forEach(function (id) { swap($(id)); });
+    if (!primeira) ['resumo', 'heroFoot', 'fluxoLegenda', 'comida', 'linhaStats', 'gaugeCopy', 'legenda', 'contas', 'acima', 'fontes', 'maiores', 'parcelas', 'leitura'].forEach(function (id) { swap($(id)); });
     document.querySelectorAll('.is-in [data-value]').forEach(countIn);
   }
 
