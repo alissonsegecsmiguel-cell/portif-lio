@@ -577,7 +577,7 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
 
     <!-- 08 · De onde veio a renda -->
     <section class="card span-4" data-rise style="--delay:160ms" aria-labelledby="c6">
-      <div class="card-head"><div><h2 id="c6">De onde veio a renda</h2><span class="caps">renda do trabalho por cliente</span></div><span class="card-index caps">08</span></div>
+      <div class="card-head"><div><h2 id="c6">De onde veio a renda</h2><span class="caps">clientes e salários do casal</span></div><span class="card-index caps">08</span></div>
       <div id="fontes"></div>
     </section>
 
@@ -668,7 +668,7 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     d.sobra = num(r.sobra); d.taxa = opt(r.taxaDeSobra);
     d.ent = { total: num(e.total), trabalho: num(e.rendaTrabalho), outras: num(e.outras), maiorPct: opt(e.maiorClientePct),
       clientes: arr(e.porCliente).map(nv).sort(maiorPrimeiro) };
-    d.ent.maiorNome = (d.ent.clientes[0] || {}).nome || 'O maior cliente';
+    d.ent.maiorNome = (d.ent.clientes[0] || {}).nome || 'A maior fonte';
     d.sai = { total: num(s.total),
       cats: arr(s.porCategoria).map(nv).map(function (c) { c.nome = titulo(c.nome); return c; }).filter(function (c) { return c.v > 0; }).sort(maiorPrimeiro),
       maiores: arr(s.maioresGastos).map(function (g) { return { nome: g.nome, cat: titulo(g.categoria), v: num(g.valor) }; }) };
@@ -1156,7 +1156,7 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
         return '<li style="--i:' + j + '"><span class="rank-n caps">0' + (j + 1) + '</span><span class="rank-name" title="' + esc(c.nome) + '">' + esc(c.nome) + '</span><span class="rank-val">' + brl(c.v) + '</span>' +
           '<span class="rank-track"><span class="rank-bar"><i data-w="' + (c.v / topoC * 100).toFixed(1) + '%"></i></span><span class="rank-share">' + (d.ent.trabalho ? pct(c.v / d.ent.trabalho) : '') + '</span></span></li>';
       }).join('') + '</ol><div class="rank-total"><span class="caps muted">Total</span><strong>' + brl(d.ent.trabalho) + '</strong></div>';
-      if (d.ent.maiorPct > 0.5) fo += '<ul class="alerts card-note">' + alertasHTML([{ n: 'warn', t: 'Maior cliente = ' + pct(d.ent.maiorPct) + ' da renda' }]) + '</ul>';
+      if (d.ent.maiorPct > 0.5) fo += '<ul class="alerts card-note">' + alertasHTML([{ n: 'warn', t: esc(d.ent.maiorNome) + ' = ' + pct(d.ent.maiorPct) + ' da renda do trabalho' }]) + '</ul>';
     }
     fo += '<p class="card-foot"><span>Outras entradas</span><b>' + brl(d.ent.outras) + '</b></p>';
     $('fontes').innerHTML = fo;
