@@ -282,6 +282,18 @@ html.js-motion [data-rise]:not(.is-in) .progress-bar>i{width:0}
 .rank-bar{position:relative;flex:1;height:6px;border:1px solid #ffffff0b;border-radius:100px;background:repeating-linear-gradient(-45deg,#ffffff08 0 1px,transparent 1px 6px)}
 .rank-bar>i{display:block;height:100%;width:max(6px,var(--w,0%));border-radius:inherit;background:linear-gradient(90deg,rgba(108,99,255,.7),rgba(169,165,255,.7));transition:width 1.1s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
 .rank li:first-child .rank-bar>i{background:linear-gradient(90deg,var(--electric),var(--signal));box-shadow:inset 0 1px 0 #ffffff55,0 0 16px #6c63ff33}
+/* "Outras categorias": abre a lista ao passar o mouse, tocar ou focar pelo teclado */
+.legend li.has-pop{position:relative;cursor:help;outline:none}
+.legend li.has-pop small::after{content:' · ver quais';color:var(--signal)}
+.legend li.has-pop:focus-visible{background:rgba(241,240,234,.05);box-shadow:0 0 0 2px var(--signal)}
+.legend-pop{position:absolute;left:0;right:0;bottom:calc(100% + 8px);z-index:6;max-height:min(360px,60vh);overflow:auto;padding:12px 14px;border:1px solid #a9a5ff44;border-radius:10px;background:var(--pop);box-shadow:0 14px 40px #0008;cursor:default;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,visibility .2s,transform .3s var(--ease)}
+.legend li.has-pop:hover .legend-pop,.legend li.has-pop.is-active .legend-pop,.legend li.has-pop:focus .legend-pop{opacity:1;visibility:visible;transform:none}
+.legend-pop .caps{display:block;margin-bottom:6px;color:var(--muted)}
+.legend-pop li{display:flex!important;justify-content:space-between;gap:12px;margin:0!important;padding:4px 0!important;border-radius:0!important;background:none!important;opacity:1!important;font-size:12px;border-bottom:1px solid var(--line-soft)}
+.legend-pop li:last-child{border-bottom:0}
+.legend-pop li span{color:var(--ink-2)}
+.legend-pop li b{font-size:12px}
+.legend-pop li em{font-style:normal;color:var(--muted);margin-left:6px;font-weight:400}
 .rank--warn .rank-bar>i,.rank--warn li:first-child .rank-bar>i{background:linear-gradient(90deg,rgba(237,194,123,.45),var(--warning));box-shadow:none}
 .rank-mark{position:absolute;top:-5px;bottom:-5px;left:var(--x);width:2px;margin-left:-1px;border-radius:2px;background:var(--ink);opacity:.7}
 .rank-sub{grid-column:2/4;font-size:11px;line-height:1.4;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -792,8 +804,10 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     $('gaugeCopy').innerHTML = gc;
 
     // 03 · Donut: top 4 + Outros
-    var cats = d.sai.cats.slice(0, 4), resto = d.sai.cats.slice(4).reduce(function (s, c) { return s + c.v; }, 0);
-    if (resto > 0) cats.push({ nome: 'Outros', v: resto });
+    // Com uma só categoria sobrando, ela aparece pelo nome; com mais, viram "Outras categorias", abertas no toque.
+    var cats = d.sai.cats.slice(0, 4), demais = d.sai.cats.slice(4);
+    if (demais.length === 1) cats.push(demais[0]);
+    else if (demais.length) cats.push({ nome: 'Outras categorias', v: demais.reduce(function (s, c) { return s + c.v; }, 0), itens: demais });
     var soma = cats.reduce(function (s, c) { return s + c.v; }, 0), ini = 0;
     segs.forEach(function (sg, j) {
       var share = cats[j] && soma > 0 ? cats[j].v / soma * 100 : 0, len = share > 0.7 ? share - 0.7 : share;
@@ -804,7 +818,9 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     $('donutTotal').textContent = curto(d.sai.total);
     $('donut').setAttribute('aria-label', 'Saídas de ' + nm + ': ' + cats.map(function (c) { return c.nome + ' ' + fmt(c.v / soma * 100, 1) + '%'; }).join(', '));
     $('legenda').innerHTML = cats.length ? cats.map(function (c, j) {
-      return '<li data-i="' + j + '" style="--c:' + CORES[j] + '"><i></i><span>' + esc(c.nome) + '<small>' + brl(c.v) + '</small></span><b>' + fmt(c.v / soma * 100, 1) + '%</b></li>';
+      var pop = c.itens ? '<div class="legend-pop" role="tooltip" id="outrosPop"><span class="caps">' + c.itens.length + ' categorias</span><ul>' +
+        c.itens.map(function (it) { return '<li><span>' + esc(it.nome) + '</span><b>' + brl(it.v) + '<em>' + fmt(it.v / soma * 100, 1) + '%</em></b></li>'; }).join('') + '</ul></div>' : '';
+      return '<li data-i="' + j + '" style="--c:' + CORES[j] + '"' + (c.itens ? ' class="has-pop" tabindex="0" aria-describedby="outrosPop"' : '') + '><i></i><span>' + esc(c.nome) + '<small>' + brl(c.v) + '</small></span><b>' + fmt(c.v / soma * 100, 1) + '%</b>' + pop + '</li>';
     }).join('') : '<li><span class="muted">Nenhuma saída lançada.</span></li>';
 
     // 04 · Pagamos tudo?
