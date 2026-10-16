@@ -12,3 +12,6 @@
 /dashboards/**/*.xls
 /dashboards/**/*.csv
 /dashboards/README.md
+# Variáveis locais: os valores reais ficam só no painel da Vercel.
+/.env*
+/.local

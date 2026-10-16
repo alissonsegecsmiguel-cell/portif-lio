@@ -8,3 +8,6 @@ dashboards/*/fonte/
 dashboards/**/*.xlsx
 dashboards/**/*.xls
 dashboards/**/*.csv
+
+# Amostras locais com dados pessoais reais.
+.local/

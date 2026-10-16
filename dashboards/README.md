@@ -17,6 +17,9 @@ Clientes atuais:
 | Pasta      | URL                    | Meses                                   | Fonte                     |
 |------------|------------------------|-----------------------------------------|---------------------------|
 | `natalia/` | `/dashboards/natalia`  | mai–set/2026 fechados, out/2026 parcial | `fonte/DRE NATÁLIA.xlsx`  |
+| `casal/`   | `/dashboard/casal` (e `/dashboards/casal`) | os do `historico` da planilha | `/api/financas` (Apps Script) |
+
+O painel `casal/` é a exceção: não tem dados no HTML. Ele busca `/api/financas` (`api/financas.js`), que lê a planilha com `FIN_SHEETS_URL` e `FIN_SHEETS_KEY` sem expor a chave, e fica atrás de senha (`middleware.js`, Basic Auth com `DASH_USER` e `DASH_PASS`). As variáveis ficam em `.env.local` (ignorado) e em Vercel › Settings › Environment Variables. No `serve.cjs` a página abre, mas sem endpoint mostra "Não foi possível carregar os dados".
 
 ## Como o painel funciona
 

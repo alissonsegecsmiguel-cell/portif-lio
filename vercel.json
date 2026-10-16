@@ -28,6 +28,10 @@
     {
       "source": "/favicon.svg",
       "destination": "/portfolio/favicon.svg"
+    },
+    {
+      "source": "/dashboard/casal/:path*",
+      "destination": "/dashboards/casal/:path*"
     }
   ],
   "headers": [
