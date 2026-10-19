@@ -255,6 +255,141 @@ html.js-motion [data-rise]:not(.is-in) .stack i{flex-basis:0}
 .rank.rank--slim li{grid-template-columns:minmax(0,1fr) auto;padding:9px 0}
 .rank.rank--slim li:first-child{padding-top:0}
 .rank.rank--slim .rank-track{grid-column:1/-1}
+/* Parcelas nos próximos meses */
+.chart-legend i.lg-sim{width:8px;height:8px;margin-right:6px;vertical-align:0;border-radius:2px;background:repeating-linear-gradient(45deg,var(--signal) 0 1.5px,rgba(169,165,255,.2) 1.5px 4px)}
+.chart-legend i.lg-lim{border-top:1px dashed var(--danger)}
+.fb{fill:url(#fbGrad);stroke:rgba(237,194,123,.45);stroke-width:1;transform-box:fill-box;transform-origin:50% 100%;transition:transform 1.1s var(--ease),fill .3s}
+.fb.is-now{fill:var(--warning);stroke:none}
+.fb.is-over{fill:url(#fbOver);stroke:rgba(243,166,173,.5)}.fb.is-now.is-over{fill:var(--danger);stroke:none}
+.fb-sim{stroke:var(--signal);stroke-width:1}
+.fut-drop{fill:var(--mint);font-weight:600}
+.lim-line{stroke:var(--danger);stroke-width:1;stroke-dasharray:4 5;opacity:.75}
+.chart .lim-txt{fill:var(--danger)}
+html.js-motion [data-rise]:not(.is-in) .fb{transform:scaleY(0)}
+
+/* Simulador: campos do design system (48px, raio 12, foco violeta) */
+.sim{margin-top:22px;padding:clamp(16px,2vw,22px);border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(169,165,255,.035),transparent 60%),#0b0b0d;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.sim-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.sim-head h3{font:500 15px/1.3 var(--font-ui);letter-spacing:-.02em}
+.sim-limpar{padding:4px 0;border:0;background:none;color:var(--signal);font:500 12px/1 var(--font-ui);cursor:pointer;transition:color .3s}.sim-limpar:hover{color:var(--ink)}
+.sim-campos{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:end}
+.field{display:grid;gap:9px;min-width:0}
+.field label{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font:500 12px/1.5 var(--font-ui);color:var(--ink)}
+.field output{color:var(--signal);font-weight:600;font-variant-numeric:tabular-nums}
+.field input:not([type=range]),.field select{width:100%;min-height:48px;padding:12px 15px;border:1px solid var(--line);border-radius:12px;background:#ffffff03;color:var(--ink);font:500 14px/1.2 var(--font-ui);font-variant-numeric:tabular-nums;outline:0;color-scheme:dark;transition:border-color .3s,box-shadow .3s,background-color .3s}
+.field select{appearance:none;-webkit-appearance:none;padding-right:38px;cursor:pointer;background:#ffffff03 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a9a5ff' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 12px center/16px}
+.field select option{background:#111116;color:var(--ink)}
+.field input:not([type=range])::placeholder{color:#96939f;opacity:1}
+.field :is(input:not([type=range]),select):hover{border-color:rgba(169,165,255,.45);background-color:#15151c}
+.field :is(input:not([type=range]),select):focus{border-color:var(--signal);background-color:#171421;box-shadow:0 0 0 3px rgba(108,99,255,.16)}
+.input-pre{position:relative}
+.input-pre span{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted);pointer-events:none}
+.input-pre input{padding-left:42px!important}
+.field input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:48px;margin:0;background:transparent;cursor:pointer;--p:39%}
+.field input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--electric) var(--p),rgba(241,240,234,.12) var(--p))}
+.field input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-8px;border:2px solid var(--ink);border-radius:50%;background:linear-gradient(180deg,#918bff,#6c63ff);box-shadow:0 4px 14px #6c63ff55;transition:transform .3s var(--ease)}
+.field input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
+.field input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:rgba(241,240,234,.12)}
+.field input[type=range]::-moz-range-progress{height:4px;border-radius:4px;background:var(--electric)}
+.field input[type=range]::-moz-range-thumb{width:16px;height:16px;border:2px solid var(--ink);border-radius:50%;background:linear-gradient(180deg,#918bff,#6c63ff);box-shadow:0 4px 14px #6c63ff55}
+.field input[type=range]:focus-visible{outline:none}
+.field input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(108,99,255,.35)}
+.sim-res{margin-top:16px;padding-top:16px;border-top:1px solid var(--line-soft);font-size:13px;line-height:1.7;color:var(--ink-2)}
+.sim-res b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.sim-res .badge{margin-right:10px;vertical-align:1px}
+@container (max-width:560px){.sim-campos{grid-template-columns:1fr;gap:12px}}
+
+/* Metas */
+.metas li{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+.metas li:first-child{padding-top:0}.metas li:last-child{border-bottom:0}
+.meta-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.meta-nome{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;letter-spacing:-.01em}
+.meta-nome .badge{padding:3px 8px;font-size:9px}
+.meta-top b{font:300 24px/1 var(--font-editorial);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.meta-bar{height:6px;margin:10px 0 8px;border:1px solid #ffffff0b;border-radius:100px;overflow:hidden;background:repeating-linear-gradient(-45deg,#ffffff08 0 1px,transparent 1px 6px)}
+.meta-bar i{display:block;height:100%;width:max(4px,var(--w,0%));border-radius:inherit;background:linear-gradient(90deg,var(--pine),var(--mint));box-shadow:inset 0 1px 0 #ffffff44;transition:width 1.2s var(--ease);transition-delay:calc(.35s + var(--i,0) * 90ms)}
+.meta.is-reserva .meta-bar i{background:linear-gradient(90deg,var(--electric),var(--signal))}
+html.js-motion [data-rise]:not(.is-in) .meta-bar i{width:0}
+.meta-info{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.meta-info b{color:var(--ink-2);font-weight:600}
+.meta-ritmo{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:12px;line-height:1.4;color:var(--ink-2)}
+.mspark{display:inline-flex;align-items:flex-end;gap:2px;height:16px;flex:none}
+.mspark i{width:4px;height:max(2px,var(--h));border-radius:1px;background:rgba(145,203,165,.45)}
+.mspark i:last-child{background:var(--mint)}.mspark i.neg{background:var(--danger)}
+
+/* Saúde financeira */
+.saude{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sinal{--c:var(--muted);position:relative;display:flex;flex-direction:column;gap:12px;padding:18px 18px 16px;border:1px solid var(--line-soft);border-radius:16px;background:rgba(5,5,6,.35);transition:border-color .4s}
+.sinal::before{content:'';position:absolute;top:-1px;left:18px;right:18px;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:.6}
+.sinal--good{--c:var(--mint)}.sinal--warn{--c:var(--warning)}.sinal--bad{--c:var(--danger)}
+.sinal:hover{border-color:var(--line)}
+.sinal-top{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted)}
+.sinal-top .badge{padding:4px 9px;font-size:9.5px}
+.sinal-valor{font:300 clamp(30px,2.6vw,38px)/1 var(--font-editorial);letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sinal-meter{position:relative;height:6px;border:1px solid #ffffff0b;border-radius:100px;background:repeating-linear-gradient(-45deg,#ffffff08 0 1px,transparent 1px 6px)}
+.sinal-meter>i{display:block;height:100%;width:max(4px,var(--w,0%));border-radius:inherit;background:var(--c);opacity:.9;box-shadow:0 0 12px color-mix(in srgb,var(--c) 35%,transparent);transition:width 1.2s var(--ease);transition-delay:calc(.35s + var(--i,0) * 90ms)}
+.sinal-alvo{position:absolute;top:-5px;bottom:-5px;left:var(--x);width:2px;margin-left:-1px;border-radius:2px;background:var(--ink);opacity:.75}
+html.js-motion [data-rise]:not(.is-in) .sinal-meter>i{width:0}
+.sinal-meta{font-size:12px;line-height:1.5;color:var(--muted)}
+.saude-ano{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--ink-2)}
+.saude-ano:empty{display:none}
+.saude-ano .caps{color:var(--muted)}
+.saude-ano b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.saude-ano b.t-good{color:var(--mint)}.saude-ano b.t-bad{color:var(--danger)}
+@container (max-width:760px){.saude{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container (max-width:340px){.saude{grid-template-columns:1fr}}
+
+/* Categorias mês a mês */
+.heat-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;outline:none}
+.heat-wrap:focus-visible{box-shadow:0 0 0 2px var(--signal)}
+.heat{width:100%;border-collapse:separate;border-spacing:3px;font-size:12px;font-variant-numeric:tabular-nums}
+.heat th{padding:8px 10px;font:400 10px/1.4 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;white-space:nowrap}
+.heat thead th.is-now{color:var(--ink)}
+.heat thead th.is-parcial{text-decoration:underline dashed var(--warning);text-underline-offset:4px}
+.heat tbody th{position:sticky;left:0;z-index:1;max-width:150px;padding:0 12px 0 8px;background:var(--void-soft);font:500 13px/1.3 var(--font-ui);letter-spacing:-.01em;text-transform:none;color:var(--ink);text-align:left;overflow:hidden;text-overflow:ellipsis}
+.heat thead th:first-child{position:sticky;left:0;z-index:1;background:var(--void-soft);text-align:left}
+.heat td{position:relative;min-width:58px;height:38px;padding:0 8px;border-radius:7px;background:rgba(169,165,255,var(--a,0));color:var(--ink);text-align:center;white-space:nowrap;transition:box-shadow .25s,transform .25s var(--ease)}
+.heat td.is-zero{background:rgba(241,240,234,.02);color:var(--muted)}
+.heat td.is-now{box-shadow:inset 0 0 0 1px rgba(241,240,234,.35)}
+.heat td.is-alto{box-shadow:inset 0 0 0 1px rgba(237,194,123,.6)}
+.heat td.is-alto.is-now{box-shadow:inset 0 0 0 1px rgba(237,194,123,.6),inset 0 0 0 2px rgba(241,240,234,.25)}
+.heat td i{position:absolute;top:3px;right:5px;font-size:8px;font-style:normal;color:var(--warning)}
+.heat td:hover{box-shadow:inset 0 0 0 1px var(--signal);transform:scale(1.04)}
+.heat .heat-media{color:var(--muted);background:transparent;border-left:1px solid var(--line-soft)}
+.heat tr.is-outras th,.heat tr.is-outras td{color:var(--muted)}
+.heat tbody tr:hover th{color:var(--signal)}
+.heat-legenda{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:11px;color:var(--muted)}
+.heat-legenda span{display:inline-flex;align-items:center;gap:7px}
+.heat-escala{width:34px;height:8px;border-radius:3px;background:linear-gradient(90deg,rgba(169,165,255,.08),rgba(169,165,255,.6))}
+.heat-destaques{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft)}
+.heat-destaques>.caps{display:block;margin-bottom:10px;color:var(--muted)}
+.heat-destaques ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.heat-destaques li{display:grid;gap:3px;padding:12px 14px;border:1px solid #edc27b2e;border-radius:12px;background:#edc27b07}
+.heat-destaques li span{font-size:13px;color:var(--ink)}
+.heat-destaques li b{font:600 15px/1.2 var(--font-ui);font-variant-numeric:tabular-nums}
+.heat-destaques li small{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.heat-parcial{width:14px;height:0;border-top:1px dashed var(--warning)}
+
+/* Contas fixas e assinaturas */
+.fx-total{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-bottom:18px}
+.fx-total .caps{color:var(--muted)}
+.fx li{padding:11px 0;border-bottom:1px solid var(--line-soft)}
+.fx li:first-child{padding-top:0}.fx li:last-child{border-bottom:0}
+.fx-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.fx-nome{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fx-nome .badge{padding:3px 8px;font-size:9px}
+.fx-top b{font:600 14px/1.4 var(--font-ui);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fx-info{display:flex;justify-content:space-between;gap:12px;margin-top:3px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.fx-bar{display:block;height:3px;margin-top:8px;border-radius:100px;background:rgba(241,240,234,.05);overflow:hidden}
+.fx-bar>i{display:block;height:100%;width:var(--w,0%);border-radius:inherit;background:linear-gradient(90deg,rgba(108,99,255,.6),rgba(169,165,255,.75));transition:width 1.1s var(--ease);transition-delay:calc(.35s + var(--i,0) * 70ms)}
+html.js-motion [data-rise]:not(.is-in) .fx-bar>i{width:0}
+.fx-mais{margin-top:8px;border-top:1px solid var(--line-soft);padding-top:4px}
+.fx-mais summary{display:flex;align-items:center;gap:10px;padding:8px 0;font:400 10px/1.6 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);cursor:pointer;list-style:none;transition:color .3s}
+.fx-mais summary::-webkit-details-marker{display:none}
+.fx-mais summary::before{content:'+';color:var(--signal);font-size:16px;line-height:1}
+.fx-mais[open] summary::before{content:'−'}
+.fx-mais summary:hover{color:var(--ink)}
+
 @container (min-width:640px){.tipo-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}.tipo-grid .sub-block{margin-top:0;padding-top:0;border-top:0}}
 
 /* Linha */
@@ -532,40 +667,82 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
       </div>
     </section>
 
-    <!-- 01 · Mês a mês -->
+    <!-- 01 · Saúde financeira -->
+    <section class="card span-12 card--saude" data-rise aria-labelledby="s1">
+      <div class="card-head"><div><h2 id="s1">Saúde financeira</h2><span class="caps">quatro sinais do mês, cada um com a sua meta</span></div><span class="card-index caps">01</span></div>
+      <ul class="saude" id="saude"></ul>
+      <p class="saude-ano" id="saudeAno"></p>
+    </section>
+
+    <!-- 02 · Mês a mês -->
     <section class="card span-8" data-rise aria-labelledby="m1">
-      <div class="card-head"><div><h2 id="m1">Mês a mês</h2><span class="caps">entrou, saiu e sobrou · toque num mês para abrir</span></div><span class="card-index caps">01</span></div>
+      <div class="card-head"><div><h2 id="m1">Mês a mês</h2><span class="caps">entrou, saiu e sobrou · toque num mês para abrir</span></div><span class="card-index caps">02</span></div>
       <div class="chart-legend" aria-hidden="true"><span><i class="lg-box" style="--c:var(--mint)"></i>entrou</span><span><i class="lg-box" style="--c:var(--signal)"></i>saiu</span><span><i class="lg-line lg-sobra"></i>sobrou</span><span><i class="lg-box lg-parcial"></i>dia a dia não lançado</span></div>
       <div class="chart-wrap" id="mam"><div class="tip" id="mamTip" aria-hidden="true"></div></div>
       <dl class="line-stats" id="mamStats"></dl>
     </section>
 
-    <!-- 02 · Como o dinheiro saiu -->
+    <!-- 03 · Como o dinheiro saiu -->
     <section class="card span-4 card--tipo" data-rise style="--delay:80ms" aria-labelledby="m2">
-      <div class="card-head"><div><h2 id="m2">Como o dinheiro saiu</h2><span class="caps">fixas, parcelas e dia a dia</span></div><span class="card-index caps">02</span></div>
+      <div class="card-head"><div><h2 id="m2">Como o dinheiro saiu</h2><span class="caps">fixas, parcelas e dia a dia</span></div><span class="card-index caps">03</span></div>
       <div class="tipo-grid"><div id="tipos"></div><div class="sub-block" id="cartoes"></div></div>
     </section>
 
-    <!-- 03 · Renda do trabalho vs. custo de vida -->
+    <!-- 04 · Parcelas nos próximos meses -->
+    <section class="card span-8" id="futuro" data-rise aria-labelledby="m3">
+      <div class="card-head"><div><h2 id="m3">Parcelas nos próximos meses</h2><span class="caps" id="futSub">o que já está comprometido</span></div><span class="card-index caps">04</span></div>
+      <div class="chart-legend" aria-hidden="true"><span><i class="lg-box" style="--c:var(--warning)"></i>parcelas já assumidas</span><span><i class="lg-box lg-sim"></i>simulação</span><span><i class="lg-line lg-lim"></i>limite: 30% das entradas</span></div>
+      <div class="chart-wrap" id="fut"><div class="tip" id="futTip" aria-hidden="true"></div></div>
+      <dl class="line-stats" id="futStats"></dl>
+      <form class="sim" id="sim" novalidate>
+        <div class="sim-head"><h3>Simular uma compra parcelada</h3><button type="reset" class="sim-limpar" id="simLimpar" hidden>Limpar</button></div>
+        <div class="sim-campos">
+          <div class="field"><label for="simValor">Valor total</label><div class="input-pre"><span aria-hidden="true">R$</span><input id="simValor" inputmode="decimal" autocomplete="off" placeholder="0,00" aria-describedby="simRes"></div></div>
+          <div class="field"><label for="simVezes">Parcelas <output id="simVezesOut" for="simVezes">10×</output></label><input id="simVezes" type="range" min="1" max="24" step="1" value="10" aria-valuetext="10 parcelas"></div>
+          <div class="field"><label for="simInicio">Primeira parcela</label><select id="simInicio"></select></div>
+        </div>
+        <p class="sim-res" id="simRes" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- 05 · Metas -->
+    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="m4">
+      <div class="card-head"><div><h2 id="m4">Metas</h2><span class="caps" id="metasSub">quanto falta e quando chega</span></div><span class="card-index caps">05</span></div>
+      <div id="metas"></div>
+    </section>
+
+    <!-- 06 · Categorias mês a mês -->
+    <section class="card span-8" data-rise aria-labelledby="s6">
+      <div class="card-head"><div><h2 id="s6">Categorias mês a mês</h2><span class="caps" id="heatSub">quais gastos vêm subindo</span></div><span class="card-index caps">06</span></div>
+      <div id="heat"></div>
+    </section>
+
+    <!-- 07 · Contas fixas e assinaturas -->
+    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="s7">
+      <div class="card-head"><div><h2 id="s7">Contas fixas e assinaturas</h2><span class="caps">o que se repete todo mês</span></div><span class="card-index caps">07</span></div>
+      <div id="fixas"></div>
+    </section>
+
+    <!-- 08 · Renda do trabalho vs. custo de vida -->
     <section class="card span-4" data-rise aria-labelledby="c1">
-      <div class="card-head"><div><h2 id="c1">Renda do trabalho vs. custo de vida</h2><span class="caps" id="c1Sub"></span></div><span class="card-index caps">03</span></div>
+      <div class="card-head"><div><h2 id="c1">Renda do trabalho vs. custo de vida</h2><span class="caps" id="c1Sub"></span></div><span class="card-index caps">08</span></div>
       <div class="chart-legend" aria-hidden="true"><span><i class="lg-line"></i>renda do trabalho</span><span><i class="lg-meta"></i>custo de vida</span></div>
       <div class="chart-wrap" id="linha"><div class="tip" id="linhaTip" aria-hidden="true"></div></div>
       <dl class="line-stats" id="linhaStats"></dl>
     </section>
 
-    <!-- 04 · Reserva de emergência -->
+    <!-- 09 · Reserva de emergência -->
     <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c2">
-      <div class="card-head"><div><h2 id="c2">Reserva de emergência</h2><span class="caps">quanto já foi guardado</span></div><span class="card-index caps">04</span></div>
+      <div class="card-head"><div><h2 id="c2">Reserva de emergência</h2><span class="caps">quanto já foi guardado</span></div><span class="card-index caps">09</span></div>
       <div class="gauge-box" id="gauge" role="img">
         <div class="gauge-center"><strong aria-hidden="true"><span id="gaugeValor"></span>%</strong><span class="caps">da meta</span></div>
       </div>
       <div class="gauge-copy" id="gaugeCopy"></div>
     </section>
 
-    <!-- 05 · Para onde foi o dinheiro -->
+    <!-- 10 · Para onde foi o dinheiro -->
     <section class="card span-4" data-rise style="--delay:160ms" aria-labelledby="c3">
-      <div class="card-head"><div><h2 id="c3">Para onde foi o dinheiro</h2><span class="caps">saídas por categoria</span></div><span class="card-index caps">05</span></div>
+      <div class="card-head"><div><h2 id="c3">Para onde foi o dinheiro</h2><span class="caps">saídas por categoria</span></div><span class="card-index caps">10</span></div>
       <div class="donut-layout" id="donutLayout">
         <div class="donut-box" id="donut" role="img">
           <div class="donut-center"><strong id="donutTotal"></strong><span class="caps">saiu no mês</span></div>
@@ -574,39 +751,39 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
       </div>
     </section>
 
-    <!-- 06 · Pagamos tudo? -->
+    <!-- 11 · Pagamos tudo? -->
     <section class="card span-4" data-rise aria-labelledby="c4">
-      <div class="card-head"><div><h2 id="c4">Pagamos tudo?</h2><span class="caps" id="c4Sub"></span></div><span class="card-index caps">06</span></div>
+      <div class="card-head"><div><h2 id="c4">Pagamos tudo?</h2><span class="caps" id="c4Sub"></span></div><span class="card-index caps">11</span></div>
       <div id="contas"></div>
     </section>
 
-    <!-- 07 · Gastando acima da média -->
+    <!-- 12 · Gastando acima da média -->
     <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c5">
-      <div class="card-head"><div><h2 id="c5">Gastando acima da média</h2><span class="caps" id="c5Sub"></span></div><span class="card-index caps">07</span></div>
+      <div class="card-head"><div><h2 id="c5">Gastando acima da média</h2><span class="caps" id="c5Sub"></span></div><span class="card-index caps">12</span></div>
       <div id="acima"></div>
     </section>
 
-    <!-- 08 · De onde veio a renda -->
+    <!-- 13 · De onde veio a renda -->
     <section class="card span-4" data-rise style="--delay:160ms" aria-labelledby="c6">
-      <div class="card-head"><div><h2 id="c6">De onde veio a renda</h2><span class="caps">clientes e salários do casal</span></div><span class="card-index caps">08</span></div>
+      <div class="card-head"><div><h2 id="c6">De onde veio a renda</h2><span class="caps">clientes e salários do casal</span></div><span class="card-index caps">13</span></div>
       <div id="fontes"></div>
     </section>
 
-    <!-- 09 · Maiores gastos do mês -->
+    <!-- 14 · Maiores gastos do mês -->
     <section class="card span-4" data-rise aria-labelledby="c7">
-      <div class="card-head"><div><h2 id="c7">Maiores gastos do mês</h2><span class="caps">os seis que mais pesaram</span></div><span class="card-index caps">09</span></div>
+      <div class="card-head"><div><h2 id="c7">Maiores gastos do mês</h2><span class="caps">os seis que mais pesaram</span></div><span class="card-index caps">14</span></div>
       <div id="maiores"></div>
     </section>
 
-    <!-- 10 · Parcelas -->
+    <!-- 15 · Parcelas -->
     <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c8">
-      <div class="card-head"><div><h2 id="c8">Parcelas</h2><span class="caps">compras parceladas no mês</span></div><span class="card-index caps">10</span></div>
+      <div class="card-head"><div><h2 id="c8">Parcelas</h2><span class="caps">compras parceladas no mês</span></div><span class="card-index caps">15</span></div>
       <div id="parcelas" style="display:contents"></div>
     </section>
 
-    <!-- 11 · O que o mês está dizendo -->
+    <!-- 16 · O que o mês está dizendo -->
     <section class="card card--insight span-4" data-rise style="--delay:160ms" aria-labelledby="c9">
-      <div class="card-head"><div><h2 id="c9">O que o mês está dizendo</h2><span class="caps">leitura automática dos números</span></div><span class="card-index caps">11</span></div>
+      <div class="card-head"><div><h2 id="c9">O que o mês está dizendo</h2><span class="caps">leitura automática dos números</span></div><span class="card-index caps">16</span></div>
       <div id="leitura"></div>
     </section>
   </div>
@@ -683,7 +860,8 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     d.sai = { total: num(s.total),
       cats: arr(s.porCategoria).map(nv).map(function (c) { c.nome = titulo(c.nome); return c; }).filter(function (c) { return c.v > 0; }).sort(maiorPrimeiro),
       maiores: arr(s.maioresGastos).map(function (g) { return { nome: g.nome, cat: titulo(g.categoria), v: num(g.valor) }; }) };
-    d.hist = arr(j.historico).map(function (h) { return { mes: h.mes, v: num(h.rendaTrabalho), e: num(h.entradas), s: num(h.saidas), sobra: num(h.sobra), completo: h.completo !== false }; }).sort(function (a, b) { return a.mes < b.mes ? -1 : 1; });
+    d.hist = arr(j.historico).map(function (h) { return { mes: h.mes, v: num(h.rendaTrabalho), e: num(h.entradas), s: num(h.saidas), sobra: num(h.sobra), completo: h.completo !== false,
+      cats: Array.isArray(h.porCategoria) ? h.porCategoria.map(function (c) { return { nome: titulo(c.nome), v: num(c.valor) }; }) : null }; }).sort(function (a, b) { return a.mes < b.mes ? -1 : 1; });
     d.custo = num(cv.valor);
     d.cobre = cv.rendaCobreCustoDeVida !== false;
     var ev = arr(rs.evolucao), ult = ev[ev.length - 1];
@@ -702,6 +880,16 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     d.res.metaMeses = opt(rs.metaMeses);
     d.res.evol = ev.map(function (x) { return { mes: x.mes, saldo: num(x.saldo), mov: num(x.movimento) }; });
     arr(gd.categorias).forEach(function (o, i) { var c = d.dem.cats[i]; c.dif = o.diferenca !== undefined && o.diferenca !== null ? num(o.diferenca) : c.atual - c.media; });
+    // Parcelas futuras e metas (Apps Script com parcelasFuturas e metas). Sem esses campos, os cards explicam como ativar.
+    var pf = j.parcelasFuturas;
+    d.futuro = pf ? { base: num(pf.mediaEntradas3m), meses: arr(pf.meses).map(function (m) { return { mes: m.mes, v: num(m.valor), terminam: arr(m.terminam).map(nv) }; }) } : null;
+    d.metas = Array.isArray(j.metas) ? j.metas.map(function (m) {
+      return { nome: m.nome, alvo: num(m.alvo), guardado: num(m.guardado), pct: num(m.pct), falta: num(m.falta), ritmo: num(m.ritmo),
+        meses: m.mesesParaMeta === null || m.mesesParaMeta === undefined ? null : num(m.mesesParaMeta), reserva: !!m.reserva,
+        mov: arr(m.movimentos).map(function (x) { return { mes: x.mes, v: num(x.valor) }; }) };
+    }) : null;
+    // Contas fixas do mês com há quantos meses aparecem (Apps Script com saidas.fixasLista).
+    d.fixasLista = Array.isArray(s.fixasLista) ? s.fixasLista.map(function (x) { return { nome: x.nome, cat: titulo(x.categoria), v: num(x.valor), dia: x.dia, meses: num(x.meses) }; }) : null;
     return d;
   }
 
@@ -938,6 +1126,250 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     barras($('cartoes'));
   }
 
+  /* ---------- Parcelas nos próximos meses + simulador ----------
+     Barras: o que já está comprometido em cada mês (este mês + 12), pela coluna FALTAM da planilha.
+     A simulação empilha uma compra nova por cima, em hachurado, e compara com o limite de 30% das entradas médias. */
+  var futCompact = null, sim = { v: 0, n: 10, ini: 1 };
+  function mesAno(id) { return mesCurto(id) + '/' + id.slice(2, 4); }
+  function futuro(d) {
+    var box = $('fut'), tip = $('futTip'), old = box.querySelector('svg, .empty');
+    if (old) old.remove();
+    if (!d.futuro) {
+      box.insertAdjacentHTML('afterbegin', vazio('Para ver as parcelas dos próximos meses e simular compras, atualize o Apps Script.'));
+      $('futStats').innerHTML = ''; $('sim').hidden = true; return;
+    }
+    $('sim').hidden = false;
+    var S = [{ mes: d.mes, v: d.sai.parcelas || d.parc.total, terminam: d.parc.terminam, agora: true }].concat(d.futuro.meses);
+    var n = S.length, base = d.futuro.base, lim = base * 0.3;
+    var parc = sim.v > 0 ? sim.v / sim.n : 0, extra = function (k) { return parc && k >= sim.ini && k < sim.ini + sim.n ? parc : 0; };
+    var compact = futCompact = box.clientWidth < 560, fs = compact ? 1.25 : 1;
+    var W = compact ? 380 : 760, H = compact ? 240 : 250, L = compact ? 46 : 52, R = 8, T = 28, B = 36;
+    var topo = Math.max.apply(null, S.map(function (s, k) { return s.v + extra(k); }).concat(lim * 1.15, 1)), st = passo(topo / 4), max = Math.ceil(topo * 1.1 / st) * st;
+    var y = function (v) { return T + (H - T - B) * (1 - v / max); }, y0 = y(0);
+    var slot = (W - L - R) / n, bw = Math.min(slot * 0.56, compact ? 18 : 30), bx = function (k) { return L + slot * k + (slot - bw) / 2; };
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'chart' + (compact ? ' is-compact' : ''), role: 'img',
+      'aria-label': 'Parcelas já assumidas por mês. ' + S.map(function (s) { return nomeMes(s.mes) + ' ' + brl(s.v); }).join(', ') + '.' });
+    var defs = svgEl('defs', {}, svg);
+    [['fbGrad', '237,194,123'], ['fbOver', '243,166,173']].forEach(function (g) {
+      var lg = svgEl('linearGradient', { id: g[0], x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+      svgEl('stop', { offset: '0%', 'stop-color': 'rgb(' + g[1] + ')', 'stop-opacity': .5 }, lg);
+      svgEl('stop', { offset: '100%', 'stop-color': 'rgb(' + g[1] + ')', 'stop-opacity': .12 }, lg);
+    });
+    var pat = svgEl('pattern', { id: 'hatch', width: 6, height: 6, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
+    svgEl('rect', { width: 6, height: 6, fill: 'rgba(169,165,255,.18)' }, pat);
+    svgEl('line', { x1: 0, y1: 0, x2: 0, y2: 6, stroke: '#a9a5ff', 'stroke-width': 2 }, pat);
+    for (var t = 0; t <= max + 1e-6; t += st) {
+      svgEl('line', { x1: L, x2: W - R, y1: y(t), y2: y(t), class: t ? 'gridline' : 'baseline' }, svg);
+      svgEl('text', { x: L - 10, y: y(t) + 4, 'text-anchor': 'end', 'font-size': 11 * fs }, svg).textContent = eixo(t);
+    }
+    // Onde alivia: quedas em relação ao mês anterior (parcelas que acabaram). No celular, só as duas maiores; as outras ficam na dica.
+    var quedas = S.map(function (s, k) { return { k: k, v: k > 0 ? S[k - 1].v - s.v : 0 }; }).filter(function (q) { return q.v >= 50; })
+      .sort(function (a, b) { return b.v - a.v; }).slice(0, compact ? 2 : 12).map(function (q) { return q.k; });
+    S.forEach(function (s, k) {
+      var ex = extra(k), tot = s.v + ex, over = base > 0 && tot > lim + 0.005, atraso = 'transition-delay:' + (300 + k * 45) + 'ms';
+      if (s.v > 0) svgEl('rect', { x: bx(k), y: y(s.v), width: bw, height: y0 - y(s.v), rx: 3, class: 'fb' + (s.agora ? ' is-now' : '') + (over ? ' is-over' : ''), style: atraso }, svg);
+      if (ex) svgEl('rect', { x: bx(k), y: y(tot), width: bw, height: y(s.v) - y(tot), rx: 3, fill: 'url(#hatch)', class: 'fb-sim' }, svg);
+      if (!compact || k % 2 === 0) svgEl('text', { x: bx(k) + bw / 2, y: H - 12, 'text-anchor': 'middle', class: 't-mono' + (s.agora ? ' t-ink' : '') }, svg).textContent = s.mes.slice(5) === '01' ? mesAno(s.mes) : mesCurto(s.mes);
+      var queda = k > 0 ? S[k - 1].v - s.v : 0;
+      if (quedas.indexOf(k) >= 0) svgEl('text', { x: bx(k) + bw / 2, y: y(tot) - 8, 'text-anchor': 'middle', 'font-size': 10.5 * fs, class: 'fut-drop' }, svg).textContent = '−' + eixo(Math.round(queda));
+    });
+    if (base > 0) {
+      var ly = y(lim);
+      svgEl('line', { x1: L, x2: W - R, y1: ly, y2: ly, class: 'lim-line' }, svg);
+      svgEl('text', { x: W - R, y: ly - 6, 'text-anchor': 'end', 'font-size': 10.5 * fs, class: 'lim-txt' }, svg).textContent = '30% · ' + curto(lim);
+    }
+    var hits = [];
+    function show(k) {
+      var s = S[k], ex = extra(k), tot = s.v + ex;
+      hits.forEach(function (h, j) { h.classList.toggle('is-on', j === k); });
+      tip.innerHTML = '<span class="caps">' + nomeMes(s.mes) + (s.agora ? ' · este mês' : '') + '</span><b>' + brl(tot) + (base ? ' · ' + pct(tot / base) : '') + '</b>' +
+        '<span>' + (ex ? brl(s.v) + ' já assumidas + ' + brl(ex) + ' da simulação' : base ? pct(tot / base) + ' das entradas médias' : 'parcelas do mês') +
+        (s.terminam.length ? ' · termina: ' + s.terminam.map(function (x) { return esc(x.nome); }).join(', ') : '') + '</span>';
+      tip.style.left = ((bx(k) + bw / 2) / W * 100) + '%';
+      tip.style.top = (y(tot) / H * 100) + '%';
+      tip.style.setProperty('--tx', k < 2 ? '-15%' : k > n - 3 ? '-85%' : '-50%');
+      tip.classList.add('is-visible');
+    }
+    function hide() { tip.classList.remove('is-visible'); hits.forEach(function (h) { h.classList.remove('is-on'); }); }
+    S.forEach(function (s, k) {
+      var h = svgEl('rect', { x: L + slot * k, y: T - 10, width: slot, height: H - T + 10 - 4, class: 'hit hit-col', tabindex: 0,
+        'aria-label': nomeMes(s.mes) + ': ' + brl(s.v + extra(k)) + ' em parcelas' + (s.terminam.length ? ', termina ' + s.terminam.map(function (x) { return x.nome; }).join(', ') : '') }, svg);
+      h.addEventListener('pointerenter', function () { show(k); });
+      h.addEventListener('focus', function () { show(k); });
+      h.addEventListener('blur', hide);
+      hits.push(h);
+    });
+    svg.addEventListener('pointerleave', hide);
+    box.insertBefore(svg, tip);
+
+    // Números de apoio (sem a simulação): agora, daqui a 6 meses e quando as parcelas zeram.
+    var em6 = S[6], livre = null;
+    for (var k = 1; k < n; k++) if (S[k].v === 0) { livre = S[k]; break; }
+    var p = function (v) { return base ? ' <small>' + pct(v / base) + '</small>' : ''; };
+    $('futStats').innerHTML = '<div><dt class="caps">Agora</dt><dd>' + curto(S[0].v) + p(S[0].v) + '</dd></div>' +
+      '<div><dt class="caps">Em ' + mesAno(em6.mes) + '</dt><dd>' + curto(em6.v) + p(em6.v) + '</dd></div>' +
+      '<div><dt class="caps">Sem parcelas</dt><dd>' + (S[0].v === 0 ? 'já' : livre ? mesAno(livre.mes) : 'após ' + mesAno(S[n - 1].mes)) + '</dd></div>';
+    $('futSub').textContent = 'o que já está comprometido' + (base ? ' · base: entradas médias de ' + curto(base) : '');
+    simResultado(S, base, lim, parc);
+  }
+  function simResultado(S, base, lim, parc) {
+    var res = $('simRes');
+    $('simLimpar').hidden = !sim.v;
+    if (!parc) { res.innerHTML = 'Digite o valor de uma compra para ver como ficariam as parcelas, mês a mês.'; return; }
+    var fim = sim.ini + sim.n - 1, pico = null, acima = 0;
+    for (var k = sim.ini; k <= Math.min(fim, S.length - 1); k++) {
+      var tot = S[k].v + parc;
+      if (!pico || tot > pico.v) pico = { v: tot, mes: S[k].mes };
+      if (base && tot > lim + 0.005) acima++;
+    }
+    var picoPct = base ? pico.v / base : 0, nivel = !base ? 'accent' : picoPct > 0.4 ? 'bad' : acima ? 'warn' : 'good';
+    var veredito = !base ? 'Sem base de entradas' : picoPct > 0.4 ? 'Passa de 40% das entradas' : acima ? 'Passa do limite em ' + acima + (acima === 1 ? ' mês' : ' meses') : 'Cabe no limite de 30%';
+    var ate = S[fim] ? mesAno(S[fim].mes) : mesAno(somaMeses(S[0].mes, fim));
+    res.innerHTML = badge(nivel, veredito) + '<b>' + sim.n + '× de ' + brl(parc) + '</b>, de ' + mesAno(S[sim.ini].mes) + ' a ' + ate + '. ' +
+      'No pico, as parcelas iriam a <b>' + brl(pico.v) + '</b> em ' + mesAno(pico.mes) + (base ? ' (' + pct(picoPct) + ' das entradas médias)' : '') + '.' +
+      (fim > S.length - 1 ? ' As últimas ' + (fim - S.length + 1) + ' parcelas ficam depois do gráfico.' : '');
+  }
+  function lerValor(s) {
+    s = String(s).replace(/[^\d,.]/g, '');
+    if (s.indexOf(',') >= 0) s = s.replace(/\./g, '').replace(',', '.');
+    var v = parseFloat(s);
+    return isFinite(v) && v > 0 ? Math.min(v, 1e7) : 0;
+  }
+  function simInicio(d) {
+    var sel = $('simInicio'), atual = String(sim.ini);
+    sel.innerHTML = [0, 1, 2, 3].map(function (k) {
+      var m = somaMeses(d.mes, k);
+      return '<option value="' + k + '">' + (k === 0 ? 'Este mês' : k === 1 ? 'Próximo mês' : 'Em ' + MESES[mesIdx(m)]) + ' (' + mesAno(m) + ')</option>';
+    }).join('');
+    sel.value = atual;
+  }
+  function vezes(n) {
+    var r = $('simVezes');
+    $('simVezesOut').textContent = n + '×';
+    r.setAttribute('aria-valuetext', n + (n === 1 ? ' parcela' : ' parcelas'));
+    r.style.setProperty('--p', ((n - 1) / 23 * 100).toFixed(1) + '%');
+  }
+  $('simValor').addEventListener('input', function () { sim.v = lerValor(this.value); if (dados) futuro(dados); });
+  $('simValor').addEventListener('blur', function () { if (sim.v) this.value = fmt(sim.v, 2); });
+  $('simVezes').addEventListener('input', function () { sim.n = +this.value; vezes(sim.n); if (dados) futuro(dados); });
+  $('simInicio').addEventListener('change', function () { sim.ini = +this.value; if (dados) futuro(dados); });
+  $('sim').addEventListener('submit', function (e) { e.preventDefault(); });
+  $('sim').addEventListener('reset', function () {
+    setTimeout(function () { sim = { v: 0, n: 10, ini: 1 }; vezes(10); $('simInicio').value = '1'; if (dados) futuro(dados); $('simValor').focus(); });
+  });
+  vezes(sim.n);
+
+  /* ---------- Metas: quanto falta, ritmo dos aportes e quando cada uma chega ---------- */
+  function metas(d) {
+    var box = $('metas');
+    if (!d.metas) { box.innerHTML = vazio('Para ver todas as metas, atualize o Apps Script.'); $('metasSub').textContent = 'quanto falta e quando chega'; return; }
+    if (!d.metas.length) { box.innerHTML = vazio('Nenhuma meta encontrada na aba RESERVA E METAS.'); return; }
+    var guardado = 0, aportes = 0;
+    box.innerHTML = '<ul class="metas">' + d.metas.map(function (m, i) {
+      guardado += m.guardado; aportes += Math.max(m.ritmo, 0);
+      var maxMov = Math.max.apply(null, m.mov.map(function (x) { return Math.abs(x.v); }).concat(1));
+      var spark = m.mov.length ? '<span class="mspark" aria-hidden="true" title="Aportes dos últimos 6 meses">' + m.mov.map(function (x) {
+        return '<i' + (x.v < 0 ? ' class="neg"' : '') + ' style="--h:' + (Math.abs(x.v) / maxMov * 100).toFixed(0) + '%"></i>';
+      }).join('') + '</span>' : '';
+      var quando = m.falta <= 0 ? '<span class="t-good">Meta atingida</span>'
+        : m.meses !== null ? curto(m.ritmo) + '/mês · chega em ~' + m.meses + (m.meses === 1 ? ' mês' : ' meses') + ' (' + mesAno(somaMeses(d.mes, m.meses)) + ')'
+        : '<span class="t-warn">Sem aportes nos últimos 3 meses</span>';
+      return '<li class="meta' + (m.reserva ? ' is-reserva' : '') + '" style="--i:' + i + '">' +
+        '<div class="meta-top"><span class="meta-nome">' + esc(m.nome) + (m.reserva ? ' <span class="badge badge-accent">reserva</span>' : '') + '</span><b>' + fmt(Math.min(m.pct, 9.99) * 100, 0) + '%</b></div>' +
+        '<div class="meta-bar" role="img" aria-label="' + esc(m.nome) + ': ' + pct(m.pct) + ' da meta"><i data-w="' + Math.min(m.pct * 100, 100).toFixed(1) + '%"></i></div>' +
+        '<div class="meta-info"><span><b>' + brl(m.guardado) + '</b> de ' + curto(m.alvo) + '</span><span>' + (m.falta > 0 ? 'faltam ' + curto(m.falta) : '') + '</span></div>' +
+        '<div class="meta-ritmo">' + spark + '<span>' + quando + '</span></div></li>';
+    }).join('') + '</ul><p class="card-foot"><span>Guardado em metas <b>' + brl(guardado) + '</b></span><span>aportes <b>' + curto(aportes) + '/mês</b></span></p>';
+    $('metasSub').textContent = d.metas.length + (d.metas.length === 1 ? ' meta' : ' metas') + ' · quanto falta e quando chega';
+    barras(box);
+  }
+
+  /* ---------- Saúde financeira: quatro sinais com meta (regras clássicas de orçamento) ---------- */
+  var ROTULO = { good: 'No alvo', warn: 'Atenção', bad: 'Fora do alvo' };
+  function saude(d) {
+    var e = d.ent.total, metaReserva = d.res.metaMeses || 6;
+    var sinais = [
+      { nome: 'Quanto sobra', v: d.taxa, txt: pct(d.taxa), escala: 0.5, alvo: 0.2, meta: 'meta: guardar 20% ou mais do que entra',
+        nivel: d.taxa === null ? null : d.taxa >= 0.2 ? 'good' : d.taxa >= 0.1 ? 'warn' : 'bad', nota: d.completo ? '' : 'dia a dia não lançado: tende a cair' },
+      { nome: 'Parcelas', v: e ? d.sai.parcelas / e : null, txt: e ? pct(d.sai.parcelas / e) : '—', escala: 0.6, alvo: 0.3, meta: 'meta: até 30% das entradas', menor: true },
+      { nome: 'Contas fixas', v: e ? d.sai.fixas / e : null, txt: e ? pct(d.sai.fixas / e) : '—', escala: 1, alvo: 0.5, meta: 'meta: até 50% das entradas', menor: true },
+      { nome: 'Reserva', v: d.res.meses, txt: d.res.meses === null ? '—' : meses(d.res.meses), escala: metaReserva * 1.25, alvo: metaReserva, meta: 'meta: ' + metaReserva + ' meses de custo de vida',
+        nivel: d.res.meses === null ? null : d.res.meses >= metaReserva ? 'good' : d.res.meses >= 3 ? 'warn' : 'bad' }
+    ];
+    sinais[1].nivel = sinais[1].v === null ? null : sinais[1].v <= 0.3 ? 'good' : sinais[1].v <= 0.4 ? 'warn' : 'bad';
+    sinais[2].nivel = sinais[2].v === null ? null : sinais[2].v <= 0.5 ? 'good' : sinais[2].v <= 0.6 ? 'warn' : 'bad';
+    $('saude').innerHTML = sinais.map(function (s, i) {
+      var w = s.v === null ? 0 : Math.min(Math.max(s.v, 0) / s.escala, 1) * 100, x = s.alvo / s.escala * 100;
+      return '<li class="sinal' + (s.nivel ? ' sinal--' + s.nivel : '') + '" style="--i:' + i + '">' +
+        '<div class="sinal-top"><span class="caps">' + s.nome + '</span>' + (s.nivel ? badge(s.nivel, ROTULO[s.nivel]) : '') + '</div>' +
+        '<p class="sinal-valor">' + s.txt + '</p>' +
+        '<div class="sinal-meter" role="img" aria-label="' + s.nome + ': ' + s.txt + ', ' + s.meta + (s.nivel ? ', ' + ROTULO[s.nivel] : '') + '">' +
+          '<i data-w="' + w.toFixed(1) + '%"></i><span class="sinal-alvo" style="--x:' + x.toFixed(1) + '%"></span></div>' +
+        '<p class="sinal-meta">' + s.meta + (s.nota ? '<br><span class="t-warn">' + s.nota + '</span>' : '') + '</p></li>';
+    }).join('');
+    barras($('saude'));
+    // Acumulado do ano do mês aberto, a partir do histórico.
+    var ano = d.mes.slice(0, 4), H = d.hist.filter(function (h) { return h.mes.slice(0, 4) === ano; });
+    var tE = 0, tS = 0; H.forEach(function (h) { tE += h.e; tS += h.s; });
+    $('saudeAno').innerHTML = H.length ? '<span class="caps">' + ano + ' até ' + mesCurto(d.mes) + '</span><span>Entrou <b>' + brl(tE) + '</b></span><span>Saiu <b>' + brl(tS) + '</b></span>' +
+      '<span>' + (tE - tS >= 0 ? 'Sobrou' : 'Faltou') + ' <b class="' + (tE - tS >= 0 ? 't-good' : 't-bad') + '">' + brl(Math.abs(tE - tS)) + '</b>' + (tE ? ' · ' + pct((tE - tS) / tE) + ' do que entrou' : '') + '</span>' : '';
+  }
+
+  /* ---------- Categorias mês a mês (grade de calor) ----------
+     Cada linha é uma categoria; a cor mostra o peso do mês dentro da própria categoria (cor mais forte = mês mais caro).
+     ▲ marca mês acima da média da categoria (mesma regra do card "Gastando acima da média": +20% e +R$ 50). */
+  function heat(d) {
+    var box = $('heat'), M = d.hist.filter(function (h) { return h.cats; }).slice(-6);
+    if (!M.length) { box.innerHTML = vazio('Para ver as categorias mês a mês, atualize o Apps Script.'); return; }
+    var tot = {};
+    M.forEach(function (h) { h.cats.forEach(function (c) { tot[c.nome] = (tot[c.nome] || 0) + c.v; }); });
+    var nomes = Object.keys(tot).sort(function (a, b) { return tot[b] - tot[a]; }), top = nomes.slice(0, 8), resto = nomes.slice(8);
+    var linhas = top.map(function (n) { return { nome: n, v: M.map(function (h) { var c = h.cats.filter(function (x) { return x.nome === n; })[0]; return c ? c.v : 0; }) }; });
+    if (resto.length) linhas.push({ nome: 'Outras (' + resto.length + ')', outras: true, v: M.map(function (h) { return h.cats.filter(function (x) { return resto.indexOf(x.nome) >= 0; }).reduce(function (s, x) { return s + x.v; }, 0); }) });
+    var k = function (v) { return v >= 1000 ? fmt(v / 1000, 1) + 'K' : fmt(v, 0); }, subindo = [];
+    var corpo = linhas.map(function (l) {
+      var media = l.v.reduce(function (s, v) { return s + v; }, 0) / l.v.length, max = Math.max.apply(null, l.v) || 1;
+      return '<tr' + (l.outras ? ' class="is-outras"' : '') + '><th scope="row">' + esc(l.nome) + '</th>' + l.v.map(function (v, i) {
+        var h = M[i], alto = !l.outras && v > media * 1.2 && v - media >= 50;
+        if (alto && h.mes === d.mes) subindo.push({ nome: l.nome, dif: v - media, media: media });
+        return '<td class="' + (h.mes === d.mes ? 'is-now' : '') + (alto ? ' is-alto' : '') + (v ? '' : ' is-zero') + '" style="--a:' + (v ? (0.08 + 0.52 * v / max).toFixed(2) : 0) + '" title="' + esc(l.nome) + ' em ' + nomeMes(h.mes) + ': ' + brl(v) + ' (média ' + brl(media) + ')">' +
+          (v ? k(v) : '–') + (alto ? '<i aria-label="acima da média">▲</i>' : '') + '</td>';
+      }).join('') + '<td class="heat-media">' + k(media) + '</td></tr>';
+    }).join('');
+    box.innerHTML = '<div class="heat-wrap" role="region" aria-label="Gastos por categoria e mês" tabindex="0"><table class="heat"><thead><tr><th scope="col">Categoria</th>' +
+      M.map(function (h) { return '<th scope="col" class="' + (h.mes === d.mes ? 'is-now' : '') + (h.completo ? '' : ' is-parcial') + '"' + (h.completo ? '' : ' title="dia a dia não lançado"') + '>' + mesCurto(h.mes) + '</th>'; }).join('') +
+      '<th scope="col" class="heat-media">Média</th></tr></thead><tbody>' + corpo + '</tbody></table></div>' +
+      '<div class="heat-legenda"><span><i class="heat-escala" aria-hidden="true"></i>cor mais forte = mês mais caro da categoria</span><span><b class="t-warn">▲</b> acima da média</span><span><i class="heat-parcial" aria-hidden="true"></i>dia a dia não lançado</span></div>';
+    subindo.sort(function (a, b) { return b.dif - a.dif; });
+    if (subindo.length) box.insertAdjacentHTML('beforeend', '<div class="heat-destaques"><span class="caps">Acima da média em ' + mesCurto(d.mes) + '</span><ul>' + subindo.slice(0, 4).map(function (x) {
+      return '<li><span>' + esc(x.nome) + '</span><b class="t-warn">+' + brl(x.dif) + '</b><small>média ' + brl(x.media) + '</small></li>';
+    }).join('') + '</ul></div>');
+    // No celular a grade rola de lado: abre já mostrando o mês mais recente.
+    var wrap = box.querySelector('.heat-wrap'); wrap.scrollLeft = wrap.scrollWidth;
+    $('heatSub').textContent = 'quais gastos vêm subindo · últimos ' + M.length + (M.length === 1 ? ' mês' : ' meses');
+  }
+
+  /* ---------- Contas fixas e assinaturas ---------- */
+  var ASSINATURA = /stream|assinat|netflix|spotify|disney|prime|max\b|globoplay|youtube|deezer|apple|icloud|google one|chatgpt|software|app\b/i;
+  function fixas(d) {
+    var box = $('fixas'), F = d.fixasLista;
+    if (!F) { box.innerHTML = vazio('Para ver as contas fixas e assinaturas, atualize o Apps Script.'); return; }
+    if (!F.length) { box.innerHTML = vazio('Nenhuma conta fixa lançada no mês.'); return; }
+    var total = F.reduce(function (s, f) { return s + f.v; }, 0), ass = F.filter(function (f) { return ASSINATURA.test(f.nome + ' ' + f.cat); });
+    var totAss = ass.reduce(function (s, f) { return s + f.v; }, 0), topo = F[0].v || 1;
+    var item = function (f, j) {
+      var a = ASSINATURA.test(f.nome + ' ' + f.cat);
+      return '<li style="--i:' + j + '"><div class="fx-top"><span class="fx-nome">' + esc(f.nome) + (a ? ' <span class="badge badge-accent">assinatura</span>' : '') + '</span><b>' + brl(f.v) + '</b></div>' +
+        '<div class="fx-info"><span>' + esc(f.cat) + (f.dia ? ' · dia ' + f.dia : '') + '</span><span>' + (f.meses <= 1 ? '<span class="t-warn">novo este mês</span>' : 'há ' + f.meses + ' meses') + ' · ' + curto(f.v * 12) + '/ano</span></div>' +
+        '<span class="fx-bar"><i data-w="' + (f.v / topo * 100).toFixed(1) + '%"></i></span></li>';
+    };
+    box.innerHTML = '<div class="fx-total"><p class="big"><small>R$</small>' + fmt(total, 2) + '</p><span class="caps">por mês · ' + brl(total * 12) + ' por ano</span></div>' +
+      '<ul class="fx">' + F.slice(0, 6).map(item).join('') + '</ul>' +
+      (F.length > 6 ? '<details class="fx-mais"><summary>Ver mais ' + (F.length - 6) + '</summary><ul class="fx">' + F.slice(6).map(function (f, j) { return item(f, j + 6); }).join('') + '</ul></details>' : '') +
+      '<p class="card-foot"><span>' + F.length + (F.length === 1 ? ' conta fixa' : ' contas fixas') + (ass.length ? ' · ' + ass.length + (ass.length === 1 ? ' assinatura' : ' assinaturas') : '') + '</span>' + (ass.length ? '<b>' + brl(totAss) + '/mês</b>' : '') + '</p>';
+    barras(box);
+  }
+
   /* ---------- 02 · Gauge ---------- */
   var gaugeFill;
   function gauge() {
@@ -1076,6 +1508,12 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     linha(d);
     mesAMes(d);
     tipos(d);
+    simInicio(d);
+    futuro(d);
+    metas(d);
+    saude(d);
+    heat(d);
+    fixas(d);
     var dif = d.ent.trabalho - d.custo;
     $('linhaStats').innerHTML = '<div><dt class="caps">Renda de ' + mesCurto(d.mes) + '</dt><dd>' + curto(d.ent.trabalho) + '</dd></div>' +
       '<div><dt class="caps">Custo de vida</dt><dd>' + curto(d.custo) + '</dd></div>' +
@@ -1194,7 +1632,7 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
       ? '<blockquote class="insight-quote">' + ins[0].t + '</blockquote>' + (ins.length > 1 ? '<ul class="alerts" aria-label="Outros pontos do mês">' + alertasHTML(ins.slice(1)) + '</ul>' : '')
       : '<blockquote class="insight-quote is-good">Mês dentro do esperado.</blockquote>';
 
-    if (!primeira) ['resumo', 'heroFoot', 'fluxoLegenda', 'comida', 'mamStats', 'tipos', 'cartoes', 'linhaStats', 'gaugeCopy', 'legenda', 'contas', 'acima', 'fontes', 'maiores', 'parcelas', 'leitura'].forEach(function (id) { swap($(id)); });
+    if (!primeira) ['resumo', 'heroFoot', 'fluxoLegenda', 'comida', 'mamStats', 'tipos', 'cartoes', 'futStats', 'simRes', 'metas', 'saude', 'saudeAno', 'heat', 'fixas', 'linhaStats', 'gaugeCopy', 'legenda', 'contas', 'acima', 'fontes', 'maiores', 'parcelas', 'leitura'].forEach(function (id) { swap($(id)); });
     document.querySelectorAll('.is-in [data-value]').forEach(countIn);
   }
 
@@ -1268,6 +1706,7 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
       if (!dados) return;
       if (($('linha').clientWidth < 480) !== linhaCompact) linha(dados);
       if (($('mam').clientWidth < 560) !== mamCompact) mesAMes(dados);
+      if (($('fut').clientWidth < 560) !== futCompact) futuro(dados);
     }, 150);
   });
 
