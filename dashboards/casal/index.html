@@ -1318,7 +1318,8 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
 
   /* ---------- Categorias mês a mês (grade de calor) ----------
      Cada linha é uma categoria; a cor mostra o peso do mês dentro da própria categoria (cor mais forte = mês mais caro).
-     ▲ marca mês acima da média da categoria (mesma regra do card "Gastando acima da média": +20% e +R$ 50). */
+     ▲ marca mês acima da média da categoria (mesma regra do card "Gastando acima da média": +20% e +R$ 50,
+     sem contar os meses em que a categoria ficou zerada só porque o dia a dia não foi lançado). */
   function heat(d) {
     var box = $('heat'), M = d.hist.filter(function (h) { return h.cats; }).slice(-6);
     if (!M.length) { box.innerHTML = vazio('Para ver as categorias mês a mês, atualize o Apps Script.'); return; }
@@ -1329,7 +1330,11 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     if (resto.length) linhas.push({ nome: 'Outras (' + resto.length + ')', outras: true, v: M.map(function (h) { return h.cats.filter(function (x) { return resto.indexOf(x.nome) >= 0; }).reduce(function (s, x) { return s + x.v; }, 0); }) });
     var k = function (v) { return v >= 1000 ? fmt(v / 1000, 1) + 'K' : fmt(v, 0); }, subindo = [];
     var corpo = linhas.map(function (l) {
-      var media = l.v.reduce(function (s, v) { return s + v; }, 0) / l.v.length, max = Math.max.apply(null, l.v) || 1;
+      // Mês sem o dia a dia lançado e com a categoria zerada não entra na média: é um zero falso (ex.: mercado),
+      // que puxaria a média para baixo. Contas fixas aparecem em todos os meses e seguem contando normalmente.
+      var base = l.v.filter(function (v, i) { return M[i].completo || v > 0; });
+      if (!base.length) base = l.v;
+      var media = base.reduce(function (s, v) { return s + v; }, 0) / base.length, max = Math.max.apply(null, l.v) || 1;
       return '<tr' + (l.outras ? ' class="is-outras"' : '') + '><th scope="row">' + esc(l.nome) + '</th>' + l.v.map(function (v, i) {
         var h = M[i], alto = !l.outras && v > media * 1.2 && v - media >= 50;
         if (alto && h.mes === d.mes) subindo.push({ nome: l.nome, dif: v - media, media: media });
