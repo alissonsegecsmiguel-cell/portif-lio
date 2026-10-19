@@ -674,23 +674,87 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
       <p class="saude-ano" id="saudeAno"></p>
     </section>
 
-    <!-- 02 · Mês a mês -->
+    <!-- 02 · Renda do trabalho vs. custo de vida -->
+    <section class="card span-4" data-rise aria-labelledby="c1">
+      <div class="card-head"><div><h2 id="c1">Renda do trabalho vs. custo de vida</h2><span class="caps" id="c1Sub"></span></div><span class="card-index caps">02</span></div>
+      <div class="chart-legend" aria-hidden="true"><span><i class="lg-line"></i>renda do trabalho</span><span><i class="lg-meta"></i>custo de vida</span></div>
+      <div class="chart-wrap" id="linha"><div class="tip" id="linhaTip" aria-hidden="true"></div></div>
+      <dl class="line-stats" id="linhaStats"></dl>
+    </section>
+
+    <!-- 03 · Reserva de emergência -->
+    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c2">
+      <div class="card-head"><div><h2 id="c2">Reserva de emergência</h2><span class="caps">quanto já foi guardado</span></div><span class="card-index caps">03</span></div>
+      <div class="gauge-box" id="gauge" role="img">
+        <div class="gauge-center"><strong aria-hidden="true"><span id="gaugeValor"></span>%</strong><span class="caps">da meta</span></div>
+      </div>
+      <div class="gauge-copy" id="gaugeCopy"></div>
+    </section>
+
+    <!-- 04 · Para onde foi o dinheiro -->
+    <section class="card span-4" data-rise style="--delay:160ms" aria-labelledby="c3">
+      <div class="card-head"><div><h2 id="c3">Para onde foi o dinheiro</h2><span class="caps">saídas por categoria</span></div><span class="card-index caps">04</span></div>
+      <div class="donut-layout" id="donutLayout">
+        <div class="donut-box" id="donut" role="img">
+          <div class="donut-center"><strong id="donutTotal"></strong><span class="caps">saiu no mês</span></div>
+        </div>
+        <ul class="legend" id="legenda" aria-label="Saídas por categoria"></ul>
+      </div>
+    </section>
+
+    <!-- 05 · Pagamos tudo? -->
+    <section class="card span-4" data-rise aria-labelledby="c4">
+      <div class="card-head"><div><h2 id="c4">Pagamos tudo?</h2><span class="caps" id="c4Sub"></span></div><span class="card-index caps">05</span></div>
+      <div id="contas"></div>
+    </section>
+
+    <!-- 06 · Gastando acima da média -->
+    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c5">
+      <div class="card-head"><div><h2 id="c5">Gastando acima da média</h2><span class="caps" id="c5Sub"></span></div><span class="card-index caps">06</span></div>
+      <div id="acima"></div>
+    </section>
+
+    <!-- 07 · De onde veio a renda -->
+    <section class="card span-4" data-rise style="--delay:160ms" aria-labelledby="c6">
+      <div class="card-head"><div><h2 id="c6">De onde veio a renda</h2><span class="caps">clientes e salários do casal</span></div><span class="card-index caps">07</span></div>
+      <div id="fontes"></div>
+    </section>
+
+    <!-- 08 · Maiores gastos do mês -->
+    <section class="card span-4" data-rise aria-labelledby="c7">
+      <div class="card-head"><div><h2 id="c7">Maiores gastos do mês</h2><span class="caps">os seis que mais pesaram</span></div><span class="card-index caps">08</span></div>
+      <div id="maiores"></div>
+    </section>
+
+    <!-- 09 · Parcelas -->
+    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c8">
+      <div class="card-head"><div><h2 id="c8">Parcelas</h2><span class="caps">compras parceladas no mês</span></div><span class="card-index caps">09</span></div>
+      <div id="parcelas" style="display:contents"></div>
+    </section>
+
+    <!-- 10 · O que o mês está dizendo -->
+    <section class="card card--insight span-4" data-rise style="--delay:160ms" aria-labelledby="c9">
+      <div class="card-head"><div><h2 id="c9">O que o mês está dizendo</h2><span class="caps">leitura automática dos números</span></div><span class="card-index caps">10</span></div>
+      <div id="leitura"></div>
+    </section>
+
+    <!-- 11 · Mês a mês -->
     <section class="card span-8" data-rise aria-labelledby="m1">
-      <div class="card-head"><div><h2 id="m1">Mês a mês</h2><span class="caps">entrou, saiu e sobrou · toque num mês para abrir</span></div><span class="card-index caps">02</span></div>
+      <div class="card-head"><div><h2 id="m1">Mês a mês</h2><span class="caps">entrou, saiu e sobrou · toque num mês para abrir</span></div><span class="card-index caps">11</span></div>
       <div class="chart-legend" aria-hidden="true"><span><i class="lg-box" style="--c:var(--mint)"></i>entrou</span><span><i class="lg-box" style="--c:var(--signal)"></i>saiu</span><span><i class="lg-line lg-sobra"></i>sobrou</span><span><i class="lg-box lg-parcial"></i>dia a dia não lançado</span></div>
       <div class="chart-wrap" id="mam"><div class="tip" id="mamTip" aria-hidden="true"></div></div>
       <dl class="line-stats" id="mamStats"></dl>
     </section>
 
-    <!-- 03 · Como o dinheiro saiu -->
+    <!-- 12 · Como o dinheiro saiu -->
     <section class="card span-4 card--tipo" data-rise style="--delay:80ms" aria-labelledby="m2">
-      <div class="card-head"><div><h2 id="m2">Como o dinheiro saiu</h2><span class="caps">fixas, parcelas e dia a dia</span></div><span class="card-index caps">03</span></div>
+      <div class="card-head"><div><h2 id="m2">Como o dinheiro saiu</h2><span class="caps">fixas, parcelas e dia a dia</span></div><span class="card-index caps">12</span></div>
       <div class="tipo-grid"><div id="tipos"></div><div class="sub-block" id="cartoes"></div></div>
     </section>
 
-    <!-- 04 · Parcelas nos próximos meses -->
+    <!-- 13 · Parcelas nos próximos meses -->
     <section class="card span-8" id="futuro" data-rise aria-labelledby="m3">
-      <div class="card-head"><div><h2 id="m3">Parcelas nos próximos meses</h2><span class="caps" id="futSub">o que já está comprometido</span></div><span class="card-index caps">04</span></div>
+      <div class="card-head"><div><h2 id="m3">Parcelas nos próximos meses</h2><span class="caps" id="futSub">o que já está comprometido</span></div><span class="card-index caps">13</span></div>
       <div class="chart-legend" aria-hidden="true"><span><i class="lg-box" style="--c:var(--warning)"></i>parcelas já assumidas</span><span><i class="lg-box lg-sim"></i>simulação</span><span><i class="lg-line lg-lim"></i>limite: 30% das entradas</span></div>
       <div class="chart-wrap" id="fut"><div class="tip" id="futTip" aria-hidden="true"></div></div>
       <dl class="line-stats" id="futStats"></dl>
@@ -705,87 +769,24 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
       </form>
     </section>
 
-    <!-- 05 · Metas -->
+    <!-- 14 · Metas -->
     <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="m4">
-      <div class="card-head"><div><h2 id="m4">Metas</h2><span class="caps" id="metasSub">quanto falta e quando chega</span></div><span class="card-index caps">05</span></div>
+      <div class="card-head"><div><h2 id="m4">Metas</h2><span class="caps" id="metasSub">quanto falta e quando chega</span></div><span class="card-index caps">14</span></div>
       <div id="metas"></div>
     </section>
 
-    <!-- 06 · Categorias mês a mês -->
+    <!-- 15 · Categorias mês a mês -->
     <section class="card span-8" data-rise aria-labelledby="s6">
-      <div class="card-head"><div><h2 id="s6">Categorias mês a mês</h2><span class="caps" id="heatSub">quais gastos vêm subindo</span></div><span class="card-index caps">06</span></div>
+      <div class="card-head"><div><h2 id="s6">Categorias mês a mês</h2><span class="caps" id="heatSub">quais gastos vêm subindo</span></div><span class="card-index caps">15</span></div>
       <div id="heat"></div>
     </section>
 
-    <!-- 07 · Contas fixas e assinaturas -->
+    <!-- 16 · Contas fixas e assinaturas -->
     <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="s7">
-      <div class="card-head"><div><h2 id="s7">Contas fixas e assinaturas</h2><span class="caps">o que se repete todo mês</span></div><span class="card-index caps">07</span></div>
+      <div class="card-head"><div><h2 id="s7">Contas fixas e assinaturas</h2><span class="caps">o que se repete todo mês</span></div><span class="card-index caps">16</span></div>
       <div id="fixas"></div>
     </section>
 
-    <!-- 08 · Renda do trabalho vs. custo de vida -->
-    <section class="card span-4" data-rise aria-labelledby="c1">
-      <div class="card-head"><div><h2 id="c1">Renda do trabalho vs. custo de vida</h2><span class="caps" id="c1Sub"></span></div><span class="card-index caps">08</span></div>
-      <div class="chart-legend" aria-hidden="true"><span><i class="lg-line"></i>renda do trabalho</span><span><i class="lg-meta"></i>custo de vida</span></div>
-      <div class="chart-wrap" id="linha"><div class="tip" id="linhaTip" aria-hidden="true"></div></div>
-      <dl class="line-stats" id="linhaStats"></dl>
-    </section>
-
-    <!-- 09 · Reserva de emergência -->
-    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c2">
-      <div class="card-head"><div><h2 id="c2">Reserva de emergência</h2><span class="caps">quanto já foi guardado</span></div><span class="card-index caps">09</span></div>
-      <div class="gauge-box" id="gauge" role="img">
-        <div class="gauge-center"><strong aria-hidden="true"><span id="gaugeValor"></span>%</strong><span class="caps">da meta</span></div>
-      </div>
-      <div class="gauge-copy" id="gaugeCopy"></div>
-    </section>
-
-    <!-- 10 · Para onde foi o dinheiro -->
-    <section class="card span-4" data-rise style="--delay:160ms" aria-labelledby="c3">
-      <div class="card-head"><div><h2 id="c3">Para onde foi o dinheiro</h2><span class="caps">saídas por categoria</span></div><span class="card-index caps">10</span></div>
-      <div class="donut-layout" id="donutLayout">
-        <div class="donut-box" id="donut" role="img">
-          <div class="donut-center"><strong id="donutTotal"></strong><span class="caps">saiu no mês</span></div>
-        </div>
-        <ul class="legend" id="legenda" aria-label="Saídas por categoria"></ul>
-      </div>
-    </section>
-
-    <!-- 11 · Pagamos tudo? -->
-    <section class="card span-4" data-rise aria-labelledby="c4">
-      <div class="card-head"><div><h2 id="c4">Pagamos tudo?</h2><span class="caps" id="c4Sub"></span></div><span class="card-index caps">11</span></div>
-      <div id="contas"></div>
-    </section>
-
-    <!-- 12 · Gastando acima da média -->
-    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c5">
-      <div class="card-head"><div><h2 id="c5">Gastando acima da média</h2><span class="caps" id="c5Sub"></span></div><span class="card-index caps">12</span></div>
-      <div id="acima"></div>
-    </section>
-
-    <!-- 13 · De onde veio a renda -->
-    <section class="card span-4" data-rise style="--delay:160ms" aria-labelledby="c6">
-      <div class="card-head"><div><h2 id="c6">De onde veio a renda</h2><span class="caps">clientes e salários do casal</span></div><span class="card-index caps">13</span></div>
-      <div id="fontes"></div>
-    </section>
-
-    <!-- 14 · Maiores gastos do mês -->
-    <section class="card span-4" data-rise aria-labelledby="c7">
-      <div class="card-head"><div><h2 id="c7">Maiores gastos do mês</h2><span class="caps">os seis que mais pesaram</span></div><span class="card-index caps">14</span></div>
-      <div id="maiores"></div>
-    </section>
-
-    <!-- 15 · Parcelas -->
-    <section class="card span-4" data-rise style="--delay:80ms" aria-labelledby="c8">
-      <div class="card-head"><div><h2 id="c8">Parcelas</h2><span class="caps">compras parceladas no mês</span></div><span class="card-index caps">15</span></div>
-      <div id="parcelas" style="display:contents"></div>
-    </section>
-
-    <!-- 16 · O que o mês está dizendo -->
-    <section class="card card--insight span-4" data-rise style="--delay:160ms" aria-labelledby="c9">
-      <div class="card-head"><div><h2 id="c9">O que o mês está dizendo</h2><span class="caps">leitura automática dos números</span></div><span class="card-index caps">16</span></div>
-      <div id="leitura"></div>
-    </section>
   </div>
 
   <footer class="foot caps">
