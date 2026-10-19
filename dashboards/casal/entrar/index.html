@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050506">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Acesso ao painel de finanças de Alisson e Ana.">
+<title>Entrar · Finanças Alisson &amp; Ana</title>
+<!-- Tela de login do painel do casal. Pública; o formulário envia para /api/entrar, que grava a sessão (lib/sessao.js).
+     Funciona sem JavaScript (envio normal do formulário); com JavaScript, mostra o erro sem recarregar.
+     Tokens, fontes e curvas de movimento seguem portfolio/assets/design_system_portifolio.html. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050506'/%3E%3Ccircle cx='12' cy='16' r='7' fill='none' stroke='%23f1f0ea' stroke-width='1.5'/%3E%3Ccircle cx='20' cy='16' r='7' fill='%236c63ff' stroke='%23a9a5ff' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap" rel="stylesheet">
+<script>
+  (function (h) {
+    var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, paused = false;
+    try { paused = localStorage.getItem('dash-motion') === 'paused'; } catch (e) {}
+    if (!reduced && !paused) h.classList.add('js-motion');
+  })(document.documentElement);
+</script>
+<style>
+:root{--ink:#f1f0ea;--paper:#e7e5de;--void:#050506;--void-soft:#0b0b0d;--electric:#6c63ff;--signal:#a9a5ff;--pine:#3f7d53;--mint:#91cba5;--warning:#edc27b;--danger:#f3a6ad;--muted:#a3a2a9;--ink-2:#bab8c3;--line:rgba(241,240,234,.16);--line-soft:rgba(241,240,234,.08);--glass:rgba(255,255,255,.035);--font-primary:Arial,Helvetica,sans-serif;--font-ui:'Manrope',Arial,sans-serif;--font-editorial:'Fraunces',Georgia,'Times New Roman',serif;--font-mono:'Courier New',Courier,monospace;--ease:cubic-bezier(.16,1,.3,1);--pad:clamp(16px,4vw,56px)}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;min-height:100svh;background:var(--void);color:var(--ink);font:400 16px/1.6 var(--font-ui);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,p{margin:0}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.caps{font:400 10px/1.5 var(--font-mono);letter-spacing:.15em;text-transform:uppercase}
+.icon{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Fundo: grade + blooms + ruído, como no painel (grade por transform: sem repintar a tela) */
+body::before{content:'';position:fixed;top:-100px;left:-100px;right:0;bottom:0;z-index:0;pointer-events:none;opacity:.3;background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:100px 100px;mask-image:radial-gradient(ellipse at 60% 50%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 50%,#000,transparent 75%);will-change:transform;animation:grid-drift 28s linear infinite}
+.bloom{position:fixed;z-index:0;pointer-events:none;border-radius:50%}
+.bloom--a{width:760px;height:760px;right:-280px;top:-260px;background:radial-gradient(ellipse,rgba(108,99,255,.14),transparent 66%);animation:bloom 14s ease-in-out infinite alternate}
+.bloom--b{width:620px;height:620px;left:-260px;bottom:-280px;background:radial-gradient(ellipse,rgba(145,203,165,.07),transparent 66%);animation:bloom 18s ease-in-out infinite alternate-reverse}
+.noise{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' opacity='.10' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");background-size:180px}
+
+/* Layout: marca à esquerda, cartão à direita; no celular, um embaixo do outro */
+.page{position:relative;z-index:2;min-height:100vh;min-height:100svh;max-width:1200px;margin:0 auto;padding:clamp(20px,4vw,40px) var(--pad);display:grid;grid-template-rows:auto 1fr auto;gap:24px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand-symbol{display:inline-flex;width:25px;height:25px;position:relative;flex:none}
+.brand-symbol i{position:absolute;width:15px;height:15px;border:1px solid var(--ink);border-radius:50%;left:0;top:5px}
+.brand-symbol i:last-child{left:10px;background:var(--electric);border-color:var(--signal);box-shadow:0 0 22px #6c63ff44}
+.brand b{font:600 17px/1 var(--font-primary);letter-spacing:-.05em}
+.stage{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,420px);align-items:center;gap:clamp(32px,7vw,110px)}
+
+.intro h1{font:500 clamp(42px,5.6vw,80px)/.98 var(--font-primary);letter-spacing:-.07em}
+.intro h1 em{display:block;font:300 1.06em/1.02 var(--font-editorial);font-style:normal;letter-spacing:-.055em;color:var(--signal)}
+.line-mask{display:block;overflow:hidden;padding:0 .05em .14em;margin-bottom:-.14em}
+.line-mask>span{display:block}
+.js-motion .line-mask>span{animation:line-rise 1.25s var(--ease) both;animation-delay:var(--delay,0ms)}
+.intro p{max-width:420px;margin-top:26px;font-size:clamp(15px,1.3vw,17px);line-height:1.7;color:var(--ink-2)}
+.intro ul{display:grid;gap:10px;margin:28px 0 0;padding:0;list-style:none;color:var(--muted);font-size:13px}
+.intro li{display:flex;align-items:center;gap:10px}
+.intro li .icon{color:var(--signal)}
+.js-motion .intro p,.js-motion .intro ul{animation:rise 1s var(--ease) .35s both}
+
+/* Cartão de login (glass do DS, borda em gradiente) */
+.card{position:relative;padding:clamp(26px,3.4vw,40px);border-radius:24px;background:linear-gradient(150deg,rgba(108,99,255,.1),rgba(145,203,165,.03) 60%,transparent),rgba(11,11,13,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 30px 80px rgba(0,0,0,.45)}
+.card::after{content:'';position:absolute;inset:0;padding:1px;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(169,165,255,.6),rgba(241,240,234,.12) 35%,rgba(145,203,165,.35) 70%,rgba(241,240,234,.08));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card::before{content:'';position:absolute;top:-1px;left:14%;right:14%;height:1px;background:linear-gradient(90deg,transparent,var(--signal),transparent);opacity:.8}
+.js-motion .card{animation:rise 1s var(--ease) .2s both}
+.card.is-shake{animation:shake .45s var(--ease)}
+.card-head{margin-bottom:26px}
+.card-head h2{font:500 26px/1.2 var(--font-ui);letter-spacing:-.04em}
+.card-head p{margin-top:6px;font-size:14px;color:var(--muted)}
+
+.field{display:grid;gap:8px;margin-bottom:16px}
+.field label{font:500 12px/1 var(--font-ui);color:var(--ink-2)}
+.control{position:relative;display:flex;align-items:center}
+.control>.icon{position:absolute;left:15px;color:var(--muted);pointer-events:none;transition:color .3s}
+.control input{width:100%;height:50px;padding:0 48px 0 44px;border:1px solid var(--line);border-radius:14px;background:rgba(5,5,6,.6);font-size:15px;transition:border-color .3s,box-shadow .3s,background .3s}
+.control input::placeholder{color:#a3a2a980}
+.control input:hover{border-color:rgba(241,240,234,.26)}
+.control input:focus{outline:none;border-color:#a9a5ffaa;background:rgba(5,5,6,.85);box-shadow:0 0 0 4px #6c63ff26}
+.control:focus-within>.icon{color:var(--signal)}
+.control input:-webkit-autofill{-webkit-text-fill-color:var(--ink);-webkit-box-shadow:0 0 0 40px #0d0c14 inset;caret-color:var(--ink)}
+.is-error .control input{border-color:#f3a6ad88}
+.ver{position:absolute;right:6px;display:grid;place-items:center;width:38px;height:38px;padding:0;border:0;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;transition:color .3s,background .3s}
+.ver:hover{color:var(--ink);background:rgba(241,240,234,.06)}
+.ver .icon-fechado{display:none}.ver[aria-pressed=true] .icon-aberto{display:none}.ver[aria-pressed=true] .icon-fechado{display:block}
+.caps-aviso{margin-top:2px;font-size:12px;color:var(--warning)}
+
+.lembrar{display:flex;align-items:flex-start;gap:12px;margin:22px 0 24px;cursor:pointer;user-select:none}
+.lembrar input{position:absolute;opacity:0;pointer-events:none}
+.check{display:grid;place-items:center;width:20px;height:20px;margin-top:1px;border:1px solid var(--line);border-radius:6px;background:rgba(5,5,6,.6);flex:none;transition:background .3s,border-color .3s,box-shadow .3s}
+.check .icon{width:13px;height:13px;stroke-width:2.2;color:#050506;opacity:0;transform:scale(.6);transition:opacity .2s,transform .3s var(--ease)}
+.lembrar input:checked+.check{background:linear-gradient(180deg,#918bff,#6c63ff);border-color:#b0acff77;box-shadow:0 4px 14px #6c63ff40}
+.lembrar input:checked+.check .icon{opacity:1;transform:none}
+.lembrar input:focus-visible+.check{outline:2px solid var(--signal);outline-offset:3px}
+.lembrar span:last-child{font-size:14px;line-height:1.4}
+.lembrar small{display:block;margin-top:2px;font-size:12px;color:var(--muted)}
+
+.btn{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:52px;border:1px solid #b0acff77;border-radius:100px;background:linear-gradient(180deg,#918bff,#8179ff 60%,#6c63ff);color:#050506;font:600 15px/1 var(--font-ui);letter-spacing:-.01em;cursor:pointer;overflow:hidden;isolation:isolate;box-shadow:inset 0 1px 0 #ffffff66,inset 0 -3px 8px #211b7744,0 10px 30px #6c63ff33;transition:transform .4s var(--ease),box-shadow .4s,opacity .3s}
+.btn::after{content:'';position:absolute;inset:-50%;z-index:-1;background:linear-gradient(110deg,transparent 35%,#ffffff44 49%,transparent 62%);transform:translateX(-110%);transition:transform .8s var(--ease)}
+.btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:inset 0 1px 0 #ffffff66,inset 0 -3px 8px #211b7744,0 16px 40px #6c63ff4d}
+.btn:hover:not(:disabled)::after{transform:translateX(110%)}
+.btn:active:not(:disabled){transform:scale(.98)}
+.btn:disabled{cursor:wait;opacity:.85}
+.btn .icon{transition:transform .4s var(--ease)}.btn:hover .icon{transform:translateX(3px)}
+.spin{display:none;width:18px;height:18px;border:2px solid #05050633;border-top-color:#050506;border-radius:50%;animation:spin .8s linear infinite}
+.btn.is-loading .spin{display:block}.btn.is-loading .icon,.btn.is-loading .btn-txt{display:none}
+
+.msg{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start;margin-bottom:18px;padding:11px 14px;border:1px solid;border-radius:12px;font-size:13px;line-height:1.5}
+.msg .icon{margin-top:2px}
+.msg--erro{border-color:#f3a6ad44;background:#f3a6ad0c}.msg--erro .icon{color:var(--danger)}
+.msg--ok{border-color:#91cba544;background:#91cba50c}.msg--ok .icon{color:var(--mint)}
+.js-motion .msg{animation:rise .5s var(--ease) both}
+
+.card-foot{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line-soft);color:var(--muted)}
+.card-foot .icon{width:13px;height:13px;color:var(--mint)}
+.foot{display:flex;justify-content:space-between;gap:16px;color:var(--muted)}
+.foot a{color:var(--ink-2);text-decoration:none;transition:color .3s}.foot a:hover{color:var(--signal)}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes line-rise{from{transform:translateY(110%);opacity:0}to{transform:none;opacity:1}}
+@keyframes bloom{from{transform:translate(-4%,4%) scale(.9);opacity:.5}to{transform:translate(4%,-4%) scale(1.12);opacity:1}}
+@keyframes grid-drift{to{transform:translate3d(100px,100px,0)}}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-8px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.spin{animation:spin 1.2s linear infinite!important}}
+html:not(.js-motion) body::before,html:not(.js-motion) .bloom{animation:none}
+
+@media(max-width:860px){
+  .stage{grid-template-columns:1fr;align-content:center;gap:28px}
+  .intro h1{font-size:clamp(36px,10vw,52px)}
+  .intro p{margin-top:16px}
+  .intro ul{display:none}
+}
+@media(max-width:480px){
+  .page{gap:18px}
+  .top .caps{display:none}
+  .card{padding:24px 20px;border-radius:20px}
+  .foot{flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+<div class="bloom bloom--a" aria-hidden="true"></div>
+<div class="bloom bloom--b" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<div class="page">
+  <header class="top">
+    <span class="brand"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><b>Alisson &amp; Ana</b></span>
+    <span class="caps">Finanças do casal</span>
+  </header>
+
+  <main class="stage">
+    <section class="intro" aria-labelledby="titulo">
+      <h1 id="titulo" aria-label="Finanças · Alisson &amp; Ana">
+        <span class="line-mask" aria-hidden="true"><span style="--delay:80ms">Finanças ·</span></span>
+        <span class="line-mask" aria-hidden="true"><span style="--delay:200ms"><em>Alisson &amp; Ana</em></span></span>
+      </h1>
+      <p>O mês da casa num só lugar: o que entrou, o que saiu, as contas e a reserva.</p>
+      <ul>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 4 7-8"/></svg>Dados direto da planilha, atualizados a cada acesso</li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Acesso restrito ao casal</li>
+      </ul>
+    </section>
+
+    <section class="card" id="card" aria-labelledby="entrar-titulo">
+      <div class="card-head">
+        <h2 id="entrar-titulo">Entrar</h2>
+        <p>Use o usuário e a senha do painel.</p>
+      </div>
+
+      <div id="mensagem" role="alert" aria-live="assertive"></div>
+
+      <form id="form" method="post" action="/api/entrar" novalidate>
+        <input type="hidden" name="proximo" id="proximo" value="/dashboard/casal">
+        <div class="field" id="campoUsuario">
+          <label for="usuario">Usuário</label>
+          <div class="control">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg>
+            <input id="usuario" name="usuario" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required placeholder="seu usuário">
+          </div>
+        </div>
+        <div class="field" id="campoSenha">
+          <label for="senha">Senha</label>
+          <div class="control">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            <input id="senha" name="senha" type="password" autocomplete="current-password" required placeholder="sua senha">
+            <button class="ver" id="ver" type="button" aria-pressed="false" aria-label="Mostrar senha">
+              <svg class="icon icon-aberto" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="icon icon-fechado" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6 0 10 7 10 7a17 17 0 0 1-3 3.7M6.6 6.6C3.8 8.4 2 12 2 12s4 7 10 7a9.7 9.7 0 0 0 4.4-1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+            </button>
+          </div>
+          <p class="caps-aviso" id="capsAviso" hidden>Caps Lock está ligado.</p>
+        </div>
+
+        <label class="lembrar">
+          <input type="checkbox" name="lembrar" id="lembrar" value="on" checked>
+          <span class="check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <span>Manter conectado neste aparelho<small>Por 60 dias. Desmarque em computador compartilhado.</small></span>
+        </label>
+
+        <button class="btn" id="btn" type="submit">
+          <span class="spin" aria-hidden="true"></span>
+          <span class="btn-txt">Entrar no painel</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <p class="card-foot caps"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Conexão segura · sessão criptografada</p>
+    </section>
+  </main>
+
+  <footer class="foot caps">
+    <span>Alisson &amp; Ana · finanças da casa</span>
+    <a href="https://alissonsegecs.com.br/portfolio" rel="noopener">Alisson Segecs</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  function $(id) { return document.getElementById(id); }
+  var form = $('form'), btn = $('btn'), card = $('card'), msg = $('mensagem'), senha = $('senha'), usuario = $('usuario');
+  var ICONE = {
+    erro: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v5M12 16h.01"/></svg>',
+    ok: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>'
+  };
+  var ERROS = { '1': 'Usuário ou senha incorretos.', tentativas: 'Muitas tentativas. Espere alguns minutos e tente de novo.', config: 'Login não configurado no servidor.' };
+  function mostrar(tipo, texto) {
+    msg.innerHTML = '<p class="msg msg--' + tipo + '">' + ICONE[tipo] + '<span></span></p>';
+    msg.querySelector('span').textContent = texto;
+  }
+  function animOK() { return document.documentElement.classList.contains('js-motion'); }
+
+  // Volta para onde a pessoa estava (ex.: ?mes=2026-09) depois de entrar; só caminhos do próprio painel.
+  var q = new URLSearchParams(location.search), proximo = q.get('proximo') || '';
+  if (/^\/dashboards?\/casal(?:[/?#]|$)/.test(proximo) && !/\/entrar/.test(proximo)) $('proximo').value = proximo;
+  if (ERROS[q.get('erro')]) mostrar('erro', ERROS[q.get('erro')]);
+  else if (q.get('saiu')) mostrar('ok', 'Você saiu do painel neste aparelho.');
+  if (q.has('erro') || q.has('saiu')) history.replaceState(null, '', location.pathname + (proximo ? '?proximo=' + encodeURIComponent(proximo) : ''));
+  (usuario.value ? senha : usuario).focus();
+
+  $('ver').addEventListener('click', function () {
+    var ver = senha.type === 'password';
+    senha.type = ver ? 'text' : 'password';
+    this.setAttribute('aria-pressed', ver);
+    this.setAttribute('aria-label', ver ? 'Ocultar senha' : 'Mostrar senha');
+    senha.focus();
+  });
+  function caps(e) { if (e.getModifierState) $('capsAviso').hidden = !e.getModifierState('CapsLock'); }
+  senha.addEventListener('keyup', caps); senha.addEventListener('keydown', caps);
+  [usuario, senha].forEach(function (el) { el.addEventListener('input', function () { el.closest('.field').classList.remove('is-error'); }); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!usuario.value.trim() || !senha.value) {
+      var vazio = !usuario.value.trim() ? usuario : senha;
+      vazio.closest('.field').classList.add('is-error');
+      mostrar('erro', 'Preencha usuário e senha.');
+      vazio.focus(); return;
+    }
+    if (!window.fetch) { form.submit(); return; }
+    btn.disabled = true; btn.classList.add('is-loading'); btn.setAttribute('aria-label', 'Entrando…');
+    fetch(form.action, {
+      method: 'POST', credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ usuario: usuario.value, senha: senha.value, lembrar: $('lembrar').checked, proximo: $('proximo').value })
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (r.ok && j.ok) { location.replace(j.proximo || '/dashboard/casal'); return; }
+        throw new Error(j.erro || 'Não foi possível entrar agora. Tente de novo.');
+      });
+    }).catch(function (err) {
+      mostrar('erro', err.message === 'Failed to fetch' ? 'Sem conexão com o servidor.' : err.message);
+      $('campoSenha').classList.add('is-error');
+      senha.value = ''; senha.focus();
+      if (animOK()) { card.classList.remove('is-shake'); void card.offsetWidth; card.classList.add('is-shake'); }
+      btn.disabled = false; btn.classList.remove('is-loading'); btn.removeAttribute('aria-label');
+    });
+  });
+})();
+</script>
+</body>
+</html>

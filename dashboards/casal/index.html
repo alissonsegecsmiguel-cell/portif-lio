@@ -24,6 +24,9 @@
     else if ('IntersectionObserver' in window) h.classList.add('js-motion');
     if (paused) h.classList.add('motion-paused');
   })(document.documentElement);
+  // O painel sempre abre no mês atual: um ?mes= que sobrou no endereço (aba restaurada, favorito, volta do login)
+  // é descartado. Dentro da página, a troca de mês continua indo para o endereço e o voltar do navegador funciona.
+  try { if (/[?&]mes=/.test(location.search)) history.replaceState(null, '', location.pathname); } catch (e) {}
   // Pede os dados já aqui, em paralelo com fontes e CSS: a planilha é a parte mais lenta da página.
   try { window.__fin = fetch('/api/financas' + location.search, { headers: { Accept: 'application/json' } }); window.__fin.catch(function () {}); } catch (e) {}
 </script>
@@ -82,6 +85,7 @@ body::after{content:'';position:fixed;width:720px;height:720px;right:-320px;top:
 .brand b{display:block;font:600 17px/1 var(--font-primary);letter-spacing:-.05em;white-space:nowrap}
 .brand small{display:block;margin-top:5px;color:var(--muted);white-space:nowrap}
 .nav__right{display:flex;align-items:center;gap:8px}
+.sair{display:contents}
 .icon-button{position:relative;display:inline-grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid var(--line);border-radius:50%;background:rgba(241,240,234,.04);overflow:hidden;isolation:isolate;flex:none;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s,opacity .3s}
 .icon-button::after{content:'';position:absolute;inset:-50%;z-index:-1;background:linear-gradient(110deg,transparent 35%,#ffffff22 49%,transparent 62%);transform:translateX(-110%);transition:transform .7s var(--ease)}
 .icon-button:hover:not(:disabled){border-color:#a9a5ff66;box-shadow:0 0 32px #6c63ff1a;transform:translateY(-2px)}.icon-button:hover:not(:disabled)::after{transform:translateX(110%)}
@@ -438,6 +442,8 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
   .brand>span:last-child{display:none}
   .nav__inner{gap:10px}
   #atualizar{display:none}
+  .nav__right{gap:6px}
+  .nav__right .icon-button{width:36px;height:36px}
   .ds-top>span{display:none}
   .hero-number{font-size:clamp(40px,12.4vw,56px)}
   .card{padding:20px 18px}
@@ -476,6 +482,11 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
         <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
         <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>
       </button>
+      <form class="sair" method="post" action="/api/sair">
+        <button class="icon-button" type="submit" aria-label="Sair do painel" title="Sair">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 8l-4 4 4 4M6 12h10"/></svg>
+        </button>
+      </form>
     </div>
   </div>
 </header>
@@ -1213,8 +1224,10 @@ html.motion-paused .line-mask>span,html.motion-paused .head-copy{animation:none!
     var antecipado = window.__fin; window.__fin = null; // só a primeira carga usa a busca do <head>
     return (antecipado || fetch('/api/financas' + location.search, { headers: { Accept: 'application/json' } }))
       .then(function (r) {
+        // Sessão expirou (ou foi encerrada em "Sair"): vai para o login e, depois, volta ao painel no mês atual.
+        if (r.status === 401) { location.replace('/dashboard/casal/entrar?proximo=' + encodeURIComponent(location.pathname)); return new Promise(function () {}); }
         return r.json().catch(function () { return {}; }).then(function (j) {
-          if (!r.ok || j.erro) throw new Error(j.erro || (r.status === 401 ? 'acesso não autorizado' : 'erro ' + r.status));
+          if (!r.ok || j.erro) throw new Error(j.erro || 'erro ' + r.status);
           return j;
         });
       })

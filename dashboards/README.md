@@ -19,7 +19,7 @@ Clientes atuais:
 | `natalia/` | `/dashboards/natalia`  | mai–set/2026 fechados, out/2026 parcial | `fonte/DRE NATÁLIA.xlsx`  |
 | `casal/`   | `/dashboard/casal` (e `/dashboards/casal`) | os do `historico` da planilha | `/api/financas` (Apps Script) |
 
-O painel `casal/` é a exceção: não tem dados no HTML. Ele busca `/api/financas` (`api/financas.js`), que lê a planilha com `FIN_SHEETS_URL` e `FIN_SHEETS_KEY` sem expor a chave, e fica atrás de senha (`middleware.js`, Basic Auth com `DASH_USER` e `DASH_PASS`). As variáveis ficam em `.env.local` (ignorado) e em Vercel › Settings › Environment Variables. No `serve.cjs` a página abre, mas sem endpoint mostra "Não foi possível carregar os dados".
+O painel `casal/` é a exceção: não tem dados no HTML. Ele busca `/api/financas` (`api/financas.js`), que lê a planilha com `FIN_SHEETS_URL` e `FIN_SHEETS_KEY` sem expor a chave, e fica atrás de login: `middleware.js` exige a sessão; sem ela, as páginas vão para a tela `casal/entrar/` (`/dashboard/casal/entrar`) e a API responde 401. O formulário envia para `/api/entrar`, que confere `DASH_USER` e `DASH_PASS` e grava um cookie assinado (`lib/sessao.js`, HttpOnly, 60 dias com "Manter conectado" ou até fechar o navegador sem ele); `/api/sair` apaga o cookie. A assinatura usa `SESSION_SECRET`, se existir, ou deriva de `DASH_PASS` + `FIN_SHEETS_KEY`: trocar a senha encerra todas as sessões. O painel sempre abre no mês atual; o `?mes=` do endereço só vale para a troca de mês dentro da página. As variáveis ficam em `.env.local` (ignorado) e em Vercel › Settings › Environment Variables. No `serve.cjs` a página abre, mas sem endpoint mostra "Não foi possível carregar os dados".
 
 ## Como o painel funciona
 

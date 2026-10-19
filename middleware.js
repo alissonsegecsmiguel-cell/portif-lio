@@ -1,5 +1,7 @@
-// Vercel Routing Middleware (sem Next.js): senha Basic Auth no painel do casal e no endpoint de dados.
-// Usuário e senha vêm de DASH_USER e DASH_PASS (Vercel › Settings › Environment Variables).
+// Vercel Routing Middleware (sem Next.js): exige a sessão do casal no painel e no endpoint de dados.
+// Sem sessão válida, as páginas vão para a tela de login e a API responde 401. A tela de login é pública.
+import { COOKIE, ENTRAR, lerCookie, tokenValido, destinoSeguro } from './lib/sessao.js';
+
 export const config = {
   matcher: [
     '/dashboard/casal', '/dashboard/casal/:path*',
@@ -8,23 +10,21 @@ export const config = {
   ]
 };
 
-// Compara em tempo constante para não revelar, pelo tempo de resposta, quantos caracteres batem.
-function iguais(a, b) {
-  let dif = a.length ^ b.length;
-  for (let i = 0; i < Math.max(a.length, b.length); i++) dif |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
-  return dif === 0;
-}
+export default async function middleware(request) {
+  const url = new URL(request.url), caminho = url.pathname;
+  const logado = await tokenValido(lerCookie(request.headers.get('cookie'), COOKIE));
+  const naoGuardar = { 'Cache-Control': 'no-store' };
 
-export default function middleware(request) {
-  const user = process.env.DASH_USER, pass = process.env.DASH_PASS;
-  const auth = request.headers.get('authorization') || '';
-  let recebido = '';
-  if (auth.startsWith('Basic ')) {
-    try { recebido = new TextDecoder().decode(Uint8Array.from(atob(auth.slice(6)), c => c.charCodeAt(0))); } catch (e) {}
+  // Tela de login: pública; quem já está logado segue direto para o painel.
+  if (/^\/dashboards?\/casal\/entrar\/?$/.test(caminho)) {
+    if (!logado) return;
+    return new Response(null, { status: 307, headers: { Location: destinoSeguro(url.searchParams.get('proximo')), ...naoGuardar } });
   }
-  if (user && pass && iguais(recebido, user + ':' + pass)) return; // segue para a página ou o endpoint
-  return new Response('Acesso restrito.', {
-    status: 401,
-    headers: { 'WWW-Authenticate': 'Basic realm="Financas", charset="UTF-8"', 'Cache-Control': 'no-store' }
-  });
+  if (logado) return; // segue para a página ou o endpoint
+
+  if (caminho.startsWith('/api/')) {
+    return new Response(JSON.stringify({ erro: 'sessao_expirada' }), { status: 401, headers: { 'Content-Type': 'application/json', ...naoGuardar } });
+  }
+  // Volta ao mesmo caminho depois do login, sem o ?mes=: o painel sempre abre no mês atual.
+  return new Response(null, { status: 307, headers: { Location: ENTRAR + '?proximo=' + encodeURIComponent(caminho), ...naoGuardar } });
 }
