@@ -12,6 +12,8 @@
 /dashboards/**/*.xls
 /dashboards/**/*.csv
 /dashboards/README.md
+# Dashboard da Natália: não publicar a página nem seus dados financeiros.
+/dashboards/natalia/
 # Variáveis locais: os valores reais ficam só no painel da Vercel.
 /.env*
 /.local
