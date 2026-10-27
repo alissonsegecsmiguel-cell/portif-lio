@@ -4,6 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
+  <script>
+    // Caminhos relativos preservam a abertura direta do arquivo e a prévia em servidores.
+    if (/^https?:$/.test(location.protocol)) {
+      // Preload com CORS só funciona em HTTP/HTTPS; no arquivo local, o CSS carrega as fontes.
+      for (const fonte of ['inter-tight-latin.woff2', 'manrope-latin.woff2']) {
+        const preload = document.createElement('link');
+        preload.rel = 'preload';
+        preload.as = 'font';
+        preload.type = 'font/woff2';
+        preload.crossOrigin = 'anonymous';
+        preload.href = 'assets/fonts/' + fonte;
+        document.head.append(preload);
+      }
+    }
+  </script>
   <!-- URL DE PRODUÇÃO: https://caderninho-marcia.vercel.app/
        Ao mudar para um domínio próprio, substitua esta URL em canonical, og:url, og:image e twitter:image abaixo. -->
   <meta name="theme-color" content="#00854A">
@@ -26,17 +41,15 @@
   <meta name="twitter:description" content="O caderno das aulas da Profa. Marcia Macedo para quem está aprendendo português. A5, espiral, 200 páginas pautadas. Envio para o Brasil e para o exterior.">
   <meta name="twitter:image" content="https://alissonsegecs.com.br/caderninho-marcia/assets/images/og-image.jpg">
   <meta name="twitter:image:alt" content="Capa do Caderninho na Mão!, da Profa. Marcia Macedo, ao lado do título em verde e azul sobre fundo creme.">
-  <link rel="icon" href="/caderninho-marcia/favicon.ico" sizes="32x32">
-  <link rel="icon" type="image/svg+xml" href="/caderninho-marcia/favicon.svg">
-  <link rel="apple-touch-icon" href="/caderninho-marcia/apple-touch-icon.png">
-  <link rel="preload" href="/caderninho-marcia/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/caderninho-marcia/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="/caderninho-marcia/assets/images/brasil-aquarela-640.webp 640w, /caderninho-marcia/assets/images/brasil-aquarela-1024.webp 1024w, /caderninho-marcia/assets/images/brasil-aquarela-1536.webp 1536w" imagesizes="100vw">
-  <link rel="preload" as="image" type="image/webp" imagesrcset="/caderninho-marcia/assets/images/capa-400.webp 400w, /caderninho-marcia/assets/images/capa-700.webp 700w, /caderninho-marcia/assets/images/capa-1054.webp 1054w" imagesizes="(max-width: 720px) 60vw, 420px">
-  <link rel="stylesheet" href="/caderninho-marcia/assets/design_system.css">
-  <link rel="stylesheet" href="/caderninho-marcia/assets/pagina.css">
-  <script src="/caderninho-marcia/assets/design_system.js" defer></script>
-  <script src="/caderninho-marcia/assets/pagina.js" defer></script>
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high" imagesrcset="assets/images/brasil-aquarela-640.webp 640w, assets/images/brasil-aquarela-1024.webp 1024w, assets/images/brasil-aquarela-1536.webp 1536w" imagesizes="100vw">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/images/capa-400.webp 400w, assets/images/capa-700.webp 700w, assets/images/capa-1054.webp 1054w" imagesizes="(max-width: 720px) 60vw, 420px">
+  <link rel="stylesheet" href="assets/design_system.css">
+  <link rel="stylesheet" href="assets/pagina.css">
+  <script src="assets/design_system.js" defer></script>
+  <script src="assets/pagina.js" defer></script>
 </head>
 <body class="sales-page">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -58,12 +71,12 @@
     <!-- As demais seções serão preenchidas nas próximas etapas. -->
     <section class="hero section section-cream" id="inicio" aria-labelledby="inicio-titulo">
       <div class="hero-backdrop" aria-hidden="true">
-        <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/brasil-aquarela-640.webp 640w, /caderninho-marcia/assets/images/brasil-aquarela-1024.webp 1024w, /caderninho-marcia/assets/images/brasil-aquarela-1536.webp 1536w" sizes="100vw"><img class="landscape hero-landscape" src="/caderninho-marcia/assets/images/brasil-aquarela.png" width="1536" height="1024" alt="" fetchpriority="high" decoding="async"></picture>
-        <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/brasil-aquarela-640.webp 640w, /caderninho-marcia/assets/images/brasil-aquarela-1024.webp 1024w, /caderninho-marcia/assets/images/brasil-aquarela-1536.webp 1536w" sizes="100vw"><img class="landscape hero-landscape hero-landscape-vivid" src="/caderninho-marcia/assets/images/brasil-aquarela.png" width="1536" height="1024" alt="" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="assets/images/brasil-aquarela-640.webp 640w, assets/images/brasil-aquarela-1024.webp 1024w, assets/images/brasil-aquarela-1536.webp 1536w" sizes="100vw"><img class="landscape hero-landscape" src="assets/images/brasil-aquarela.png" width="1536" height="1024" alt="" fetchpriority="high" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="assets/images/brasil-aquarela-640.webp 640w, assets/images/brasil-aquarela-1024.webp 1024w, assets/images/brasil-aquarela-1536.webp 1536w" sizes="100vw"><img class="landscape hero-landscape hero-landscape-vivid" src="assets/images/brasil-aquarela.png" width="1536" height="1024" alt="" decoding="async"></picture>
       </div>
       <div class="hero-glow bloom" data-ds-bloom aria-hidden="true"></div>
-      <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/folha-360.webp 360w, /caderninho-marcia/assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-top" src="/caderninho-marcia/assets/images/folha.png" alt="" aria-hidden="true" decoding="async"></picture>
-      <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/folha-360.webp 360w, /caderninho-marcia/assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-bottom" src="/caderninho-marcia/assets/images/folha.png" alt="" aria-hidden="true" decoding="async"></picture>
+      <picture><source type="image/webp" srcset="assets/images/folha-360.webp 360w, assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-top" src="assets/images/folha.png" alt="" aria-hidden="true" decoding="async"></picture>
+      <picture><source type="image/webp" srcset="assets/images/folha-360.webp 360w, assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-bottom" src="assets/images/folha.png" alt="" aria-hidden="true" decoding="async"></picture>
       <div class="side-rail left" aria-hidden="true"><span class="rail-text">LÍNGUA · CULTURA · CONEXÃO</span></div>
       <div class="side-rail right" aria-hidden="true"><span class="rail-text">PROFA. MARCIA MACEDO · CADERNINHO NA MÃO!</span></div>
       <div class="container hero-grid">
@@ -83,7 +96,7 @@
       </div>
       <figure class="hero-art" data-reveal="scale" aria-label="O caderninho diante da paisagem em aquarela do Pão de Açúcar, com o bondinho visível.">
         <div class="caderno-3d hero-book" id="caderno-hero" data-caderno data-caderno-loop role="img" aria-label="Caderninho na Mão! em 3D: capa ilustrada, miolo original, espiral transparente e 100 folhas, diante da praia do Rio.">
-          <img class="caderno-fallback" src="/caderninho-marcia/assets/images/capa.jpg" width="1054" height="1493" alt="" decoding="async">
+          <img class="caderno-fallback" src="assets/images/capa.jpg" width="1054" height="1493" alt="" decoding="async">
         </div>
         <figcaption class="annot coord badge badge-white">RIO DE JANEIRO · 22°57′ S 43°09′ W</figcaption>
         <div class="postmark" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="inicio-stamp-ring" d="M60 12a48 48 0 1 1-.1 0"/></defs><text><textPath href="#inicio-stamp-ring" textLength="298">FEITO DE AFETO · FEITO DE BRASIL · </textPath></text></svg><span><svg class="icon"><use href="#i-sun"/></svg></span></div>
@@ -113,21 +126,21 @@
             <div class="postais-pilha">
               <button type="button" class="postal" data-postal aria-label="Postal de Salvador: aquarela do Pelourinho, com casarões coloridos e fitas do Senhor do Bonfim. Trazer para a frente.">
                 <span class="flag-art ds-window phrase-art postal-face">
-                  <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/postal-salvador-480.webp 480w, /caderninho-marcia/assets/images/postal-salvador-800.webp 800w, /caderninho-marcia/assets/images/postal-salvador-1200.webp 1200w" sizes="(max-width: 720px) 50vw, 34vw"><img src="/caderninho-marcia/assets/images/postal-salvador.jpg" width="1536" height="1024" alt="Aquarela do Pelourinho, em Salvador, com casarões coloridos e fitas do Senhor do Bonfim." loading="lazy" decoding="async"></picture>
+                  <picture><source type="image/webp" srcset="assets/images/postal-salvador-480.webp 480w, assets/images/postal-salvador-800.webp 800w, assets/images/postal-salvador-1200.webp 1200w" sizes="(max-width: 720px) 50vw, 34vw"><img src="assets/images/postal-salvador.jpg" width="1536" height="1024" alt="Aquarela do Pelourinho, em Salvador, com casarões coloridos e fitas do Senhor do Bonfim." loading="lazy" decoding="async"></picture>
                   <span class="annot coord phrase-coordinates">SALVADOR · 12°58′ S 38°30′ W</span>
                   <span class="window-caption">A FRASE DE TODA AULA.</span>
                 </span>
               </button>
               <button type="button" class="postal" data-postal aria-label="Postal da Amazônia: aquarela de um rio com vitórias-régias e um tucano na floresta. Trazer para a frente.">
                 <span class="flag-art ds-window phrase-art postal-face">
-                  <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/postal-amazonia-480.webp 480w, /caderninho-marcia/assets/images/postal-amazonia-800.webp 800w, /caderninho-marcia/assets/images/postal-amazonia-1200.webp 1200w" sizes="(max-width: 720px) 50vw, 34vw"><img src="/caderninho-marcia/assets/images/postal-amazonia.jpg" width="1536" height="1024" alt="Aquarela da Amazônia, com vitórias-régias no rio e um tucano na floresta." loading="lazy" decoding="async"></picture>
+                  <picture><source type="image/webp" srcset="assets/images/postal-amazonia-480.webp 480w, assets/images/postal-amazonia-800.webp 800w, assets/images/postal-amazonia-1200.webp 1200w" sizes="(max-width: 720px) 50vw, 34vw"><img src="assets/images/postal-amazonia.jpg" width="1536" height="1024" alt="Aquarela da Amazônia, com vitórias-régias no rio e um tucano na floresta." loading="lazy" decoding="async"></picture>
                   <span class="annot coord phrase-coordinates">AMAZÔNIA · 3°07′ S 60°01′ W</span>
                   <span class="window-caption">A FRASE DE TODA AULA.</span>
                 </span>
               </button>
               <button type="button" class="postal" data-postal aria-label="Postal de Foz do Iguaçu: aquarela das cataratas com arco-íris e um quati. Trazer para a frente.">
                 <span class="flag-art ds-window phrase-art postal-face">
-                  <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/postal-iguacu-480.webp 480w, /caderninho-marcia/assets/images/postal-iguacu-800.webp 800w, /caderninho-marcia/assets/images/postal-iguacu-1200.webp 1200w" sizes="(max-width: 720px) 50vw, 34vw"><img src="/caderninho-marcia/assets/images/postal-iguacu.jpg" width="1536" height="1024" alt="Aquarela das Cataratas do Iguaçu, com arco-íris e um quati na pedra." loading="lazy" decoding="async"></picture>
+                  <picture><source type="image/webp" srcset="assets/images/postal-iguacu-480.webp 480w, assets/images/postal-iguacu-800.webp 800w, assets/images/postal-iguacu-1200.webp 1200w" sizes="(max-width: 720px) 50vw, 34vw"><img src="assets/images/postal-iguacu.jpg" width="1536" height="1024" alt="Aquarela das Cataratas do Iguaçu, com arco-íris e um quati na pedra." loading="lazy" decoding="async"></picture>
                   <span class="annot coord phrase-coordinates">FOZ DO IGUAÇU · 25°41′ S 54°26′ W</span>
                   <span class="window-caption">A FRASE DE TODA AULA.</span>
                 </span>
@@ -139,7 +152,7 @@
             </div>
           </figure>
           <div class="caderno-3d frase-book" id="caderno-frase" data-caderno data-caderno-closed data-caderno-hover data-reveal role="img" aria-label="Capa inteira do Caderninho na mão!, da Profa. Marcia Macedo, com arte brasileira em verde, amarelo e azul.">
-            <img class="caderno-fallback" src="/caderninho-marcia/assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
+            <img class="caderno-fallback" src="assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="principles" data-reveal>
@@ -153,16 +166,16 @@
     <section class="section ds-group section-cream vitrine" id="para-que" aria-labelledby="para-que-titulo">
       <div class="hero-glow bloom" data-ds-bloom aria-hidden="true"></div>
       <div class="vitrine-decor" aria-hidden="true">
-        <div class="vitrine-object vitrine-postal" data-vitrine-object data-depth=".035"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/selo-240.webp 240w, /caderninho-marcia/assets/images/selo-480.webp 480w" sizes="240px"><img src="/caderninho-marcia/assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
-        <div class="vitrine-object vitrine-selo" data-vitrine-object data-depth="-.025"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/selo-240.webp 240w, /caderninho-marcia/assets/images/selo-480.webp 480w" sizes="240px"><img src="/caderninho-marcia/assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
-        <div class="vitrine-object vitrine-folha" data-vitrine-object data-depth=".025"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/folha-360.webp 360w, /caderninho-marcia/assets/images/folha-700.webp 700w" sizes="340px"><img src="/caderninho-marcia/assets/images/folha.png" width="1312" height="1199" alt="" loading="lazy" decoding="async"></picture></div>
-        <div class="vitrine-object vitrine-lapis" data-vitrine-object data-depth="-.035"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/lapis-240.webp 240w, /caderninho-marcia/assets/images/lapis-480.webp 480w" sizes="230px"><img src="/caderninho-marcia/assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="vitrine-object vitrine-postal" data-vitrine-object data-depth=".035"><picture><source type="image/webp" srcset="assets/images/selo-240.webp 240w, assets/images/selo-480.webp 480w" sizes="240px"><img src="assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="vitrine-object vitrine-selo" data-vitrine-object data-depth="-.025"><picture><source type="image/webp" srcset="assets/images/selo-240.webp 240w, assets/images/selo-480.webp 480w" sizes="240px"><img src="assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="vitrine-object vitrine-folha" data-vitrine-object data-depth=".025"><picture><source type="image/webp" srcset="assets/images/folha-360.webp 360w, assets/images/folha-700.webp 700w" sizes="340px"><img src="assets/images/folha.png" width="1312" height="1199" alt="" loading="lazy" decoding="async"></picture></div>
+        <div class="vitrine-object vitrine-lapis" data-vitrine-object data-depth="-.035"><picture><source type="image/webp" srcset="assets/images/lapis-240.webp 240w, assets/images/lapis-480.webp 480w" sizes="230px"><img src="assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture></div>
       </div>
       <div class="container">
         <div class="sec-rule" data-reveal><span>03 / O CADERNO POR DENTRO</span><span>UM CADERNO, MUITOS USOS</span></div>
         <div class="ds-grid2 vitrine-grid">
           <span class="vitrine-photo-sombra" aria-hidden="true"></span>
-          <figure class="ds-window vitrine-photo" data-reveal="scale"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/mao-caderno-480.webp 480w, /caderninho-marcia/assets/images/mao-caderno-800.webp 800w, /caderninho-marcia/assets/images/mao-caderno-1254.webp 1254w" sizes="(max-width: 720px) 100vw, 45vw"><img src="/caderninho-marcia/assets/images/mao-caderno.jpg" width="1254" height="1254" alt="Uma mão segura o Caderninho na Mão!, com capa ilustrada e espiral, diante da paisagem do Rio." loading="lazy" decoding="async"></picture></figure>
+          <figure class="ds-window vitrine-photo" data-reveal="scale"><picture><source type="image/webp" srcset="assets/images/mao-caderno-480.webp 480w, assets/images/mao-caderno-800.webp 800w, assets/images/mao-caderno-1254.webp 1254w" sizes="(max-width: 720px) 100vw, 45vw"><img src="assets/images/mao-caderno.jpg" width="1254" height="1254" alt="Uma mão segura o Caderninho na Mão!, com capa ilustrada e espiral, diante da paisagem do Rio." loading="lazy" decoding="async"></picture></figure>
 
           <div class="notes-carousel" data-notes-carousel data-reveal aria-roledescription="carrossel" role="region" aria-label="Exemplos de anotações no caderninho">
             <p class="sr-only" id="notas-ajuda">Use as setas anterior e próxima, as setas do teclado ou arraste a página para explorar as anotações.</p>
@@ -170,35 +183,35 @@
               <div class="notes-track">
                 <article class="notes-slide is-current" data-note-slide data-note-label="VOCABULÁRIO" role="group" aria-roledescription="slide" aria-label="1 de 5 · Vocabulário" aria-hidden="false">
                   <div class="note-paper">
-                    <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/miolo-400.webp 400w, /caderninho-marcia/assets/images/miolo-760.webp 760w, /caderninho-marcia/assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="/caderninho-marcia/assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
+                    <picture><source type="image/webp" srcset="assets/images/miolo-400.webp 400w, assets/images/miolo-760.webp 760w, assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
                     <span class="badge badge-white note-label">VOCABULÁRIO</span>
                     <div class="note-writing"><p class="note-term">saudade <span class="note-pronunciation">· /sawˈda.dʒi/ · substantivo</span></p><p>A falta que a gente sente de alguém, de um lugar ou de um momento.</p><p>"Que saudade das nossas aulas!"</p></div>
                   </div>
                 </article>
                 <article class="notes-slide" data-note-slide data-note-label="VOCABULÁRIO" role="group" aria-roledescription="slide" aria-label="2 de 5 · Vocabulário" aria-hidden="true" inert>
                   <div class="note-paper">
-                    <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/miolo-400.webp 400w, /caderninho-marcia/assets/images/miolo-760.webp 760w, /caderninho-marcia/assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="/caderninho-marcia/assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
+                    <picture><source type="image/webp" srcset="assets/images/miolo-400.webp 400w, assets/images/miolo-760.webp 760w, assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
                     <span class="badge badge-white note-label">VOCABULÁRIO</span>
                     <div class="note-writing"><p class="note-term">cafuné <span class="note-pronunciation">· /ka.fuˈnɛ/ · substantivo</span></p><p>Carinho que a gente faz passando a mão, de leve, nos cabelos de alguém.</p><p>"Tem palavras que parecem um abraço."</p></div>
                   </div>
                 </article>
                 <article class="notes-slide" data-note-slide data-note-label="ESCRITA" role="group" aria-roledescription="slide" aria-label="3 de 5 · Escrita" aria-hidden="true" inert>
                   <div class="note-paper">
-                    <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/miolo-400.webp 400w, /caderninho-marcia/assets/images/miolo-760.webp 760w, /caderninho-marcia/assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="/caderninho-marcia/assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
+                    <picture><source type="image/webp" srcset="assets/images/miolo-400.webp 400w, assets/images/miolo-760.webp 760w, assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
                     <span class="badge badge-white note-label">ESCRITA</span>
                     <div class="note-writing"><p>Eu moro em Buenos Aires.</p><p>Eu gosto de café com leite.</p><p>Amanhã eu vou à praia com meus amigos.</p></div>
                   </div>
                 </article>
                 <article class="notes-slide" data-note-slide data-note-label="DÚVIDAS" role="group" aria-roledescription="slide" aria-label="4 de 5 · Dúvidas" aria-hidden="true" inert>
                   <div class="note-paper">
-                    <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/miolo-400.webp 400w, /caderninho-marcia/assets/images/miolo-760.webp 760w, /caderninho-marcia/assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="/caderninho-marcia/assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
+                    <picture><source type="image/webp" srcset="assets/images/miolo-400.webp 400w, assets/images/miolo-760.webp 760w, assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
                     <span class="badge badge-white note-label">DÚVIDAS</span>
                     <div class="note-writing"><p class="note-term">Perguntar na aula:</p><p>Qual a diferença entre "por" e "para"?</p><p>Quando eu uso "a gente" no lugar de "nós"?</p></div>
                   </div>
                 </article>
                 <article class="notes-slide" data-note-slide data-note-label="REVISÃO" role="group" aria-roledescription="slide" aria-label="5 de 5 · Revisão" aria-hidden="true" inert>
                   <div class="note-paper">
-                    <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/miolo-400.webp 400w, /caderninho-marcia/assets/images/miolo-760.webp 760w, /caderninho-marcia/assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="/caderninho-marcia/assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
+                    <picture><source type="image/webp" srcset="assets/images/miolo-400.webp 400w, assets/images/miolo-760.webp 760w, assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="assets/images/miolo.png" width="1748" height="2480" alt="" loading="lazy" decoding="async" draggable="false"></picture>
                     <span class="badge badge-white note-label">REVISÃO</span>
                     <div class="note-writing"><p>Palavras da semana: saudade, cafuné, cheiro, abraço, sobremesa.</p><p class="note-term">Já sei usar 4 de 5! ✓</p></div>
                   </div>
@@ -270,8 +283,8 @@
           <figure class="details-stage" data-active-detail="01" aria-label="Veja de perto cada detalhe do caderninho">
             <div class="hero-glow bloom" data-ds-bloom aria-hidden="true"></div>
             <div class="details-scene" data-reveal="scale">
-              <div class="caderno-3d details-book" id="caderno-detalhes" data-caderno data-caderno-interactive data-caderno-feature="01" data-contracapa="/caderninho-marcia/assets/images/contra-capa.webp" role="img" aria-label="Caderninho na Mão! em 3D: Tamanho A5.">
-                <img class="caderno-fallback" src="/caderninho-marcia/assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
+              <div class="caderno-3d details-book" id="caderno-detalhes" data-caderno data-caderno-interactive data-caderno-feature="01" data-contracapa="assets/images/contra-capa.webp" role="img" aria-label="Caderninho na Mão! em 3D: Tamanho A5.">
+                <img class="caderno-fallback" src="assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
               </div>
               <div class="details-ruler" aria-hidden="true"><span class="meta">14,8 x 21 cm</span></div>
               <span class="details-active-number" aria-hidden="true">01</span>
@@ -297,10 +310,10 @@
           <div class="oferta-produto">
             <div class="oferta-livro">
               <div class="oferta-livro-glow" aria-hidden="true"></div>
-              <div class="oferta-objeto oferta-folha" aria-hidden="true"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/folha-360.webp 360w, /caderninho-marcia/assets/images/folha-700.webp 700w" sizes="340px"><img src="/caderninho-marcia/assets/images/folha.png" width="1312" height="1199" alt="" loading="lazy" decoding="async"></picture></div>
-              <div class="oferta-objeto oferta-lapis" aria-hidden="true"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/lapis-240.webp 240w, /caderninho-marcia/assets/images/lapis-480.webp 480w" sizes="230px"><img src="/caderninho-marcia/assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture></div>
+              <div class="oferta-objeto oferta-folha" aria-hidden="true"><picture><source type="image/webp" srcset="assets/images/folha-360.webp 360w, assets/images/folha-700.webp 700w" sizes="340px"><img src="assets/images/folha.png" width="1312" height="1199" alt="" loading="lazy" decoding="async"></picture></div>
+              <div class="oferta-objeto oferta-lapis" aria-hidden="true"><picture><source type="image/webp" srcset="assets/images/lapis-240.webp 240w, assets/images/lapis-480.webp 480w" sizes="230px"><img src="assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture></div>
               <div class="caderno-3d oferta-book" id="caderno-oferta" data-caderno data-caderno-closed data-caderno-hover role="img" aria-label="Caderninho na Mão! em 3D, fechado, com a capa ilustrada das aulas.">
-                <img class="caderno-fallback" src="/caderninho-marcia/assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
+                <img class="caderno-fallback" src="assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="oferta-produto-info">
@@ -362,7 +375,7 @@
         <div class="passos-trilha">
           <div class="passos-linha" aria-hidden="true">
             <span class="passos-linha-cheia"></span>
-            <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/lapis-240.webp 240w, /caderninho-marcia/assets/images/lapis-480.webp 480w" sizes="230px"><img class="passos-lapis" src="/caderninho-marcia/assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture>
+            <picture><source type="image/webp" srcset="assets/images/lapis-240.webp 240w, assets/images/lapis-480.webp 480w" sizes="230px"><img class="passos-lapis" src="assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture>
           </div>
           <ol class="passos-lista">
             <li class="passo" data-passo>
@@ -371,7 +384,7 @@
               <div class="passo-imagem">
                 <button class="passo-tela" type="button" data-lightbox aria-label="Ampliar imagem: botão dourado Quero o meu caderninho, nesta página">
                   <span class="tela-barra" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="/caderninho-marcia/assets/images/passo-1-botao.jpg" width="1220" height="264" alt="Botão dourado Quero o meu caderninho, em destaque na faixa verde desta página." loading="lazy" decoding="async">
+                  <img src="assets/images/passo-1-botao.jpg" width="1220" height="264" alt="Botão dourado Quero o meu caderninho, em destaque na faixa verde desta página." loading="lazy" decoding="async">
                 </button>
               </div>
             </li>
@@ -381,7 +394,7 @@
               <div class="passo-imagem">
                 <button class="passo-tela" type="button" data-lightbox aria-label="Ampliar imagem: carrinho do Clube de Autores com o campo de quantidade">
                   <span class="tela-barra" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="/caderninho-marcia/assets/images/passo-2-quantidade.jpg" width="1304" height="502" alt="Tela do carrinho do Clube de Autores com o Caderninho na Mão e o campo de quantidade e o botão Recalcular destacados." loading="lazy" decoding="async">
+                  <img src="assets/images/passo-2-quantidade.jpg" width="1304" height="502" alt="Tela do carrinho do Clube de Autores com o Caderninho na Mão e o campo de quantidade e o botão Recalcular destacados." loading="lazy" decoding="async">
                 </button>
               </div>
             </li>
@@ -391,7 +404,7 @@
               <div class="passo-imagem">
                 <button class="passo-tela" type="button" data-lightbox aria-label="Ampliar imagem: opções de envio do carrinho">
                   <span class="tela-barra" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="/caderninho-marcia/assets/images/passo-3-entrega.jpg" width="1620" height="288" alt="Quadro Informações de envio com as opções receber pelo correio, receber fora do Brasil e retirar na gráfica." loading="lazy" decoding="async">
+                  <img src="assets/images/passo-3-entrega.jpg" width="1620" height="288" alt="Quadro Informações de envio com as opções receber pelo correio, receber fora do Brasil e retirar na gráfica." loading="lazy" decoding="async">
                 </button>
               </div>
             </li>
@@ -401,7 +414,7 @@
               <div class="passo-imagem">
                 <button class="passo-tela" type="button" data-lightbox aria-label="Ampliar imagem: formulário de endereço para entrega">
                   <span class="tela-barra" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="/caderninho-marcia/assets/images/passo-4-dados.jpg" width="1580" height="1124" alt="Formulário Confirme o endereço para entrega, com os campos país, CEP, estado, endereço, número, cidade, bairro e complemento." loading="lazy" decoding="async">
+                  <img src="assets/images/passo-4-dados.jpg" width="1580" height="1124" alt="Formulário Confirme o endereço para entrega, com os campos país, CEP, estado, endereço, número, cidade, bairro e complemento." loading="lazy" decoding="async">
                 </button>
               </div>
             </li>
@@ -421,7 +434,7 @@
           </ol>
         </div>
         <aside class="passos-bilhete" data-reveal aria-labelledby="passos-bilhete-titulo">
-          <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/selo-240.webp 240w, /caderninho-marcia/assets/images/selo-480.webp 480w" sizes="240px"><img class="passos-bilhete-selo" src="/caderninho-marcia/assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture>
+          <picture><source type="image/webp" srcset="assets/images/selo-240.webp 240w, assets/images/selo-480.webp 480w" sizes="240px"><img class="passos-bilhete-selo" src="assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture>
           <h3 class="handwritten" id="passos-bilhete-titulo">Mora fora do Brasil?</h3>
           <p>Escolha "Desejo receber fora do Brasil" e tenha em mãos o seu número fiscal ou documento do seu país (por exemplo, DNI ou CUIT na Argentina e NIF em Portugal). O frete e o prazo aparecem antes do pagamento.</p>
         </aside>
@@ -478,7 +491,7 @@
                 <span class="purchase-stamp" aria-hidden="true"><span class="mini-flag"><i></i></span><span class="meta">BRASIL</span></span>
                 <div class="purchase-portrait">
                   <div class="bloom portrait-glow" data-ds-bloom aria-hidden="true"></div>
-                  <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/marcia-320.webp 320w, /caderninho-marcia/assets/images/marcia-640.webp 640w" sizes="260px"><img src="/caderninho-marcia/assets/images/marcia.png" width="1254" height="1254" alt="Retrato em aquarela da Profa. Marcia Macedo." loading="lazy" decoding="async"></picture>
+                  <picture><source type="image/webp" srcset="assets/images/marcia-320.webp 320w, assets/images/marcia-640.webp 640w" sizes="260px"><img src="assets/images/marcia.png" width="1254" height="1254" alt="Retrato em aquarela da Profa. Marcia Macedo." loading="lazy" decoding="async"></picture>
                 </div>
                 <h3 id="compra-card-titulo">Pronto para ter o seu caderninho?</h3>
                 <p class="purchase-total"><strong data-preco></strong> <span class="caption">+ frete</span></p>
@@ -493,8 +506,8 @@
 
     <section class="section closing-section section-dark section-forest" id="chamada-final" aria-labelledby="chamada-final-titulo">
       <div class="hero-glow bloom" data-ds-bloom aria-hidden="true"></div>
-      <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/folha-360.webp 360w, /caderninho-marcia/assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-top" src="/caderninho-marcia/assets/images/folha.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></picture>
-      <picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/folha-360.webp 360w, /caderninho-marcia/assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-bottom" src="/caderninho-marcia/assets/images/folha.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/webp" srcset="assets/images/folha-360.webp 360w, assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-top" src="assets/images/folha.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/webp" srcset="assets/images/folha-360.webp 360w, assets/images/folha-700.webp 700w" sizes="340px"><img class="hero-tropical hero-tropical-bottom" src="assets/images/folha.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></picture>
       <div class="container closing-grid">
         <div class="closing-copy">
           <span class="label" data-reveal>CADERNINHO NA MÃO. PORTUGUÊS NO CORAÇÃO.</span>
@@ -504,11 +517,11 @@
           <p class="caption closing-price" data-reveal><strong data-preco></strong> + frete · Envio para o Brasil e para o exterior</p>
         </div>
         <div class="closing-stage" data-reveal="scale">
-          <div class="closing-objeto closing-folha" aria-hidden="true"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/folha-360.webp 360w, /caderninho-marcia/assets/images/folha-700.webp 700w" sizes="340px"><img src="/caderninho-marcia/assets/images/folha.png" width="1312" height="1199" alt="" loading="lazy" decoding="async"></picture></div>
-          <div class="closing-objeto closing-selo" aria-hidden="true"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/selo-240.webp 240w, /caderninho-marcia/assets/images/selo-480.webp 480w" sizes="240px"><img src="/caderninho-marcia/assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
-          <div class="closing-objeto closing-lapis" aria-hidden="true"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/lapis-240.webp 240w, /caderninho-marcia/assets/images/lapis-480.webp 480w" sizes="230px"><img src="/caderninho-marcia/assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="closing-objeto closing-folha" aria-hidden="true"><picture><source type="image/webp" srcset="assets/images/folha-360.webp 360w, assets/images/folha-700.webp 700w" sizes="340px"><img src="assets/images/folha.png" width="1312" height="1199" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="closing-objeto closing-selo" aria-hidden="true"><picture><source type="image/webp" srcset="assets/images/selo-240.webp 240w, assets/images/selo-480.webp 480w" sizes="240px"><img src="assets/images/selo.png" width="1536" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="closing-objeto closing-lapis" aria-hidden="true"><picture><source type="image/webp" srcset="assets/images/lapis-240.webp 240w, assets/images/lapis-480.webp 480w" sizes="230px"><img src="assets/images/lapis.png" width="1292" height="1218" alt="" loading="lazy" decoding="async"></picture></div>
           <div class="caderno-3d closing-book" id="caderno-final" data-caderno data-caderno-closed data-caderno-hover role="img" aria-label="Caderninho na Mão! em 3D, fechado, com a capa ilustrada das aulas.">
-            <img class="caderno-fallback" src="/caderninho-marcia/assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
+            <img class="caderno-fallback" src="assets/images/capa.jpg" width="1054" height="1493" alt="" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -549,9 +562,9 @@
     <div class="caderno-lift"><div class="caderno-float"><div class="caderno-model">
       <div class="caderno-back"><img data-caderno-back alt="" hidden></div>
       <div class="caderno-edge caderno-edge-right"></div><div class="caderno-edge caderno-edge-bottom"></div>
-      <div class="caderno-page"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/miolo-400.webp 400w, /caderninho-marcia/assets/images/miolo-760.webp 760w, /caderninho-marcia/assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="/caderninho-marcia/assets/images/miolo.png" width="1748" height="2480" alt="" decoding="async"></picture></div>
+      <div class="caderno-page"><picture><source type="image/webp" srcset="assets/images/miolo-400.webp 400w, assets/images/miolo-760.webp 760w, assets/images/miolo-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 400px"><img src="assets/images/miolo.png" width="1748" height="2480" alt="" decoding="async"></picture></div>
       <div class="caderno-cover">
-        <div class="caderno-face caderno-cover-front"><picture><source type="image/webp" srcset="/caderninho-marcia/assets/images/capa-400.webp 400w, /caderninho-marcia/assets/images/capa-700.webp 700w, /caderninho-marcia/assets/images/capa-1054.webp 1054w" sizes="(max-width: 720px) 60vw, 420px"><img src="/caderninho-marcia/assets/images/capa.jpg" width="1054" height="1493" alt="" decoding="async"></picture></div>
+        <div class="caderno-face caderno-cover-front"><picture><source type="image/webp" srcset="assets/images/capa-400.webp 400w, assets/images/capa-700.webp 700w, assets/images/capa-1054.webp 1054w" sizes="(max-width: 720px) 60vw, 420px"><img src="assets/images/capa.jpg" width="1054" height="1493" alt="" decoding="async"></picture></div>
         <div class="caderno-face caderno-cover-inside"></div>
       </div>
       <div class="caderno-bindings" aria-hidden="true"></div>

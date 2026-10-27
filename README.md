@@ -33,6 +33,14 @@ node serve.cjs
 
 Abra http://127.0.0.1:4173/portfolio. Encerre com Ctrl+C. O servidor aplica os mesmos redirecionamentos do vercel.json e aceita HTTP Range, necessário para o vídeo. A página usa JavaScript nativo e animações CSS, sem bibliotecas carregadas por CDN.
 
+## Case Caderninho na Mão!
+
+A cópia congelada da página da Profa. Marcia Macedo fica em `caderninho-marcia/index.html`, com seus próprios CSS, JS, imagens, fontes e favicons. A pasta não depende dos recursos da página principal do portfólio. O projeto original da cliente permanece separado.
+
+Para abrir com duplo clique, use `caderninho-marcia/index.html`. Para testar no servidor, execute `node serve.cjs` na raiz e abra `http://127.0.0.1:4173/caderninho-marcia/`. O endereço sem barra final redireciona para a versão com barra por uma regra específica em `vercel.json`, também aplicada pelo servidor local. Os recursos usam caminhos relativos; o preload das fontes só roda em HTTP/HTTPS para evitar bloqueios CORS na abertura por arquivo.
+
+A versão de portfólio mantém canonical para a página oficial, `noindex, nofollow` e identificação discreta no rodapé. O card desse case ainda não foi incluído na seção `#cases` de `portfolio/index.html`. A publicação depende do desbloqueio do deploy na Vercel.
+
 ## Espaçamento entre seções
 
 O token --section-space usa clamp(24px,2.5vw,36px). A escala compacta é compartilhada por Habilidades, Método, Sobre mim, Perguntas e Contato. Cases têm entrada e saída próprias, também reduzidas. Foram encurtados os intervalos entre rótulos, títulos e conteúdo, a separação do bloco de públicos no método e os espaços da composição Sobre mim. O contato acompanha a altura do conteúdo, sem min-height de quase uma viewport. A proteção de rodapé e das âncoras para o botão flutuante permanece.

@@ -14,6 +14,11 @@
       "source": "/portifolio/:path*",
       "destination": "/portfolio/:path*",
       "permanent": true
+    },
+    {
+      "source": "/caderninho-marcia",
+      "destination": "/caderninho-marcia/",
+      "permanent": true
     }
   ],
   "rewrites": [
