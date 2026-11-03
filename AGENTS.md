@@ -13,4 +13,19 @@ Leia README.md antes de alterar o site. O projeto é estático, sem build, e é 
 - Manter `.vercelignore` alinhado à estrutura: prévias e ferramentas locais não fazem parte do site publicado.
 - Seguir os tokens, fontes, componentes e curvas de movimento do design system. Preservar a pausa global, o movimento reduzido e o agrupamento de cada case no celular.
 
-As alterações de conteúdo não autorizam publicação, push ou alteração da configuração de hospedagem por si só. Trabalhe no código local conforme o pedido do usuário.
+O fluxo de branch, handoff, commit, push e publicação segue a seção Passagem de contexto abaixo.
+
+## Passagem de contexto
+
+Estas regras substituem as orientações anteriores sobre visibilidade e autorização de push.
+
+- Repositório público. Nunca registrar no HANDOFF.md ou em qualquer arquivo: dados pessoais, financeiros, de clientes, credenciais, links ou IDs de planilhas privadas, falhas de segurança ou pendências sensíveis.
+- O HANDOFF.md deve conter somente informações apropriadas para leitura pública: estado do site, estrutura, tarefas de copy e código, decisões de copy e design e regras de fluxo. Na seção "Pendências que dependem de pessoas", escrever apenas: "Itens sensíveis são acompanhados fora do repositório."
+- Antes de trabalhar, ler HANDOFF.md e verificar o estado do Git. Todo trabalho ocorre na branch dev. Se dev não existir localmente nem no origin, criá-la a partir da main; se existir no origin, acompanhar a branch existente. Preservar alterações e commits do usuário.
+- Manter .vercelignore excluindo HANDOFF.md, AGENTS.md, CLAUDE.md e README.md em qualquer pasta, além de portfolio/referenciais/. Preservar as demais exclusões existentes.
+- Push da dev ao final de toda tarefa, depois de confirmar que nada sensível entrou no commit.
+- Antes do push, revisar os commits da dev ainda não presentes no GitHub, incluindo conteúdo e mensagens. Se houver conteúdo incompatível com este repositório público, não fazer push e avisar o usuário em canal apropriado, sem reproduzir valores ou identificadores.
+- Atualizar o HANDOFF.md público antes de cada commit. Relatórios que não sejam apropriados para publicação devem permanecer fora da pasta do repositório.
+- Nunca fazer merge nem push na main sem o usuário escrever "publica". Quando isso ocorrer, integrar dev na main, fazer push da main e registrar a publicação no handoff público.
+- Nas publicações autorizadas, conferir as rotas e os recursos do site. Excluir um arquivo do deploy não o remove do histórico do GitHub.
+- Não implementar funcionalidades nem reescrever o histórico sem a autorização correspondente. Registrar no handoff apenas a próxima evolução aprovada para descrição pública.
